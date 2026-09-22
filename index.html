@@ -2,6 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="
+  default-src 'none';
+  script-src 'self' https://cdn.jsdelivr.net 'wasm-unsafe-eval' blob:;
+  style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com;
+  font-src 'self' https://fonts.gstatic.com data:;
+  img-src 'self' data: blob:;
+  connect-src 'self' blob:;
+  worker-src blob:;
+  base-uri 'none';
+  form-action 'none';
+  frame-ancestors 'none';
+  object-src 'none'">
+<meta name="referrer" content="no-referrer">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Vessari, verifiable target assessment</title>
 <meta name="description" content="Held-out performance, the fine tuning result that did not work, and one worked specimen. Every figure is drawn against a printed axis and read at load from one file.">
@@ -9,8 +22,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&family=DM+Mono:wght@400;500&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/molstar@4.9.0/build/viewer/molstar.css">
-<script src="https://cdn.jsdelivr.net/npm/molstar@4.9.0/build/viewer/molstar.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/molstar@4.9.0/build/viewer/molstar.css"
+      integrity="sha384-+OaZyMNzr/LWHaWBBaLVIo+d7YRTNTToL8l6b05HXIgKyvVguOjZJX4dF5ykaX2r"
+      crossorigin="anonymous" referrerpolicy="no-referrer">
+<script src="https://cdn.jsdelivr.net/npm/molstar@4.9.0/build/viewer/molstar.js"
+        integrity="sha384-eq20u4xjAngOakfX2/AnZKJBUf3lRv/ULwa5hKesdI12bQdoLE8NS3Dae4LjEn1s"
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
 
