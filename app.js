@@ -90,7 +90,7 @@ function declareUnavailable() {
     const wrap = el.closest('.lanes-scroll');
     (wrap || el).hidden = true;
   });
-  [['admet-rows', 3], ['control-rows', 3], ['paired-rows', 4], ['readout-list', 0]].forEach(([id, cols]) => {
+  [['admet-rows', 3], ['control-rows', 3], ['paired-rows', 4], ['conformal-rows', 3], ['readout-list', 0]].forEach(([id, cols]) => {
     const el = document.getElementById(id);
     if (!el) return;
     el.innerHTML = cols
@@ -614,6 +614,49 @@ function drawPaired(tbody, cap, p) {
       + (big.sign_accuracy_ci[0] * 100).toFixed(0) + ' to '
       + (big.sign_accuracy_ci[1] * 100).toFixed(0) + '%.'
     : '';
+}
+
+function drawConformal(tbody, cap, c) {
+  tbody.innerHTML = '';
+  if (!c || !c.within_target) {
+    tbody.innerHTML = '<tr><td colspan="3" class="missing">NOT RECORDED</td></tr>';
+    return;
+  }
+  // Narrowest first: the targets where a prediction is worth acting on.
+  const rows = c.within_target.per_target.slice()
+    .sort((a, b) => a.width_fold - b.width_fold);
+  rows.forEach((r) => {
+    const tr = document.createElement('tr');
+    const t = document.createElement('td');
+    t.textContent = r.target;
+    const cov = document.createElement('td');
+    cov.className = 'num';
+    cov.textContent = (r.coverage * 100).toFixed(0) + '%';
+    const w = document.createElement('td');
+    w.className = 'num';
+    // Fold, because that is the unit an affinity is argued about in, and
+    // rounded hard because the difference between 14,000 and 15,000 fold is
+    // not a difference anyone acts on.
+    // Rounded hard, because the difference between 14,000 and 15,000 fold is
+    // not one anyone acts on, and grouped properly: dividing by a thousand and
+    // appending ",000" rendered 1.32 million as "1324,000".
+    const f = r.width_fold;
+    const rounded = f < 100 ? Math.round(f)
+      : f < 10000 ? Math.round(f / 100) * 100
+      : Math.round(f / 1000) * 1000;
+    w.textContent = rounded.toLocaleString('en-US') + '\u00d7';
+    tr.append(t, cov, w);
+    tbody.appendChild(tr);
+  });
+  if (cap) {
+    const w = c.within_target;
+    cap.textContent = 'Asked to cover ' + (c.target_coverage * 100).toFixed(0)
+      + '%, these intervals cover between ' + (w.min_coverage * 100).toFixed(0)
+      + ' and ' + (w.max_coverage * 100).toFixed(0) + '%, with '
+      + w.n_under_covering + ' of ' + w.per_target.length
+      + ' targets falling short. The median width is '
+      + Math.round(w.median_width_fold) + ' fold.';
+  }
 }
 
 function drawReadout(list, specimen) {
@@ -1167,6 +1210,12 @@ async function boot() {
 
     const readoutList = document.getElementById('readout-list');
     if (readoutList && data.specimen) drawReadout(readoutList, data.specimen);
+
+    const conformalRows = document.getElementById('conformal-rows');
+    if (conformalRows) {
+      drawConformal(conformalRows, document.getElementById('conformal-cap'),
+                    data.conformal);
+    }
 
     const pairedRows = document.getElementById('paired-rows');
     if (pairedRows) {

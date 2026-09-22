@@ -278,9 +278,58 @@
       </div>
     </section>
 
-    <section class="channel" id="ch00" aria-labelledby="h00">
+    <section class="channel" id="ch-interval" aria-labelledby="h-interval">
       <div class="channel-head">
         <span class="channel-no">04</span>
+        <h2 class="h2" id="h-interval">A number is not useful unless it comes with what it might be wrong by</h2>
+      </div>
+      <p class="body">Our affinity model ranks compounds well inside a chemical series and near
+        chance across series, which is measured above and is not fixable: a search of the
+        2024&ndash;2026 literature found no published method that beats a model given no protein at
+        all on a genuinely series&#8209;separated single&#8209;target task. So the question is not
+        how to make the number better. It is what a reader is entitled to be told about it.</p>
+      <p class="body">Every prediction now carries an interval, calibrated on compounds already
+        measured for the same target. Across
+        <span data-num="conformal.n_compounds" data-fmt="int">&#183;&#183;&#183;</span> compounds
+        the intervals are asked to contain the truth
+        <span data-num="conformal.target_coverage" data-fmt="pct">&#183;&#183;</span> of the time,
+        and they contain it
+        <span data-num="conformal.within_target.mean_coverage" data-fmt="pct">&#183;&#183;</span>
+        of the time, on every target tested, with none falling short.</p>
+
+      <div class="split">
+        <div>
+          <table class="curve">
+            <caption class="vh">Interval coverage and width by target</caption>
+            <thead>
+              <tr><th>target</th><th class="num">covered</th><th class="num">interval width</th></tr>
+            </thead>
+            <tbody id="conformal-rows"></tbody>
+          </table>
+          <p class="cap" id="conformal-cap"></p>
+        </div>
+        <div>
+          <h3 class="h3">The width is the honest part</h3>
+          <p class="body">On one target the interval is tenfold, which a chemist can act on. On
+            another it is wider than the entire range of affinities anyone would measure, which is
+            the model reporting that it does not know. Both numbers are correct: the intervals
+            cover on both targets. What differs is whether the prediction was worth making.</p>
+          <p class="body">Calibrated instead on other proteins, with nothing measured for the one
+            being asked about, coverage holds on average and collapses per target &mdash; from
+            <span data-num="conformal.across_targets.min_coverage" data-fmt="pct">&#183;</span> on
+            the worst to
+            <span data-num="conformal.across_targets.max_coverage" data-fmt="pct">&#183;&#183;</span>
+            on the best. An interval that is right on average and wrong for your protein is worse
+            than no interval, so the tool asks for measured compounds before it offers one.</p>
+          <p class="cap">Split conformal prediction, calibrated on absolute residuals with the
+            finite-sample correction. Regenerate with scripts/conformal_validation.py.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="channel" id="ch00" aria-labelledby="h00">
+      <div class="channel-head">
+        <span class="channel-no">05</span>
         <h2 class="h2" id="h00">Programs</h2>
       </div>
       <p class="body">Vessari runs target assessments end to end. Give it a protein and a set of
@@ -340,7 +389,7 @@
 
     <section class="channel" id="ch01" aria-labelledby="h01">
       <div class="channel-head">
-        <span class="channel-no" aria-hidden="true">05</span>
+        <span class="channel-no" aria-hidden="true">06</span>
         <h2 class="h2" id="h01">Held-out performance, and what it survives</h2>
       </div>
 
@@ -393,7 +442,7 @@
     <!-- 02 -->
     <section class="channel" id="ch02" aria-labelledby="h02">
       <div class="channel-head">
-        <span class="channel-no" aria-hidden="true">06</span>
+        <span class="channel-no" aria-hidden="true">07</span>
         <h2 class="h2" id="h02">What the number is</h2>
       </div>
       <p class="body">The held-out set is <span data-num="holdout.n" data-fmt="int">&#183;&#183;&#183;</span> compounds separated from training by scaffold rather than by molecule. Scaffold splitting removed <span data-num="pipeline.scaffold_split_removed" data-fmt="int">&#183;&#183;&#183;</span> near relatives that a molecule level split would have left in training, so the correlation above is measured against chemistry the model has not already seen a close cousin of.</p>
@@ -415,7 +464,7 @@
     <!-- 04 -->
     <section class="channel" id="ch04" aria-labelledby="h04">
       <div class="channel-head">
-        <span class="channel-no" aria-hidden="true">07</span>
+        <span class="channel-no" aria-hidden="true">08</span>
         <h2 class="h2" id="h04">Residual strip</h2>
       </div>
       <p class="body">Every held-out compound with a prediction, <span data-num="derived.points_count" data-fmt="int">&#183;&#183;&#183;</span> of them, sorted by measured affinity. Each lane carries two marks on one axis: the measured value in violet and the prediction in clay, with the miss drawn between them. Reading down the strip, the marks sit together at the tight end and pull apart as the compounds get weaker, which is the model losing resolution rather than losing accuracy evenly.</p>
@@ -434,7 +483,7 @@
     <!-- 06 -->
     <section class="channel" id="ch06" aria-labelledby="h06">
       <div class="channel-head">
-        <span class="channel-no" aria-hidden="true">08</span>
+        <span class="channel-no" aria-hidden="true">09</span>
         <h2 class="h2" id="h06">How it is checked</h2>
       </div>
       <p class="body">Citation verification is <span data-num="pipeline.citation_check" data-fmt="text">&#183;&#183;&#183;</span>. A quoted sentence either appears in the source text or it does not, and no model is asked to judge whether a citation supports a claim. ADMET runs across <span data-num="derived.admet_count" data-fmt="int">&#183;&#183;</span> endpoints from the Therapeutics Data Commons benchmark group, scored below on the metric that group defines for each one. The endpoint names are theirs, so the table can be compared line by line against a public source.</p>
@@ -466,7 +515,7 @@
     <!-- 07 -->
     <section class="channel" id="ch07" aria-labelledby="h07">
       <div class="channel-head">
-        <span class="channel-no" aria-hidden="true">09</span>
+        <span class="channel-no" aria-hidden="true">10</span>
         <h2 class="h2" id="h07">Scope of this page</h2>
       </div>
       <p class="body">What the figures above cover, and what they do not. We would rather you arrive at this list from us than from your own reading of the numbers.</p>
