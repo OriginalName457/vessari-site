@@ -818,15 +818,15 @@
     "n_pairs": 4899,
     "n_targets": 15,
     "noise_threshold_kcal": 0.5,
-    "note": "within-target pairs formed from per-compound predictions already in the repository; a re-framing of existing numbers, not new predictions",
+    "note": "within-target pairs formed from per-compound predictions already in the repository; a re-framing of existing numbers, not new predictions. Intervals resample compounds, not pairs, because each compound appears in about 27 pairs.",
     "by_effect_size": [
       {
         "threshold_kcal": 0.0,
         "n": 4852,
         "sign_accuracy": 0.7323,
         "sign_accuracy_ci": [
-          0.7199,
-          0.7446
+          0.7139,
+          0.75
         ],
         "rmse_kcal": 1.123,
         "rmse_predict_zero_kcal": 1.507
@@ -836,8 +836,8 @@
         "n": 3504,
         "sign_accuracy": 0.7934,
         "sign_accuracy_ci": [
-          0.7797,
-          0.8065
+          0.7733,
+          0.8125
         ],
         "rmse_kcal": 1.261,
         "rmse_predict_zero_kcal": 1.764
@@ -847,8 +847,8 @@
         "n": 2301,
         "sign_accuracy": 0.8531,
         "sign_accuracy_ci": [
-          0.8383,
-          0.8674
+          0.8314,
+          0.8733
         ],
         "rmse_kcal": 1.445,
         "rmse_predict_zero_kcal": 2.107
@@ -858,8 +858,8 @@
         "n": 875,
         "sign_accuracy": 0.9109,
         "sign_accuracy_ci": [
-          0.8914,
-          0.928
+          0.8868,
+          0.9337
         ],
         "rmse_kcal": 1.879,
         "rmse_predict_zero_kcal": 2.85
@@ -871,16 +871,16 @@
         "vessari": {
           "sign_accuracy": 0.7683,
           "sign_accuracy_ci": [
-            0.7336,
-            0.805
+            0.7231,
+            0.8119
           ],
           "rmse_kcal": 1.31
         },
         "fep_plus": {
           "sign_accuracy": 0.8591,
           "sign_accuracy_ci": [
-            0.8282,
-            0.888
+            0.8165,
+            0.8971
           ],
           "rmse_kcal": 1.012
         }
@@ -891,8 +891,8 @@
       "n": 2301,
       "sign_accuracy": 0.8531,
       "sign_accuracy_ci": [
-        0.8383,
-        0.8674
+        0.8314,
+        0.8733
       ],
       "rmse_kcal": 1.445,
       "rmse_predict_zero_kcal": 2.107

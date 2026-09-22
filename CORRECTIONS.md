@@ -61,3 +61,21 @@ The pipeline reproduces the published regime when given a published-style
 benchmark: 52 FEP+ compounds, Pearson 0.596 and Kendall 0.433, against Boltz-2's
 reported 0.66 and 0.48. The corrections above are about what we measured and
 claimed, not about whether the code runs correctly.
+
+## The paired intervals were too narrow
+
+**Published:** direction right 85.3% of the time on pairs whose measured change
+exceeds 1 kcal/mol, 95% interval 83.8 to 86.7.
+
+**Corrected to:** the same 85.3%, interval 83.1 to 87.3. Regenerate with
+`scripts/paired_validation.py`.
+
+364 compounds generate 4,899 within-target pairs, so each compound appears in
+about twenty-seven of them and the pairs are nowhere near independent.
+Resampling pairs for the interval treats them as though they were, and returns
+a precision the evidence does not support. The interval now resamples compounds
+and keeps every pair among those drawn.
+
+The point estimate did not move. Only the claimed precision did, and only by
+about a point at each end. It is recorded here because a number that was on a
+public page for a day and then changed is exactly what this file is for.
