@@ -1,0 +1,1343 @@
+{
+  "holdout": {
+    "n": 120,
+    "spearman": 0.785,
+    "mae": 0.759
+  },
+  "pipeline": {
+    "split": "scaffold",
+    "scaffold_split_removed": 989,
+    "repeat_run_spread_log": 0.02,
+    "citation_check": "deterministic string containment"
+  },
+  "curve": [
+    {
+      "n": 40,
+      "before": 0.785,
+      "after": 0.728
+    },
+    {
+      "n": 80,
+      "before": 0.785,
+      "after": 0.725
+    },
+    {
+      "n": 160,
+      "before": 0.785,
+      "after": 0.713
+    },
+    {
+      "n": 240,
+      "before": 0.785,
+      "after": 0.714
+    },
+    {
+      "n": 320,
+      "before": 0.785,
+      "after": 0.732
+    },
+    {
+      "n": 399,
+      "before": 0.785,
+      "after": 0.73
+    }
+  ],
+  "points": [
+    {
+      "id": "CHEMBL71611",
+      "measured": -3.52,
+      "predicted": -3.31
+    },
+    {
+      "id": "CHEMBL70524",
+      "measured": -3.15,
+      "predicted": -3.16
+    },
+    {
+      "id": "CHEMBL99257",
+      "measured": -2.8,
+      "predicted": -2.81
+    },
+    {
+      "id": "CHEMBL5084107",
+      "measured": -2.76,
+      "predicted": -1.82
+    },
+    {
+      "id": "CHEMBL103630",
+      "measured": -2.7,
+      "predicted": -1.82
+    },
+    {
+      "id": "CHEMBL103615",
+      "measured": -2.22,
+      "predicted": -1.87
+    },
+    {
+      "id": "CHEMBL103524",
+      "measured": -2.15,
+      "predicted": -2.11
+    },
+    {
+      "id": "CHEMBL4561998",
+      "measured": -2.1,
+      "predicted": -1.18
+    },
+    {
+      "id": "CHEMBL4160766",
+      "measured": -2.08,
+      "predicted": -1.81
+    },
+    {
+      "id": "CHEMBL218490",
+      "measured": -2.05,
+      "predicted": -2.11
+    },
+    {
+      "id": "CHEMBL5199262",
+      "measured": -2.02,
+      "predicted": -0.17
+    },
+    {
+      "id": "CHEMBL360356",
+      "measured": -1.92,
+      "predicted": -1.79
+    },
+    {
+      "id": "CHEMBL4084428",
+      "measured": -1.75,
+      "predicted": -1.47
+    },
+    {
+      "id": "CHEMBL3805222",
+      "measured": -1.67,
+      "predicted": -1.26
+    },
+    {
+      "id": "CHEMBL4104834",
+      "measured": -1.57,
+      "predicted": -1.6
+    },
+    {
+      "id": "CHEMBL3322410",
+      "measured": -1.33,
+      "predicted": -0.85
+    },
+    {
+      "id": "CHEMBL2113714",
+      "measured": -1.32,
+      "predicted": -1.83
+    },
+    {
+      "id": "CHEMBL4444999",
+      "measured": -1.25,
+      "predicted": -1.36
+    },
+    {
+      "id": "CHEMBL1240572",
+      "measured": -1.11,
+      "predicted": -0.88
+    },
+    {
+      "id": "CHEMBL4128942",
+      "measured": -1.08,
+      "predicted": 0.19
+    },
+    {
+      "id": "CHEMBL4447240",
+      "measured": -1.06,
+      "predicted": -1.36
+    },
+    {
+      "id": "CHEMBL3623635",
+      "measured": -1.0,
+      "predicted": -0.39
+    },
+    {
+      "id": "CHEMBL1165726",
+      "measured": -0.98,
+      "predicted": -0.8
+    },
+    {
+      "id": "CHEMBL7092",
+      "measured": -0.96,
+      "predicted": -0.8
+    },
+    {
+      "id": "CHEMBL1165695",
+      "measured": -0.93,
+      "predicted": -1.02
+    },
+    {
+      "id": "CHEMBL1163376",
+      "measured": -0.88,
+      "predicted": -0.69
+    },
+    {
+      "id": "CHEMBL1055",
+      "measured": -0.86,
+      "predicted": -2.02
+    },
+    {
+      "id": "CHEMBL1163382",
+      "measured": -0.85,
+      "predicted": -0.26
+    },
+    {
+      "id": "CHEMBL4164338",
+      "measured": -0.79,
+      "predicted": -0.82
+    },
+    {
+      "id": "CHEMBL4761395",
+      "measured": -0.62,
+      "predicted": -1.31
+    },
+    {
+      "id": "CHEMBL299744",
+      "measured": -0.6,
+      "predicted": -1.62
+    },
+    {
+      "id": "CHEMBL4464046",
+      "measured": -0.47,
+      "predicted": -0.31
+    },
+    {
+      "id": "CHEMBL3104061",
+      "measured": -0.46,
+      "predicted": -0.42
+    },
+    {
+      "id": "CHEMBL4786073",
+      "measured": -0.4,
+      "predicted": -0.65
+    },
+    {
+      "id": "CHEMBL5418946",
+      "measured": -0.34,
+      "predicted": -1.17
+    },
+    {
+      "id": "CHEMBL3623634",
+      "measured": -0.3,
+      "predicted": -0.43
+    },
+    {
+      "id": "CHEMBL4637911",
+      "measured": -0.27,
+      "predicted": 0.15
+    },
+    {
+      "id": "CHEMBL342390",
+      "measured": -0.27,
+      "predicted": -1.04
+    },
+    {
+      "id": "CHEMBL4286482",
+      "measured": -0.22,
+      "predicted": -1.26
+    },
+    {
+      "id": "CHEMBL4174943",
+      "measured": -0.07,
+      "predicted": -1.74
+    },
+    {
+      "id": "CHEMBL5182616",
+      "measured": -0.05,
+      "predicted": 0.28
+    },
+    {
+      "id": "CHEMBL4764804",
+      "measured": -0.05,
+      "predicted": -0.28
+    },
+    {
+      "id": "CHEMBL4639344",
+      "measured": -0.05,
+      "predicted": -2.26
+    },
+    {
+      "id": "CHEMBL4763176",
+      "measured": -0.04,
+      "predicted": -1.19
+    },
+    {
+      "id": "CHEMBL3237852",
+      "measured": -0.04,
+      "predicted": 1.15
+    },
+    {
+      "id": "CHEMBL4456743",
+      "measured": -0.04,
+      "predicted": 0.98
+    },
+    {
+      "id": "CHEMBL1643305",
+      "measured": -0.04,
+      "predicted": -0.5
+    },
+    {
+      "id": "CHEMBL2047823",
+      "measured": -0.04,
+      "predicted": -0.95
+    },
+    {
+      "id": "CHEMBL1556897",
+      "measured": -0.03,
+      "predicted": -0.26
+    },
+    {
+      "id": "CHEMBL4757832",
+      "measured": -0.03,
+      "predicted": -0.04
+    },
+    {
+      "id": "CHEMBL4462083",
+      "measured": -0.03,
+      "predicted": 0.24
+    },
+    {
+      "id": "CHEMBL5414672",
+      "measured": -0.02,
+      "predicted": -1.3
+    },
+    {
+      "id": "CHEMBL4277397",
+      "measured": -0.02,
+      "predicted": -0.38
+    },
+    {
+      "id": "CHEMBL1683470",
+      "measured": -0.02,
+      "predicted": -0.09
+    },
+    {
+      "id": "CHEMBL4277666",
+      "measured": -0.02,
+      "predicted": -0.63
+    },
+    {
+      "id": "CHEMBL1822702",
+      "measured": -0.02,
+      "predicted": -0.84
+    },
+    {
+      "id": "CHEMBL4798904",
+      "measured": -0.02,
+      "predicted": -0.89
+    },
+    {
+      "id": "CHEMBL1276016",
+      "measured": -0.02,
+      "predicted": -2.15
+    },
+    {
+      "id": "CHEMBL1485038",
+      "measured": -0.02,
+      "predicted": -0.94
+    },
+    {
+      "id": "CHEMBL1822701",
+      "measured": -0.01,
+      "predicted": -0.6
+    },
+    {
+      "id": "CHEMBL172215",
+      "measured": 0.01,
+      "predicted": -1.38
+    },
+    {
+      "id": "CHEMBL138115",
+      "measured": 0.02,
+      "predicted": -1.81
+    },
+    {
+      "id": "CHEMBL1683467",
+      "measured": 0.07,
+      "predicted": -0.46
+    },
+    {
+      "id": "CHEMBL1683466",
+      "measured": 0.08,
+      "predicted": -0.42
+    },
+    {
+      "id": "CHEMBL1683468",
+      "measured": 0.19,
+      "predicted": -0.07
+    },
+    {
+      "id": "CHEMBL1683474",
+      "measured": 0.25,
+      "predicted": -1.11
+    },
+    {
+      "id": "CHEMBL1673089",
+      "measured": 0.29,
+      "predicted": 1.26
+    },
+    {
+      "id": "CHEMBL1683471",
+      "measured": 0.35,
+      "predicted": 0.02
+    },
+    {
+      "id": "CHEMBL1683469",
+      "measured": 0.39,
+      "predicted": -0.02
+    },
+    {
+      "id": "CHEMBL1081233",
+      "measured": 0.54,
+      "predicted": 1.04
+    },
+    {
+      "id": "CHEMBL138972",
+      "measured": 0.7,
+      "predicted": -1.16
+    },
+    {
+      "id": "CHEMBL169685",
+      "measured": 1.18,
+      "predicted": -1.08
+    },
+    {
+      "id": "CHEMBL166696",
+      "measured": 1.32,
+      "predicted": -1.05
+    },
+    {
+      "id": "CHEMBL168447",
+      "measured": 1.4,
+      "predicted": -1.62
+    },
+    {
+      "id": "CHEMBL506247",
+      "measured": 1.52,
+      "predicted": -0.66
+    },
+    {
+      "id": "CHEMBL5198769",
+      "measured": 1.56,
+      "predicted": 1.34
+    },
+    {
+      "id": "CHEMBL2391084",
+      "measured": 1.57,
+      "predicted": -0.11
+    },
+    {
+      "id": "CHEMBL4532459",
+      "measured": 1.59,
+      "predicted": 0.22
+    },
+    {
+      "id": "CHEMBL567544",
+      "measured": 1.6,
+      "predicted": 1.44
+    },
+    {
+      "id": "CHEMBL508732",
+      "measured": 1.63,
+      "predicted": 0.29
+    },
+    {
+      "id": "CHEMBL4800519",
+      "measured": 1.65,
+      "predicted": -0.56
+    },
+    {
+      "id": "CHEMBL4868279",
+      "measured": 1.68,
+      "predicted": 1.7
+    },
+    {
+      "id": "CHEMBL2334350",
+      "measured": 1.69,
+      "predicted": 0.59
+    },
+    {
+      "id": "CHEMBL1807501",
+      "measured": 1.69,
+      "predicted": 1.37
+    },
+    {
+      "id": "CHEMBL7121",
+      "measured": 1.71,
+      "predicted": 0.88
+    },
+    {
+      "id": "CHEMBL3627999",
+      "measured": 1.75,
+      "predicted": 0.95
+    },
+    {
+      "id": "CHEMBL4632763",
+      "measured": 1.75,
+      "predicted": 1.65
+    },
+    {
+      "id": "CHEMBL4861003",
+      "measured": 1.76,
+      "predicted": 1.31
+    },
+    {
+      "id": "CHEMBL2042371",
+      "measured": 1.78,
+      "predicted": 1.47
+    },
+    {
+      "id": "CHEMBL4063436",
+      "measured": 1.78,
+      "predicted": 0.57
+    },
+    {
+      "id": "CHEMBL4082845",
+      "measured": 1.79,
+      "predicted": 0.3
+    },
+    {
+      "id": "CHEMBL1995684",
+      "measured": 1.8,
+      "predicted": 1.23
+    },
+    {
+      "id": "CHEMBL4572128",
+      "measured": 1.8,
+      "predicted": 1.85
+    },
+    {
+      "id": "CHEMBL4755619",
+      "measured": 1.8,
+      "predicted": 1.37
+    },
+    {
+      "id": "CHEMBL4779437",
+      "measured": 1.8,
+      "predicted": 0.86
+    },
+    {
+      "id": "CHEMBL3326434",
+      "measured": 1.81,
+      "predicted": 0.62
+    },
+    {
+      "id": "CHEMBL4864196",
+      "measured": 1.82,
+      "predicted": 1.47
+    },
+    {
+      "id": "CHEMBL4761403",
+      "measured": 1.83,
+      "predicted": 0.03
+    },
+    {
+      "id": "CHEMBL4634457",
+      "measured": 1.83,
+      "predicted": 1.22
+    },
+    {
+      "id": "CHEMBL4468079",
+      "measured": 1.84,
+      "predicted": -0.43
+    },
+    {
+      "id": "CHEMBL578167",
+      "measured": 1.86,
+      "predicted": 0.73
+    },
+    {
+      "id": "CHEMBL4751945",
+      "measured": 1.87,
+      "predicted": 1.46
+    },
+    {
+      "id": "CHEMBL4634778",
+      "measured": 1.87,
+      "predicted": 1.79
+    },
+    {
+      "id": "CHEMBL2040866",
+      "measured": 1.89,
+      "predicted": 1.51
+    },
+    {
+      "id": "CHEMBL4566244",
+      "measured": 1.89,
+      "predicted": 1.62
+    },
+    {
+      "id": "CHEMBL4438066",
+      "measured": 1.89,
+      "predicted": 0.7
+    },
+    {
+      "id": "CHEMBL4854547",
+      "measured": 1.9,
+      "predicted": 1.81
+    },
+    {
+      "id": "CHEMBL4633334",
+      "measured": 1.91,
+      "predicted": 1.35
+    },
+    {
+      "id": "CHEMBL5208049",
+      "measured": 1.92,
+      "predicted": 0.92
+    },
+    {
+      "id": "CHEMBL4648555",
+      "measured": 1.93,
+      "predicted": 1.03
+    },
+    {
+      "id": "CHEMBL5074965",
+      "measured": 1.93,
+      "predicted": 1.66
+    },
+    {
+      "id": "CHEMBL5092020",
+      "measured": 1.94,
+      "predicted": 1.6
+    },
+    {
+      "id": "CHEMBL4851324",
+      "measured": 1.96,
+      "predicted": 1.77
+    },
+    {
+      "id": "CHEMBL4068548",
+      "measured": 1.97,
+      "predicted": 1.29
+    },
+    {
+      "id": "CHEMBL4073396",
+      "measured": 1.98,
+      "predicted": 0.08
+    },
+    {
+      "id": "CHEMBL5194036",
+      "measured": 1.98,
+      "predicted": 0.81
+    },
+    {
+      "id": "CHEMBL3110148",
+      "measured": 1.98,
+      "predicted": 0.43
+    },
+    {
+      "id": "CHEMBL4573205",
+      "measured": 1.99,
+      "predicted": 1.98
+    },
+    {
+      "id": "CHEMBL3627998",
+      "measured": 1.99,
+      "predicted": 1.24
+    }
+  ],
+  "specimen": {
+    "target": "CHEMBL1862",
+    "target_name": "ABL1 kinase domain",
+    "uniprot": "P00519",
+    "ligand": "Dasatinib",
+    "affinity": {
+      "affinity_pred_value": -2.513619899749756,
+      "affinity_probability_binary": 0.9092445373535156,
+      "affinity_pred_value1": -2.6019086837768555,
+      "affinity_probability_binary1": 0.939100980758667,
+      "affinity_pred_value2": -2.4253311157226562,
+      "affinity_probability_binary2": 0.8793880939483643
+    },
+    "confidence": {
+      "confidence_score": 0.9444815516471863,
+      "ptm": 0.9513025879859924,
+      "iptm": 0.9781935811042786,
+      "ligand_iptm": 0.9781935811042786,
+      "protein_iptm": 0.0,
+      "complex_plddt": 0.9360535740852356,
+      "complex_iplddt": 0.9301624894142151,
+      "complex_pde": 0.39392513036727905,
+      "complex_ipde": 0.4912174344062805,
+      "chains_ptm": {
+        "0": 0.9507727026939392,
+        "1": 0.9630612134933472
+      },
+      "pair_chains_iptm": {
+        "0": {
+          "0": 0.9507727026939392,
+          "1": 0.8056938052177429
+        },
+        "1": {
+          "0": 0.9781935811042786,
+          "1": 0.9630612134933472
+        }
+      }
+    }
+  },
+  "abl1": {
+    "n": 30,
+    "n_failed": 0,
+    "effective_n_clusters": 30,
+    "max_pairwise_tanimoto": 0.578,
+    "spearman": 0.284,
+    "ci": [
+      -0.121,
+      0.636
+    ],
+    "mae_log": 1.404,
+    "median_fold": 20.5,
+    "within_10x": 13,
+    "source": "benchmarks/results/abl1-holdout-predictions-v2.json",
+    "assays": 266
+  },
+  "abl1_controls": {
+    "arms": {
+      "Boltz-2 structure + affinity": 0.284,
+      "ligand_gbm": 0.872,
+      "nearest_neighbour": 0.726,
+      "molecular_weight": 0.209
+    },
+    "outcome": "loses",
+    "strongest_control": "ligand_gbm",
+    "delta": -0.588,
+    "ci": [
+      -0.99,
+      -0.202
+    ],
+    "n_eval": null,
+    "n_train": null
+  },
+  "fep_repro": {
+    "n": 364,
+    "n_targets": 15,
+    "pearson": 0.664,
+    "spearman": 0.647,
+    "kendall": 0.501,
+    "comparable_pearson": 0.593,
+    "comparable_n": 52,
+    "comparable_targets": "CDK2, TYK2, P38",
+    "boltz2_reported_pearson": 0.66
+  },
+  "assessment": {
+    "target": "ABL1",
+    "run_id": "d93de4ae914d",
+    "created_at": "2026-09-17T08:06:53.899133+00:00",
+    "target_chembl_id": "CHEMBL1862",
+    "evidence": {
+      "literature": true,
+      "target_records": true,
+      "binding": true,
+      "admet": true
+    },
+    "gaps": [],
+    "literature": {
+      "verdict": "insufficient",
+      "claims_proposed": 3,
+      "claims_verified": 3,
+      "claims_dropped": 0,
+      "sources_cited": 3,
+      "verification_rate": 1.0,
+      "is_fallback": false
+    },
+    "records": {
+      "genes": [
+        "ENSG00000097007"
+      ],
+      "proteins": [
+        {
+          "accession": "P00519",
+          "length": 1130,
+          "structures": 85
+        },
+        {
+          "accession": "Q8TDN4",
+          "length": 633,
+          "structures": 0
+        },
+        {
+          "accession": "Q9BTV7",
+          "length": 478,
+          "structures": 0
+        }
+      ],
+      "trials": 8
+    },
+    "compounds": [
+      {
+        "name": "imatinib",
+        "predicted_nm": 356.8,
+        "probability": 0.5816624760627747,
+        "structure_confidence": 0.9510330557823181,
+        "measured_nm": 220.0,
+        "measured_n": 106,
+        "measured_types": [
+          "IC50",
+          "Kd",
+          "Ki"
+        ],
+        "chembl_id": "CHEMBL941"
+      },
+      {
+        "name": "dasatinib",
+        "predicted_nm": 3.1,
+        "probability": 0.9092445373535156,
+        "structure_confidence": 0.9444815516471863,
+        "measured_nm": 0.9,
+        "measured_n": 37,
+        "measured_types": [
+          "IC50",
+          "Kd"
+        ],
+        "chembl_id": "CHEMBL1421"
+      },
+      {
+        "name": "nilotinib",
+        "predicted_nm": 97.2,
+        "probability": 0.5949645042419434,
+        "structure_confidence": 0.9581433534622192,
+        "measured_nm": 28.0,
+        "measured_n": 69,
+        "measured_types": [
+          "IC50",
+          "Kd"
+        ],
+        "chembl_id": "CHEMBL255863"
+      }
+    ],
+    "n_compared": 3,
+    "rank_correlation": 1.0,
+    "chance_of_this_order": 0.16666666666666666,
+    "median_fold_error": 3.4,
+    "assays_behind_comparison": 212
+  },
+  "paired": {
+    "n_pairs": 4899,
+    "n_targets": 15,
+    "noise_threshold_kcal": 0.5,
+    "note": "within-target pairs formed from per-compound predictions already in the repository; a re-framing of existing numbers, not new predictions",
+    "by_effect_size": [
+      {
+        "threshold_kcal": 0.0,
+        "n": 4852,
+        "sign_accuracy": 0.7323,
+        "sign_accuracy_ci": [
+          0.7199,
+          0.7446
+        ],
+        "rmse_kcal": 1.123,
+        "rmse_predict_zero_kcal": 1.507
+      },
+      {
+        "threshold_kcal": 0.5,
+        "n": 3504,
+        "sign_accuracy": 0.7934,
+        "sign_accuracy_ci": [
+          0.7797,
+          0.8065
+        ],
+        "rmse_kcal": 1.261,
+        "rmse_predict_zero_kcal": 1.764
+      },
+      {
+        "threshold_kcal": 1.0,
+        "n": 2301,
+        "sign_accuracy": 0.8531,
+        "sign_accuracy_ci": [
+          0.8383,
+          0.8674
+        ],
+        "rmse_kcal": 1.445,
+        "rmse_predict_zero_kcal": 2.107
+      },
+      {
+        "threshold_kcal": 2.0,
+        "n": 875,
+        "sign_accuracy": 0.9109,
+        "sign_accuracy_ci": [
+          0.8914,
+          0.928
+        ],
+        "rmse_kcal": 1.879,
+        "rmse_predict_zero_kcal": 2.85
+      }
+    ],
+    "head_to_head": {
+      "n": 518,
+      "arms": {
+        "vessari": {
+          "sign_accuracy": 0.7683,
+          "sign_accuracy_ci": [
+            0.7336,
+            0.805
+          ],
+          "rmse_kcal": 1.31
+        },
+        "fep_plus": {
+          "sign_accuracy": 0.8591,
+          "sign_accuracy_ci": [
+            0.8282,
+            0.888
+          ],
+          "rmse_kcal": 1.012
+        }
+      }
+    },
+    "headline": {
+      "threshold_kcal": 1.0,
+      "n": 2301,
+      "sign_accuracy": 0.8531,
+      "sign_accuracy_ci": [
+        0.8383,
+        0.8674
+      ],
+      "rmse_kcal": 1.445,
+      "rmse_predict_zero_kcal": 2.107
+    }
+  },
+  "admet": {
+    "count": 22,
+    "failed": 0,
+    "model": "morgan+descriptors -> lightgbm, one configuration for all endpoints",
+    "suite": "TDC ADMET Benchmark Group",
+    "endpoints": [
+      {
+        "endpoint": "ames",
+        "metric": "roc-auc",
+        "score": 0.8395,
+        "better": "higher",
+        "n_train": 4948,
+        "n_test": 1457,
+        "split_digest": "4c17c7e189973731"
+      },
+      {
+        "endpoint": "bbb_martins",
+        "metric": "roc-auc",
+        "score": 0.8915,
+        "better": "higher",
+        "n_train": 1381,
+        "n_test": 406,
+        "split_digest": "0496f0031547d95a"
+      },
+      {
+        "endpoint": "bioavailability_ma",
+        "metric": "roc-auc",
+        "score": 0.719,
+        "better": "higher",
+        "n_train": 436,
+        "n_test": 128,
+        "split_digest": "c1b8dc443ad17e2f"
+      },
+      {
+        "endpoint": "caco2_wang",
+        "metric": "mae",
+        "score": 0.2854,
+        "better": "lower",
+        "n_train": 619,
+        "n_test": 182,
+        "split_digest": "bd8d0803cd62840f"
+      },
+      {
+        "endpoint": "clearance_hepatocyte_az",
+        "metric": "spearman",
+        "score": 0.47,
+        "better": "higher",
+        "n_train": 825,
+        "n_test": 243,
+        "split_digest": "97a3ce9c74ec51ad"
+      },
+      {
+        "endpoint": "clearance_microsome_az",
+        "metric": "spearman",
+        "score": 0.5626,
+        "better": "higher",
+        "n_train": 749,
+        "n_test": 221,
+        "split_digest": "753c52bc56c6e9ec"
+      },
+      {
+        "endpoint": "cyp2c9_substrate_carbonmangels",
+        "metric": "pr-auc",
+        "score": 0.3145,
+        "better": "higher",
+        "n_train": 454,
+        "n_test": 135,
+        "split_digest": "037be8e967ac00ef"
+      },
+      {
+        "endpoint": "cyp2c9_veith",
+        "metric": "pr-auc",
+        "score": 0.7829,
+        "better": "higher",
+        "n_train": 8223,
+        "n_test": 2419,
+        "split_digest": "eb1bdcc156f1ad84"
+      },
+      {
+        "endpoint": "cyp2d6_substrate_carbonmangels",
+        "metric": "pr-auc",
+        "score": 0.5697,
+        "better": "higher",
+        "n_train": 453,
+        "n_test": 135,
+        "split_digest": "f0179508fff13054"
+      },
+      {
+        "endpoint": "cyp2d6_veith",
+        "metric": "pr-auc",
+        "score": 0.6911,
+        "better": "higher",
+        "n_train": 8929,
+        "n_test": 2626,
+        "split_digest": "45b045b29cce0dba"
+      },
+      {
+        "endpoint": "cyp3a4_substrate_carbonmangels",
+        "metric": "roc-auc",
+        "score": 0.6708,
+        "better": "higher",
+        "n_train": 455,
+        "n_test": 135,
+        "split_digest": "0c46e870498e8373"
+      },
+      {
+        "endpoint": "cyp3a4_veith",
+        "metric": "pr-auc",
+        "score": 0.8743,
+        "better": "higher",
+        "n_train": 8382,
+        "n_test": 2467,
+        "split_digest": "901f2e875374be31"
+      },
+      {
+        "endpoint": "dili",
+        "metric": "roc-auc",
+        "score": 0.9374,
+        "better": "higher",
+        "n_train": 323,
+        "n_test": 96,
+        "split_digest": "f921ee91aaf475d7"
+      },
+      {
+        "endpoint": "half_life_obach",
+        "metric": "spearman",
+        "score": 0.1994,
+        "better": "higher",
+        "n_train": 453,
+        "n_test": 135,
+        "split_digest": "16b22c47ee882954"
+      },
+      {
+        "endpoint": "herg",
+        "metric": "roc-auc",
+        "score": 0.8526,
+        "better": "higher",
+        "n_train": 445,
+        "n_test": 132,
+        "split_digest": "3a8cebd24330f8a2"
+      },
+      {
+        "endpoint": "hia_hou",
+        "metric": "roc-auc",
+        "score": 0.9576,
+        "better": "higher",
+        "n_train": 392,
+        "n_test": 117,
+        "split_digest": "9cc4affc535f1280"
+      },
+      {
+        "endpoint": "ld50_zhu",
+        "metric": "mae",
+        "score": 0.6269,
+        "better": "lower",
+        "n_train": 5021,
+        "n_test": 1478,
+        "split_digest": "89ed4f103f8b8d92"
+      },
+      {
+        "endpoint": "lipophilicity_astrazeneca",
+        "metric": "mae",
+        "score": 0.551,
+        "better": "lower",
+        "n_train": 2856,
+        "n_test": 840,
+        "split_digest": "9185f9e24b134151"
+      },
+      {
+        "endpoint": "pgp_broccatelli",
+        "metric": "roc-auc",
+        "score": 0.9182,
+        "better": "higher",
+        "n_train": 828,
+        "n_test": 245,
+        "split_digest": "58615a64781804bd"
+      },
+      {
+        "endpoint": "ppbr_az",
+        "metric": "mae",
+        "score": 8.5278,
+        "better": "lower",
+        "n_train": 1897,
+        "n_test": 559,
+        "split_digest": "1e3f16aab1cb7dfa"
+      },
+      {
+        "endpoint": "solubility_aqsoldb",
+        "metric": "mae",
+        "score": 0.7598,
+        "better": "lower",
+        "n_train": 6788,
+        "n_test": 1997,
+        "split_digest": "c6f11f0dd116fe6a"
+      },
+      {
+        "endpoint": "vdss_lombardo",
+        "metric": "spearman",
+        "score": 0.4893,
+        "better": "higher",
+        "n_train": 769,
+        "n_test": 226,
+        "split_digest": "dca91dea3e56f812"
+      }
+    ]
+  },
+  "affinity_control": {
+    "model": 0.785,
+    "ligand_only": 0.604,
+    "nearest_neighbour": 0.376,
+    "molecular_weight": 0.013,
+    "verdict": "inconclusive",
+    "note": "with a cross-validated ligand-only baseline the gap is +0.083, 95% CI -0.014 to +0.195, an interval containing zero",
+    "delta_nn": 0.409,
+    "delta_mw": 0.772
+  },
+  "fep": {
+    "n": 52,
+    "targets": 3,
+    "model": 0.61,
+    "ligand_only": 0.686,
+    "source": "openforcefield protein-ligand-benchmark, CDK2 P38 TYK2"
+  },
+  "fep15": {
+    "targets": 14,
+    "structure_wins": 5,
+    "ligand_wins": 3,
+    "ties": 6,
+    "best": {
+      "target": "pde2",
+      "n": 21,
+      "boltz2": 0.87,
+      "ligand_only": 0.416,
+      "delta": 0.455
+    },
+    "worst": {
+      "target": "pfkfb3",
+      "n": 31,
+      "boltz2": 0.388,
+      "ligand_only": 0.789,
+      "delta": -0.401
+    }
+  },
+  "ntab": {
+    "benchmark": "NTAB",
+    "model": "reproduced fp_and_moldesc baseline",
+    "n_seeds": 13,
+    "seeds": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      42
+    ],
+    "tiers": [
+      "0.00-0.35",
+      "0.35-0.50",
+      "0.50-0.70",
+      "0.70-1.00",
+      "1.00"
+    ],
+    "per_seed": {
+      "0.00-0.35": [
+        0.1384,
+        0.0186,
+        0.0574,
+        0.2608,
+        0.0754,
+        0.0351,
+        0.0255,
+        0.127,
+        0.0146,
+        0.1678,
+        0.0643,
+        0.1869,
+        0.1622
+      ],
+      "0.35-0.50": [
+        0.1689,
+        0.1784,
+        0.1505,
+        0.1756,
+        0.1546,
+        0.2022,
+        0.1742,
+        0.1444,
+        0.1352,
+        0.1738,
+        0.1571,
+        0.1674,
+        0.1558
+      ],
+      "0.50-0.70": [
+        0.208,
+        0.191,
+        0.2072,
+        0.2095,
+        0.182,
+        0.2067,
+        0.2113,
+        0.1783,
+        0.1878,
+        0.2172,
+        0.2017,
+        0.2002,
+        0.1903
+      ],
+      "0.70-1.00": [
+        0.293,
+        0.232,
+        0.3128,
+        0.2627,
+        0.2861,
+        0.2883,
+        0.2531,
+        0.2941,
+        0.2782,
+        0.2783,
+        0.3098,
+        0.276,
+        0.2917
+      ],
+      "1.00": [
+        0.5491,
+        0.5534,
+        0.6057,
+        0.5805,
+        0.6157,
+        0.5903,
+        0.5855,
+        0.6105,
+        0.6073,
+        0.6051,
+        0.5995,
+        0.6024,
+        0.6076
+      ]
+    },
+    "summary": {
+      "0.00-0.35": {
+        "mean": 0.1026,
+        "sd": 0.0771,
+        "min": 0.0146,
+        "max": 0.2608,
+        "range": 0.2462
+      },
+      "0.35-0.50": {
+        "mean": 0.1645,
+        "sd": 0.0174,
+        "min": 0.1352,
+        "max": 0.2022,
+        "range": 0.067
+      },
+      "0.50-0.70": {
+        "mean": 0.1993,
+        "sd": 0.0122,
+        "min": 0.1783,
+        "max": 0.2172,
+        "range": 0.0389
+      },
+      "0.70-1.00": {
+        "mean": 0.2812,
+        "sd": 0.0222,
+        "min": 0.232,
+        "max": 0.3128,
+        "range": 0.0808
+      },
+      "1.00": {
+        "mean": 0.5933,
+        "sd": 0.0212,
+        "min": 0.5491,
+        "max": 0.6157,
+        "range": 0.0666
+      }
+    },
+    "published_baselines": {
+      "chemprop": 0.078,
+      "moldesc": 0.124,
+      "fp_and_moldesc": 0.143
+    },
+    "implications": {
+      "published_spread": 0.065,
+      "one_seed_sd": 0.0771,
+      "spread_in_sd_units": 0.84,
+      "p_correct_ranking_best_vs_worst": 0.724,
+      "p_correct_ranking_top_two": 0.569,
+      "seeds_needed_for_95pct": 11
+    },
+    "evidence": {
+      "hard_tier": "0.00-0.35",
+      "n_seeds": 13,
+      "seed_spread": 0.246,
+      "seed_sd": 0.077,
+      "published_between_model_spread": 0.065,
+      "published_methods": 3
+    }
+  },
+  "verification": {
+    "cases": 5,
+    "as_expected": 5,
+    "method": "string containment after whitespace, case and punctuation normalisation",
+    "results": [
+      {
+        "name": "Quote present in the document it names",
+        "verified": true,
+        "expected": true,
+        "why": "The ordinary case. Nothing clever is required and nothing clever happens."
+      },
+      {
+        "name": "Quote reflowed across line breaks, with typographic punctuation",
+        "verified": true,
+        "expected": true,
+        "why": "Whitespace and dash style are rendering differences, not differences in what the source said. Normalising them lets a real quote through and still admits nothing invented, because invented text matches under no normalisation."
+      },
+      {
+        "name": "Real quote, real document, wrong attribution",
+        "verified": false,
+        "expected": false,
+        "why": "The case a model judge waves through. The sentence is genuine and the document is genuine, and the sentence is not in that document. A string check against the document actually named catches it."
+      },
+      {
+        "name": "Fabricated quote",
+        "verified": false,
+        "expected": false,
+        "why": "Plausible, well formed, and absent from the source. Absent is the only thing checked."
+      },
+      {
+        "name": "Citation naming a document that was never retrieved",
+        "verified": false,
+        "expected": false,
+        "why": "A document outside the retrieved corpus cannot support anything, whatever it may say elsewhere. The run only stands on what the run actually read."
+      }
+    ]
+  }
+}

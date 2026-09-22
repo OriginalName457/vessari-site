@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vessari, verifiable target assessment</title>
+<meta name="description" content="Held-out performance, the fine tuning result that did not work, and one worked specimen. Every figure is drawn against a printed axis and read at load from one file.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&family=DM+Mono:wght@400;500&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/molstar@4.9.0/build/viewer/molstar.css">
+<script src="https://cdn.jsdelivr.net/npm/molstar@4.9.0/build/viewer/molstar.js"></script>
+</head>
+<body>
+
+<a class="skip" href="#ch01">Skip to the first channel</a>
+
+<header class="masthead">
+  <div class="masthead-in">
+    <span class="wordmark">VESSARI</span>
+    <span class="masthead-sub">verifiable target assessment</span>
+  </div>
+</header>
+
+<div class="strip">
+
+  <nav class="rail" aria-label="Channels">
+    <ul class="rail-list" id="rail-list">
+      <li><a class="rail-tick" href="#ch00"><span class="rail-no">01</span><span class="rail-name">programs</span></a></li>
+      <li><a class="rail-tick" href="#ch01"><span class="rail-no">02</span><span class="rail-name">performance</span></a></li>
+      <li><a class="rail-tick" href="#ch02"><span class="rail-no">03</span><span class="rail-name">the number</span></a></li>
+      <li><a class="rail-tick" href="#ch04"><span class="rail-no">04</span><span class="rail-name">residuals</span></a></li>
+      <li><a class="rail-tick" href="#ch06"><span class="rail-no">05</span><span class="rail-name">checks</span></a></li>
+      <li><a class="rail-tick" href="#ch07"><span class="rail-no">06</span><span class="rail-name">scope</span></a></li>
+      <li class="rail-marker" id="rail-marker" aria-hidden="true"></li>
+    </ul>
+  </nav>
+
+  <main class="sheet">
+
+    <p class="fail" id="fail-banner" hidden>
+      SOURCE NOT AVAILABLE. <span class="fail-note">data/site-data.json did not parse, so no figure and no axis are drawn on this page. Every figure drawn on an axis, and every number carrying a source, is read at load from that file.</span>
+    </p>
+
+    <div class="hero">
+      <div class="hero-copy">
+        <h1 class="h1">We assess drug targets, and we run the controls that decide whether the assessment is worth acting on.</h1>
+        <p class="lede">Structure prediction, binding affinity, absorption and toxicity, and the literature behind each claim, run as one pipeline on hardware we own. Across <span data-num="fep_repro.n_targets" data-fmt="int">&#183;&#183;</span> targets of the public FEP+ set, <span data-num="fep_repro.n" data-fmt="int">&#183;&#183;&#183;</span> compounds, it reaches Pearson <span data-num="fep_repro.pearson" data-fmt="3">&#183;&#183;&#183;</span> within target. Every affinity number it produces is then scored against a model given no protein at all, and the verdict is printed whichever way it falls. On the target below, it fell against us.</p>
+        <dl class="hero-stats">
+          <div>
+            <dt>FEP+ within target, Pearson</dt>
+            <dd><span data-num="fep_repro.pearson" data-fmt="3">&#183;&#183;&#183;</span>
+              <span class="hero-stats__unit">over <span data-num="fep_repro.n_targets" data-fmt="int">&#183;&#183;</span> targets</span></dd>
+          </div>
+          <div>
+            <dt>control arms per claim</dt>
+            <dd>4</dd>
+          </div>
+          <div>
+            <dt>our claims the controls overturned</dt>
+            <dd>1<span class="hero-stats__unit">, before release</span></dd>
+          </div>
+          <div>
+            <dt>ADMET endpoints, no failures</dt>
+            <dd><span data-num="admet.count" data-fmt="int">&#183;&#183;</span></dd>
+          </div>
+        </dl>
+      </div>
+      <figure class="hero-viewer">
+          <div class="viewer-frame" id="viewer-frame" role="group" aria-label="Specimen structure viewer">
+            <div class="viewer-target" id="viewer-canvas"></div>
+            <div class="viewer-overlay" id="viewer-overlay">
+              <p class="viewer-status" id="viewer-status" role="status" aria-live="polite">Structure not loaded.</p>
+              <button class="btn" id="viewer-load" type="button">Load the viewer <span class="btn-sub">fetches the model file and the viewer module</span></button>
+            </div>
+          </div>
+          <div class="preset-row" role="group" aria-label="Structure colouring">
+            <button class="btn preset" type="button" id="preset-pen" data-preset="pen" aria-pressed="true" disabled>pen</button>
+            <button class="btn preset" type="button" id="preset-plddt" data-preset="plddt" aria-pressed="false" disabled><span class="nocaps">pLDDT</span></button>
+            <button class="btn preset" type="button" id="preset-pocket" data-preset="pocket" aria-pressed="false" disabled>pocket</button>
+          </div>
+          <p class="cap swap" id="preset-cap">Flat plotter inks. Protein drawn in outline on the same stock, ligand in clay.</p>
+        <figcaption class="cap">The ABL1 kinase domain with dasatinib bound, folded from sequence
+          and ligand alone. It is one prediction from the same pipeline, shown as an example of what it
+          produces. It is not one of the held-out compounds scored below. Drag to turn it, scroll to zoom.</figcaption>
+      </figure>
+      <div class="hero-data">
+          <div class="readout">
+            <p class="readout-head">
+              <span class="readout-name" data-num="specimen.target_name" data-fmt="text">&#183;&#183;&#183;</span>
+              <span class="readout-ids"><span data-num="specimen.uniprot" data-fmt="text">&#183;&#183;&#183;</span> &#183; <span data-num="specimen.target" data-fmt="text">&#183;&#183;&#183;</span> &#183; <span data-num="specimen.ligand" data-fmt="text">&#183;&#183;&#183;</span></span>
+            </p>
+            <dl class="readout-list" id="readout-list"></dl>
+            <p class="flag" id="readout-flag" hidden></p>
+          </div>
+          <p class="cap" id="readout-affnote"></p>
+          <p class="prov" data-prov hidden><span class="src">source: data/site-data.json, specimen</span></p>
+      </div>
+    </div>
+
+    <!-- 01 -->
+    <section class="channel" id="ch-assess" aria-labelledby="h-assess">
+      <div class="channel-head">
+        <span class="channel-no">01</span>
+        <h2 class="h2" id="h-assess">ABL1, and what the control said about it</h2>
+      </div>
+      <p class="body">ABL1 is the kinase that drives chronic myeloid leukaemia. We gave the pipeline
+        its sequence and thirty compounds it had never seen, one per chemical series, with
+        <span data-num="abl1.n" data-fmt="int">&#183;&#183;</span> held out and
+        <span data-num="abl1.assays" data-fmt="int">&#183;&#183;&#183;</span> measured assays
+        behind their affinities. It folded every complex and ranked them.</p>
+
+      <div class="lanes-scroll">
+        <table class="readout">
+          <caption class="vh">Control arms on the ABL1 held-out set</caption>
+          <thead>
+            <tr><th scope="col">arm</th><th scope="col">what it sees</th><th scope="col" class="num">Spearman</th></tr>
+          </thead>
+          <tbody id="control-rows"></tbody>
+        </table>
+      </div>
+
+      <p class="cap" id="control-cap"></p>
+
+      <div class="split">
+        <div>
+          <h3 class="h3">The ligand model won, and we are publishing that</h3>
+          <p class="body">A random forest on 2D fingerprints, given no protein and no structure,
+            ranked these compounds better than the folded complexes did. The gap is
+            <span data-num="abl1_controls.delta" data-fmt="3">&#183;&#183;&#183;</span> Spearman with a
+            95% interval that clears zero, which is the first time this battery has returned a
+            resolved verdict rather than an inconclusive one. It resolved against us.</p>
+          <p class="body">Our own interval, <span data-num="abl1.ci.0" data-fmt="3">&#183;&#183;</span>
+            to <span data-num="abl1.ci.1" data-fmt="3">&#183;&#183;</span>, contains zero. On chemistry
+            with no related series to lean on we cannot show this arm ranks better than chance.
+            Median error is <span data-num="abl1.median_fold" data-fmt="1">&#183;&#183;</span> fold and
+            <span data-num="abl1.within_10x" data-fmt="int">&#183;&#183;</span> of
+            <span data-num="abl1.n" data-fmt="int">&#183;&#183;</span> land within tenfold.</p>
+        </div>
+        <div>
+          <h3 class="h3">Why this is a measurement and not a malfunction</h3>
+          <p class="body">The same installation, on the public FEP+ set, reaches Pearson
+            <span data-num="fep_repro.pearson" data-fmt="3">&#183;&#183;&#183;</span> within target
+            across <span data-num="fep_repro.n_targets" data-fmt="int">&#183;&#183;</span> proteins
+            and <span data-num="fep_repro.n" data-fmt="int">&#183;&#183;&#183;</span> compounds. The
+            code does what it is supposed to do.</p>
+          <p class="body">That figure is not the one the model's authors published, and the two
+            should not be set side by side. They reported
+            <span data-num="fep_repro.boltz2_reported_pearson" data-fmt="2">&#183;&#183;</span> on
+            four targets; we hold three of those four, and on those three we reach
+            <span data-num="fep_repro.comparable_pearson" data-fmt="3">&#183;&#183;&#183;</span>
+            across <span data-num="fep_repro.comparable_n" data-fmt="int">&#183;&#183;</span>
+            compounds. A fifteen-target mean and a four-target mean are different quantities and
+            the near match between them is a coincidence.</p>
+          <p class="body">What changed is the question. FEP+ compounds are analogues around a shared
+            core, and ranking those is the job Boltz-2's authors describe. Ranking unrelated
+            chemotypes against one target is not, and their own blinded result is Pearson above 0.55
+            on three of eight internal assays. CASP16's blind affinity track, 28 groups on 122
+            compounds, had a best result near Spearman 0.56, and its assessors recorded that
+            molecular weight tracks the measurements almost as well as the best submissions.</p>
+          <p class="cap">MIRAGE (arXiv 2609.14491) reports the same shape independently: co-folding
+            accuracy rises with how much public data a protein family already has, while a
+            family-disjoint random forest stays flat and leads on novel families.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="channel" id="ch-split" aria-labelledby="h-split">
+      <div class="channel-head">
+        <span class="channel-no">02</span>
+        <h2 class="h2" id="h-split">The standard way of building a held-out set did not work</h2>
+      </div>
+      <div class="split">
+        <div>
+          <p class="body">Held-out sets in this field are usually split by Bemis-Murcko scaffold, and
+            that is what we did first. It reported Spearman 0.563 on thirty ABL1 compounds.</p>
+          <p class="body">Eight of those thirty were one chemical series. They share a benzamide, a
+            piperazinylmethyl, a trifluoromethyl and an alkyne, and differ only in a fused heteroaryl
+            cap. That cap is part of the ring system, so Murcko counts eight scaffolds where a chemist
+            sees one series, and all eight were admitted. They occupied every sub-nanomolar slot.
+            Most of the correlation was that series being told apart from a bag of unrelated weak
+            compounds.</p>
+          <p class="body">Rebuilt with one compound per ECFP4 Tanimoto cluster at 0.6, the same thirty
+            slots hold thirty genuine series and the number is
+            <span data-num="abl1.spearman" data-fmt="3">&#183;&#183;&#183;</span>. The training side
+            leaked the same way: excluding by scaffold removed 111 compounds, excluding by similarity
+            removes 441, so 330 near neighbours of the test set had been sitting in training. That
+            inflated the baselines beating us as well, and both arms were re-measured.</p>
+        </div>
+        <div>
+          <h3 class="h3">What moved when the leak was closed</h3>
+          <table class="curve">
+            <caption class="vh">Arms before and after clustering</caption>
+            <thead><tr><th>arm</th><th class="num">leaky</th><th class="num">clean</th></tr></thead>
+            <tbody>
+              <tr><td>ligand alone</td><td class="num">0.871</td><td class="num">0.872</td></tr>
+              <tr><td>nearest-neighbour</td><td class="num">0.663</td><td class="num">0.726</td></tr>
+              <tr><td>structure + affinity</td><td class="num">0.546</td><td class="num">0.284</td></tr>
+              <tr><td>molecular weight</td><td class="num">0.497</td><td class="num">0.209</td></tr>
+            </tbody>
+          </table>
+          <p class="cap">Molecular weight fell furthest, which says most of what it scored came from
+            the series rather than from any relation between size and affinity. The ligand model did
+            not move despite losing 330 training compounds, so its advantage was never the leak. Our own
+            arm reads 0.284 against molecular weight's 0.209 on the clean set, and that gap does
+            not resolve: the interval runs &#8722;0.295 to +0.431 and contains zero. By the rule
+            stated above, this evaluation cannot tell the two apart.</p>
+          <p class="cap">Every number that moved is recorded in CORRECTIONS.md in the repository,
+            with what moved it.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="channel" id="ch-paired" aria-labelledby="h-paired">
+      <div class="channel-head">
+        <span class="channel-no">03</span>
+        <h2 class="h2" id="h-paired">Does it get the direction of a change right?</h2>
+      </div>
+      <p class="body">Everything above asks how well the pipeline ranks a set of compounds. That
+        is not the question it gets used for. A chemist changes one thing about a molecule and
+        wants to know whether the change helped. So: every pair of compounds measured against the
+        same protein is one such change, and
+        <span data-num="paired.n_pairs" data-fmt="int">&#183;&#183;&#183;&#183;</span> of them
+        across <span data-num="paired.n_targets" data-fmt="int">&#183;&#183;</span> targets can be
+        formed from predictions already made.</p>
+
+      <div class="split">
+        <div>
+          <table class="curve">
+            <caption class="vh">Direction accuracy by size of the real change</caption>
+            <thead>
+              <tr><th>real change</th><th class="num">pairs</th><th class="num">direction right</th><th class="num">error</th></tr>
+            </thead>
+            <tbody id="paired-rows"></tbody>
+          </table>
+          <p class="cap" id="paired-cap"></p>
+        </div>
+        <div>
+          <h3 class="h3">Against a method that costs hours per pair</h3>
+          <p class="body">On the
+            <span data-num="paired.head_to_head.n" data-fmt="int">&#183;&#183;&#183;</span> pairs
+            where the FEP+ reference also has a value, free energy perturbation calls the
+            direction right
+            <span data-num="paired.head_to_head.arms.fep_plus.sign_accuracy" data-fmt="pct">&#183;&#183;</span>
+            of the time against our
+            <span data-num="paired.head_to_head.arms.vessari.sign_accuracy" data-fmt="pct">&#183;&#183;</span>,
+            with a root mean square error of
+            <span data-num="paired.head_to_head.arms.fep_plus.rmse_kcal" data-fmt="2">&#183;&#183;</span>
+            kcal/mol against our
+            <span data-num="paired.head_to_head.arms.vessari.rmse_kcal" data-fmt="2">&#183;&#183;</span>.</p>
+          <p class="body">It is ahead, and it should be. Free energy perturbation simulates the
+            change explicitly and takes hours of compute for each pair. This runs in minutes on one
+            consumer card. The useful comparison is not which wins but whether the cheap method is
+            close enough to be worth pointing at a list before the expensive one is pointed at a
+            shortlist.</p>
+          <p class="cap">These pairs are formed from predictions already made and reported above.
+            It is the same evidence read in the frame the tool is used in, not a new measurement.
+            Regenerate with scripts/paired_validation.py.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="channel" id="ch00" aria-labelledby="h00">
+      <div class="channel-head">
+        <span class="channel-no">04</span>
+        <h2 class="h2" id="h00">Programs</h2>
+      </div>
+      <p class="body">Vessari runs target assessments end to end. Give it a protein and a set of
+        compounds and it predicts the bound structure, scores the binding, profiles absorption and
+        toxicity, and pulls the literature behind every claim it makes. Each program below is a
+        pipeline we run on our own hardware, and each one reports the measurement behind its numbers.</p>
+
+      <ul class="programs" id="programs-list">
+        <li class="program program--live">
+          <div class="program-head">
+            <span class="program-state">Running</span>
+            <h3 class="program-name">Carbonic anhydrase II</h3>
+          </div>
+          <p class="program-note">Our reference target, and the one that taught us the most by not
+            working. Densely measured in the public record, which is also why it sits inside the
+            training data of the model we run, so a good score here proves less than it looks.</p>
+          <dl class="program-facts">
+            <div><dt>held out</dt><dd><span data-num="holdout.n" data-fmt="int">&#183;&#183;&#183;</span> compounds</dd></div>
+            <div><dt>rank correlation</dt><dd><span data-num="holdout.spearman" data-fmt="3">&#183;&#183;&#183;</span></dd></div>
+          </dl>
+        </li>
+
+        <li class="program program--build">
+          <div class="program-head">
+            <span class="program-state">Running</span>
+            <h3 class="program-name">Benchmark reliability</h3>
+          </div>
+          <p class="program-note">Measuring whether the benchmarks the field ranks itself on can
+            actually tell models apart. On the hardest tier of one public benchmark, the same model at
+            thirteen random seeds spans nearly four times the published gap between the three methods
+            the benchmark ranks.</p>
+          <dl class="program-facts">
+            <div><dt>seed spread</dt><dd><span data-num="ntab.evidence.seed_spread" data-fmt="3">&#183;</span></dd></div>
+            <div><dt>between-model spread</dt><dd><span data-num="ntab.evidence.published_between_model_spread" data-fmt="3">&#183;</span></dd></div>
+          </dl>
+        </li>
+
+        <li class="program program--build">
+          <div class="program-head">
+            <span class="program-state">Running</span>
+            <h3 class="program-name">ADMET properties</h3>
+          </div>
+          <p class="program-note">Absorption, metabolism and toxicity across 22 public endpoints, plus
+            a live blind challenge on pharmaceutical data we have never seen. This is the part of the
+            pipeline that holds up under its own controls.</p>
+          <dl class="program-facts">
+            <div><dt>endpoints</dt><dd><span data-num="derived.admet_count" data-fmt="int">&#183;&#183;</span></dd></div>
+            <div><dt>blind entry</dt><dd>750 compounds</dd></div>
+          </dl>
+        </li>
+      </ul>
+
+      <p class="cap">A program moves from preparation to running when it has a scaffold separated
+        held-out set large enough to carry an error bar. That is the bar for appearing above with a
+        number next to it.</p>
+    </section>
+
+    <section class="channel" id="ch01" aria-labelledby="h01">
+      <div class="channel-head">
+        <span class="channel-no" aria-hidden="true">05</span>
+        <h2 class="h2" id="h01">Held-out performance, and what it survives</h2>
+      </div>
+
+      <div class="meter-row">
+        <div class="meter" id="meter-rho">
+          <span class="meter-label">Spearman <span class="nocaps">&#961;</span></span>
+          <span class="meter-digits" data-num="holdout.spearman" data-fmt="3">&#183;&#183;&#183;&#183;&#183;</span>
+          <span class="meter-err" id="meter-rho-err"></span>
+        </div>
+        <dl class="meter-side">
+          <div class="meter-side-row"><dt>MAE</dt><dd><span data-num="holdout.mae" data-fmt="3">&#183;&#183;&#183;&#183;&#183;</span><span class="unit"> log&#8321;&#8320; &#181;M</span></dd></div>
+          <div class="meter-side-row"><dt>n</dt><dd><span data-num="holdout.n" data-fmt="int">&#183;&#183;&#183;</span><span class="unit"> compounds</span></dd></div>
+          <div class="meter-side-row"><dt>split</dt><dd><span data-num="pipeline.split" data-fmt="text">&#183;&#183;&#183;</span></dd></div>
+          <div class="meter-side-row"><dt><span class="nocaps">&#963;</span> on <span class="nocaps">&#961;</span></dt><dd><span data-num="derived.se" data-fmt="2">&#183;&#183;&#183;</span><span class="unit"> = 1/&#8730;(n&#8722;1)</span></dd></div>
+        </dl>
+      </div>
+
+      <figure class="rail-fig">
+        <div class="rail-plot" id="rail-hero" data-rail="hero"></div>
+        <figcaption class="prov" data-prov hidden>
+          Rank correlation against measured Ki, drawn on a printed axis. The shaded width is one standard error, drawn to scale rather than described.
+          <span class="src">source: data/site-data.json, holdout and curve</span>
+        </figcaption>
+      </figure>
+
+      <h3 class="h3">The control we ran against ourselves</h3>
+      <p class="body">A rank correlation on held-out compounds is evidence that the structure is doing
+        work only if a model that never saw the protein does worse. We built that control, pointed it at
+        our own result, and it came back inconclusive.</p>
+      <table class="curve">
+        <thead><tr><th>arm</th><th>Spearman</th></tr></thead>
+        <tbody>
+          <tr><td>our pipeline</td><td><span data-num="affinity_control.model" data-fmt="3">&#183;</span></td></tr>
+          <tr><td>ligand alone, no protein</td><td><span data-num="affinity_control.ligand_only" data-fmt="3">&#183;</span></td></tr>
+          <tr><td>nearest neighbour, pure recall</td><td><span data-num="affinity_control.nearest_neighbour" data-fmt="3">&#183;</span></td></tr>
+          <tr><td>molecular weight, the floor</td><td><span data-num="affinity_control.molecular_weight" data-fmt="3">&#183;</span></td></tr>
+        </tbody>
+      </table>
+      <p class="body">The gap to the ligand-only arm is +0.083, 95% interval &minus;0.014 to +0.195.
+        That interval contains zero, so on this target we cannot show the structure contributes over the
+        ligand alone. The model does clear pure recall by +<span data-num="affinity_control.delta_nn" data-fmt="3">&#183;&#183;&#183;</span> and molecular weight by +<span data-num="affinity_control.delta_mw" data-fmt="3">&#183;&#183;&#183;</span>, so it is
+        not a lookup table and the task is not trivial. Those are different claims and we keep them apart.</p>
+      <p class="body">On a benchmark we did not choose, 52 compounds across CDK2, P38 and TYK2 from the
+        public FEP set, the same control returns the same answer: our pipeline
+        <span data-num="fep.model" data-fmt="3">&#183;</span> against a ligand-only
+        <span data-num="fep.ligand_only" data-fmt="3">&#183;</span>. Two inconclusive controls on two
+        unrelated datasets is a pattern rather than an accident.</p>
+    </section>
+
+    <!-- 02 -->
+    <section class="channel" id="ch02" aria-labelledby="h02">
+      <div class="channel-head">
+        <span class="channel-no" aria-hidden="true">06</span>
+        <h2 class="h2" id="h02">What the number is</h2>
+      </div>
+      <p class="body">The held-out set is <span data-num="holdout.n" data-fmt="int">&#183;&#183;&#183;</span> compounds separated from training by scaffold rather than by molecule. Scaffold splitting removed <span data-num="pipeline.scaffold_split_removed" data-fmt="int">&#183;&#183;&#183;</span> near relatives that a molecule level split would have left in training, so the correlation above is measured against chemistry the model has not already seen a close cousin of.</p>
+      <p class="body">Running the same pipeline twice moves a predicted value by about <span data-num="pipeline.repeat_run_spread_log" data-fmt="2">&#183;&#183;&#183;</span> log units. That spread is the floor under any comparison of two predictions. The standard error on a rank correlation at this sample size is 1/&#8730;(n&#8722;1), which is <span data-num="derived.se" data-fmt="2">&#183;&#183;&#183;</span>, and that is the width shaded on the axis above.</p>
+      <p class="chips">
+        <span class="chip"><span class="chip-k">n</span><span class="chip-v" data-num="holdout.n" data-fmt="int">&#183;&#183;&#183;</span></span>
+        <span class="chip"><span class="chip-k">split</span><span class="chip-v" data-num="pipeline.split" data-fmt="text">&#183;&#183;&#183;</span></span>
+        <span class="chip"><span class="chip-k">removed</span><span class="chip-v" data-num="pipeline.scaffold_split_removed" data-fmt="int">&#183;&#183;&#183;</span></span>
+        <span class="chip"><span class="chip-k">repeat spread</span><span class="chip-v" data-num="pipeline.repeat_run_spread_log" data-fmt="2">&#183;&#183;&#183;</span></span>
+      </p>
+      <details class="disclose">
+        <summary>What a scaffold split does to the score</summary>
+        <p class="body">A molecule level split can put two analogues of the same series on either side of the line, and the model then scores well by recognising the series. Splitting on Bemis-Murcko scaffold puts a whole series on one side. The reported correlation is lower under this split than under a molecule split, and that is the point of using it.</p>
+      </details>
+    </section>
+
+    <!-- 03 -->
+
+    <!-- 04 -->
+    <section class="channel" id="ch04" aria-labelledby="h04">
+      <div class="channel-head">
+        <span class="channel-no" aria-hidden="true">07</span>
+        <h2 class="h2" id="h04">Residual strip</h2>
+      </div>
+      <p class="body">Every held-out compound with a prediction, <span data-num="derived.points_count" data-fmt="int">&#183;&#183;&#183;</span> of them, sorted by measured affinity. Each lane carries two marks on one axis: the measured value in violet and the prediction in clay, with the miss drawn between them. Reading down the strip, the marks sit together at the tight end and pull apart as the compounds get weaker, which is the model losing resolution rather than losing accuracy evenly.</p>
+      <figure class="rail-fig">
+        <div class="lanes-scroll">
+          <div class="lanes" id="residual-lanes"></div>
+        </div>
+        <figcaption class="prov" data-prov hidden>
+          Axis in log&#8321;&#8320; &#181;M. Lower is more potent. &#916; is predicted minus measured.
+          <span class="src">source: data/site-data.json, points</span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- 05 -->
+    <!-- 06 -->
+    <section class="channel" id="ch06" aria-labelledby="h06">
+      <div class="channel-head">
+        <span class="channel-no" aria-hidden="true">08</span>
+        <h2 class="h2" id="h06">How it is checked</h2>
+      </div>
+      <p class="body">Citation verification is <span data-num="pipeline.citation_check" data-fmt="text">&#183;&#183;&#183;</span>. A quoted sentence either appears in the source text or it does not, and no model is asked to judge whether a citation supports a claim. ADMET runs across <span data-num="derived.admet_count" data-fmt="int">&#183;&#183;</span> endpoints from the Therapeutics Data Commons benchmark group, scored below on the metric that group defines for each one. The endpoint names are theirs, so the table can be compared line by line against a public source.</p>
+
+      <div class="table-wrap">
+        <table class="dtable admet">
+          <caption class="tcap">ADMET endpoints, read from the file at load</caption>
+          <thead><tr><th scope="col">#</th><th scope="col">endpoint</th><th scope="col">metric</th><th scope="col" class="num">score</th><th scope="col" class="dir">direction</th></tr></thead>
+          <tbody id="admet-rows"></tbody>
+        </table>
+      </div>
+
+      <details class="disclose">
+        <summary>Where the endpoint list comes from</summary>
+        <dl class="paths">
+          <div class="path-row"><dt>benchmark archive</dt><dd><code>benchmarks/tdc/admet_group.zip</code></dd></div>
+          <div class="path-row"><dt>listing in code</dt><dd><code>src/vessari/admet/benchmark.py</code></dd></div>
+        </dl>
+        <p class="body">The endpoint names above are the identifiers used by the Therapeutics Data Commons group, so the list can be compared line by line against a public source.</p>
+      </details>
+      <h3 class="h3">What the verifier does with cases where the answer is known</h3>
+      <ul class="vcases" id="vcases"></ul>
+      <p class="cap">Run through the same entry point the pipeline uses, not a helper written for a
+        demonstration. <span data-num="verification.as_expected" data-fmt="int">&#183;</span> of
+        <span data-num="verification.cases" data-fmt="int">&#183;</span> behaved as expected.</p>
+
+    </section>
+
+    <!-- 07 -->
+    <section class="channel" id="ch07" aria-labelledby="h07">
+      <div class="channel-head">
+        <span class="channel-no" aria-hidden="true">09</span>
+        <h2 class="h2" id="h07">Scope of this page</h2>
+      </div>
+      <p class="body">What the figures above cover, and what they do not. We would rather you arrive at this list from us than from your own reading of the numbers.</p>
+      <ul class="limits">
+        <li><span class="limit-h">One target in the viewer.</span> The structure at the top of this page is one prediction for one protein with one ligand. It is an example of what the output looks like, not evidence of accuracy on any other target.</li>
+        <li><span class="limit-h">No bench work of ours.</span> The measured values in the residual strip carry ChEMBL identifiers and come from the source dataset. We have not measured any of them ourselves.</li>
+        <li><span class="limit-h">The sample is small.</span> A rank correlation on <span data-num="holdout.n" data-fmt="int">&#183;&#183;&#183;</span> compounds carries a standard error of <span data-num="derived.se" data-fmt="2">&#183;&#183;</span>. That width is drawn on the axis, not rounded away, and it is wide.</li>
+        <li><span class="limit-h">One ADMET configuration, not twenty-two.</span> The same model and the same features are fitted to every endpoint. A per endpoint search would score better and would stop the comparison being like for like, so the numbers below are one honest configuration rather than the best each endpoint could reach.</li>
+        <li><span class="limit-h">Confidence is self reported.</span> The Boltz-2 numbers beside the structure describe how well the model agrees with itself. They are not agreement with a solved structure.</li>
+      </ul>
+    </section>
+
+    <footer class="colophon">
+      <a class="studio-badge" href="https://madodigital.net">
+        <span class="studio-badge__mark" aria-hidden="true"></span>
+        <span class="studio-badge__text">
+          <span class="studio-badge__name">Mado Digital</span>
+          <span class="studio-badge__note">An independent software studio building in the open,
+            with an interest in scientific work and in pointing good engineering at problems that
+            are worth solving.</span>
+        </span>
+      </a>
+      <p class="colophon-line">Work that did not make it into the pipeline is written up in the engineering notes, linked above, because the reasoning is useful even when the result was not.</p>
+      <p class="colophon-line">Every figure above is read at load from one file. If that file does not parse, the axes are not drawn and each figure reads SOURCE NOT AVAILABLE. Break the file and watch the page refuse, or append ?break=1 to this address to see the same thing without touching it.</p>
+      <p class="colophon-line mono" id="digest-line" hidden>sha256 of the file as fetched, first 12: <span id="digest-hex"></span></p>
+      <p class="colophon-line"><a class="btn linkbtn" id="raw-link" href="data/site-data.json">Open the raw file</a> <a class="btn linkbtn" href="notes/fine-tuning.html">Engineering notes</a></p>
+    </footer>
+
+  </main>
+</div>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>

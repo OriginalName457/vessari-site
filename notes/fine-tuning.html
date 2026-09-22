@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fine tuning the affinity head</title>
+<meta name="description" content="Engineering notes: what we learned trying to fine tune a binding affinity head on a small measured set.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&family=DM+Mono:wght@400;500&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  .note { max-width: 42rem; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+  .note h1 { margin-bottom: .5rem; }
+  .note .kicker { font-family: var(--mono, monospace); font-size: .6875rem;
+    letter-spacing: .16em; text-transform: uppercase; opacity: .6; margin-bottom: 2rem; }
+  .note h2 { margin-top: 2.5rem; }
+  .note table { border-collapse: collapse; width: 100%; margin: 1.5rem 0;
+    font-family: var(--mono, monospace); font-size: .8125rem; }
+  .note th, .note td { text-align: right; padding: .5rem .75rem;
+    border-bottom: 1px solid var(--grid, #ccc); font-variant-numeric: tabular-nums; }
+  .note th:first-child, .note td:first-child { text-align: left; }
+  .note .back { display: inline-block; margin-bottom: 2rem; font-size: .875rem; }
+</style>
+</head>
+<body>
+<main class="note">
+  <a class="back" href="../">Back to Vessari</a>
+  <p class="kicker">Engineering notes</p>
+  <h1 class="h1">Fine tuning the affinity head on a small measured set</h1>
+
+  <p class="body">The binding model we build on is accurate on compounds that bind tightly and
+    loses resolution on compounds that bind weakly. The obvious response is to train its affinity
+    head on measured data of our own. We tried that, twice, and it did not improve the model. These
+    are the notes, because the reasoning is worth keeping even though the result was not.</p>
+
+  <h2 class="h2">What we ran</h2>
+  <p class="body">The affinity head is 8.7 million parameters and sits downstream of a frozen
+    trunk, receiving inputs the trunk has already detached. That makes it trainable on cached
+    outputs, at one expensive pass per compound instead of one per epoch. We verified the cache
+    reproduced the live pipeline to within 0.0007 before trusting it, against a run to run spread
+    of 0.14 from the structure sampling itself.</p>
+
+  <table>
+    <thead><tr><th>Training compounds</th><th>Before</th><th>After</th><th>Change</th></tr></thead>
+    <tbody>
+      <tr><td>40</td><td>0.785</td><td>0.728</td><td>&minus;0.056</td></tr>
+      <tr><td>80</td><td>0.785</td><td>0.725</td><td>&minus;0.059</td></tr>
+      <tr><td>160</td><td>0.785</td><td>0.713</td><td>&minus;0.071</td></tr>
+      <tr><td>240</td><td>0.785</td><td>0.714</td><td>&minus;0.070</td></tr>
+      <tr><td>320</td><td>0.785</td><td>0.732</td><td>&minus;0.053</td></tr>
+      <tr><td>399</td><td>0.785</td><td>0.730</td><td>&minus;0.055</td></tr>
+    </tbody>
+  </table>
+
+  <p class="body">Both runs were scored on the same 120 compound held-out set used everywhere else.
+    Training loss fell steeply while the held-out correlation fell with it, which is the signature
+    of a large head memorising a small set. A second configuration with the learning rate ten times
+    lower and a strong penalty on drifting from the original weights left the model essentially
+    unmoved, which rules out the hyperparameters as the explanation.</p>
+
+  <h2 class="h2">What the numbers do and do not license</h2>
+  <p class="body">Each drop is smaller than the 0.09 standard error on a single rank correlation at
+    this sample size. It would be convenient to call them noise. We will not, because the comparison
+    is paired: each fine tuned model was scored on exactly the compounds the base model was scored
+    on, and the error on a paired difference is narrower than the error on a single sample. We have
+    not run that paired test. The claim we make is the smaller one. Fine tuning at 40 and at 80
+    compounds did not raise the correlation, so it did not ship.</p>
+
+  <h2 class="h2">The more useful finding</h2>
+  <p class="body">Before training anything we checked whether the error was correctable by
+    rescaling. Predictions regressed on measured values give a slope of 0.598, so the model's range
+    covers about sixty percent of the real one. Measured values regressed on predictions give 1.012,
+    which says the error minimising correction is no correction at all. Both are true. Undoing a
+    compression of 0.598 means multiplying the residual scatter by the same 1.67, and against a
+    scatter of 0.714 that trade loses.</p>
+
+  <p class="body">So roughly forty percent of the squared error is a scale that could in principle be
+    fixed, and the rest is scatter, and the scale cannot be fixed separately while the scatter is
+    there to be amplified with it. That is what makes this a data problem rather than a calibration
+    problem, and it is why the next run is a larger training set rather than a different objective.</p>
+
+  <h2 class="h2">The curve is flat</h2>
+  <p class="body">Every point above was scored on the same 120 compound evaluation set, and each
+    training subset contains the one before it, so successive points differ by added data rather
+    than by different data. The training set grew tenfold, from 40 compounds to 399. The change
+    stayed between &minus;0.053 and &minus;0.071, a spread of 0.018 against a standard error of
+    0.09 on any one of these correlations.</p>
+  <p class="body">That answers the question the experiment was built to ask. The limit is not the
+    amount of target-specific data. More of it does not help, and it does not hurt more either.
+    Whatever the head would need to separate the compounds it currently maps to the same place, it
+    is not another few hundred measured affinities for the same protein.</p>
+  <p class="body">So this line of work is closed rather than scaled. The affinity head ships frozen,
+    as it arrived. The next thing worth trying is not a bigger version of this: it is a second
+    target, and a benchmark whose answer is not already inside the model's training data.</p>
+
+  <p class="cap">Measured on carbonic anhydrase II, Ki values from ChEMBL, held-out set separated by
+    Bemis-Murcko scaffold.</p>
+</main>
+</body>
+</html>
