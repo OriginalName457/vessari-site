@@ -17,9 +17,11 @@ benchmark suites, admitted eight members of one congeneric series into the
 held-out set. The eight share a benzamide, a piperazinylmethyl, a
 trifluoromethyl and an alkyne, and differ only in a fused heteroaryl cap. That
 cap is part of the ring system, so Murcko sees eight scaffolds where a chemist
-sees one series. The eight took every sub-nanomolar slot, and most of the
-reported correlation was that series being told apart from a bag of unrelated
-weak compounds.
+sees one series. Removing them is not the same as removing any nine compounds:
+keeping one per Tanimoto cluster gives 0.250 where dropping nine at random leaves
+0.556, and a random subset does as badly as declustering 0.25% of the time. An
+earlier version of this paragraph said the eight took every sub-nanomolar slot,
+which is false and is retracted at the bottom of this file.
 
 Two further defects were found and fixed in the same pass. Medians were taken
 in linear nanomolar on log-normal data, which for a compound measured three
