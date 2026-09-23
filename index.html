@@ -191,13 +191,17 @@
       <div class="split">
         <div>
           <p class="body">Held-out sets in this field are usually split by Bemis-Murcko scaffold, and
-            that is what we did first. It reported Spearman 0.563 on thirty ABL1 compounds.</p>
+            that is what we did first. It reported Spearman 0.563 on thirty ABL1 compounds. That
+            Murcko splitting fails to separate analogue series is established: Steshin's Lo-Hi
+            benchmark showed it in 2023, and Guo, Hern&aacute;ndez&#8209;Hern&aacute;ndez and
+            Ballester put it in a title in 2024. We rediscovered it the expensive way.</p>
           <p class="body">Eight of those thirty were one chemical series. They share a benzamide, a
             piperazinylmethyl, a trifluoromethyl and an alkyne, and differ only in a fused heteroaryl
             cap. That cap is part of the ring system, so Murcko counts eight scaffolds where a chemist
-            sees one series, and all eight were admitted. They occupied every sub-nanomolar slot.
-            Most of the correlation was that series being told apart from a bag of unrelated weak
-            compounds.</p>
+            sees one series, and all eight were admitted. Removing them is not the same as removing
+            any nine compounds: keeping one per Tanimoto cluster gives 0.250, while dropping nine at
+            random and ignoring clusters leaves the score at 0.556, and a random subset does as badly
+            as declustering 0.25% of the time.</p>
           <p class="body">Rebuilt with one compound per ECFP4 Tanimoto cluster at 0.6, the same thirty
             slots hold thirty genuine series and the number is
             <span data-num="abl1.spearman" data-fmt="3">&#183;&#183;&#183;</span>. The training side

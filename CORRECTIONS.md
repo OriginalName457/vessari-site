@@ -79,3 +79,28 @@ and keeps every pair among those drawn.
 The point estimate did not move. Only the claimed precision did, and only by
 about a point at each end. It is recorded here because a number that was on a
 public page for a day and then changed is exactly what this file is for.
+
+## A false sentence about the ABL1 series was published
+
+**Published:** "The eight took every sub-nanomolar slot", on the website and in
+this file.
+
+**Corrected to:** three of the five sub-nanomolar compounds belong to the series
+and two do not, and the series spans 0.34 to 31.95 nM, a 94-fold range.
+
+It was written as a plausible explanation of a real effect and never checked
+against the compound list. The effect survives: keeping one compound per
+Tanimoto cluster gives Spearman 0.250 where dropping the same number of
+compounds at random leaves 0.556, and a random subset does as badly as
+declustering 0.25 percent of the time. What did not survive is the story told
+about why.
+
+Two smaller claims in the same sentence were also loose. Seven of the eight
+share a benzamide, not eight: CHEMBL2324925 carries a urea on a pyrazole. And
+six of the eight differ only in the fused heteroaryl cap; CHEMBL2316585 also
+swaps a methyl for cyclopropyl.
+
+The finding is a replication rather than a discovery, which the page now says.
+Steshin's Lo-Hi benchmark measured scaffold-split leakage across four public
+datasets in 2023, and Guo, Hernandez-Hernandez and Ballester titled a 2024 paper
+"Scaffold Splits Overestimate Virtual Screening Performance" over 2,100 models.
