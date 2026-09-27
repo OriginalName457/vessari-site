@@ -250,10 +250,26 @@ function drawRail(host, spec) {
 /* ---------- residual strip ---------- */
 
 const railSpecs = [];
+let lastPoints = null;
 
 function drawRailTracked(host, spec) {
   railSpecs.push({ host: host, spec: spec });
   drawRail(host, spec);
+}
+
+function redrawRails(scope) {
+  railSpecs.forEach((entry) => {
+    if (scope && !scope.contains(entry.host)) return;
+    if (!entry.host.clientWidth) return;
+    drawRail(entry.host, entry.spec);
+    if (entry.host.dataset.revealed === '1') {
+      entry.host.querySelectorAll('.band').forEach((b) => b.classList.add('is-drawn'));
+    }
+  });
+  const res = scope && scope.querySelector('#residual-lanes');
+  if (res && res.clientWidth && typeof lastPoints !== 'undefined' && lastPoints) {
+    drawResiduals(res, lastPoints);
+  }
 }
 
 function watchRailWidth() {
@@ -1198,6 +1214,7 @@ async function boot() {
 
 
     const residualHost = document.getElementById('residual-lanes');
+    lastPoints = points;
     if (residualHost && points.length) drawResiduals(residualHost, points);
     else if (residualHost) suppressFigure(residualHost);
 
@@ -1248,3 +1265,59 @@ async function boot() {
 }
 
 boot().catch(() => declareUnavailable());
+
+
+/* Tabs.
+   The sections are unchanged and all of them are in the document; one group is
+   visible at a time. Without JavaScript every panel stays in the flow and the
+   page reads as it did before, which is the behaviour to fall back to rather
+   than an empty page. */
+(function tabs() {
+  const list = document.querySelector('.tabs');
+  if (!list) return;
+  const buttons = [...list.querySelectorAll('[role="tab"]')];
+  if (!buttons.length) return;
+
+  const panelFor = (b) => document.getElementById(b.getAttribute('aria-controls'));
+
+  function show(next, focus) {
+    buttons.forEach((b) => {
+      const on = b === next;
+      b.setAttribute('aria-selected', String(on));
+      b.tabIndex = on ? 0 : -1;
+      const p = panelFor(b);
+      if (p) p.hidden = !on;
+    });
+    if (focus) next.focus();
+
+    // A chart drawn inside a hidden panel measures zero width and comes out
+    // empty. The panel that just opened gets its figures drawn again, now that
+    // they have a width to measure.
+    const opened = panelFor(next);
+    if (opened && typeof redrawRails === 'function') redrawRails(opened);
+    // A tab in the address bar so a link can point at one, and so the back
+    // button returns to the section the reader was on.
+    if (history.replaceState) {
+      history.replaceState(null, '', '#' + next.id.replace(/^tab-/, ''));
+    }
+  }
+
+  buttons.forEach((b) => b.addEventListener('click', () => show(b, false)));
+
+  list.addEventListener('keydown', (e) => {
+    const i = buttons.indexOf(document.activeElement);
+    if (i < 0) return;
+    const step = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+    if (step) {
+      e.preventDefault();
+      show(buttons[(i + step + buttons.length) % buttons.length], true);
+    } else if (e.key === 'Home') {
+      e.preventDefault(); show(buttons[0], true);
+    } else if (e.key === 'End') {
+      e.preventDefault(); show(buttons[buttons.length - 1], true);
+    }
+  });
+
+  const wanted = document.getElementById('tab-' + location.hash.replace('#', ''));
+  if (wanted) show(wanted, false);
+})();

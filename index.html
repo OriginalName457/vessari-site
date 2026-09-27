@@ -42,17 +42,6 @@
 
 <div class="strip">
 
-  <nav class="rail" aria-label="Channels">
-    <ul class="rail-list" id="rail-list">
-      <li><a class="rail-tick" href="#ch00"><span class="rail-no">01</span><span class="rail-name">programs</span></a></li>
-      <li><a class="rail-tick" href="#ch01"><span class="rail-no">02</span><span class="rail-name">performance</span></a></li>
-      <li><a class="rail-tick" href="#ch02"><span class="rail-no">03</span><span class="rail-name">the number</span></a></li>
-      <li><a class="rail-tick" href="#ch04"><span class="rail-no">04</span><span class="rail-name">residuals</span></a></li>
-      <li><a class="rail-tick" href="#ch06"><span class="rail-no">05</span><span class="rail-name">checks</span></a></li>
-      <li><a class="rail-tick" href="#ch07"><span class="rail-no">06</span><span class="rail-name">scope</span></a></li>
-      <li class="rail-marker" id="rail-marker" aria-hidden="true"></li>
-    </ul>
-  </nav>
 
   <main class="sheet">
 
@@ -117,6 +106,28 @@
     </div>
 
     <!-- 01 -->
+
+
+
+
+
+
+    <!-- 02 -->
+
+    <!-- 03 -->
+
+    <!-- 04 -->
+
+    <!-- 05 -->
+    <!-- 06 -->
+
+    <!-- 07 -->
+
+    <nav class="tabs" role="tablist" aria-label="Sections">
+<button class="tab" role="tab" id="tab-result" aria-controls="panel-result" aria-selected="true" tabindex="0"><span class="tab-no">01</span><span class="tab-name">the result</span></button><button class="tab" role="tab" id="tab-evidence" aria-controls="panel-evidence" aria-selected="false" tabindex="-1"><span class="tab-no">02</span><span class="tab-name">how we know</span></button><button class="tab" role="tab" id="tab-method" aria-controls="panel-method" aria-selected="false" tabindex="-1"><span class="tab-no">03</span><span class="tab-name">method</span></button><button class="tab" role="tab" id="tab-work" aria-controls="panel-work" aria-selected="false" tabindex="-1"><span class="tab-no">04</span><span class="tab-name">what we run</span></button><button class="tab" role="tab" id="tab-scope" aria-controls="panel-scope" aria-selected="false" tabindex="-1"><span class="tab-no">05</span><span class="tab-name">scope</span></button>
+  </nav>
+
+<div class="panel" role="tabpanel" id="panel-result" aria-labelledby="tab-result">
     <section class="channel" id="ch-assess" aria-labelledby="h-assess">
       <div class="channel-head">
         <span class="channel-no">01</span>
@@ -182,7 +193,157 @@
         </div>
       </div>
     </section>
+    <section class="channel" id="ch01" aria-labelledby="h01">
+      <div class="channel-head">
+        <span class="channel-no" aria-hidden="true">06</span>
+        <h2 class="h2" id="h01">Held-out performance, and what it survives</h2>
+      </div>
 
+      <div class="meter-row">
+        <div class="meter" id="meter-rho">
+          <span class="meter-label">Spearman <span class="nocaps">&#961;</span></span>
+          <span class="meter-digits" data-num="holdout.spearman" data-fmt="3">&#183;&#183;&#183;&#183;&#183;</span>
+          <span class="meter-err" id="meter-rho-err"></span>
+        </div>
+        <dl class="meter-side">
+          <div class="meter-side-row"><dt>MAE</dt><dd><span data-num="holdout.mae" data-fmt="3">&#183;&#183;&#183;&#183;&#183;</span><span class="unit"> log&#8321;&#8320; &#181;M</span></dd></div>
+          <div class="meter-side-row"><dt>n</dt><dd><span data-num="holdout.n" data-fmt="int">&#183;&#183;&#183;</span><span class="unit"> compounds</span></dd></div>
+          <div class="meter-side-row"><dt>split</dt><dd><span data-num="pipeline.split" data-fmt="text">&#183;&#183;&#183;</span></dd></div>
+          <div class="meter-side-row"><dt><span class="nocaps">&#963;</span> on <span class="nocaps">&#961;</span></dt><dd><span data-num="derived.se" data-fmt="2">&#183;&#183;&#183;</span><span class="unit"> = 1/&#8730;(n&#8722;1)</span></dd></div>
+        </dl>
+      </div>
+
+      <figure class="rail-fig">
+        <div class="rail-plot" id="rail-hero" data-rail="hero"></div>
+        <figcaption class="prov" data-prov hidden>
+          Rank correlation against measured Ki, drawn on a printed axis. The shaded width is one standard error, drawn to scale rather than described.
+          <span class="src">source: data/site-data.json, holdout and curve</span>
+        </figcaption>
+      </figure>
+
+      <h3 class="h3">The control we ran against ourselves</h3>
+      <p class="body">A rank correlation on held-out compounds is evidence that the structure is doing
+        work only if a model that never saw the protein does worse. We built that control, pointed it at
+        our own result, and it came back inconclusive.</p>
+      <table class="curve">
+        <thead><tr><th>arm</th><th>Spearman</th></tr></thead>
+        <tbody>
+          <tr><td>our pipeline</td><td><span data-num="affinity_control.model" data-fmt="3">&#183;</span></td></tr>
+          <tr><td>ligand alone, no protein</td><td><span data-num="affinity_control.ligand_only" data-fmt="3">&#183;</span></td></tr>
+          <tr><td>nearest neighbour, pure recall</td><td><span data-num="affinity_control.nearest_neighbour" data-fmt="3">&#183;</span></td></tr>
+          <tr><td>molecular weight, the floor</td><td><span data-num="affinity_control.molecular_weight" data-fmt="3">&#183;</span></td></tr>
+        </tbody>
+      </table>
+      <p class="body">The gap to the ligand-only arm is +0.083, 95% interval &minus;0.014 to +0.195.
+        That interval contains zero, so on this target we cannot show the structure contributes over the
+        ligand alone. The model does clear pure recall by +<span data-num="affinity_control.delta_nn" data-fmt="3">&#183;&#183;&#183;</span> and molecular weight by +<span data-num="affinity_control.delta_mw" data-fmt="3">&#183;&#183;&#183;</span>, so it is
+        not a lookup table and the task is not trivial. Those are different claims and we keep them apart.</p>
+      <p class="body">On a benchmark we did not choose, 52 compounds across CDK2, P38 and TYK2 from the
+        public FEP set, the same control returns the same answer: our pipeline
+        <span data-num="fep.model" data-fmt="3">&#183;</span> against a ligand-only
+        <span data-num="fep.ligand_only" data-fmt="3">&#183;</span>. Two inconclusive controls on two
+        unrelated datasets is a pattern rather than an accident.</p>
+    </section>
+</div>
+<div class="panel" role="tabpanel" id="panel-evidence" aria-labelledby="tab-evidence" hidden>
+    <section class="channel" id="ch-paired" aria-labelledby="h-paired">
+      <div class="channel-head">
+        <span class="channel-no">03</span>
+        <h2 class="h2" id="h-paired">Does it get the direction of a change right?</h2>
+      </div>
+      <p class="body">Everything above asks how well the pipeline ranks a set of compounds. That
+        is not the question it gets used for. A chemist changes one thing about a molecule and
+        wants to know whether the change helped. So: every pair of compounds measured against the
+        same protein is one such change, and
+        <span data-num="paired.n_pairs" data-fmt="int">&#183;&#183;&#183;&#183;</span> of them
+        across <span data-num="paired.n_targets" data-fmt="int">&#183;&#183;</span> targets can be
+        formed from predictions already made.</p>
+
+      <div class="split">
+        <div>
+          <table class="curve">
+            <caption class="vh">Direction accuracy by size of the real change</caption>
+            <thead>
+              <tr><th>real change</th><th class="num">pairs</th><th class="num">direction right</th><th class="num">error</th></tr>
+            </thead>
+            <tbody id="paired-rows"></tbody>
+          </table>
+          <p class="cap" id="paired-cap"></p>
+        </div>
+        <div>
+          <h3 class="h3">Against a method that costs hours per pair</h3>
+          <p class="body">On the
+            <span data-num="paired.head_to_head.n" data-fmt="int">&#183;&#183;&#183;</span> pairs
+            where the FEP+ reference also has a value, free energy perturbation calls the
+            direction right
+            <span data-num="paired.head_to_head.arms.fep_plus.sign_accuracy" data-fmt="pct">&#183;&#183;</span>
+            of the time against our
+            <span data-num="paired.head_to_head.arms.vessari.sign_accuracy" data-fmt="pct">&#183;&#183;</span>,
+            with a root mean square error of
+            <span data-num="paired.head_to_head.arms.fep_plus.rmse_kcal" data-fmt="2">&#183;&#183;</span>
+            kcal/mol against our
+            <span data-num="paired.head_to_head.arms.vessari.rmse_kcal" data-fmt="2">&#183;&#183;</span>.</p>
+          <p class="body">It is ahead, and it should be. Free energy perturbation simulates the
+            change explicitly and takes hours of compute for each pair. This runs in minutes on one
+            consumer card. The useful comparison is not which wins but whether the cheap method is
+            close enough to be worth pointing at a list before the expensive one is pointed at a
+            shortlist.</p>
+          <p class="cap">These pairs are formed from predictions already made and reported above.
+            It is the same evidence read in the frame the tool is used in, not a new measurement.
+            Regenerate with scripts/paired_validation.py.</p>
+        </div>
+      </div>
+    </section>
+    <section class="channel" id="ch-interval" aria-labelledby="h-interval">
+      <div class="channel-head">
+        <span class="channel-no">04</span>
+        <h2 class="h2" id="h-interval">A number is not useful unless it comes with what it might be wrong by</h2>
+      </div>
+      <p class="body">Our affinity model ranks compounds well inside a chemical series and near
+        chance across series, which is measured above and is not fixable: a search of the
+        2024&ndash;2026 literature found no published method that beats a model given no protein at
+        all on a genuinely series&#8209;separated single&#8209;target task. So the question is not
+        how to make the number better. It is what a reader is entitled to be told about it.</p>
+      <p class="body">Every prediction now carries an interval, calibrated on compounds already
+        measured for the same target. Across
+        <span data-num="conformal.n_compounds" data-fmt="int">&#183;&#183;&#183;</span> compounds
+        the intervals are asked to contain the truth
+        <span data-num="conformal.target_coverage" data-fmt="pct">&#183;&#183;</span> of the time,
+        and they contain it
+        <span data-num="conformal.within_target.mean_coverage" data-fmt="pct">&#183;&#183;</span>
+        of the time, on every target tested, with none falling short.</p>
+
+      <div class="split">
+        <div>
+          <table class="curve">
+            <caption class="vh">Interval coverage and width by target</caption>
+            <thead>
+              <tr><th>target</th><th class="num">covered</th><th class="num">interval width</th></tr>
+            </thead>
+            <tbody id="conformal-rows"></tbody>
+          </table>
+          <p class="cap" id="conformal-cap"></p>
+        </div>
+        <div>
+          <h3 class="h3">The width is the honest part</h3>
+          <p class="body">On one target the interval is tenfold, which a chemist can act on. On
+            another it is wider than the entire range of affinities anyone would measure, which is
+            the model reporting that it does not know. Both numbers are correct: the intervals
+            cover on both targets. What differs is whether the prediction was worth making.</p>
+          <p class="body">Calibrated instead on other proteins, with nothing measured for the one
+            being asked about, coverage holds on average and collapses per target &mdash; from
+            <span data-num="conformal.across_targets.min_coverage" data-fmt="pct">&#183;</span> on
+            the worst to
+            <span data-num="conformal.across_targets.max_coverage" data-fmt="pct">&#183;&#183;</span>
+            on the best. An interval that is right on average and wrong for your protein is worse
+            than no interval, so the tool asks for measured compounds before it offers one.</p>
+          <p class="cap">Split conformal prediction, calibrated on absolute residuals with the
+            finite-sample correction. Regenerate with scripts/conformal_validation.py.</p>
+        </div>
+      </div>
+    </section>
+</div>
+<div class="panel" role="tabpanel" id="panel-method" aria-labelledby="tab-method" hidden>
     <section class="channel" id="ch-split" aria-labelledby="h-split">
       <div class="channel-head">
         <span class="channel-no">02</span>
@@ -232,105 +393,42 @@
         </div>
       </div>
     </section>
-
-    <section class="channel" id="ch-paired" aria-labelledby="h-paired">
+    <section class="channel" id="ch02" aria-labelledby="h02">
       <div class="channel-head">
-        <span class="channel-no">03</span>
-        <h2 class="h2" id="h-paired">Does it get the direction of a change right?</h2>
+        <span class="channel-no" aria-hidden="true">07</span>
+        <h2 class="h2" id="h02">What the number is</h2>
       </div>
-      <p class="body">Everything above asks how well the pipeline ranks a set of compounds. That
-        is not the question it gets used for. A chemist changes one thing about a molecule and
-        wants to know whether the change helped. So: every pair of compounds measured against the
-        same protein is one such change, and
-        <span data-num="paired.n_pairs" data-fmt="int">&#183;&#183;&#183;&#183;</span> of them
-        across <span data-num="paired.n_targets" data-fmt="int">&#183;&#183;</span> targets can be
-        formed from predictions already made.</p>
-
-      <div class="split">
-        <div>
-          <table class="curve">
-            <caption class="vh">Direction accuracy by size of the real change</caption>
-            <thead>
-              <tr><th>real change</th><th class="num">pairs</th><th class="num">direction right</th><th class="num">error</th></tr>
-            </thead>
-            <tbody id="paired-rows"></tbody>
-          </table>
-          <p class="cap" id="paired-cap"></p>
-        </div>
-        <div>
-          <h3 class="h3">Against a method that costs hours per pair</h3>
-          <p class="body">On the
-            <span data-num="paired.head_to_head.n" data-fmt="int">&#183;&#183;&#183;</span> pairs
-            where the FEP+ reference also has a value, free energy perturbation calls the
-            direction right
-            <span data-num="paired.head_to_head.arms.fep_plus.sign_accuracy" data-fmt="pct">&#183;&#183;</span>
-            of the time against our
-            <span data-num="paired.head_to_head.arms.vessari.sign_accuracy" data-fmt="pct">&#183;&#183;</span>,
-            with a root mean square error of
-            <span data-num="paired.head_to_head.arms.fep_plus.rmse_kcal" data-fmt="2">&#183;&#183;</span>
-            kcal/mol against our
-            <span data-num="paired.head_to_head.arms.vessari.rmse_kcal" data-fmt="2">&#183;&#183;</span>.</p>
-          <p class="body">It is ahead, and it should be. Free energy perturbation simulates the
-            change explicitly and takes hours of compute for each pair. This runs in minutes on one
-            consumer card. The useful comparison is not which wins but whether the cheap method is
-            close enough to be worth pointing at a list before the expensive one is pointed at a
-            shortlist.</p>
-          <p class="cap">These pairs are formed from predictions already made and reported above.
-            It is the same evidence read in the frame the tool is used in, not a new measurement.
-            Regenerate with scripts/paired_validation.py.</p>
-        </div>
-      </div>
+      <p class="body">The held-out set is <span data-num="holdout.n" data-fmt="int">&#183;&#183;&#183;</span> compounds separated from training by scaffold rather than by molecule. Scaffold splitting removed <span data-num="pipeline.scaffold_split_removed" data-fmt="int">&#183;&#183;&#183;</span> near relatives that a molecule level split would have left in training, so the correlation above is measured against chemistry the model has not already seen a close cousin of.</p>
+      <p class="body">Running the same pipeline twice moves a predicted value by about <span data-num="pipeline.repeat_run_spread_log" data-fmt="2">&#183;&#183;&#183;</span> log units. That spread is the floor under any comparison of two predictions. The standard error on a rank correlation at this sample size is 1/&#8730;(n&#8722;1), which is <span data-num="derived.se" data-fmt="2">&#183;&#183;&#183;</span>, and that is the width shaded on the axis above.</p>
+      <p class="chips">
+        <span class="chip"><span class="chip-k">n</span><span class="chip-v" data-num="holdout.n" data-fmt="int">&#183;&#183;&#183;</span></span>
+        <span class="chip"><span class="chip-k">split</span><span class="chip-v" data-num="pipeline.split" data-fmt="text">&#183;&#183;&#183;</span></span>
+        <span class="chip"><span class="chip-k">removed</span><span class="chip-v" data-num="pipeline.scaffold_split_removed" data-fmt="int">&#183;&#183;&#183;</span></span>
+        <span class="chip"><span class="chip-k">repeat spread</span><span class="chip-v" data-num="pipeline.repeat_run_spread_log" data-fmt="2">&#183;&#183;&#183;</span></span>
+      </p>
+      <details class="disclose">
+        <summary>What a scaffold split does to the score</summary>
+        <p class="body">A molecule level split can put two analogues of the same series on either side of the line, and the model then scores well by recognising the series. Splitting on Bemis-Murcko scaffold puts a whole series on one side. The reported correlation is lower under this split than under a molecule split, and that is the point of using it.</p>
+      </details>
     </section>
-
-    <section class="channel" id="ch-interval" aria-labelledby="h-interval">
+    <section class="channel" id="ch04" aria-labelledby="h04">
       <div class="channel-head">
-        <span class="channel-no">04</span>
-        <h2 class="h2" id="h-interval">A number is not useful unless it comes with what it might be wrong by</h2>
+        <span class="channel-no" aria-hidden="true">08</span>
+        <h2 class="h2" id="h04">Residual strip</h2>
       </div>
-      <p class="body">Our affinity model ranks compounds well inside a chemical series and near
-        chance across series, which is measured above and is not fixable: a search of the
-        2024&ndash;2026 literature found no published method that beats a model given no protein at
-        all on a genuinely series&#8209;separated single&#8209;target task. So the question is not
-        how to make the number better. It is what a reader is entitled to be told about it.</p>
-      <p class="body">Every prediction now carries an interval, calibrated on compounds already
-        measured for the same target. Across
-        <span data-num="conformal.n_compounds" data-fmt="int">&#183;&#183;&#183;</span> compounds
-        the intervals are asked to contain the truth
-        <span data-num="conformal.target_coverage" data-fmt="pct">&#183;&#183;</span> of the time,
-        and they contain it
-        <span data-num="conformal.within_target.mean_coverage" data-fmt="pct">&#183;&#183;</span>
-        of the time, on every target tested, with none falling short.</p>
-
-      <div class="split">
-        <div>
-          <table class="curve">
-            <caption class="vh">Interval coverage and width by target</caption>
-            <thead>
-              <tr><th>target</th><th class="num">covered</th><th class="num">interval width</th></tr>
-            </thead>
-            <tbody id="conformal-rows"></tbody>
-          </table>
-          <p class="cap" id="conformal-cap"></p>
+      <p class="body">Every held-out compound with a prediction, <span data-num="derived.points_count" data-fmt="int">&#183;&#183;&#183;</span> of them, sorted by measured affinity. Each lane carries two marks on one axis: the measured value in violet and the prediction in clay, with the miss drawn between them. Reading down the strip, the marks sit together at the tight end and pull apart as the compounds get weaker, which is the model losing resolution rather than losing accuracy evenly.</p>
+      <figure class="rail-fig">
+        <div class="lanes-scroll">
+          <div class="lanes" id="residual-lanes"></div>
         </div>
-        <div>
-          <h3 class="h3">The width is the honest part</h3>
-          <p class="body">On one target the interval is tenfold, which a chemist can act on. On
-            another it is wider than the entire range of affinities anyone would measure, which is
-            the model reporting that it does not know. Both numbers are correct: the intervals
-            cover on both targets. What differs is whether the prediction was worth making.</p>
-          <p class="body">Calibrated instead on other proteins, with nothing measured for the one
-            being asked about, coverage holds on average and collapses per target &mdash; from
-            <span data-num="conformal.across_targets.min_coverage" data-fmt="pct">&#183;</span> on
-            the worst to
-            <span data-num="conformal.across_targets.max_coverage" data-fmt="pct">&#183;&#183;</span>
-            on the best. An interval that is right on average and wrong for your protein is worse
-            than no interval, so the tool asks for measured compounds before it offers one.</p>
-          <p class="cap">Split conformal prediction, calibrated on absolute residuals with the
-            finite-sample correction. Regenerate with scripts/conformal_validation.py.</p>
-        </div>
-      </div>
+        <figcaption class="prov" data-prov hidden>
+          Axis in log&#8321;&#8320; &#181;M. Lower is more potent. &#916; is predicted minus measured.
+          <span class="src">source: data/site-data.json, points</span>
+        </figcaption>
+      </figure>
     </section>
-
+</div>
+<div class="panel" role="tabpanel" id="panel-work" aria-labelledby="tab-work" hidden>
     <section class="channel" id="ch00" aria-labelledby="h00">
       <div class="channel-head">
         <span class="channel-no">05</span>
@@ -390,101 +488,6 @@
         held-out set large enough to carry an error bar. That is the bar for appearing above with a
         number next to it.</p>
     </section>
-
-    <section class="channel" id="ch01" aria-labelledby="h01">
-      <div class="channel-head">
-        <span class="channel-no" aria-hidden="true">06</span>
-        <h2 class="h2" id="h01">Held-out performance, and what it survives</h2>
-      </div>
-
-      <div class="meter-row">
-        <div class="meter" id="meter-rho">
-          <span class="meter-label">Spearman <span class="nocaps">&#961;</span></span>
-          <span class="meter-digits" data-num="holdout.spearman" data-fmt="3">&#183;&#183;&#183;&#183;&#183;</span>
-          <span class="meter-err" id="meter-rho-err"></span>
-        </div>
-        <dl class="meter-side">
-          <div class="meter-side-row"><dt>MAE</dt><dd><span data-num="holdout.mae" data-fmt="3">&#183;&#183;&#183;&#183;&#183;</span><span class="unit"> log&#8321;&#8320; &#181;M</span></dd></div>
-          <div class="meter-side-row"><dt>n</dt><dd><span data-num="holdout.n" data-fmt="int">&#183;&#183;&#183;</span><span class="unit"> compounds</span></dd></div>
-          <div class="meter-side-row"><dt>split</dt><dd><span data-num="pipeline.split" data-fmt="text">&#183;&#183;&#183;</span></dd></div>
-          <div class="meter-side-row"><dt><span class="nocaps">&#963;</span> on <span class="nocaps">&#961;</span></dt><dd><span data-num="derived.se" data-fmt="2">&#183;&#183;&#183;</span><span class="unit"> = 1/&#8730;(n&#8722;1)</span></dd></div>
-        </dl>
-      </div>
-
-      <figure class="rail-fig">
-        <div class="rail-plot" id="rail-hero" data-rail="hero"></div>
-        <figcaption class="prov" data-prov hidden>
-          Rank correlation against measured Ki, drawn on a printed axis. The shaded width is one standard error, drawn to scale rather than described.
-          <span class="src">source: data/site-data.json, holdout and curve</span>
-        </figcaption>
-      </figure>
-
-      <h3 class="h3">The control we ran against ourselves</h3>
-      <p class="body">A rank correlation on held-out compounds is evidence that the structure is doing
-        work only if a model that never saw the protein does worse. We built that control, pointed it at
-        our own result, and it came back inconclusive.</p>
-      <table class="curve">
-        <thead><tr><th>arm</th><th>Spearman</th></tr></thead>
-        <tbody>
-          <tr><td>our pipeline</td><td><span data-num="affinity_control.model" data-fmt="3">&#183;</span></td></tr>
-          <tr><td>ligand alone, no protein</td><td><span data-num="affinity_control.ligand_only" data-fmt="3">&#183;</span></td></tr>
-          <tr><td>nearest neighbour, pure recall</td><td><span data-num="affinity_control.nearest_neighbour" data-fmt="3">&#183;</span></td></tr>
-          <tr><td>molecular weight, the floor</td><td><span data-num="affinity_control.molecular_weight" data-fmt="3">&#183;</span></td></tr>
-        </tbody>
-      </table>
-      <p class="body">The gap to the ligand-only arm is +0.083, 95% interval &minus;0.014 to +0.195.
-        That interval contains zero, so on this target we cannot show the structure contributes over the
-        ligand alone. The model does clear pure recall by +<span data-num="affinity_control.delta_nn" data-fmt="3">&#183;&#183;&#183;</span> and molecular weight by +<span data-num="affinity_control.delta_mw" data-fmt="3">&#183;&#183;&#183;</span>, so it is
-        not a lookup table and the task is not trivial. Those are different claims and we keep them apart.</p>
-      <p class="body">On a benchmark we did not choose, 52 compounds across CDK2, P38 and TYK2 from the
-        public FEP set, the same control returns the same answer: our pipeline
-        <span data-num="fep.model" data-fmt="3">&#183;</span> against a ligand-only
-        <span data-num="fep.ligand_only" data-fmt="3">&#183;</span>. Two inconclusive controls on two
-        unrelated datasets is a pattern rather than an accident.</p>
-    </section>
-
-    <!-- 02 -->
-    <section class="channel" id="ch02" aria-labelledby="h02">
-      <div class="channel-head">
-        <span class="channel-no" aria-hidden="true">07</span>
-        <h2 class="h2" id="h02">What the number is</h2>
-      </div>
-      <p class="body">The held-out set is <span data-num="holdout.n" data-fmt="int">&#183;&#183;&#183;</span> compounds separated from training by scaffold rather than by molecule. Scaffold splitting removed <span data-num="pipeline.scaffold_split_removed" data-fmt="int">&#183;&#183;&#183;</span> near relatives that a molecule level split would have left in training, so the correlation above is measured against chemistry the model has not already seen a close cousin of.</p>
-      <p class="body">Running the same pipeline twice moves a predicted value by about <span data-num="pipeline.repeat_run_spread_log" data-fmt="2">&#183;&#183;&#183;</span> log units. That spread is the floor under any comparison of two predictions. The standard error on a rank correlation at this sample size is 1/&#8730;(n&#8722;1), which is <span data-num="derived.se" data-fmt="2">&#183;&#183;&#183;</span>, and that is the width shaded on the axis above.</p>
-      <p class="chips">
-        <span class="chip"><span class="chip-k">n</span><span class="chip-v" data-num="holdout.n" data-fmt="int">&#183;&#183;&#183;</span></span>
-        <span class="chip"><span class="chip-k">split</span><span class="chip-v" data-num="pipeline.split" data-fmt="text">&#183;&#183;&#183;</span></span>
-        <span class="chip"><span class="chip-k">removed</span><span class="chip-v" data-num="pipeline.scaffold_split_removed" data-fmt="int">&#183;&#183;&#183;</span></span>
-        <span class="chip"><span class="chip-k">repeat spread</span><span class="chip-v" data-num="pipeline.repeat_run_spread_log" data-fmt="2">&#183;&#183;&#183;</span></span>
-      </p>
-      <details class="disclose">
-        <summary>What a scaffold split does to the score</summary>
-        <p class="body">A molecule level split can put two analogues of the same series on either side of the line, and the model then scores well by recognising the series. Splitting on Bemis-Murcko scaffold puts a whole series on one side. The reported correlation is lower under this split than under a molecule split, and that is the point of using it.</p>
-      </details>
-    </section>
-
-    <!-- 03 -->
-
-    <!-- 04 -->
-    <section class="channel" id="ch04" aria-labelledby="h04">
-      <div class="channel-head">
-        <span class="channel-no" aria-hidden="true">08</span>
-        <h2 class="h2" id="h04">Residual strip</h2>
-      </div>
-      <p class="body">Every held-out compound with a prediction, <span data-num="derived.points_count" data-fmt="int">&#183;&#183;&#183;</span> of them, sorted by measured affinity. Each lane carries two marks on one axis: the measured value in violet and the prediction in clay, with the miss drawn between them. Reading down the strip, the marks sit together at the tight end and pull apart as the compounds get weaker, which is the model losing resolution rather than losing accuracy evenly.</p>
-      <figure class="rail-fig">
-        <div class="lanes-scroll">
-          <div class="lanes" id="residual-lanes"></div>
-        </div>
-        <figcaption class="prov" data-prov hidden>
-          Axis in log&#8321;&#8320; &#181;M. Lower is more potent. &#916; is predicted minus measured.
-          <span class="src">source: data/site-data.json, points</span>
-        </figcaption>
-      </figure>
-    </section>
-
-    <!-- 05 -->
-    <!-- 06 -->
     <section class="channel" id="ch06" aria-labelledby="h06">
       <div class="channel-head">
         <span class="channel-no" aria-hidden="true">09</span>
@@ -515,8 +518,8 @@
         <span data-num="verification.cases" data-fmt="int">&#183;</span> behaved as expected.</p>
 
     </section>
-
-    <!-- 07 -->
+</div>
+<div class="panel" role="tabpanel" id="panel-scope" aria-labelledby="tab-scope" hidden>
     <section class="channel" id="ch07" aria-labelledby="h07">
       <div class="channel-head">
         <span class="channel-no" aria-hidden="true">10</span>
@@ -531,8 +534,9 @@
         <li><span class="limit-h">Confidence is self reported.</span> The Boltz-2 numbers beside the structure describe how well the model agrees with itself. They are not agreement with a solved structure.</li>
       </ul>
     </section>
+</div>
 
-    <footer class="colophon">
+  <footer class="colophon">
       <a class="studio-badge" href="https://madodigital.net">
         <span class="studio-badge__mark" aria-hidden="true"></span>
         <span class="studio-badge__text">
