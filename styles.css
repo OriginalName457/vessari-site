@@ -143,10 +143,11 @@ a:hover { color: var(--graphite); }
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 24px 96px;
-  display: grid;
-  grid-template-columns: var(--rail-w) minmax(0, 1fr);
-  column-gap: 24px;
-  align-items: start;
+  /* One column. This was two, the first sized for a side rail that has been
+     replaced by tabs across the top. Leaving the two-column rule in place put
+     every child into the narrow rail column and the page collapsed into a
+     stack of overlapping text. */
+  display: block;
 }
 
 .rail {
