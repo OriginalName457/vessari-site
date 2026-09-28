@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="
+  default-src 'none';
+  script-src 'self';
+  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+  font-src 'self' https://fonts.gstatic.com data:;
+  img-src 'self' data:;
+  connect-src 'self';
+  base-uri 'none';
+  form-action 'none';
+  object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Critical findings, Vessari</title>
+<meta name="description" content="Things that did not work, claims that did not hold when we tested them, and our own numbers that moved after we published them.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&family=DM+Mono:wght@400;500&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="findings.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <a class="wordmark" href="../">Vessari</a>
+    <span class="masthead-rule" aria-hidden="true"></span>
+    <span class="masthead-sub">critical findings</span>
+  </div>
+</header>
+
+<main class="strip">
+  <div class="f-intro">
+    <h1 class="h1">Critical findings</h1>
+    <p class="lede">A log of things that did not work. Some are claims we tested
+      and could not reproduce. Some are traps in tools everyone uses. Several
+      are our own numbers, which moved after we had already published them.</p>
+    <p class="body">Each entry says in its first line what kind of finding it is.
+      Where somebody established a result before us, they are named there and
+      not in a footnote. A replication is still worth writing down, because a
+      result that only exists in one paper is a result nobody has checked, but
+      it is not a discovery and will not be dressed as one.</p>
+  </div>
+
+  <article class="finding">
+    <p class="f-label f-label--own">Our own error. Published for a day before we
+      caught it.</p>
+    <h2 class="h2">A sentence we put on this site was false, and the effect it
+      described was real</h2>
+    <p class="body">We wrote that eight congeneric compounds admitted by a
+      Bemis-Murcko split had taken every sub-nanomolar slot in a thirty compound
+      held-out set. Five compounds in that set are sub-nanomolar. Three of them
+      belong to the series. The series spans 0.34 to 31.95 nM, a 94 fold range,
+      so it is not concentrated at the potent end at all.</p>
+    <p class="body">The sentence was written as a plausible mechanism for a real
+      effect and never checked against the compound list. Two neighbouring
+      details were also loose: seven of the eight share a benzamide rather than
+      eight, and six of the eight differ only in the fused heteroaryl cap.</p>
+    <p class="body">What survives is the effect, and the test that establishes it
+      is a matched null rather than the story. Keeping one compound per ECFP4
+      Tanimoto cluster gives Spearman 0.250. Dropping the same nine compounds at
+      random, ignoring clusters, leaves it at 0.556. A random subset does as
+      badly as declustering 0.25 percent of the time, so the collapse is specific
+      to removing the series.</p>
+    <p class="f-repro">Reproduce: <code>scripts/score_holdout.py</code> against
+      <code>abl1-holdout-predictions.json</code>. Every number that has moved is
+      logged in <a href="../CORRECTIONS.md">CORRECTIONS.md</a>.</p>
+  </article>
+
+  <article class="finding">
+    <p class="f-label f-label--rep">Replication of Steshin 2023 and Guo,
+      Hernández-Hernández and Ballester 2024. Not a new result.</p>
+    <h2 class="h2">Murcko scaffold splitting let a ponatinib analogue series into
+      our held-out set</h2>
+    <p class="body">Splitting a held-out set by Bemis-Murcko scaffold is the
+      default across this field. It does not separate close analogues, and that
+      was established before we ran into it. Steshin showed in the Lo-Hi
+      benchmark that after a scaffold split, most test molecules still have a
+      close training neighbour, including 78 percent of one TDC CYP set. Guo and
+      colleagues put the result in a title across 2,100 models on 60 datasets.</p>
+    <p class="body">Our case adds a mechanism and a magnitude on a co-folding
+      model. Eight compounds in our ABL1 set share a benzamide, a
+      piperazinylmethyl, a trifluoromethyl and an internal diaryl alkyne, and
+      differ in a fused heteroaryl cap. That cap sits inside the ring system, so
+      Murcko writes eight different scaffold strings for what a chemist reads as
+      one ponatinib-like series, and the one-compound-per-scaffold rule admitted
+      all eight. Reported Spearman fell from 0.564 to 0.250 when the set was
+      collapsed to one compound per cluster.</p>
+    <p class="body">We log it because it broke one of our own published numbers,
+      not because it is news. If you build held-out sets on Murcko scaffolds,
+      the number you are reporting is probably higher than the one you meant to
+      report.</p>
+    <p class="f-repro">Compounds: CHEMBL2316579, 2316581, 2316582, 2316585,
+      2316870, 2316871, 2324924, 2324925. Selection rule now in
+      <code>src/vessari/holdout/build.py</code>.</p>
+  </article>
+
+  <article class="finding">
+    <p class="f-label f-label--trap">A trap we walked into. The behaviour is
+      documented; the consequence is not obvious.</p>
+    <h2 class="h2">Training one model across several TDC ADMET endpoints voids
+      their scaffold splits</h2>
+    <p class="body">The TDC ADMET Benchmark Group scores 22 endpoints on scaffold
+      splits, so a leaderboard entry is meant to report how a model handles
+      chemotypes it has not seen. Each endpoint is split on its own. Many of them
+      share molecules, and the CYP2C9, CYP2D6 and CYP3A4 Veith sets come from a
+      single screening campaign, so they share most of a compound library by
+      construction.</p>
+    <p class="body">We measured the overlap before building a shared-trunk model
+      and did not build it. Of cyp2d6_veith's 2,626 test molecules, 1,759 appear
+      in cyp3a4_veith's training set. That is 67 percent. Across the suite, 462
+      endpoint pairs share at least one molecule across that boundary. A model
+      trained on all endpoints at once and scored on their individual test splits
+      is fitted on labelled copies of most of its own test set.</p>
+    <p class="body">Multitask ADMET models are common and this check is not part
+      of the usual recipe. Ours is single task for this reason, which costs us
+      the transfer that makes multitask attractive on the sparse endpoints.</p>
+    <p class="f-repro">Reproduce with the official TDC archive through
+      <code>src/vessari/admet/dataset.py</code>. The overlap is a property of the
+      published splits, not of anything we did to them.</p>
+  </article>
+
+  <article class="finding">
+    <p class="f-label f-label--rep">Replication of documented behaviour, with one
+      measurement of our own.</p>
+    <h2 class="h2">In Boltz-2, diffusion_samples_affinity is a best-of-N pose
+      search rather than an averaging ensemble</h2>
+    <p class="body">The flag reads like an ensemble size. It is not one. The
+      affinity stage draws N poses, ranks them by interface pTM, and conditions
+      the affinity head on the single best. The other N minus one never reach it
+      and are not averaged into the reported value.</p>
+    <p class="body">This matters if you raise the flag expecting variance to fall
+      as one over the square root of N. It will not. What did remove our
+      run-to-run variance was a seed, which Boltz does not set by default: three
+      runs of one compound with a fixed seed returned identical values to sixteen
+      significant figures, while unseeded runs of the same input differed by
+      about 0.05 log units. Averaging, if you want it, has to happen outside the
+      tool across independent runs.</p>
+    <p class="f-repro">The selection is at <code>boltz/model/models/boltz2.py</code>,
+      an argsort on ipTM taking index zero. Our replicate averaging is in
+      <code>adapters.predict_replicates</code>.</p>
+  </article>
+
+  <article class="finding">
+    <p class="f-label f-label--scope">Scoped to our use. Not a claim that the
+      tool is wrong.</p>
+    <h2 class="h2">Why we do not gate proposed analogues on synthetic
+      accessibility score</h2>
+    <p class="body">Across the 19 imatinib analogues our generator produces,
+      RDKit's SA_Score spans 2.350 to 2.533 against the parent's 2.332. That is
+      0.18 units on a scale of 1 to 10. We are not claiming an error: one-atom
+      analogues of a marketed drug plausibly are of near-identical difficulty,
+      and the score may be right about that.</p>
+    <p class="body">We are claiming it cannot answer the question we have, which
+      is how much of the parent's synthetic route survives the change. Two
+      observations shaped that. The score rates hexa-tert-butylbenzene, a
+      molecule that has never been made and is sterically impossible, at 2.16,
+      below imatinib's 2.33. And it rated a disconnected molecule produced by a
+      bug in our own generator, a piperazine sitting beside a separate fragment,
+      at 2.46. Used as a gate it would have passed that bug, which three other
+      checks also passed.</p>
+    <p class="body">What we use instead is a route class stated per
+      transformation: whether the change can plausibly be made on the finished
+      molecule, whether it arrives on a different purchased building block, or
+      whether it breaks the sequence. That is chemistry written down rather than
+      computed, and it is narrower and more useful than a score.</p>
+    <p class="f-repro">RDKit 2026.03.5,
+      <code>rdkit.Contrib.SA_Score</code>. Route classes in
+      <code>src/vessari/design/synthesis.py</code>.</p>
+  </article>
+
+  <article class="finding">
+    <p class="f-label f-label--own">Our own error, caught before it reached
+      anyone.</p>
+    <h2 class="h2">A gene symbol is not a protein, and our lookup assumed it was
+      human</h2>
+    <p class="body">An assessment of InhA, the Mycobacterium tuberculosis enoyl
+      reductase that isoniazid targets, came back describing human inhibin alpha.
+      Both carry the symbol InhA and they are unrelated: a 269 residue bacterial
+      enzyme and a 366 residue reproductive hormone subunit. Our protein lookup
+      restricted every search to human, so it answered confidently and wrongly,
+      and the dossier carried one protein's gene record and literature beside
+      binding numbers computed from the other.</p>
+    <p class="body">Two attempted fixes were worse than the bug. Widening the
+      search to every organism answers ABL1 with a mouse orthologue as readily as
+      the human protein. Refusing whenever candidates differ in length blocked
+      ABL1 outright, because a fungus has a gene of that name too, and a tool
+      that refuses on every homonym teaches people to skip its warnings.</p>
+    <p class="body">What works is to proceed and name the species. InhA now
+      resolves to the human protein and says so in the output, which makes the
+      error impossible to miss, and an accession pins the one you meant. Eight
+      organisms carry that symbol.</p>
+    <p class="f-repro">Ranking and the cross-organism listing are in
+      <code>src/vessari/data/lookup.py</code>.</p>
+  </article>
+
+  <p class="f-foot">Entries are added when something does not work, not on a
+    schedule. If you think one of these is wrong, the code to check it is named
+    in each entry.</p>
+</main>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <span>Vessari</span>
+    <nav><a href="../">Back to the assessment</a></nav>
+  </div>
+</footer>
+
+<script src="findings.js"></script>
+</body>
+</html>

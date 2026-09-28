@@ -1364,3 +1364,7 @@ a:hover { color: var(--graphite); }
   .tab-name{display:none}
   .tab-no{font-size:.8rem;opacity:1}
 }
+
+/* The findings log is a page rather than a panel, so its tab is a link. */
+.tab--link{text-decoration:none}
+.tab--link:hover{color:var(--ink)}
