@@ -1,0 +1,15 @@
+{
+ "n": 30,
+ "n_failed": 0,
+ "effective_n_clusters": 30,
+ "max_pairwise_tanimoto": 0.578,
+ "spearman": 0.284,
+ "ci": [
+  -0.121,
+  0.636
+ ],
+ "mae_log": 1.404,
+ "median_fold": 20.5,
+ "within_10x": 13,
+ "source": "benchmarks/results/abl1-holdout-predictions-v2.json"
+}

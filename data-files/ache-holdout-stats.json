@@ -1,0 +1,15 @@
+{
+ "n": 24,
+ "n_failed": 6,
+ "effective_n_clusters": 24,
+ "max_pairwise_tanimoto": 0.594,
+ "spearman": 0.537,
+ "ci": [
+  0.118,
+  0.826
+ ],
+ "mae_log": 1.7,
+ "median_fold": 41.4,
+ "within_10x": 6,
+ "source": "benchmarks/results/ache-holdout-predictions.json"
+}

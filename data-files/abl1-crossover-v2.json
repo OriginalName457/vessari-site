@@ -1,0 +1,147 @@
+{
+ "model": "random forest, 100 trees, ECFP4 2048 bit",
+ "structure_score": 0.284,
+ "structure_score_provenance": {
+  "from": "benchmarks/results/abl1-holdout-stats-v2.json",
+  "sha256": "114abd996c0f1c81",
+  "n": 30,
+  "ci": [
+   -0.121,
+   0.636
+  ]
+ },
+ "points": [
+  {
+   "n_train": 5,
+   "mean": 0.2894,
+   "sd": 0.323,
+   "lo": -0.4543,
+   "hi": 0.6915,
+   "n_subsamples": 120,
+   "beats_structure": 0.608
+  },
+  {
+   "n_train": 10,
+   "mean": 0.4223,
+   "sd": 0.2569,
+   "lo": -0.2612,
+   "hi": 0.726,
+   "n_subsamples": 120,
+   "beats_structure": 0.717
+  },
+  {
+   "n_train": 15,
+   "mean": 0.4714,
+   "sd": 0.2106,
+   "lo": -0.0184,
+   "hi": 0.7254,
+   "n_subsamples": 120,
+   "beats_structure": 0.833
+  },
+  {
+   "n_train": 25,
+   "mean": 0.5564,
+   "sd": 0.1332,
+   "lo": 0.2891,
+   "hi": 0.7595,
+   "n_subsamples": 120,
+   "beats_structure": 0.975
+  },
+  {
+   "n_train": 40,
+   "mean": 0.5948,
+   "sd": 0.1114,
+   "lo": 0.33,
+   "hi": 0.7798,
+   "n_subsamples": 120,
+   "beats_structure": 0.975
+  },
+  {
+   "n_train": 60,
+   "mean": 0.6444,
+   "sd": 0.0909,
+   "lo": 0.4348,
+   "hi": 0.792,
+   "n_subsamples": 120,
+   "beats_structure": 1.0
+  },
+  {
+   "n_train": 100,
+   "mean": 0.6656,
+   "sd": 0.0948,
+   "lo": 0.4647,
+   "hi": 0.8077,
+   "n_subsamples": 60,
+   "beats_structure": 1.0
+  },
+  {
+   "n_train": 160,
+   "mean": 0.6975,
+   "sd": 0.0587,
+   "lo": 0.5578,
+   "hi": 0.7797,
+   "n_subsamples": 60,
+   "beats_structure": 1.0
+  },
+  {
+   "n_train": 250,
+   "mean": 0.7467,
+   "sd": 0.0553,
+   "lo": 0.63,
+   "hi": 0.8367,
+   "n_subsamples": 60,
+   "beats_structure": 1.0
+  },
+  {
+   "n_train": 400,
+   "mean": 0.7354,
+   "sd": 0.0581,
+   "lo": 0.6212,
+   "hi": 0.8285,
+   "n_subsamples": 60,
+   "beats_structure": 1.0
+  },
+  {
+   "n_train": 650,
+   "mean": 0.7699,
+   "sd": 0.0371,
+   "lo": 0.6962,
+   "hi": 0.8327,
+   "n_subsamples": 30,
+   "beats_structure": 1.0
+  },
+  {
+   "n_train": 1000,
+   "mean": 0.7763,
+   "sd": 0.0307,
+   "lo": 0.7292,
+   "hi": 0.835,
+   "n_subsamples": 30,
+   "beats_structure": 1.0
+  },
+  {
+   "n_train": 1600,
+   "mean": 0.8007,
+   "sd": 0.0257,
+   "lo": 0.7544,
+   "hi": 0.8435,
+   "n_subsamples": 30,
+   "beats_structure": 1.0
+  },
+  {
+   "n_train": 2650,
+   "mean": 0.8105,
+   "sd": 0.0197,
+   "lo": 0.7769,
+   "hi": 0.8384,
+   "n_subsamples": 10,
+   "beats_structure": 1.0
+  }
+ ],
+ "crossover": {
+  "last_n_structure_wins": null,
+  "first_n_ligand_wins": 5,
+  "resolved": false
+ },
+ "minutes": 51.5
+}

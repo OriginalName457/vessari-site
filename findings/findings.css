@@ -30,3 +30,22 @@
               font-size:.72rem;text-transform:uppercase;letter-spacing:.14em;
               color:var(--muted)}
 @media (max-width:640px){.finding .h2{font-size:1.15rem}}
+
+/* Data index. A list of files, so the filename leads and the prose follows. */
+.df-list{list-style:none;padding:0;margin:1.5rem 0 0;max-width:46rem}
+.df{padding:1.1rem 0;border-top:1px solid var(--rule);
+    display:grid;grid-template-columns:1fr auto;gap:.2rem .8rem;
+    align-items:baseline}
+.df-name{grid-column:1;font-family:var(--mono,ui-monospace,Menlo,Consolas,monospace);
+         font-size:.88rem;color:var(--ink);text-decoration:none;
+         border-bottom:1px solid var(--rule);word-break:break-all}
+.df-name:hover{border-bottom-color:var(--ink)}
+.df-size{grid-column:2;font-family:var(--mono,ui-monospace,Menlo,Consolas,monospace);
+         font-size:.74rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.df-flag{grid-column:1/-1;font-family:var(--mono,ui-monospace,Menlo,Consolas,monospace);
+         font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;
+         color:#8c3a2b;background:#f6e3e0;padding:.12rem .45rem;
+         border-radius:2px;justify-self:start}
+.df-desc{grid-column:1/-1;margin:.35rem 0 0;font-size:.92rem;
+         color:var(--muted);max-width:44rem}
+.df--old .df-name{color:var(--muted)}

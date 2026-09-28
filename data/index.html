@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="
+  default-src 'none'; script-src 'none';
+  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+  font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data:;
+  connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data, Vessari</title>
+<meta name="description" content="The result files behind every number on this site, including the ones that were withdrawn.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&family=DM+Mono:wght@400;500&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../findings/findings.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-in">
+    <a class="wordmark" href="../">VESSARI</a>
+    <span class="masthead-sub">data</span>
+    <nav class="topnav" aria-label="Sections">
+      <a href="../">assessment</a>
+      <a href="../findings/">findings</a>
+      <a href="../notes/">notes</a>
+      <a href="./">data</a>
+    </nav>
+  </div>
+</header>
+
+<main class="strip">
+  <div class="f-intro">
+    <h1 class="h1">Data</h1>
+    <p class="lede">The files behind every number on this site. Each is what the
+      run wrote, not a summary prepared afterwards.</p>
+    <p class="body">Superseded files are here too and marked. A result that was
+      withdrawn is part of the record, and removing it would undo the point of
+      keeping a corrections log. Where a number moved, both versions are present
+      and the log says what moved it.</p>
+  </div>
+
+  <ul class="df-list">
+  <li class="df">
+    <a class="df-name" href="../data-files/abl1-holdout-set-v2.json">abl1-holdout-set-v2.json</a>
+    <span class="df-size">8 KB</span>
+    <p class="df-desc">The ABL1 held-out set: 30 compounds in 30 chemical series, one per ECFP4 Tanimoto cluster at 0.6, with each measured affinity and the number of assays behind it.</p>
+  </li>
+  <li class="df">
+    <a class="df-name" href="../data-files/abl1-holdout-predictions-v2.json">abl1-holdout-predictions-v2.json</a>
+    <span class="df-size">14 KB</span>
+    <p class="df-desc">What the pipeline predicted for those 30, with pose confidence and the disagreement between the two affinity modules.</p>
+  </li>
+  <li class="df">
+    <a class="df-name" href="../data-files/abl1-holdout-stats-v2.json">abl1-holdout-stats-v2.json</a>
+    <span class="df-size">267 B</span>
+    <p class="df-desc">The scores: Spearman, interval, mean absolute error, and the effective number of independent series.</p>
+  </li>
+  <li class="df df--old">
+    <a class="df-name" href="../data-files/abl1-holdout-set.json">abl1-holdout-set.json</a>
+    <span class="df-size">8 KB</span>
+    <span class="df-flag">superseded by abl1-holdout-set-v2.json</span>
+    <p class="df-desc">The first ABL1 set, built by Bemis-Murcko scaffold. It admitted eight members of one congeneric series.</p>
+  </li>
+  <li class="df df--old">
+    <a class="df-name" href="../data-files/abl1-holdout-stats.json">abl1-holdout-stats.json</a>
+    <span class="df-size">121 B</span>
+    <span class="df-flag">superseded by abl1-holdout-stats-v2.json</span>
+    <p class="df-desc">Scores from that first set, Spearman 0.563. Here because it was published at the time and later withdrawn.</p>
+  </li>
+  <li class="df">
+    <a class="df-name" href="../data-files/ache-holdout-set.json">ache-holdout-set.json</a>
+    <span class="df-size">8 KB</span>
+    <p class="df-desc">The acetylcholinesterase set, same rules, an unrelated fold.</p>
+  </li>
+  <li class="df">
+    <a class="df-name" href="../data-files/ache-holdout-predictions.json">ache-holdout-predictions.json</a>
+    <span class="df-size">14 KB</span>
+    <p class="df-desc">Predictions for it. Every compound came back below the lowest pose confidence seen anywhere in the ABL1 set.</p>
+  </li>
+  <li class="df">
+    <a class="df-name" href="../data-files/ache-holdout-stats.json">ache-holdout-stats.json</a>
+    <span class="df-size">260 B</span>
+    <p class="df-desc">Scores for acetylcholinesterase.</p>
+  </li>
+  <li class="df">
+    <a class="df-name" href="../data-files/paired-validation.json">paired-validation.json</a>
+    <span class="df-size">1 KB</span>
+    <p class="df-desc">Direction of an affinity change across 4,899 within-target pairs, split by how large the real change is, against free energy perturbation on the subset where both have a value.</p>
+  </li>
+  <li class="df">
+    <a class="df-name" href="../data-files/conformal-validation.json">conformal-validation.json</a>
+    <span class="df-size">3 KB</span>
+    <p class="df-desc">Whether the prediction intervals cover what they claim to, per target, calibrated within a target and across targets.</p>
+  </li>
+  <li class="df">
+    <a class="df-name" href="../data-files/fep-benchmark.json">fep-benchmark.json</a>
+    <span class="df-size">6 KB</span>
+    <p class="df-desc">Fifteen FEP+ targets, 364 compounds, scored within target and aggregated, with the arm comparable to the published figure marked.</p>
+  </li>
+  <li class="df">
+    <a class="df-name" href="../data-files/abl1-crossover-v2.json">abl1-crossover-v2.json</a>
+    <span class="df-size">2 KB</span>
+    <p class="df-desc">How a ligand-only model&#x27;s held-out score changes with training set size, against the structure arm.</p>
+  </li>
+  <li class="df">
+    <a class="df-name" href="../data-files/ntab-seed-variance.json">ntab-seed-variance.json</a>
+    <span class="df-size">2 KB</span>
+    <p class="df-desc">Thirteen seeds of one model on one benchmark tier, against the published spread between the three methods that benchmark ranks.</p>
+  </li>
+  <li class="df">
+    <a class="df-name" href="../data-files/admet.json">admet.json</a>
+    <span class="df-size">12 KB</span>
+    <p class="df-desc">Twenty-two TDC ADMET endpoints, one configuration, with the split digest for each.</p>
+  </li>
+  <li class="df">
+    <a class="df-name" href="../data-files/abl1-control-card.md">abl1-control-card.md</a>
+    <span class="df-size">8 KB</span>
+    <p class="df-desc">The control battery on ABL1 as a card: every arm, every interval, and the verdict.</p>
+  </li>
+  <li class="df">
+    <a class="df-name" href="../data-files/CORRECTIONS.md">CORRECTIONS.md</a>
+    <span class="df-size">5 KB</span>
+    <p class="df-desc">Every number that moved after it was stated, and what moved it.</p>
+  </li>
+  </ul>
+
+  <p class="f-foot">These are the inputs to the figures on the assessment page,
+    which reads them at load. If a figure and a file disagree, the file is right
+    and we want to hear about it.</p>
+</main>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <span>Vessari</span>
+    <nav><a href="../">Back to the assessment</a></nav>
+  </div>
+</footer>
+</body></html>
