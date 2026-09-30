@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="
+  default-src 'none'; script-src 'none';
+  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+  font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data:;
+  connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Twelve targets instead of two</title>
+<meta name="description" content="Engineering notes: an unattended run took the corpus from two proteins to twelve, which is the first interval we have on the method rather than on one protein.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&family=DM+Mono:wght@400;500&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../findings/findings.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-in">
+    <a class="wordmark" href="../">VESSARI</a>
+    <span class="masthead-sub">notes</span>
+    <nav class="topnav" aria-label="Sections">
+      <a href="../">assessment</a>
+      <a href="../findings/">findings</a>
+      <a href="./">notes</a>
+      <a href="../data/">data</a>
+    </nav>
+  </div>
+</header>
+
+<main class="strip">
+  <div class="f-intro">
+    <h1 class="h1">Twelve targets instead of two</h1>
+    <p class="lede">Every performance number on this site came from two
+      proteins. An unattended run took that to twelve. This is what the twelve
+      scored, and what the run cost us on the way.</p>
+    <p class="body">The corpus worker builds a series-disjoint held-out set for
+      one target, predicts every compound in it, scores the result and appends
+      the scores to ~/.vessari/corpus/corpus.jsonl before taking the
+      next target. It ran unattended on 29 September 2026, finishing its first
+      target at 18:47 UTC and its last at 00:07 UTC the following day, 5.81
+      hours of scored work summed across targets on one rig. Sixteen entries
+      came out of it: twelve targets scored, four declined with a stated
+      reason.</p>
+  </div>
+
+  <article class="finding">
+    <p class="f-label f-label--scope">Scoped to twelve proteins that passed a
+      length and compound-count filter. Not a claim about proteins outside
+      it.</p>
+    <h2 class="h2">What the twelve targets scored</h2>
+
+    <div class="table-wrap">
+      <table class="dtable">
+        <caption class="tcap">Held-out scores, one compound per series</caption>
+        <thead>
+          <tr>
+            <th>target</th>
+            <th class="num">aa</th>
+            <th class="num">n</th>
+            <th class="num">Spearman</th>
+            <th class="num">median fold error</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Catechol O-methyltransferase</td><td class="num">271</td><td class="num">11</td><td class="num">0.818</td><td class="num">4.4x</td></tr>
+          <tr><td>Beta-2 adrenergic receptor</td><td class="num">413</td><td class="num">25</td><td class="num">0.798</td><td class="num">3.9x</td></tr>
+          <tr><td>Dihydrofolate reductase (E. coli)</td><td class="num">159</td><td class="num">27</td><td class="num">0.670</td><td class="num">13.8x</td></tr>
+          <tr><td>Dihydrofolate reductase (human)</td><td class="num">187</td><td class="num">30</td><td class="num">0.633</td><td class="num">3.9x</td></tr>
+          <tr><td>Serine protease 1</td><td class="num">247</td><td class="num">24</td><td class="num">0.550</td><td class="num">2.9x</td></tr>
+          <tr><td>5-hydroxytryptamine receptor 1B</td><td class="num">390</td><td class="num">22</td><td class="num">0.534</td><td class="num">7.8x</td></tr>
+          <tr><td>3-oxo-5-alpha-steroid 4-dehydrogenase 1</td><td class="num">259</td><td class="num">20</td><td class="num">0.513</td><td class="num">8.7x</td></tr>
+          <tr><td>5-hydroxytryptamine receptor 1D</td><td class="num">377</td><td class="num">24</td><td class="num">0.490</td><td class="num">4.9x</td></tr>
+          <tr><td>Thymidylate synthase</td><td class="num">313</td><td class="num">15</td><td class="num">0.479</td><td class="num">19.0x</td></tr>
+          <tr><td>InhA (M. tuberculosis)</td><td class="num">269</td><td class="num">13</td><td class="num">0.473</td><td class="num">14.9x</td></tr>
+          <tr><td>Farnesyl pyrophosphate synthase</td><td class="num">419</td><td class="num">20</td><td class="num">0.405</td><td class="num">2.6x</td></tr>
+          <tr><td>Histamine H2 receptor</td><td class="num">359</td><td class="num">10</td><td class="num">0.091</td><td class="num">5.1x</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="body">Each held-out set keeps one compound per ECFP4 Tanimoto
+      cluster at 0.6, single linkage, so no two compounds in a set belong to the
+      same series. The largest pairwise similarity anywhere in the twelve sets
+      is 0.597. Across the twelve, 241 compounds were scored out of 306
+      predicted; the other 65 returned no affinity value at all. Of the 241, 146
+      landed within ten fold of the measured affinity.</p>
+
+    <p class="body">Mean Spearman over the twelve targets is 0.538, 95% CI
+      [0.430, 0.636], bootstrapped by resampling targets rather than compounds.
+      The median of the twelve per-target median fold errors is 5.0x, 95% CI
+      [3.9x, 11.2x] on the same bootstrap.</p>
+
+    <p class="body">Four of the twelve are G protein coupled receptors, which
+      this pipeline had never been measured on. Beta-2 adrenergic receptor, at
+      0.798 on 25 compounds, is the second best target in the corpus. The other
+      three came in at 0.534 on 22 compounds, 0.490 on 24 and 0.091 on 10, which
+      is most of the range the whole corpus covers. As far as these numbers go
+      the receptors do not behave as a group.</p>
+
+    <p class="body">Four further targets were declined rather than scored,
+      because too few compounds survived clustering to build a set: peptidyl-prolyl
+      cis-trans isomerase B left 1 compound, beta-lactamase TEM 5,
+      UDP-N-acetylglucosamine 1-carboxyvinyltransferase 5 and adenosine deaminase
+      6, against a floor of 12. A declined target is written to the corpus with
+      its reason rather than dropped, because the reason measures where the
+      selection rule bites.</p>
+  </article>
+
+  <article class="finding">
+    <p class="f-label f-label--scope">What the interval covers, and what it does
+      not.</p>
+    <h2 class="h2">The interval is now around a claim about the method</h2>
+    <p class="body">The held-out figures published here before this run were
+      Spearman 0.284 on 30 ABL1 compounds and 0.537 on 24 acetylcholinesterase
+      compounds. Each came with an interval, and each of those intervals was an
+      interval on one protein. It said how uncertain we were about ABL1, not how
+      uncertain we were about the next protein a reader might bring. With two
+      targets there was no way to put a number on the second question at all.</p>
+    <p class="body">Twelve is enough to resample targets, so [0.430, 0.636] is
+      the first figure on this site that describes the pipeline rather than a
+      protein. It is also the one that matters to anyone deciding whether to
+      point this at their own target, and it is wide. The number to plan against
+      is the lower end, 0.430.</p>
+    <p class="body">The twelve were not drawn from proteins in general. They
+      passed the queue filter in src/vessari/corpus/queue.py: 150 to
+      420 residues, between 40 and 4,000 measured compounds in ChEMBL, and
+      enough of those surviving clustering to fill a set of at least 12. An
+      interval over twelve targets selected that way says nothing about a
+      protein the filter would have rejected.</p>
+  </article>
+
+  <article class="finding">
+    <p class="f-label f-label--own">Our own failure. It is inside every average
+      above.</p>
+    <h2 class="h2">Histamine H2 receptor came back at 0.091</h2>
+    <p class="body">On 10 held-out compounds the rank correlation is 0.091, 95%
+      CI [&minus;0.639, 0.795]. That is a failure. Calling it noise because the
+      interval is wide would be the wrong reading: ten compounds cannot show
+      much, and ten compounds is what this target had after clustering, so the
+      width is part of the result rather than an excuse for it. The median fold
+      error on those ten is 5.1x, near the corpus median of 5.0x, so the
+      predicted affinities are not far off in magnitude. They are in the wrong
+      order.</p>
+    <p class="body">H2 is a 359 residue receptor, inside the length range, with
+      enough measured compounds in ChEMBL to enter the queue. Nothing marked it
+      in advance. It is the case to hold against the mean: one target in twelve
+      returned a ranking with no usable signal, and we could not have said which
+      one beforehand.</p>
+  </article>
+
+  <article class="finding">
+    <p class="f-label f-label--own">Our own error. Eleven entries deleted from
+      the corpus before any number above was computed.</p>
+    <h2 class="h2">A database outage was recorded as a property of six
+      proteins</h2>
+    <p class="body">The worker's first attempt ran while ChEMBL was returning
+      HTTP 500. The set builder treated any non-200 response as the end of the
+      result list, found zero compounds, and the worker wrote "scoring failed"
+      against the target and marked it permanently skipped. Eleven such entries
+      were written in two bursts, the first five of them inside 48 seconds by
+      their own timestamps. Five of the six targets involved scored normally once
+      ChEMBL recovered and are in the table above. The sixth, peptidyl-prolyl
+      cis-trans isomerase B, was later declined for a reason that holds.</p>
+    <p class="body">An upstream failure and an unusable target need opposite
+      handling. A target whose chemistry this pipeline cannot process should be
+      skipped and never retried. A target whose database we could not reach
+      should be left exactly where it was. The worker had one path for both.
+      There is now an Upstream exception that returns the target to the queue and
+      waits, and a check against the activity count recorded when the target was
+      enqueued, so finding zero compounds where the queue says there were
+      hundreds counts as a contradiction rather than an answer. The fix is in
+      scripts/corpus_worker.py. All eleven entries were deleted
+      before the analysis on this page ran.</p>
+  </article>
+
+  <article class="finding">
+    <p class="f-label f-label--trap">A trap we walked into. The rule was ours and
+      it was in our own materials.</p>
+    <h2 class="h2">The length rule came from two points and does not survive
+      twelve</h2>
+    <p class="body">Target selection has bounded protein length at 150 to 420
+      residues since the queue was written. That bound came from two
+      measurements: ABL1's kinase domain at 254 residues gave interface pTM above
+      0.80 throughout, and acetylcholinesterase at 583 residues gave a median of
+      0.27 with every compound below the worst ABL1 pose. One good point and one
+      bad point were turned into a rule about length, and the rule was then
+      repeated in our own materials as guidance that proteins under about 400
+      residues are comfortable for this pipeline.</p>
+    <p class="body">Measured across the twelve, the correlation between protein
+      length and per-target Spearman is &minus;0.336, over lengths of 159 to 419
+      residues. That is weak, and it rests on twelve targets, so it does not rule
+      a length effect out. What it does is remove the basis for the sentence we
+      were writing. Inside 159 to 419 residues, length does not predict whether
+      this pipeline will rank a target's compounds: the best target in the corpus
+      is 271 residues and the second best is 413.</p>
+    <p class="body">The bound itself stays, because nothing here tests it. Every
+      target in the corpus was inside 150 to 420 residues by construction, so the
+      corpus says nothing about the span from 420 to 583 that the bound was
+      invented to cover.</p>
+  </article>
+
+  <p class="f-repro">Reproduce: the scores are one JSON object per target in
+    <code>~/.vessari/corpus/corpus.jsonl</code>, written by
+    <code>scripts/corpus_worker.py</code>. The aggregate figures resample the
+    twelve targets with replacement over 20,000 draws. The deleted entries and
+    the fix behind them are logged in
+    <a href="../data-files/CORRECTIONS.md">CORRECTIONS.md</a>.</p>
+
+  <p class="f-foot">Twelve targets is not fifty. The worker takes another target
+    whenever the rig is idle, so the numbers on this page will move. When they
+    move, both versions go in the corrections log.</p>
+</main>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <span>Vessari</span>
+    <nav><a href="../">Back to the assessment</a></nav>
+  </div>
+</footer>
+</body></html>
