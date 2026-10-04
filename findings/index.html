@@ -51,6 +51,48 @@
   </div>
 
   <article class="finding">
+    <p class="f-label f-label--own">Our own error. Three targets said yes,
+      fifteen said no.</p>
+    <h2 class="h2">The model's confidence in a pose does not predict how wrong
+      the affinity is</h2>
+    <p class="body">When the model places a ligand it reports its own confidence
+      in that interface. We built a trust signal on it: poses above 0.90 were
+      labelled good, below 0.60 poor, and the affinities sorted accordingly. The
+      evidence was three targets, where the correlation between interface
+      confidence and error averaged about -0.57. Lower confidence, worse number,
+      which is what it should do.</p>
+    <p class="body">At fifteen targets and 325 predictions the correlation
+      averages <strong>-0.067</strong>, with a bootstrap interval over targets of
+      -0.209 to +0.085. Nine of fifteen are negative, which is what a coin does.
+      The first three targets were not a sample, they were the three we happened
+      to run first, and they were the favourable tail of a distribution sitting
+      on zero. Re-measured now, one of those three has changed sign.</p>
+    <p class="body">The worst-case version of the claim fails separately. We
+      said a pose above 0.90 is never wrong by more than about 400 fold. Eight
+      of 244 such poses exceed it, the worst by 132,867 fold at a confidence of
+      0.961. A bound with counterexamples is not a bound.</p>
+    <p class="body">One piece looked like it survived and does not. Predictions
+      below 0.60 really do have a higher median error, 43 fold against 5, and
+      the test on that returns p = 0.0005. All 23 of them come from one protein.
+      The comparison is acetylcholinesterase against fourteen others, so it
+      measures that acetylcholinesterase is hard, which its affinities already
+      told us.</p>
+    <p class="body">The thresholds are removed rather than retuned. Fitting new
+      ones to the 325 predictions that refuted the old ones would produce
+      numbers that describe this corpus and promise nothing about the next
+      target. Interface confidence is still recorded on every prediction and
+      still shown to a reader, because it is the model's own statement about the
+      structure it built. Nothing downstream weights, gates or filters on it, and
+      predicting which affinities are wrong is back to being an open problem
+      here.</p>
+    <p class="f-repro">Reproduce: per-target correlations over
+      <code>~/.vessari/corpus/*/predictions.json</code> plus the three named
+      held-out sets in <a href="../data/">data</a>. The retraction and every
+      number in it are logged in
+      <a href="../data-files/CORRECTIONS.md">CORRECTIONS.md</a>.</p>
+  </article>
+
+  <article class="finding">
     <p class="f-label f-label--own">Our own error. Published for a day before we
       caught it.</p>
     <h2 class="h2">A sentence we put on this site was false, and the effect it
@@ -72,7 +114,7 @@
       to removing the series.</p>
     <p class="f-repro">Reproduce: <code>scripts/score_holdout.py</code> against
       <code>abl1-holdout-predictions.json</code>. Every number that has moved is
-      logged in <a href="../CORRECTIONS.md">CORRECTIONS.md</a>.</p>
+      logged in <a href="../data-files/CORRECTIONS.md">CORRECTIONS.md</a>.</p>
   </article>
 
   <article class="finding">

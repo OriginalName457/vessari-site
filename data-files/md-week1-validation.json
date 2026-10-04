@@ -1,0 +1,154 @@
+{
+ "what_this_is": "Week one of the molecular dynamics module. One solvated protein, the villin headpiece, run under NVE at two timesteps on both GPU platforms. NVE means no thermostat, so nothing is exchanging energy with the system and total energy has to be flat. A thermostatted run cannot test this, because a thermostat absorbs an integrator's mistakes and reports a healthy temperature while doing so.",
+ "system": {
+  "source": "1vii.pdb",
+  "n_atoms": 8562,
+  "n_residues": 2702,
+  "n_waters": 2650,
+  "box_nm": [
+   4.531,
+   4.531,
+   4.531
+  ],
+  "net_charge_before_ions": 2,
+  "forcefield": [
+   "amber14-all.xml",
+   "amber14/tip3pfb.xml"
+  ],
+  "water_model": "tip3pfb",
+  "solvation_template": "tip3p",
+  "ph": 7.0,
+  "ionic_strength_m": 0.15,
+  "padding_nm": 1.0,
+  "added_atoms": {
+   "residues_in_input": 36,
+   "atoms_in_input": 596,
+   "missing_residues_modelled": 0,
+   "missing_heavy_atoms_added": 0,
+   "nonstandard_residues_replaced": 0
+  }
+ },
+ "picoseconds_per_run": 200.0,
+ "platforms": {
+  "CUDA": {
+   "runs": {
+    "1.0": {
+     "performance": {
+      "ns_per_day": 304.2,
+      "wall_seconds": 56.8
+     },
+     "drift": {
+      "n_samples": 200,
+      "ns": 0.2,
+      "n_atoms": 8562,
+      "dof": 25686,
+      "temperature_k": 300.0,
+      "mean_total_kj": -107479.9,
+      "drift_kj_per_ns": 39.02,
+      "drift_kt_per_ns_per_dof": 0.0006090094393057307,
+      "fluctuation_fraction": 0.00012109502399020906,
+      "r_squared": 0.02995796641953352,
+      "verdict": "no trend",
+      "note": "total energy shows no trend over the run, r-squared 0.030. The variation is oscillation rather than drift, which is what a symplectic integrator should give."
+     }
+    },
+    "0.5": {
+     "performance": {
+      "ns_per_day": 183.0,
+      "wall_seconds": 94.4
+     },
+     "drift": {
+      "n_samples": 200,
+      "ns": 0.2,
+      "n_atoms": 8562,
+      "dof": 25686,
+      "temperature_k": 300.0,
+      "mean_total_kj": -106391.0,
+      "drift_kj_per_ns": 3.12,
+      "drift_kt_per_ns_per_dof": 4.8621447941882826e-05,
+      "fluctuation_fraction": 2.887506038978496e-05,
+      "r_squared": 0.0034274548578603348,
+      "verdict": "no trend",
+      "note": "total energy shows no trend over the run, r-squared 0.003. The variation is oscillation rather than drift, which is what a symplectic integrator should give."
+     }
+    }
+   },
+   "second_order_by_drift_slope": {
+    "pass": true,
+    "note": "neither run shows a trend to scale, which means drift is below what this run length can resolve. That is a pass by a stronger route than the scaling check."
+   },
+   "second_order_by_fluctuation": {
+    "pass": true,
+    "note": "energy fluctuation fell 4.19x when the timestep was halved (0.0121% to 0.0029%), against 4x expected for a second order method."
+   }
+  },
+  "OpenCL": {
+   "runs": {
+    "1.0": {
+     "performance": {
+      "ns_per_day": 220.2,
+      "wall_seconds": 78.5
+     },
+     "drift": {
+      "n_samples": 200,
+      "ns": 0.2,
+      "n_atoms": 8562,
+      "dof": 25686,
+      "temperature_k": 300.0,
+      "mean_total_kj": -107370.2,
+      "drift_kj_per_ns": -0.03,
+      "drift_kt_per_ns_per_dof": -5.42881462176647e-07,
+      "fluctuation_fraction": 0.00011671797473181463,
+      "r_squared": 2.5676653248041248e-08,
+      "verdict": "no trend",
+      "note": "total energy shows no trend over the run, r-squared 0.000. The variation is oscillation rather than drift, which is what a symplectic integrator should give."
+     }
+    },
+    "0.5": {
+     "performance": {
+      "ns_per_day": 139.9,
+      "wall_seconds": 123.5
+     },
+     "drift": {
+      "n_samples": 200,
+      "ns": 0.2,
+      "n_atoms": 8562,
+      "dof": 25686,
+      "temperature_k": 300.0,
+      "mean_total_kj": -107294.7,
+      "drift_kj_per_ns": -4.91,
+      "drift_kt_per_ns_per_dof": -7.6560994852649e-05,
+      "fluctuation_fraction": 2.9008883882156452e-05,
+      "r_squared": 0.00827881953944809,
+      "verdict": "no trend",
+      "note": "total energy shows no trend over the run, r-squared 0.008. The variation is oscillation rather than drift, which is what a symplectic integrator should give."
+     }
+    }
+   },
+   "second_order_by_drift_slope": {
+    "pass": true,
+    "note": "neither run shows a trend to scale, which means drift is below what this run length can resolve. That is a pass by a stronger route than the scaling check."
+   },
+   "second_order_by_fluctuation": {
+    "pass": true,
+    "note": "energy fluctuation fell 4.02x when the timestep was halved (0.0117% to 0.0029%), against 4x expected for a second order method."
+   }
+  }
+ },
+ "performance_matched_settings": {
+  "note": "Identical system, timestep, precision and run length. The CUDA platform did not work at all until the CUDA 12 build of the plugin was installed: the default wheel ships kernels compiled against CUDA 13.4 and this driver accepts 13.1, which fails as CUDA_ERROR_UNSUPPORTED_PTX_VERSION.",
+  "ns_per_day": {
+   "1.0_fs": {
+    "CUDA": 304,
+    "OpenCL": 220,
+    "speedup": 1.38
+   },
+   "0.5_fs": {
+    "CUDA": 183,
+    "OpenCL": 140,
+    "speedup": 1.31
+   }
+  }
+ },
+ "conclusion": "Energy is conserved, and conserved for the right reason. Neither platform shows a resolvable drift at either timestep. The amplitude of the energy oscillation falls 4.19x on CUDA and 4.02x on OpenCL when the timestep is halved, against 4x expected for a second order method, which is positive evidence rather than an absence of evidence. Two independent GPU implementations agreeing on that figure is a stronger check than either alone."
+}

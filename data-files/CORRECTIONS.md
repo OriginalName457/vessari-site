@@ -211,3 +211,56 @@ The 150 to 420 residue bound in `src/vessari/corpus/queue.py` stays, because
 nothing here tests it. Every target in the corpus was inside that range by
 construction, so the corpus says nothing about the span from 420 to 583 residues
 that the bound was written to cover.
+
+## Interface pTM does not predict affinity error
+
+Withdrawn 2026-10-03. Measured on 325 predictions across fifteen targets.
+
+`vessari/uncertainty/pose.py` claimed that the model's own confidence in the
+ligand interface predicts how wrong the affinity will be, and used it to sort
+predictions into good, marginal and poor. That claim came from three targets. It
+does not survive fifteen, and the three ways it was stated fail separately.
+
+**As a correlation.** Per-target Spearman between interface pTM and absolute log
+error, averaged over fifteen targets: **-0.067**, bootstrap interval over targets
+**[-0.209, +0.085]**. Nine of fifteen negative. Wilcoxon against zero p = 0.277.
+The figure first reported, about -0.57, was the mean of ABL1 (-0.426), AChE
+(-0.380) and InhA (-0.900), which were the three targets measured first. Re-run
+now at n=13, InhA comes back **+0.577**, so even that set does not reproduce.
+
+**As a bound on the worst case.** The claim was that a pose above 0.90 is never
+wrong by more than about 400 fold. **Eight of 244** such poses exceed it, the
+worst by **132,867 fold at an interface pTM of 0.961** (dihydrofolate reductase,
+P00374).
+
+**As a filter on bad poses.** Predictions below 0.60 do show a higher median
+error, 43 fold against 5, Mann-Whitney p = 0.0005. The test is void: all 23 of
+those predictions come from one target, acetylcholinesterase. It compares one
+hard protein against fourteen others and says nothing about the pose score.
+
+| bin | n | median | 90th pct | worst |
+|---|---|---|---|---|
+| above 0.90 | 244 | 5x | 118x | 132,867x |
+| 0.60 to 0.90 | 58 | 5x | 385x | 78,734x |
+| below 0.60 | 23 | 43x | 2,168x | 18,168x |
+
+The top two bins have the same median.
+
+**What changed.** `GOOD_POSE` and `POOR_POSE` are removed rather than retuned,
+because retuning them on the 325 predictions that refuted them would fit this
+corpus and claim nothing about the next target. `assess_pose` now returns a
+single verdict, `recorded`, carrying the number. The dossier and the assessment
+summary print the interface pTM instead of a warning. Nothing downstream
+weights, gates or filters on it.
+
+**Why it took this long.** The original three targets were not a sample, they
+were the first three available, and two of the three happened to be the ones
+where the model placed some ligands badly. On a target where every pose comes
+back confident the correlation cannot be measured at all, which is most targets:
+244 of 325 predictions sit above 0.90. The signal that was reported was the
+favourable tail of a distribution centred near zero.
+
+**Still open.** Error prediction remains unsolved. The ensemble spread between
+the two affinity modules is recorded on every prediction and has not been tested
+against error across the corpus. That is the next candidate and it should be
+pre-registered before it is measured, not after.
