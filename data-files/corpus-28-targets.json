@@ -495,5 +495,39 @@
    "residues": 393,
    "reason": "only 0 compounds survived selection, fewer than the 12 a scored set needs"
   }
- ]
+ ],
+ "independence_check": {
+  "question": "The aggregate interval is a bootstrap over targets, which assumes the entries are independent. Two pairs in the corpus are the same protein from different organisms, so that assumption needed testing rather than stating.",
+  "ortholog_pairs": [
+   {
+    "pair": "thymidylate synthase, human P04818 and mouse P07607",
+    "sequence_identity_pct": 90,
+    "shared_compounds": 1,
+    "held_out_set_sizes": [
+     21,
+     14
+    ],
+    "spearman": [
+     0.479,
+     0.71
+    ]
+   },
+   {
+    "pair": "dihydrofolate reductase, human P00374 and E. coli P0ABQ4",
+    "sequence_identity_pct": 33,
+    "shared_compounds": 1,
+    "held_out_set_sizes": [
+     30,
+     28
+    ],
+    "spearman": [
+     0.633,
+     0.67
+    ]
+   }
+  ],
+  "cluster_bootstrap": "Collapsing each pair to one family and resampling families rather than entries gives [0.473, 0.627] against [0.474, 0.629], the same width to three decimals. Two pairs out of twenty nine entries is too few to move it, so the published interval stands.",
+  "what_the_pair_does_tell_us": "Human and mouse thymidylate synthase are 90 percent identical and share one compound out of fourteen. They scored 0.479 and 0.710. Nearly the same protein, different compounds, a spread of 0.23. That is a direct measure of how much of a single target's Spearman comes from which compounds happened to survive selection rather than from the protein, and it is the reason a single target's figure should not be quoted without an interval over targets beside it.",
+  "a_measure_I_got_wrong_first": "Identity was first computed by comparing residues at the same index in both sequences, which returned 7 percent for a pair that is 90 percent identical. An ungapped positional comparison returns roughly chance identity for any pair with an offset, and reporting it would have supported the opposite conclusion."
+ }
 }
