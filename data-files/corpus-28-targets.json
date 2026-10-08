@@ -1,0 +1,499 @@
+{
+ "what_this_is": "Every target the unattended worker has scored, and every target it declined to score with the reason attached. One entry per protein. Each Spearman is between measured and predicted affinity across a held-out set built so that no two compounds share an ECFP4 Tanimoto cluster at 0.6, which is the rule that stops a congeneric series from inflating the figure.",
+ "n_scored": 28,
+ "n_declined": 11,
+ "aggregate": {
+  "mean_spearman": 0.55,
+  "median_spearman": 0.536,
+  "ci95_over_targets": [
+   0.467,
+   0.625
+  ],
+  "targets_above_0.5": 18,
+  "targets_below_0": 1
+ },
+ "class_a_gpcr_comparison": {
+  "question": "Co-folding a seven transmembrane receptor without its membrane, from sequence alone, should plausibly be harder than folding a soluble enzyme. This tests whether it is.",
+  "gpcr": {
+   "n": 16,
+   "mean_spearman": 0.585,
+   "median_spearman": 0.568,
+   "median_fold_error": 4.2
+  },
+  "other": {
+   "n": 12,
+   "mean_spearman": 0.503,
+   "median_spearman": 0.496,
+   "median_fold_error": 4.6
+  },
+  "difference": 0.082,
+  "difference_ci95": [
+   -0.079,
+   0.249
+  ],
+  "mann_whitney_p": 0.318,
+  "conclusion": "No detectable difference. The interval on the difference straddles zero, so this does not say receptors are easier. It says they are not harder, which is the claim that was in doubt."
+ },
+ "scored": [
+  {
+   "spearman": 0.901,
+   "ci": [
+    0.768,
+    0.953
+   ],
+   "median_fold": 4.0,
+   "target": "Dihydroorotate dehydrogenase (quinone), mitochondrial",
+   "accession": "Q02127",
+   "residues": 395,
+   "organism": "Homo sapiens",
+   "n_measured_compounds": 3264,
+   "hours": 0.65
+  },
+  {
+   "spearman": 0.818,
+   "ci": [
+    0.308,
+    0.99
+   ],
+   "median_fold": 4.4,
+   "target": "Catechol O-methyltransferase",
+   "accession": "P21964",
+   "residues": 271,
+   "organism": "Homo sapiens",
+   "n_measured_compounds": 224,
+   "hours": 0.3
+  },
+  {
+   "spearman": 0.813,
+   "ci": [
+    0.55,
+    0.941
+   ],
+   "median_fold": 2.3,
+   "target": "P2Y purinoceptor 12",
+   "accession": "Q9H244",
+   "residues": 342,
+   "organism": "Homo sapiens",
+   "n_measured_compounds": 1766,
+   "hours": 0.52
+  },
+  {
+   "spearman": 0.798,
+   "ci": [
+    0.545,
+    0.919
+   ],
+   "median_fold": 3.9,
+   "target": "Beta-2 adrenergic receptor",
+   "accession": "P07550",
+   "residues": 413,
+   "organism": "Homo sapiens",
+   "n_measured_compounds": 1805,
+   "hours": 0.7
+  },
+  {
+   "spearman": 0.737,
+   "ci": [
+    0.495,
+    0.862
+   ],
+   "median_fold": 5.2,
+   "target": "Vasopressin V1a receptor",
+   "accession": "P37288",
+   "residues": 418,
+   "organism": "Homo sapiens",
+   "n_measured_compounds": 2331,
+   "hours": 0.57
+  },
+  {
+   "spearman": 0.732,
+   "ci": [
+    0.353,
+    0.915
+   ],
+   "median_fold": 3.7,
+   "target": "5-hydroxytryptamine receptor 4",
+   "accession": "Q13639",
+   "residues": 388,
+   "organism": "Homo sapiens",
+   "n_measured_compounds": 694,
+   "hours": 0.38
+  },
+  {
+   "spearman": 0.73,
+   "ci": [
+    0.503,
+    0.852
+   ],
+   "median_fold": 4.4,
+   "target": "Type-1 angiotensin II receptor",
+   "accession": "P30556",
+   "residues": 359,
+   "organism": "Homo sapiens",
+   "n_measured_compounds": 1517,
+   "hours": 0.54
+  },
+  {
+   "spearman": 0.704,
+   "ci": [
+    0.373,
+    0.886
+   ],
+   "median_fold": 3.5,
+   "target": "Corticotropin-releasing factor receptor 1",
+   "accession": "P34998",
+   "residues": 415,
+   "organism": "Homo sapiens",
+   "n_measured_compounds": 2447,
+   "hours": 0.55
+  },
+  {
+   "spearman": 0.67,
+   "ci": [
+    0.328,
+    0.858
+   ],
+   "median_fold": 13.8,
+   "target": "Dihydrofolate reductase",
+   "accession": "P0ABQ4",
+   "residues": 159,
+   "organism": "Escherichia coli (strain K12)",
+   "n_measured_compounds": 824,
+   "hours": 0.49
+  },
+  {
+   "spearman": 0.651,
+   "ci": [
+    0.303,
+    0.873
+   ],
+   "median_fold": 4.1,
+   "target": "Prostaglandin E2 receptor EP2 subtype",
+   "accession": "P43116",
+   "residues": 358,
+   "organism": "Homo sapiens",
+   "n_measured_compounds": 810,
+   "hours": 0.5
+  },
+  {
+   "spearman": 0.633,
+   "ci": [
+    0.291,
+    0.839
+   ],
+   "median_fold": 3.9,
+   "target": "Dihydrofolate reductase",
+   "accession": "P00374",
+   "residues": 187,
+   "organism": "Homo sapiens",
+   "n_measured_compounds": 2009,
+   "hours": 0.57
+  },
+  {
+   "spearman": 0.596,
+   "ci": [
+    0.198,
+    0.869
+   ],
+   "median_fold": 3.0,
+   "target": "Gonadotropin-releasing hormone receptor",
+   "accession": "P30968",
+   "residues": 328,
+   "organism": "Homo sapiens",
+   "n_measured_compounds": 2908,
+   "hours": 0.52
+  },
+  {
+   "spearman": 0.55,
+   "ci": [
+    0.13,
+    0.842
+   ],
+   "median_fold": 2.9,
+   "target": "Serine protease 1",
+   "accession": "P07477",
+   "residues": 247,
+   "organism": "Homo sapiens",
+   "n_measured_compounds": 2164,
+   "hours": 0.48
+  },
+  {
+   "spearman": 0.539,
+   "ci": [
+    0.042,
+    0.836
+   ],
+   "median_fold": 24.3,
+   "target": "Somatostatin receptor type 2",
+   "accession": "P30874",
+   "residues": 369,
+   "organism": "Homo sapiens",
+   "n_measured_compounds": 1301,
+   "hours": 0.31
+  },
+  {
+   "spearman": 0.534,
+   "ci": [
+    0.087,
+    0.803
+   ],
+   "median_fold": 7.8,
+   "target": "5-hydroxytryptamine receptor 1B",
+   "accession": "P28222",
+   "residues": 390,
+   "organism": "Homo sapiens",
+   "n_measured_compounds": 1620,
+   "hours": 0.59
+  },
+  {
+   "spearman": 0.532,
+   "ci": [
+    0.178,
+    0.769
+   ],
+   "median_fold": 5.1,
+   "target": "Oxytocin receptor",
+   "accession": "P30559",
+   "residues": 389,
+   "organism": "Homo sapiens",
+   "n_measured_compounds": 1074,
+   "hours": 0.54
+  },
+  {
+   "spearman": 0.523,
+   "ci": [
+    0.163,
+    0.772
+   ],
+   "median_fold": 3.6,
+   "target": "Vasopressin V2 receptor",
+   "accession": "P30518",
+   "residues": 371,
+   "organism": "Homo sapiens",
+   "n_measured_compounds": 1216,
+   "hours": 0.52
+  },
+  {
+   "spearman": 0.513,
+   "ci": [
+    -0.025,
+    0.858
+   ],
+   "median_fold": 8.7,
+   "target": "3-oxo-5-alpha-steroid 4-dehydrogenase 1",
+   "accession": "P18405",
+   "residues": 259,
+   "organism": "Homo sapiens",
+   "n_measured_compounds": 615,
+   "hours": 0.44
+  },
+  {
+   "spearman": 0.49,
+   "ci": [
+    0.092,
+    0.779
+   ],
+   "median_fold": 4.9,
+   "target": "5-hydroxytryptamine receptor 1D",
+   "accession": "P28221",
+   "residues": 377,
+   "organism": "Homo sapiens",
+   "n_measured_compounds": 1795,
+   "hours": 0.64
+  },
+  {
+   "spearman": 0.479,
+   "ci": [
+    -0.015,
+    0.822
+   ],
+   "median_fold": 19.0,
+   "target": "Thymidylate synthase",
+   "accession": "P04818",
+   "residues": 313,
+   "organism": "Homo sapiens",
+   "n_measured_compounds": 1050,
+   "hours": 0.43
+  },
+  {
+   "spearman": 0.473,
+   "ci": [
+    -0.174,
+    0.882
+   ],
+   "median_fold": 14.9,
+   "target": "InhA, M. tuberculosis enoyl reductase",
+   "accession": "P9WGR1",
+   "residues": 269,
+   "organism": "Mycobacterium tuberculosis (strain ATCC 25618 / H37Rv)",
+   "n_measured_compounds": 541,
+   "hours": 0.28
+  },
+  {
+   "spearman": 0.453,
+   "ci": [
+    0.073,
+    0.736
+   ],
+   "median_fold": 3.3,
+   "target": "Tumor necrosis factor",
+   "accession": "P01375",
+   "residues": 233,
+   "organism": "Homo sapiens",
+   "n_measured_compounds": 1847,
+   "hours": 0.5
+  },
+  {
+   "spearman": 0.448,
+   "ci": [
+    -0.179,
+    0.879
+   ],
+   "median_fold": 3.1,
+   "target": "Prostacyclin receptor",
+   "accession": "P43119",
+   "residues": 386,
+   "organism": "Homo sapiens",
+   "n_measured_compounds": 532,
+   "hours": 0.24
+  },
+  {
+   "spearman": 0.444,
+   "ci": [
+    0.086,
+    0.706
+   ],
+   "median_fold": 12.8,
+   "target": "Nociceptin receptor",
+   "accession": "P41146",
+   "residues": 370,
+   "organism": "Homo sapiens",
+   "n_measured_compounds": 3312,
+   "hours": 0.6
+  },
+  {
+   "spearman": 0.405,
+   "ci": [
+    -0.101,
+    0.749
+   ],
+   "median_fold": 2.6,
+   "target": "Farnesyl pyrophosphate synthase",
+   "accession": "P14324",
+   "residues": 419,
+   "organism": "Homo sapiens",
+   "n_measured_compounds": 854,
+   "hours": 0.45
+  },
+  {
+   "spearman": 0.242,
+   "ci": [
+    -0.439,
+    0.746
+   ],
+   "median_fold": 4.8,
+   "target": "Vascular endothelial growth factor A, long form",
+   "accession": "P15692",
+   "residues": 395,
+   "organism": "Homo sapiens",
+   "n_measured_compounds": 190,
+   "hours": 0.26
+  },
+  {
+   "spearman": 0.091,
+   "ci": [
+    -0.639,
+    0.795
+   ],
+   "median_fold": 5.1,
+   "target": "Histamine H2 receptor",
+   "accession": "P25021",
+   "residues": 359,
+   "organism": "Homo sapiens",
+   "n_measured_compounds": 827,
+   "hours": 0.44
+  },
+  {
+   "spearman": -0.1,
+   "ci": [
+    -0.638,
+    0.432
+   ],
+   "median_fold": 28.8,
+   "target": "3-oxo-5-alpha-steroid 4-dehydrogenase 2",
+   "accession": "P31213",
+   "residues": 254,
+   "organism": "Homo sapiens",
+   "n_measured_compounds": 662,
+   "hours": 0.3
+  }
+ ],
+ "declined": [
+  {
+   "target": "Peptidyl-prolyl cis-trans isomerase B",
+   "accession": "P23284",
+   "residues": 216,
+   "reason": "only 1 compounds survived selection, fewer than the 12 a scored set needs"
+  },
+  {
+   "target": "Beta-lactamase TEM",
+   "accession": "P62593",
+   "residues": 286,
+   "reason": "only 5 compounds survived selection, fewer than the 12 a scored set needs"
+  },
+  {
+   "target": "Adenosine deaminase",
+   "accession": "P00813",
+   "residues": 363,
+   "reason": "only 6 compounds survived selection, fewer than the 12 a scored set needs"
+  },
+  {
+   "target": "UDP-N-acetylglucosamine 1-carboxyvinyltransferase",
+   "accession": "P0A749",
+   "residues": 419,
+   "reason": "only 5 compounds survived selection, fewer than the 12 a scored set needs"
+  },
+  {
+   "target": "Peptidyl-prolyl cis-trans isomerase A",
+   "accession": "P62937",
+   "residues": 165,
+   "reason": "only 5 compounds survived selection, fewer than the 12 a scored set needs"
+  },
+  {
+   "target": "Enoyl-[acyl-carrier-protein] reductase [NADH] FabI",
+   "accession": "P0AEK4",
+   "residues": 262,
+   "reason": "only 7 compounds survived selection, fewer than the 12 a scored set needs"
+  },
+  {
+   "target": "Adrenocorticotropic hormone receptor",
+   "accession": "Q01718",
+   "residues": 297,
+   "reason": "only 3 compounds survived selection, fewer than the 12 a scored set needs"
+  },
+  {
+   "target": "Cysteinyl leukotriene receptor 1",
+   "accession": "Q9Y271",
+   "residues": 337,
+   "reason": "no sequence"
+  },
+  {
+   "target": "Prostaglandin F2-alpha receptor",
+   "accession": "P43088",
+   "residues": 359,
+   "reason": "only 9 compounds survived selection, fewer than the 12 a scored set needs"
+  },
+  {
+   "target": "Thymidine kinase",
+   "accession": "P06479",
+   "residues": 376,
+   "reason": "only 4 compounds survived selection, fewer than the 12 a scored set needs"
+  },
+  {
+   "target": "4-hydroxyphenylpyruvate dioxygenase",
+   "accession": "P32754",
+   "residues": 393,
+   "reason": "only 0 compounds survived selection, fewer than the 12 a scored set needs"
+  }
+ ]
+}

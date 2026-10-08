@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="
+  default-src 'none'; script-src 'none';
+  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+  font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data:;
+  connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The receptors were not harder</title>
+<meta name="description" content="Engineering notes: the corpus went from twelve targets to twenty eight, sixteen of them class A GPCRs, and the receptors scored no worse than the soluble enzymes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&family=DM+Mono:wght@400;500&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../findings/findings.css">
+<style>
+  .ct { width: 100%; border-collapse: collapse; margin: 1.6rem 0;
+         font-size: 0.86rem; }
+  .ct th, .ct td { padding: 0.3rem 0.6rem; text-align: left;
+                    border-bottom: 1px solid var(--rule, #e4e1db); }
+  .ct th { font: 600 0.72rem/1 'Barlow Semi Condensed', system-ui, sans-serif;
+            text-transform: uppercase; letter-spacing: 0.06em; }
+  .ct .num { text-align: right; font-family: 'DM Mono', ui-monospace, monospace;
+              font-variant-numeric: tabular-nums; }
+  .wrap { overflow-x: auto; }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-in">
+    <a class="wordmark" href="../">VESSARI</a>
+    <span class="masthead-sub">notes</span>
+    <nav class="topnav" aria-label="Sections">
+      <a href="../">assessment</a>
+      <a href="../findings/">findings</a>
+      <a href="./">notes</a>
+      <a href="../data/">data</a>
+    </nav>
+  </div>
+</header>
+
+<main class="strip">
+  <div class="f-intro">
+    <h1 class="h1">The receptors were not harder</h1>
+    <p class="lede">The corpus went from twelve scored proteins to twenty eight.
+      Sixteen of the new ones are class A G protein coupled receptors, which we
+      expected to be the point where this stops working. They scored no worse
+      than the soluble enzymes.</p>
+  </div>
+
+  <p class="body">Everything this project claims rests on a corpus of proteins
+    the pipeline has been scored against, one entry each, with the held-out set
+    built so no two compounds share an ECFP4 Tanimoto cluster at 0.6. That rule
+    exists because splitting by Bemis-Murcko scaffold let eight members of one
+    congeneric series into a thirty compound set and moved a Spearman from 0.248
+    to 0.564. The corpus was twelve. It is now twenty eight, with eleven more
+    proteins the worker declined and recorded a reason for.</p>
+
+  <h2 class="h2">What the twenty eight scored</h2>
+
+  <p class="body">Mean Spearman <strong>0.55</strong>, bootstrap
+    interval over targets
+    <strong>[0.467, 0.625]</strong>.
+    At twelve targets the same figure was 0.538 with an interval of
+    [0.430, 0.636]. More than doubling the corpus moved the mean by 0.012 and
+    narrowed the interval, which is the result we wanted and not the one a
+    cherry picked twelve would have given.
+    18 of 28 are above 0.5 and
+    1 is below zero.</p>
+
+  <div class="wrap">
+  <table class="ct">
+    <thead><tr><th>Protein</th><th class="num">Spearman</th>
+      <th class="num">Median error</th><th class="num">Residues</th>
+      <th>Class</th></tr></thead>
+    <tbody>
+      <tr><td>Dihydroorotate dehydrogenase (quinone), mitoch</td><td class="num">+0.901</td><td class="num">4.0x</td><td class="num">395</td><td></td></tr>
+      <tr><td>Catechol O-methyltransferase</td><td class="num">+0.818</td><td class="num">4.4x</td><td class="num">271</td><td></td></tr>
+      <tr><td>P2Y purinoceptor 12</td><td class="num">+0.813</td><td class="num">2.3x</td><td class="num">342</td><td>receptor</td></tr>
+      <tr><td>Beta-2 adrenergic receptor</td><td class="num">+0.798</td><td class="num">3.9x</td><td class="num">413</td><td>receptor</td></tr>
+      <tr><td>Vasopressin V1a receptor</td><td class="num">+0.737</td><td class="num">5.2x</td><td class="num">418</td><td>receptor</td></tr>
+      <tr><td>5-hydroxytryptamine receptor 4</td><td class="num">+0.732</td><td class="num">3.7x</td><td class="num">388</td><td>receptor</td></tr>
+      <tr><td>Type-1 angiotensin II receptor</td><td class="num">+0.730</td><td class="num">4.4x</td><td class="num">359</td><td>receptor</td></tr>
+      <tr><td>Corticotropin-releasing factor receptor 1</td><td class="num">+0.704</td><td class="num">3.5x</td><td class="num">415</td><td>receptor</td></tr>
+      <tr><td>Dihydrofolate reductase</td><td class="num">+0.670</td><td class="num">13.8x</td><td class="num">159</td><td></td></tr>
+      <tr><td>Prostaglandin E2 receptor EP2 subtype</td><td class="num">+0.651</td><td class="num">4.1x</td><td class="num">358</td><td>receptor</td></tr>
+      <tr><td>Dihydrofolate reductase</td><td class="num">+0.633</td><td class="num">3.9x</td><td class="num">187</td><td></td></tr>
+      <tr><td>Gonadotropin-releasing hormone receptor</td><td class="num">+0.596</td><td class="num">3.0x</td><td class="num">328</td><td>receptor</td></tr>
+      <tr><td>Serine protease 1</td><td class="num">+0.550</td><td class="num">2.9x</td><td class="num">247</td><td></td></tr>
+      <tr><td>Somatostatin receptor type 2</td><td class="num">+0.539</td><td class="num">24.3x</td><td class="num">369</td><td>receptor</td></tr>
+      <tr><td>5-hydroxytryptamine receptor 1B</td><td class="num">+0.534</td><td class="num">7.8x</td><td class="num">390</td><td>receptor</td></tr>
+      <tr><td>Oxytocin receptor</td><td class="num">+0.532</td><td class="num">5.1x</td><td class="num">389</td><td>receptor</td></tr>
+      <tr><td>Vasopressin V2 receptor</td><td class="num">+0.523</td><td class="num">3.6x</td><td class="num">371</td><td>receptor</td></tr>
+      <tr><td>3-oxo-5-alpha-steroid 4-dehydrogenase 1</td><td class="num">+0.513</td><td class="num">8.7x</td><td class="num">259</td><td></td></tr>
+      <tr><td>5-hydroxytryptamine receptor 1D</td><td class="num">+0.490</td><td class="num">4.9x</td><td class="num">377</td><td>receptor</td></tr>
+      <tr><td>Thymidylate synthase</td><td class="num">+0.479</td><td class="num">19.0x</td><td class="num">313</td><td></td></tr>
+      <tr><td>InhA, M. tuberculosis enoyl reductase</td><td class="num">+0.473</td><td class="num">14.9x</td><td class="num">269</td><td></td></tr>
+      <tr><td>Tumor necrosis factor</td><td class="num">+0.453</td><td class="num">3.3x</td><td class="num">233</td><td></td></tr>
+      <tr><td>Prostacyclin receptor</td><td class="num">+0.448</td><td class="num">3.1x</td><td class="num">386</td><td>receptor</td></tr>
+      <tr><td>Nociceptin receptor</td><td class="num">+0.444</td><td class="num">12.8x</td><td class="num">370</td><td>receptor</td></tr>
+      <tr><td>Farnesyl pyrophosphate synthase</td><td class="num">+0.405</td><td class="num">2.6x</td><td class="num">419</td><td></td></tr>
+      <tr><td>Vascular endothelial growth factor A, long for</td><td class="num">+0.242</td><td class="num">4.8x</td><td class="num">395</td><td></td></tr>
+      <tr><td>Histamine H2 receptor</td><td class="num">+0.091</td><td class="num">5.1x</td><td class="num">359</td><td>receptor</td></tr>
+      <tr><td>3-oxo-5-alpha-steroid 4-dehydrogenase 2</td><td class="num">-0.100</td><td class="num">28.8x</td><td class="num">254</td><td></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2 class="h2">The receptors</h2>
+
+  <p class="body">A G protein coupled receptor has seven transmembrane helices
+    and sits in a lipid bilayer. The pipeline folds it from sequence with no
+    membrane, no lipid, and no experimental structure, then reads an affinity
+    off the pose. There is a straightforward reason to expect that to fail, and
+    the day before this run I wrote that it probably would, that the receptors
+    would pull the mean down, and that this was the point of measuring them.</p>
+
+  <div class="wrap">
+  <table class="ct">
+    <thead><tr><th>Group</th><th class="num">n</th><th class="num">Mean</th>
+      <th class="num">Median</th><th class="num">Median error</th></tr></thead>
+    <tbody>
+      <tr><td>Class A GPCRs</td><td class="num">16</td>
+        <td class="num">+0.585</td>
+        <td class="num">+0.568</td>
+        <td class="num">4.2x</td></tr>
+      <tr><td>Everything else</td><td class="num">12</td>
+        <td class="num">+0.503</td>
+        <td class="num">+0.496</td>
+        <td class="num">4.6x</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p class="body">The receptors came out <strong>+0.082</strong>
+    ahead, with an interval on that difference of
+    [-0.079, +0.249] and a
+    rank sum test at p = 0.318. The interval straddles zero,
+    so the honest reading is not that receptors are easier. It is that they are
+    not harder, and that was the claim in doubt. The two best scoring receptors
+    are the P2Y purinoceptor 12 at 0.813 and the beta-2 adrenergic receptor at
+    0.798, both above every soluble enzyme in the corpus except two.</p>
+
+  <p class="body">This matters more than one more row in a table. Receptors of
+    this family are a large share of the proteins that approved drugs act on,
+    and they are the ones least likely to have a crystal structure to work from.
+    A method that needs an experimental structure cannot be pointed at most of
+    them. This one was pointed at sixteen and did not degrade.</p>
+
+  <p class="body">Two cautions belong next to that. Sixteen receptors is enough
+    to rule out a large penalty and not enough to rule out a small one, and all
+    sixteen are class A, which is the best characterised of the GPCR classes and
+    the one with the most structures in the training data for any model of this
+    kind. Neither of those is addressed by measuring more class A receptors.</p>
+
+  <h2 class="h2">The worst result in the corpus</h2>
+
+  <p class="body">Two paralogues of the same human enzyme sit at opposite ends.
+    3-oxo-5-alpha-steroid 4-dehydrogenase 1 scored +0.513 and its paralogue 2
+    scored <strong>-0.100</strong> with a median error of 28.8 fold, the only
+    negative entry here. They are the same fold acting on the same substrate.
+    Whatever separates them is not protein family, size, or compound count, and
+    we do not currently know what it is. It is recorded rather than explained.</p>
+
+  <h2 class="h2">The eleven it declined</h2>
+
+  <p class="body">A target the worker refused is part of the record, because a
+    corpus that only contains proteins we expected to do well on is not evidence
+    about the method. Every one of these is the same cause: too few compounds
+    survived series disjoint selection to carry an interval worth reporting.</p>
+
+  <ul class="body">
+      <li>Peptidyl-prolyl cis-trans isomerase B, 216 aa. only 1 compounds survived selection, fewer than the 12 a scored set needs</li>
+      <li>Beta-lactamase TEM, 286 aa. only 5 compounds survived selection, fewer than the 12 a scored set needs</li>
+      <li>Adenosine deaminase, 363 aa. only 6 compounds survived selection, fewer than the 12 a scored set needs</li>
+      <li>UDP-N-acetylglucosamine 1-carboxyvinyltransfer, 419 aa. only 5 compounds survived selection, fewer than the 12 a scored set needs</li>
+      <li>Peptidyl-prolyl cis-trans isomerase A, 165 aa. only 5 compounds survived selection, fewer than the 12 a scored set needs</li>
+      <li>Enoyl-[acyl-carrier-protein] reductase [NADH] , 262 aa. only 7 compounds survived selection, fewer than the 12 a scored set needs</li>
+      <li>Adrenocorticotropic hormone receptor, 297 aa. only 3 compounds survived selection, fewer than the 12 a scored set needs</li>
+      <li>Cysteinyl leukotriene receptor 1, 337 aa. no sequence</li>
+      <li>Prostaglandin F2-alpha receptor, 359 aa. only 9 compounds survived selection, fewer than the 12 a scored set needs</li>
+      <li>Thymidine kinase, 376 aa. only 4 compounds survived selection, fewer than the 12 a scored set needs</li>
+      <li>4-hydroxyphenylpyruvate dioxygenase, 393 aa. only 0 compounds survived selection, fewer than the 12 a scored set needs</li>
+  </ul>
+
+  <p class="f-foot">Every figure here reads from
+    <a href="../data-files/corpus-28-targets.json">corpus-28-targets.json</a>,
+    which is what the run wrote. The twelve target note that this supersedes is
+    still published at <a href="twelve-targets.html">twelve targets instead of
+    two</a>, and the numbers that moved are in
+    <a href="../data-files/CORRECTIONS.md">CORRECTIONS.md</a>.</p>
+</main>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <span>Vessari</span>
+    <nav><a href="./">Back to the notes</a></nav>
+  </div>
+</footer>
+</body></html>
