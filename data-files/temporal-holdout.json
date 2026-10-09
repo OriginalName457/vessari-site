@@ -1,0 +1,45 @@
+{
+ "registration": "benchmarks/preregistered/2026-10-09-temporal-holdout.md",
+ "why": "Every result this project reports is retrospective, on ChEMBL data that already existed. A temporal holdout is the closest honest approach to a prospective test without a wet lab: predict the most recently published compounds and ask whether accuracy holds.",
+ "n_compounds": 805,
+ "n_targets": 40,
+ "year_range": [
+  1976,
+  2025
+ ],
+ "median_year": 2004,
+ "compounds_2020_or_later": 38,
+ "compounds_by_half_decade": {
+  "1975": 9,
+  "1980": 30,
+  "1985": 25,
+  "1990": 97,
+  "1995": 125,
+  "2000": 130,
+  "2005": 110,
+  "2010": 124,
+  "2015": 117,
+  "2020": 34,
+  "2025": 4
+ },
+ "primary_test": {
+  "design": "pre-2020 against 2020-and-later, within target, a target counted only with at least 5 compounds in each bucket",
+  "result": "NOT COMPUTABLE",
+  "why": "Only 2 of 40 targets have 5 or more compounds in both buckets. 38 of 805 compounds were first published in 2020 or later. The registered minimum was not met and the boundary was not moved to manufacture a result."
+ },
+ "secondary_test": {
+  "design": "Spearman between publication year and absolute log error, within target, averaged over targets. Uses year continuously so it does not depend on where a boundary is placed.",
+  "n_targets": 39,
+  "mean_spearman": -0.109,
+  "ci95": [
+   -0.217,
+   -0.001
+  ],
+  "direction": "negative, meaning more recently published compounds are predicted slightly BETTER, not worse",
+  "reading_as_registered": "The registration said an improvement on recent compounds is to be reported as what it is and not celebrated, because the likely cause is that recent papers report cleaner assays rather than that the method is better on new chemistry. That still applies. The interval's upper end is -0.001, so it only just excludes zero and should be treated as marginal."
+ },
+ "what_this_does_and_does_not_establish": {
+  "does": "It is evidence against the specific worry that the model is recalling memorised measurements. Memorisation predicts worse accuracy on recent compounds, because those are least likely to sit in a training set assembled before them. The measured direction is the opposite, slightly.",
+  "does_not": "It is not a prospective validation and does not substitute for one. The primary test could not be run. ChEMBL's affinity data is mostly old, median publication year 2004, so this corpus cannot support a strong temporal holdout no matter how it is analysed. A genuinely prospective claim needs either a data source newer than ChEMBL's bulk or compounds tested at a bench after the prediction was made."
+ }
+}

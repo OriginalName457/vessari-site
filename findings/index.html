@@ -51,6 +51,49 @@
   </div>
 
   <article class="finding">
+    <p class="f-label f-label--own">Our own error. It was in the headline number
+      for forty one targets.</p>
+    <h2 class="h2">Part of our headline score was a property of our test sets,
+      not of the method</h2>
+    <p class="body">The number this project led with was a mean Spearman
+      correlation across the corpus, most recently 0.569. Spearman measures
+      whether predictions put compounds in the right order, and how high it can
+      go depends on how far apart the true answers are. A set whose compounds
+      all bind with similar strength has almost no ordering to recover, so it
+      scores low however good the predictions are.</p>
+    <p class="body">Across 41 targets, the spread of measured affinity in a
+      held-out set correlates with that target's Spearman at
+      <strong>+0.553</strong>, with a 99 percent interval of [+0.152, +0.801].
+      It survives a Bonferroni correction for having tested five explanations.
+      The other four, compound count, protein length, number of independent
+      chemical series, and chemical similarity within the set, are all null.</p>
+    <p class="body">So the corpus mean was reporting two things at once and we
+      were describing it as one. This should have been checked long before the
+      corpus reached forty targets.</p>
+    <p class="body">The fix was fixed in advance. The pre-registration for this
+      analysis said that if the spread came out significant, median fold error
+      becomes the headline, because it measures how far off each prediction is
+      and does not care how far apart the answers are. That holds: the
+      correlation between affinity range and median fold error is +0.094 with an
+      interval of [-0.240, +0.414], straddling zero. <strong>The headline is now
+      a median error of 4.5 fold across 41 targets.</strong> The Spearman is
+      still reported, next to the confound.</p>
+    <p class="body">One useful thing came out of it. A narrow spread warns that a
+      Spearman will understate performance on that target: all three targets
+      scoring below 0.1 have ranges of 0.90 to 0.99 log units against a corpus
+      median of 1.18, and the three widest ranges score 0.901, 0.714 and 0.633.
+      It is a warning and not a rule. The narrowest set we have, the prostacyclin
+      receptor at 0.74, still scores +0.448, and the one negative target is
+      genuinely bad rather than merely narrow, at 28.8 fold median error.</p>
+    <p class="f-repro">Reproduce: all five candidate explanations, with
+      uncorrected and corrected intervals, are in
+      <a href="../data-files/error-sources.json">error-sources.json</a>, and the
+      analysis was registered before it was run in
+      <a href="../data-files/2026-10-09-error-sources.md">its
+      pre-registration</a>.</p>
+  </article>
+
+  <article class="finding">
     <p class="f-label f-label--own">Our own error. Three targets said yes,
       fifteen said no.</p>
     <h2 class="h2">The model's confidence in a pose does not predict how wrong

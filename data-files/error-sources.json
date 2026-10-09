@@ -1,0 +1,105 @@
+{
+ "registration": "benchmarks/preregistered/2026-10-09-error-sources.md",
+ "question_1_can_we_say_which_predictions_to_trust": {
+  "candidate": "ensemble_spread, the disagreement between the two affinity modules",
+  "n_targets": 41,
+  "n_compounds": 910,
+  "mean_within_target_spearman_vs_abs_log_error": 0.022,
+  "ci95_over_targets": [
+   -0.054,
+   0.097
+  ],
+  "positive_in": "23 of 41 targets",
+  "verdict": "NULL",
+  "what_it_means": "The second candidate fails as the first did. Neither the model's own confidence in the interface it built (interface pTM, mean -0.067) nor the disagreement between its two affinity modules (mean +0.022) carries information about how wrong the affinity will be. Twenty three of forty one targets positive is what a coin does. Boltz-2's internal uncertainty signals do not transfer to affinity error, and that is worth stating as a finding rather than hiding as two failed attempts."
+ },
+ "question_2_how_much_of_the_error_is_the_measurement": {
+  "experimental_floor": {
+   "median_assay_spread_log": 0.26,
+   "median_assay_spread_fold": 1.8,
+   "quartiles_log": [
+    0.0,
+    0.26,
+    0.78
+   ],
+   "note": "The answer key disagrees with itself by about 1.8 fold at the median. No method can beat the disagreement in its own reference values."
+  },
+  "our_error": {
+   "median_log": 0.657,
+   "median_fold": 4.5
+  },
+  "ratio_in_log_units": 2.53,
+  "does_measurement_noise_explain_our_error": {
+   "mean_within_target_spearman": -0.029,
+   "ci95_over_targets": [
+    -0.109,
+    0.055
+   ],
+   "positive_in": "19 of 42 targets",
+   "verdict": "NO RELATIONSHIP",
+   "what_it_means": "This is the result that refuses the convenient story. If our error were substantially the lab's error, compounds whose assays disagree would show larger prediction error. They do not. So the gap between 4.5 fold and the 1.8 fold floor is ours, and we cannot attribute it to a noisy answer key."
+  },
+  "cleanest_subset": {
+   "rule_fixed_in_advance": "at least 3 assays and assay spread in the lowest quartile",
+   "n_compounds": 83,
+   "n_targets": 27,
+   "median_error_fold": 3.5,
+   "median_error_on_everything_fold": 4.5,
+   "median_assays_in_subset": 3,
+   "median_assays_overall": 2,
+   "caveat_registered_in_advance": "Compounds with more assays are better studied and therefore more likely to sit in any model's training data, so 3.5 fold against 4.5 fold has at least two explanations. Reported alongside the full corpus number and never instead of it."
+  }
+ },
+ "where_this_leaves_the_product_claim": "Two candidate triage signals have now failed. The honest position is that we cannot rank predictions by trustworthiness from model internals. What we do have is conformal prediction intervals that cover 82.8 percent against an 80 percent target within a protein we hold data for. The open problem is narrower than it looked: not finding a new signal, but making those intervals valid on a protein we have no data for, which is the actual use case and where across-target coverage currently ranges from 0 to 1.",
+ "question_3_which_targets_will_we_do_badly_on": {
+  "five_candidates_all_named_in_advance": {
+   "spread_of_measured_affinity_log_sd": {
+    "rho": 0.553,
+    "ci95": [
+     0.256,
+     0.754
+    ],
+    "ci99": [
+     0.152,
+     0.801
+    ],
+    "verdict": "REAL, survives Bonferroni"
+   },
+   "number_of_compounds": {
+    "rho": 0.23,
+    "ci99": [
+     -0.214,
+     0.621
+    ],
+    "verdict": "null"
+   },
+   "protein_length": {
+    "rho": 0.087,
+    "ci99": [
+     -0.328,
+     0.487
+    ],
+    "verdict": "null"
+   },
+   "effective_independent_series": {
+    "rho": 0.23,
+    "ci99": [
+     -0.209,
+     0.62
+    ],
+    "verdict": "null"
+   },
+   "max_pairwise_tanimoto": {
+    "rho": -0.06,
+    "ci99": [
+     -0.499,
+     0.386
+    ],
+    "verdict": "null"
+   }
+  },
+  "the_confound": "Spearman measures rank agreement and its value depends on how far the true ranks spread. A held-out set whose compounds all have similar potency scores a low Spearman however good the predictions are, because there is barely an ordering to recover. Across 41 targets the spread of measured affinity explains a substantial part of the per-target Spearman. So the corpus mean of 0.569 is partly a property of our held-out sets and not only of the method. This should have been checked long before forty targets.",
+  "consequence_fixed_in_advance": "The registration said that if this feature came out significant, median fold error becomes the headline number because it does not depend on range. Spearman between affinity range and median fold error is +0.094, interval [-0.240, +0.414], so median fold error is clean. The headline is now 4.5 fold median error across 41 targets, and the mean Spearman is reported beside it with the confound stated.",
+  "is_it_useful_as_a_target_level_signal": "Partly. The three targets scoring below 0.1 all have ranges of 0.90 to 0.99 log against a corpus median of 1.18, and the three widest ranges score 0.901, 0.714 and 0.633. But it is a contributor and not a rule: the narrowest set in the corpus, the prostacyclin receptor at 0.74 log, still scores +0.448, and 3-oxo-5-alpha-steroid 4-dehydrogenase 2 is genuinely bad at 28.8 fold median error rather than merely narrow. A narrow range warns that a Spearman will understate performance; it does not predict the error."
+ }
+}
