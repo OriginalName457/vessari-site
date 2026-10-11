@@ -100,6 +100,79 @@
   },
   "the_confound": "Spearman measures rank agreement and its value depends on how far the true ranks spread. A held-out set whose compounds all have similar potency scores a low Spearman however good the predictions are, because there is barely an ordering to recover. Across 41 targets the spread of measured affinity explains a substantial part of the per-target Spearman. So the corpus mean of 0.569 is partly a property of our held-out sets and not only of the method. This should have been checked long before forty targets.",
   "consequence_fixed_in_advance": "The registration said that if this feature came out significant, median fold error becomes the headline number because it does not depend on range. Spearman between affinity range and median fold error is +0.094, interval [-0.240, +0.414], so median fold error is clean. The headline is now 4.5 fold median error across 41 targets, and the mean Spearman is reported beside it with the confound stated.",
-  "is_it_useful_as_a_target_level_signal": "Partly. The three targets scoring below 0.1 all have ranges of 0.90 to 0.99 log against a corpus median of 1.18, and the three widest ranges score 0.901, 0.714 and 0.633. But it is a contributor and not a rule: the narrowest set in the corpus, the prostacyclin receptor at 0.74 log, still scores +0.448, and 3-oxo-5-alpha-steroid 4-dehydrogenase 2 is genuinely bad at 28.8 fold median error rather than merely narrow. A narrow range warns that a Spearman will understate performance; it does not predict the error."
+  "is_it_useful_as_a_target_level_signal": "Partly. The three targets scoring below 0.1 all have ranges of 0.90 to 0.99 log against a corpus median of 1.18, and the three widest ranges score 0.901, 0.714 and 0.633. But it is a contributor and not a rule: the narrowest set in the corpus, the prostacyclin receptor at 0.74 log, still scores +0.448, and 3-oxo-5-alpha-steroid 4-dehydrogenase 2 is genuinely bad at 28.8 fold median error rather than merely narrow. A narrow range warns that a Spearman will understate performance; it does not predict the error.",
+  "revisited_at_98_targets": {
+   "when": "2026-10-11, after the corpus grew from 41 to 98 scored targets",
+   "range_vs_spearman": {
+    "rho": 0.341,
+    "ci95": [
+     0.146,
+     0.516
+    ],
+    "was_at_41_targets": {
+     "rho": 0.553,
+     "ci95": [
+      0.256,
+      0.754
+     ]
+    },
+    "reading": "Still real and clearly weaker. The effect at 41 targets was overestimated, which is the usual direction for an effect first measured on a small sample."
+   },
+   "range_vs_median_fold_error": {
+    "rho": 0.215,
+    "ci95": [
+     0.009,
+     0.404
+    ],
+    "was_at_41_targets": {
+     "rho": 0.094,
+     "ci95": [
+      -0.24,
+      0.414
+     ],
+     "verdict_then": "null, which is why the headline was switched to this metric"
+    },
+    "reading": "This undercuts the justification given two days ago. Median fold error was switched to as the headline because it showed no dependence on affinity range. At 98 targets it shows a weak one, with a lower bound of +0.009 that only just excludes zero. The switch was still the right call, because the dependence is less than half the size of Spearman's, but 'clean' was the wrong word and is withdrawn."
+   },
+   "why_a_dependence_would_exist": "The direction is positive: wider affinity range coincides with larger error. A wider range means the set contains more extreme values, including sub-nanomolar compounds, and extreme values are harder to predict in absolute terms. So a weak positive relationship is what the physics would predict and its absence at 41 targets was more surprising than its presence at 98.",
+   "what_we_now_report": "Median fold error stays the headline as the least range-sensitive simple metric available, stated as less sensitive rather than insensitive. The affinity range of every target is published alongside its score so a reader can judge any individual result, which is the only honest fix when no single number is free of the property."
+  }
+ },
+ "question_4_does_an_arbitrary_stereochemical_choice_cost_accuracy": {
+  "registration": "benchmarks/preregistered/2026-10-09-stereochemistry.md",
+  "how_it_was_noticed": "Rebuilding ligands from predicted poses for the dynamics work required matching each structure against the SMILES that produced it. The match failed on the first compound because the 3D pose defined a stereocentre the SMILES left unspecified.",
+  "the_scale_of_it": "656 of 658 poses rebuild successfully. 124 of them, 19 percent, come from a SMILES with at least one undefined stereocentre, so the prediction committed to a configuration arbitrarily and the affinity measured in a lab may belong to the other enantiomer or to a mixture.",
+  "n_compounds": 646,
+  "n_undefined": 121,
+  "n_specified": 525,
+  "median_log_error_undefined": 0.648,
+  "median_log_error_specified": 0.648,
+  "difference_log": 0.0,
+  "ci95_on_difference": [
+   -0.154,
+   0.144
+  ],
+  "confound_check": "Median heavy atom count 32 against 31, so the groups are not separated by molecular size and the comparison is not confounded that way.",
+  "per_target": "Of 14 targets holding at least 4 of each kind, undefined stereochemistry is worse at p<0.05 in 1, which is what 14 tests at that threshold produce by chance.",
+  "verdict": "NULL",
+  "reading_as_registered": "The arbitrary choice is real and affects a fifth of our predictions. We could not measure a cost. That is a weaker statement than it not mattering, and it is the one the data supports. Affected predictions will carry a flag so a user can see the choice was made, which is worth doing whether or not it changes the error."
+ },
+ "what_the_pattern_of_nulls_means": "Four candidate explanations for our 4.5 fold median error have now been tested and none survived: the model's confidence in the structure it built, the disagreement between its two affinity modules, noise in the measured values we score against, and an arbitrary stereochemical choice affecting a fifth of predictions. One real effect was found and it was in our own metric rather than in the error: the spread of measured affinity inflates or deflates a target's Spearman. Four nulls in a row is itself informative. It suggests the error is spread across many small causes rather than concentrated in one fixable place, which would mean a user should treat every prediction as carrying the same risk. One registered candidate remains, whether a pose that drifts under molecular dynamics is a pose whose affinity was wrong, and if that is null too then the honest claim is that the error is irreducible at this level of modelling. That is a less exciting result and a more useful one than a filter that does not work.",
+ "headline_at_98_targets": {
+  "n_scored": 98,
+  "n_declined": 147,
+  "median_fold_error": 4.4,
+  "median_fold_error_ci95": [
+   3.9,
+   4.8
+  ],
+  "mean_spearman": 0.577,
+  "mean_spearman_ci95": [
+   0.527,
+   0.623
+  ],
+  "targets_above_0.5": 66,
+  "targets_below_0": 3,
+  "stability": "The headline has moved 0.1 fold while the corpus tripled: 4.5 fold at 28 targets, 4.5 at 41, 4.4 at 98. An estimate that does not drift as the sample triples is the main reason to believe it."
  }
 }

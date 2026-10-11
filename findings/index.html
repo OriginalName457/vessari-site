@@ -85,8 +85,29 @@
       It is a warning and not a rule. The narrowest set we have, the prostacyclin
       receptor at 0.74, still scores +0.448, and the one negative target is
       genuinely bad rather than merely narrow, at 28.8 fold median error.</p>
+    <p class="body"><strong>Revisited two days later, at 98 targets.</strong>
+      The corpus more than doubled and both numbers moved. The range dependence
+      on Spearman fell from +0.553 to <strong>+0.341</strong>, interval
+      [+0.146, +0.516], so the original effect was overestimated on the smaller
+      sample, which is the usual direction. More awkwardly, median fold error
+      now shows a weak dependence of its own, <strong>+0.215</strong> with an
+      interval of [+0.009, +0.404] that only just excludes zero, where at 41
+      targets it was +0.094 and null.</p>
+    <p class="body">That undercuts the reason given for switching to it. The
+      switch was still right, because the dependence is less than half the size
+      of Spearman's, but describing median fold error as clean was wrong and we
+      withdraw the word. A positive relationship is also what should have been
+      expected: a wider range means more extreme values in the set, and extreme
+      values are harder to predict in absolute terms. Its absence at 41 targets
+      was the surprising result, not its presence at 98.</p>
+    <p class="body">No single number here is free of the property, so the
+      affinity range of every target is published next to its score and a reader
+      can judge any individual result. The headline is a median error of
+      <strong>4.4 fold across 98 targets</strong>, interval [3.9, 4.8], and it
+      has moved by 0.1 fold while the corpus tripled.</p>
     <p class="f-repro">Reproduce: all five candidate explanations, with
-      uncorrected and corrected intervals, are in
+      uncorrected and corrected intervals and both the 41 and 98 target
+      versions, are in
       <a href="../data-files/error-sources.json">error-sources.json</a>, and the
       analysis was registered before it was run in
       <a href="../data-files/2026-10-09-error-sources.md">its
