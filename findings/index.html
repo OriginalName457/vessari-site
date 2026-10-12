@@ -51,6 +51,58 @@
   </div>
 
   <article class="finding">
+    <p class="f-label f-label--own">Our own error, and the same one twice. An
+      audit found it and our first check of that audit got it wrong.</p>
+    <h2 class="h2">Eight members of one chemical series were in a thirty
+      compound held-out set, again</h2>
+    <p class="body">The rule this project rests on is one compound per chemical
+      series in a held-out set, because a set containing several members of one
+      series lets a model look good by telling that series apart from
+      everything else. A Bemis-Murcko split broke it once and moved an ABL1
+      correlation from 0.564 to 0.248. The replacement was described
+      everywhere, including on this site, as single-linkage clustering on ECFP4
+      Tanimoto at 0.6.</p>
+    <p class="body">It was not. The code compared each candidate against the
+      compounds already accepted and rejected anything at 0.6 or above. A
+      rejected compound was never added to the comparison, so it could not act
+      as a bridge, and two compounds half a similarity apart are admitted even
+      when a third compound in the pool sits above 0.6 from both and binds all
+      three into one series.</p>
+    <p class="body">Measured on the published ABL1 set: <strong>30 compounds
+      spanning 19 true single-linkage clusters</strong>, one of which holds
+      eight of them. The pool is 3,013 compounds with 35,750 pairs above the
+      threshold. Keeping one compound per true cluster moves the Spearman from
+      0.284 to <strong>0.207</strong>, and moves the median error from 20.6
+      fold to 6.2, because the eight-member cluster holds badly predicted
+      compounds. So the leak flattered the correlation and penalised the error.</p>
+    <p class="body">Two checks should have caught it and both were circular in
+      the same way. The guard in our scoring script does genuine single-linkage
+      clustering, over the selected compounds only, where selection has already
+      removed anything within the threshold, so it returns one cluster per
+      compound by construction and can never fire. And when the audit raised
+      this, the first thing we did was run the same test over the same selected
+      compounds, find no chains, and record the finding as refuted. A bridge
+      that selection rejected cannot appear in a graph built from the
+      selection.</p>
+    <p class="body">What is fixed: clustering now runs over the whole candidate
+      pool once per target, one compound per cluster is admitted, each selected
+      compound carries the cluster it came from so the downstream check can be
+      real, and three tests pin the bridged chain that used to pass.</p>
+    <p class="body"><strong>What is not known is the size of it.</strong>
+      Candidate pools were not kept for the other targets, only the selected
+      sets, so this cannot be measured retroactively anywhere but ABL1. Until
+      the corpus is rebuilt under the corrected rule, the headline of 4.4 fold
+      across 108 targets carries a leak of unquantified size and unknown
+      direction. On the one target we can measure, it helped the correlation
+      and hurt the error. One target does not say which way that runs in
+      aggregate, and we are not going to guess.</p>
+    <p class="f-repro">Reproduce: every number here is in
+      <a href="../data-files/clustering-leak-2026-10-12.json">clustering-leak-2026-10-12.json</a>,
+      computed from the candidate pool published at
+      <code>benchmarks/results/abl1-v2-inputs/measured.csv</code>.</p>
+  </article>
+
+  <article class="finding">
     <p class="f-label f-label--own">Our own error. It was in the headline number
       for forty one targets.</p>
     <h2 class="h2">Part of our headline score was a property of our test sets,

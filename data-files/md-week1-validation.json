@@ -74,12 +74,18 @@
     }
    },
    "second_order_by_drift_slope": {
-    "pass": true,
-    "note": "neither run shows a trend to scale, which means drift is below what this run length can resolve. That is a pass by a stronger route than the scaling check."
+    "pass": false,
+    "note": "Neither run shows a trend to scale, so this check cannot establish anything. Previously recorded as pass=True with the note that it was 'a pass by a stronger route', which is backwards: finding no trend is weaker evidence than measuring one that scales, because two cancelling error sources also produce no trend. Corrected 2026-10-12."
    },
    "second_order_by_fluctuation": {
     "pass": true,
     "note": "energy fluctuation fell 4.19x when the timestep was halved (0.0121% to 0.0029%), against 4x expected for a second order method."
+   },
+   "gross_stability": {
+    "max_fluctuation_fraction": 0.0001211,
+    "bound": 0.01,
+    "intact": true,
+    "note": "Added 2026-10-12. energy_drift computed this and then chose its verdict from the slope alone, so a run whose energy swung by a quarter of itself was reported as 'no trend'. Both platform results here had taken that branch. The measurements were sound; the gate was not."
    }
   },
   "OpenCL": {
@@ -126,12 +132,18 @@
     }
    },
    "second_order_by_drift_slope": {
-    "pass": true,
-    "note": "neither run shows a trend to scale, which means drift is below what this run length can resolve. That is a pass by a stronger route than the scaling check."
+    "pass": false,
+    "note": "Neither run shows a trend to scale, so this check cannot establish anything. Previously recorded as pass=True with the note that it was 'a pass by a stronger route', which is backwards: finding no trend is weaker evidence than measuring one that scales, because two cancelling error sources also produce no trend. Corrected 2026-10-12."
    },
    "second_order_by_fluctuation": {
     "pass": true,
     "note": "energy fluctuation fell 4.02x when the timestep was halved (0.0117% to 0.0029%), against 4x expected for a second order method."
+   },
+   "gross_stability": {
+    "max_fluctuation_fraction": 0.00011672,
+    "bound": 0.01,
+    "intact": true,
+    "note": "Added 2026-10-12. energy_drift computed this and then chose its verdict from the slope alone, so a run whose energy swung by a quarter of itself was reported as 'no trend'. Both platform results here had taken that branch. The measurements were sound; the gate was not."
    }
   }
  },
@@ -150,5 +162,6 @@
    }
   }
  },
- "conclusion": "Energy is conserved, and conserved for the right reason. Neither platform shows a resolvable drift at either timestep. The amplitude of the energy oscillation falls 4.19x on CUDA and 4.02x on OpenCL when the timestep is halved, against 4x expected for a second order method, which is positive evidence rather than an absence of evidence. Two independent GPU implementations agreeing on that figure is a stronger check than either alone."
+ "conclusion": "Energy is conserved, and conserved for the right reason. Neither platform shows a resolvable drift at either timestep. The amplitude of the energy oscillation falls 4.19x on CUDA and 4.02x on OpenCL when the timestep is halved, against 4x expected for a second order method, which is positive evidence rather than an absence of evidence. Two independent GPU implementations agreeing on that figure is a stronger check than either alone.",
+ "correction_2026_10_12": "An audit found that two of the three checks behind this artifact could not fail. energy_drift computed the energy fluctuation amplitude and then never consulted it, branching only on the slope and its r-squared, so an exploding run would have been reported as 'no trend'. And scaling_is_second_order returned a pass whenever neither run had a resolvable trend, describing it as 'a pass by a stronger route' when it is the weaker one. The conclusion of this artifact survives, because it never rested on those two: the substantive evidence is the fluctuation amplitude falling 4.19x on CUDA and 4.02x on OpenCL when the timestep was halved, against 4x required for a second order method, measured on two independent GPU implementations. That check was always real and still passes. What was wrong was describing three passes when there was one, and shipping a gate that could not fail."
 }

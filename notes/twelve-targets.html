@@ -83,10 +83,17 @@
       </table>
     </div>
 
-    <p class="body">Each held-out set keeps one compound per ECFP4 Tanimoto
-      cluster at 0.6, single linkage, so no two compounds in a set belong to the
-      same series. The largest pairwise similarity anywhere in the twelve sets
-      is 0.597. Across the twelve, 241 compounds were scored out of 306
+    <p class="body"><strong>Corrected 2026-10-12.</strong> This paragraph said
+      each held-out set keeps one compound per single-linkage ECFP4 Tanimoto
+      cluster at 0.6, so no two compounds in a set belong to the same series.
+      That was wrong. The code compared each candidate against the compounds
+      already accepted, which is a weaker rule, and the published ABL1 set
+      turns out to hold eight members of one series. The largest
+      <em>pairwise</em> similarity anywhere in the twelve sets really is 0.597,
+      which is exactly why nobody noticed: pairwise similarity cannot see a
+      series held together through a third compound. The size of the leak and
+      what it costs are in
+      <a href="../findings/">the findings log</a>. Across the twelve, 241 compounds were scored out of 306
       predicted; the other 65 returned no affinity value at all. Of the 241, 146
       landed within ten fold of the measured affinity.</p>
 

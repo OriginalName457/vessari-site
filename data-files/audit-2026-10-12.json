@@ -1,0 +1,92 @@
+{
+ "found_by": "a multi-agent audit of this repository, 2026-10-12",
+ "the_defect": "corpus_worker's MIN_SET of 12 gated the held-out set that was BUILT, not the number of predictions that SUCCEEDED. A target where most predictions failed still entered the corpus with a Spearman computed on whatever survived. Six of 108 entries rest on fewer than twelve scored compounds, and the worst, the histamine H2 receptor, on ten out of thirty.",
+ "entries_below_the_projects_own_minimum": [
+  {
+   "target": "Catechol O-methyltransferase",
+   "scored": 11,
+   "failed": 2,
+   "spearman": 0.818,
+   "median_fold": 4.4
+  },
+  {
+   "target": "Histamine H2 receptor",
+   "scored": 10,
+   "failed": 20,
+   "spearman": 0.091,
+   "median_fold": 5.1
+  },
+  {
+   "target": "L-lactate dehydrogenase B chain",
+   "scored": 10,
+   "failed": 2,
+   "spearman": 0.818,
+   "median_fold": 3.5
+  },
+  {
+   "target": "Neuropeptide Y receptor type 2",
+   "scored": 8,
+   "failed": 4,
+   "spearman": 0.524,
+   "median_fold": 2.3
+  },
+  {
+   "target": "5-hydroxytryptamine receptor 5A",
+   "scored": 8,
+   "failed": 6,
+   "spearman": 0.524,
+   "median_fold": 7.3
+  },
+  {
+   "target": "Carbonic anhydrase 4",
+   "scored": 11,
+   "failed": 1,
+   "spearman": 0.827,
+   "median_fold": 1.5
+  }
+ ],
+ "does_it_change_the_published_result": {
+  "as_published": {
+   "n_targets": 108,
+   "median_fold": 4.4,
+   "median_fold_ci95": [
+    3.9,
+    4.8
+   ],
+   "mean_spearman": 0.578,
+   "mean_spearman_ci95": [
+    0.532,
+    0.624
+   ]
+  },
+  "gated_at_12_successful_predictions": {
+   "n_targets": 102,
+   "median_fold": 4.4,
+   "median_fold_ci95": [
+    3.9,
+    4.8
+   ],
+   "mean_spearman": 0.577,
+   "mean_spearman_ci95": [
+    0.528,
+    0.624
+   ]
+  },
+  "also_dropping_over_25_percent_failure": {
+   "n_targets": 100,
+   "median_fold": 4.3,
+   "median_fold_ci95": [
+    3.8,
+    4.7
+   ],
+   "mean_spearman": 0.589,
+   "mean_spearman_ci95": [
+    0.541,
+    0.637
+   ]
+  },
+  "conclusion": "No. The headline is 4.4 fold either way and the interval is unchanged. Four of the six under-powered entries score high rather than low, so they were not inflating the aggregate by being weak. This is a process defect that did not become a result defect, and the distinction is worth stating plainly rather than reporting either the defect or the robustness alone."
+ },
+ "why_it_still_mattered": "A Spearman on eight points is noise whatever the aggregate does, and the project stated a minimum of twelve and then did not enforce it where it counted. The gate now applies to predictions that succeeded.",
+ "the_same_class_of_bug_found_elsewhere_and_fixed": "activity_count in corpus_enqueue returned 0 both for a target with no measured activities and for a ChEMBL request that failed, so an outage was written into the queue as a permanent property of a protein. That had already cost five targets once. It now returns None for unreachable and the caller leaves the target for a later scan."
+}

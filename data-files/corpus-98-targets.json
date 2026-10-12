@@ -1,5 +1,5 @@
 {
- "what_this_is": "Every target the unattended worker has scored and every one it declined with the reason attached. One entry per protein, held-out sets built so no two compounds share an ECFP4 Tanimoto cluster at 0.6.",
+ "what_this_is": "Every target the unattended worker has scored and every one it declined with the reason attached. One entry per protein, held-out sets built so no two compounds are within ECFP4 Tanimoto 0.6 of each other. That is weaker than the single-linkage rule previously claimed here, and the difference is measured in clustering-leak-2026-10-12.json: on ABL1, 30 compounds span 19 true clusters. The corpus-wide effect is not known because candidate pools were not retained.",
  "n_scored": 98,
  "n_declined": 147,
  "headline": {

@@ -1,0 +1,28 @@
+{
+  "what_was_claimed": "That held-out sets contain one compound per single-linkage ECFP4 Tanimoto cluster at 0.6, so no two compounds in a set belong to the same chemical series. Stated in holdout/build.py, in corpus-98-targets.json, and on web/two/notes/twelve-targets.html.",
+  "what_was_actually_implemented": "Greedy exclusion. Each candidate was compared against the compounds already accepted and rejected at 0.6 or above. A rejected compound was never added to the comparison set, so it could not act as a bridge. Two compounds 0.5 apart are admitted even when a third pool compound sits above 0.6 from both and binds all three into one single-linkage cluster.",
+  "measured_on_the_published_abl1_set": {
+    "compounds": 30,
+    "true_single_linkage_clusters_over_the_pool": 19,
+    "largest_cluster_among_the_selected": 8,
+    "second_largest": 4,
+    "pool_size": 3013,
+    "pool_edges_at_0.6": 35750,
+    "spearman_as_published": 0.284,
+    "spearman_one_per_true_cluster": 0.207,
+    "spearman_one_per_true_cluster_range95": [
+      0.026,
+      0.389
+    ],
+    "change": -0.077,
+    "median_fold_as_published": 20.6,
+    "median_fold_one_per_true_cluster": 6.2,
+    "note": "The leak inflates Spearman by 0.077 and inflates the reported error threefold in the other direction, because the eight-member cluster holds badly predicted compounds. For comparison the Bemis-Murcko retraction moved this target's Spearman by -0.316, so this leak is smaller and the same kind."
+  },
+  "why_nothing_caught_it": {
+    "the_downstream_guard": "score_holdout.clusters() does genuine single linkage, over the selected compounds only. Selection already rejected anything within 0.6 of an accepted compound, so it returns one cluster per compound by construction and its guard can never fire. abl1-holdout-stats-v2.json records effective_n_clusters 30, which is that circular answer.",
+    "and_my_own_check": "Asked to verify this finding I ran union-find over the selected compounds and found zero edges, concluded no chains existed, and reported the finding refuted. That is the same circularity. A bridge rejected during selection cannot appear in a graph built from the selection. The verifier ran it over the pool and was right."
+  },
+  "what_is_fixed": "build.py computes single linkage over the whole candidate pool once per target and admits one compound per cluster. Each selected compound now carries its pool_cluster id so the downstream check can be real, and score_holdout says plainly what its own cluster count can and cannot see. Three tests pin the bridged chain that used to pass.",
+  "what_is_not_known": "The corpus-wide effect. Candidate pools were not retained for the 108 corpus targets, only the selected sets, so the leak cannot be measured retroactively for any target but ABL1. Measuring it means refetching every pool from ChEMBL and reclustering, roughly a day of network work, or rebuilding the corpus under the corrected rule, which is about four GPU days. Until one of those is done the published headline of 4.4 fold across 108 targets carries an unquantified leak of unknown direction. On ABL1 the direction was favourable for Spearman and unfavourable for error; one target does not establish which way it runs in aggregate."
+}
