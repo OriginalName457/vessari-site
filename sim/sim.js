@@ -132,15 +132,21 @@
           sele: "LIG or LIG1 or UNL", color: "#E8A33D",
           radiusScale: 0.55, multipleBond: "symmetric"
         });
-        // The surface is NOT created here.
+        // The surface is built on demand rather than created hidden.
         //
-        // Creating it hidden still costs: NGL rebuilds every representation
-        // when the frame changes, and a solvent-accessible surface is by far
-        // the most expensive thing on this page to rebuild. With one sitting
-        // there invisible, playback ran at 0.4 frames per second, about thirty
-        // times slower than the player was asking for. It is built the first
-        // time somebody asks for it and disposed when they turn it off, so a
-        // viewer who never clicks the button never pays for it.
+        // The reason first written here was wrong and is worth correcting
+        // rather than quietly replacing. Playback looked like 0.4 frames per
+        // second and I attributed it to a hidden surface being rebuilt every
+        // frame. It was not: the tab doing the measuring was in the
+        // background, and a browser throttles timers in a background tab to
+        // about one a second. Measured properly, advancing a frame costs
+        // 2.27 ms on this structure, so the renderer could sustain roughly 440
+        // frames per second and the player's 80 ms timeout is the only limit.
+        //
+        // Building on demand is still right, because a solvent-accessible
+        // surface is genuinely the most expensive thing here and most viewers
+        // never ask for one. The change was correct and the stated reason was
+        // not.
         var surf = null;
 
         comp.autoView("LIG or LIG1 or UNL", 1200);

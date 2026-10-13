@@ -1,0 +1,19 @@
+{
+ "what_was_measured": "Whether the simulation viewer plays smoothly, measured in the browser rather than inferred.",
+ "structure": {
+  "atoms_drawn": 718,
+  "atoms_simulated": 104689,
+  "frames": 40,
+  "file_mb": 2.22
+ },
+ "measured": {
+  "load_ms": 47,
+  "per_frame_ms": 2.27,
+  "implied_fps": 439.9,
+  "player_timeout_ms": 80,
+  "player_fps": 12.5
+ },
+ "conclusion": "The renderer is about thirty five times faster than the player asks for, so playback is limited by the deliberate 80 ms frame interval and not by anything on the page. There is substantial headroom for more frames or more atoms if either turns out to be worth the download.",
+ "a_measurement_that_was_wrong_first": "Playback appeared to run at 0.4 frames per second and that was attributed to a hidden surface representation being rebuilt every frame. It was an artifact of the measurement: the tab was in the background and browsers throttle timers there to about one a second, confirmed by a plain setTimeout loop firing 1.22 times a second against 12.5 expected. The surface was moved to build on demand anyway, because it is genuinely the most expensive thing on the page and most viewers never ask for it, but the reason given for the change was false and the comment in the source now says so.",
+ "how_smoothness_was_actually_achieved": "In the exporter, not the page. The simulation held 104,689 atoms and the viewer draws 718: solvent removed, the receptor reduced to its alpha carbon trace, and every atom kept only for the residues lining the pocket. That is a 145-fold reduction and it is why the per-frame cost is 2.27 ms."
+}
