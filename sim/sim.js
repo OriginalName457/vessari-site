@@ -114,26 +114,31 @@
       .then(function (comp) {
         ui.note.remove();
 
-        // The rest of the receptor: backbone only, muted, so the fold reads
-        // without competing with the pocket.
-        comp.addRepresentation("cartoon", {
-          sele: "protein", color: "#8E9A93", opacity: 0.55,
-          aspectRatio: 2.0, quality: "medium"
+        // The rest of the receptor is an alpha carbon trace, so it gets a
+        // tube. A cartoon is a spline through the alpha carbons but needs the
+        // full backbone to orient its ribbon, and asking for one here draws
+        // nothing at all.
+        comp.addRepresentation("tube", {
+          sele: ".CA", color: "#8E9A93", opacity: 0.5, radius: 0.25,
+          quality: "medium"
         });
-        // Pocket residues came through with every atom, so draw them.
+        // Pocket residues came through with every atom, so draw them in full.
         comp.addRepresentation("licorice", {
-          sele: "protein and sidechainAttached and not backbone",
-          color: "#6FA8C7", radiusScale: 0.3, opacity: 0.9
+          sele: "sidechainAttached and not .CA",
+          color: "#6FA8C7", radiusScale: 0.28, opacity: 0.95
         });
         // The compound is the subject.
         comp.addRepresentation("ball+stick", {
           sele: "LIG or LIG1 or UNL", color: "#E8A33D",
           radiusScale: 0.55, multipleBond: "symmetric"
         });
+        // A surface over the pocket residues only. Over an alpha carbon
+        // trace a molecular surface is meaningless, and over the whole
+        // structure it would hide the compound, which is the subject.
         var surf = comp.addRepresentation("surface", {
-          sele: "protein", opacity: 0.18, color: "#6FA8C7",
-          surfaceType: "sas", probeRadius: 1.4, visible: false,
-          quality: "low"
+          sele: "sidechainAttached and not .CA", opacity: 0.2,
+          color: "#6FA8C7", surfaceType: "sas", probeRadius: 1.4,
+          visible: false, quality: "low"
         });
 
         comp.autoView("LIG or LIG1 or UNL", 1200);

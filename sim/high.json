@@ -1,11 +1,11 @@
 {
  "label": "high",
- "frames": 60,
- "atoms_shown": 1680,
+ "frames": 40,
+ "atoms_shown": 648,
  "atoms_in_simulation": 93408,
- "atoms_hidden": 91728,
+ "atoms_hidden": 92760,
  "pocket_residues_shown_in_full": 15,
- "what_was_removed": "Water and ions, and the side chains of residues more than 5 angstroms from the ligand. The simulation ran with all 93408 atoms; this is what is drawn.",
+ "what_was_removed": "Water and ions. Residues within 5 angstroms of the compound keep every atom; the rest of the chain is reduced to its alpha carbon trace, which is what a cartoon is drawn through anyway. The simulation ran with all 93408 atoms; this is what is drawn.",
  "ligand_atoms": 35,
  "measurements": {
   "chembl_id": "CHEMBL5271484",
