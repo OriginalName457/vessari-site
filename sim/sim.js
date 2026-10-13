@@ -132,22 +132,26 @@
           sele: "LIG or LIG1 or UNL", color: "#E8A33D",
           radiusScale: 0.55, multipleBond: "symmetric"
         });
-        // A surface over the pocket residues only. Over an alpha carbon
-        // trace a molecular surface is meaningless, and over the whole
-        // structure it would hide the compound, which is the subject.
-        var surf = comp.addRepresentation("surface", {
-          sele: "sidechainAttached and not .CA", opacity: 0.2,
-          color: "#6FA8C7", surfaceType: "sas", probeRadius: 1.4,
-          visible: false, quality: "low"
-        });
+        // The surface is NOT created here.
+        //
+        // Creating it hidden still costs: NGL rebuilds every representation
+        // when the frame changes, and a solvent-accessible surface is by far
+        // the most expensive thing on this page to rebuild. With one sitting
+        // there invisible, playback ran at 0.4 frames per second, about thirty
+        // times slower than the player was asking for. It is built the first
+        // time somebody asks for it and disposed when they turn it off, so a
+        // viewer who never clicks the button never pays for it.
+        var surf = null;
 
         comp.autoView("LIG or LIG1 or UNL", 1200);
 
         var traj = comp.addTrajectory().trajectory;
+        // No interpolation. Interpolated steps multiply the work per real
+        // frame, and at 40 frames over 500 picoseconds the motion is already
+        // continuous without them.
         var player = new NGL.TrajectoryPlayer(traj, {
-          step: 1, timeout: 70, start: 0, end: manifest.frames - 1,
-          interpolateType: "linear", interpolateStep: 2, mode: "loop",
-          direction: "forward"
+          step: 1, timeout: 80, start: 0, end: manifest.frames - 1,
+          mode: "loop", direction: "forward"
         });
         player.play();
 
@@ -166,9 +170,27 @@
           traj.setFrame(parseInt(ui.slider.value, 10));
         });
         ui.style.addEventListener("click", function () {
-          var on = !surf.visible;
-          surf.setVisibility(on);
-          ui.style.textContent = on ? "Hide surface" : "Surface";
+          if (surf) {
+            surf.dispose();
+            surf = null;
+            ui.style.textContent = "Surface";
+            return;
+          }
+          // Pause while it builds. A solvent-accessible surface over the
+          // pocket takes a moment, and building it under a running player
+          // makes the page appear to hang.
+          var wasRunning = player.isRunning;
+          player.pause();
+          ui.style.textContent = "Building";
+          window.setTimeout(function () {
+            surf = comp.addRepresentation("surface", {
+              sele: "sidechainAttached and not .CA", opacity: 0.2,
+              color: "#6FA8C7", surfaceType: "sas", probeRadius: 1.4,
+              quality: "low"
+            });
+            ui.style.textContent = "Hide surface";
+            if (wasRunning) player.play();
+          }, 30);
         });
         ui.reset.addEventListener("click", function () {
           comp.autoView("LIG or LIG1 or UNL", 600);
