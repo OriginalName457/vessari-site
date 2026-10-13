@@ -692,6 +692,7 @@
     "median_fold": 20.5,
     "within_10x": 13,
     "source": "benchmarks/results/abl1-holdout-predictions-v2.json",
+    "effective_n_clusters_note": "The 30 here is a circular answer: it clusters the selected compounds only, and selection already rejected anything within 0.6 of an accepted compound. Over the 3,013 compound candidate pool these 30 span 19 single-linkage clusters, one holding eight of them. See clustering-leak-2026-10-12.json.",
     "assays": 266
   },
   "abl1_controls": {

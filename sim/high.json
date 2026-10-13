@@ -1,0 +1,19 @@
+{
+ "label": "high",
+ "frames": 60,
+ "atoms_shown": 1680,
+ "atoms_in_simulation": 93408,
+ "atoms_hidden": 91728,
+ "pocket_residues_shown_in_full": 15,
+ "what_was_removed": "Water and ions, and the side chains of residues more than 5 angstroms from the ligand. The simulation ran with all 93408 atoms; this is what is drawn.",
+ "ligand_atoms": 35,
+ "measurements": {
+  "chembl_id": "CHEMBL5271484",
+  "measured_nm": 11.047171583713181,
+  "predicted_nm": 31866.546442847037,
+  "fold_error": 2884.6,
+  "ligand_rmsd_angstrom": 1.22,
+  "contact_persistence": 0.3226,
+  "contacts_at_start": 62
+ }
+}

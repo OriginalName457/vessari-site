@@ -1,0 +1,62 @@
+{
+ "registration": "benchmarks/preregistered/2026-10-12-pose-stability-v2.md",
+ "which_control": "The extreme-pair control. The registration required that the lowest and highest error poses on one target separate in the predicted direction before the full 160 pose subsample is run, because a protocol that cannot tell 1.1 fold from 2,885 fold apart will not find a correlation across a corpus.",
+ "target": "P30556, angiotensin II type 1 receptor",
+ "poses": {
+  "low_error": {
+   "chembl_id": "CHEMBL6149456",
+   "measured_nm": 11490.766292984981,
+   "predicted_nm": 12173.176507902084,
+   "fold_error": 1.1,
+   "atoms_simulated": 104689
+  },
+  "high_error": {
+   "chembl_id": "CHEMBL5271484",
+   "measured_nm": 11.047171583713181,
+   "predicted_nm": 31866.546442847037,
+   "fold_error": 2884.6,
+   "atoms_simulated": 93408
+  }
+ },
+ "protocol_as_registered": "200 ps restrained equilibration, restraints released, 100 ps free equilibration, then 2 ns unrestrained production. Five independent replicas per pose differing only in starting velocities. Ligand heavy atom RMSD and contact persistence measured against the predicted pose over the final quarter, median across replicas.",
+ "result": {
+  "low_error_pose": {
+   "ligand_rmsd_angstrom": {
+    "median": 3.53,
+    "min": 1.55,
+    "max": 5.78
+   },
+   "contact_persistence": {
+    "median": 0.1525,
+    "min": 0.0,
+    "max": 0.3051
+   },
+   "replicas": 5,
+   "ns_sampled": 10.0
+  },
+  "high_error_pose": {
+   "ligand_rmsd_angstrom": {
+    "median": 2.43,
+    "min": 1.6,
+    "max": 3.73
+   },
+   "contact_persistence": {
+    "median": 0.2903,
+    "min": 0.1452,
+    "max": 0.3871
+   },
+   "replicas": 5,
+   "ns_sampled": 10.0
+  }
+ },
+ "verdict": "FAILED",
+ "why": "Both metrics point the wrong way. The pose whose affinity was wrong by 2,885 fold is MORE stable than the pose that was right: RMSD 2.43 against 3.53 angstroms, persistence 0.290 against 0.152. The hypothesis predicts the opposite on both.",
+ "and_it_is_noise_as_well_as_backwards": "The two poses differ by 1.11 angstroms of median RMSD. Five replicas of the SAME pose span 4.24 angstroms. The between-pose difference is smaller than the within-pose scatter, so even a result in the right direction could not have been believed at this sampling level.",
+ "what_the_registration_requires_now": "The full 160 pose subsample does not run. That is 16 GPU days not spent, decided by a control written before any of this was measured.",
+ "what_was_learned_that_is_worth_keeping": [
+  "The replica design was necessary and still insufficient. A single trajectory per pose, which the first version of this protocol specified, would have produced a number with no way to know it was noise. Five replicas reveal the scatter and show that five is not enough.",
+  "The restrained phase works as intended: the protein held to 0.26 and 0.27 angstroms across both poses and all ten replicas, so the settling phase did what it claimed and the release took effect.",
+  "The literature lens predicted this. Every published validation of pose stability is against pose correctness rather than affinity error, and the one published measurement of RMSD against affinity error is near-null. That was in the registration as a stated prior and the measurement agrees with it."
+ ],
+ "the_open_problem_is_unchanged": "Five candidate signals for predicting which affinity predictions to trust have now been tested and all five are null: interface pTM, ensemble spread, measurement noise in the answer key, undefined stereochemistry, and pose stability under dynamics. The honest position is that the error is not concentrated in one detectable place, and a user should treat every prediction as carrying the same risk until something is found that works."
+}
