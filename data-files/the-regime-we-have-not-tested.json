@@ -1,0 +1,38 @@
+{
+ "what_this_is": "The most consequential gap in this project's evidence, found 2026-10-13 while assembling material for a grant application. It is about what our corpus does not contain rather than what it measures.",
+ "the_product_claim_as_usually_stated": "Structure-based affinity prediction earns its cost on targets where there is little or no ligand data, because a model trained on known actives cannot be built without known actives.",
+ "what_our_own_controls_say": {
+  "target": "ABL1, the one target with a full control battery",
+  "structure_arm_spearman": 0.284,
+  "ligand_only_random_forest": {
+   "5_training_compounds": {
+    "mean_spearman": 0.289,
+    "beats_structure": "60.8%"
+   },
+   "10_training_compounds": {
+    "mean_spearman": 0.422,
+    "beats_structure": "71.7%"
+   },
+   "25_training_compounds": {
+    "mean_spearman": 0.556,
+    "beats_structure": "97.5%"
+   },
+   "2650_training_compounds": {
+    "mean_spearman": 0.81,
+    "beats_structure": "100%"
+   }
+  },
+  "reading": "On this target there is no training set size at which the structure arm wins. Even five compounds beat it more often than not. The crossover analysis records this as unresolved with first_n_ligand_wins = 5."
+ },
+ "and_the_corpus_cannot_test_the_claim": {
+  "targets": 121,
+  "minimum_known_compounds_on_any_target": 190,
+  "median_known_compounds": 1239,
+  "targets_with_fewer_than_25_known_compounds": 0,
+  "why": "vessari.corpus.queue admits targets with 40 to 4,000 measured compounds. The lower bound exists so a held-out set can be built at all, and its side effect is that every target we have ever scored is one where a ligand-only model has far more training data than the 25 compounds at which it beat the structure arm 97.5 percent of the time.",
+  "consequence": "The claim that structure helps where ligand data is scarce is not supported by anything this project has measured, and the one target where we can compare points the other way. We have never measured the regime the product claim depends on."
+ },
+ "a_figure_withdrawn": "I have repeatedly stated that structure beats a ligand-only model 0.629 against 0.233 on data-poor targets, with an interval. That figure appears in no artifact in this repository and I cannot trace it. It is withdrawn.",
+ "what_is_still_true": "The corpus result stands on its own terms: median 4.4 fold affinity error across 121 proteins, interval [4.0, 4.8], stable from 28 targets to 121. Prediction intervals cover 82.8 percent against an 80 percent target within a protein. None of that is affected. What is affected is the argument for why anyone should use this rather than a cheaper model, which is a different and more important claim.",
+ "the_experiment_that_would_settle_it": "Score targets with very few known compounds, where a ligand model can only be trained on a handful, and compare the two arms directly in that regime. It needs the queue's lower bound dropped from 40 to about 15 and a ligand arm run alongside each structure arm. It is the experiment that either establishes the product claim or retires it, and it should have been the first one run rather than the hundred and twenty first."
+}
