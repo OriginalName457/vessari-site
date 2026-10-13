@@ -195,6 +195,24 @@
         ui.reset.addEventListener("click", function () {
           comp.autoView("LIG or LIG1 or UNL", 600);
         });
+
+        // A handle for measuring and for anyone who wants to drive the viewer
+        // from a console during a demonstration. It also exists because the
+        // frame rate cannot be measured from outside: a browser throttles
+        // timers in a background tab to about one a second, so wall clock
+        // playback speed measured from a script that is not watching the page
+        // says nothing about what a viewer sees. What can be measured is the
+        // cost of advancing one frame, which is what decides smoothness.
+        window.vessariSim = window.vessariSim || {};
+        window.vessariSim[panel.key] = {
+          component: comp, trajectory: traj, player: player,
+          timeFrame: function (n) {
+            n = n || 20;
+            var t0 = performance.now();
+            for (var i = 0; i < n; i++) traj.setFrame(i % manifest.frames);
+            return (performance.now() - t0) / n;
+          }
+        };
       })
       .catch(function (err) {
         ui.note.textContent =
