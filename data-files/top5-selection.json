@@ -1,0 +1,744 @@
+{
+ "the_question": "A laboratory can synthesise five of the compounds it is considering. Which five? This measures the only thing that matters for that decision: how many of the genuinely best five end up in the five we nominate.",
+ "definition": "For each target, rank the held-out compounds by measured affinity and by predicted affinity. Count how many of the true best five appear in the predicted best five. Targets with fewer than ten scored compounds are excluded because a top five out of nine is not a selection.",
+ "n_targets": 119,
+ "mean_hits_of_five": 2.87,
+ "ci95": [
+  2.66,
+  3.08
+ ],
+ "random_baseline": 1.21,
+ "enrichment_over_random": 2.4,
+ "distribution": {
+  "0": 4,
+  "1": 8,
+  "2": 33,
+  "3": 39,
+  "4": 25,
+  "5": 10
+ },
+ "at_least_one": "115 of 119",
+ "at_least_two": "107 of 119",
+ "caveats_that_belong_next_to_this": [
+  "The held-out sets are built to spread evenly across the affinity range, so the true best five are separable by construction. A real campaign's compounds are often variations on one idea and may be far closer together in potency, which would make this harder. This number is not a promise about an arbitrary compound list.",
+  "These sets were built under the clustering rule later found to be weaker than documented, which let members of one chemical series into a set. The corpus is being re-measured under the corrected rule and this figure should be recomputed when that finishes.",
+  "Retrospective, like everything else here. No compound was selected by this method and then made.",
+  "The random baseline is the hypergeometric expectation, 25 divided by the set size, averaged over targets. It is what blind picking would give on these same sets."
+ ],
+ "per_target": [
+  {
+   "accession": "O95136",
+   "n": 27,
+   "hits_top5": 3,
+   "random_expectation": 0.926
+  },
+  {
+   "accession": "O95977",
+   "n": 30,
+   "hits_top5": 4,
+   "random_expectation": 0.833
+  },
+  {
+   "accession": "P00338",
+   "n": 28,
+   "hits_top5": 0,
+   "random_expectation": 0.893
+  },
+  {
+   "accession": "P00374",
+   "n": 30,
+   "hits_top5": 2,
+   "random_expectation": 0.833
+  },
+  {
+   "accession": "P00811",
+   "n": 21,
+   "hits_top5": 2,
+   "random_expectation": 1.19
+  },
+  {
+   "accession": "P01375",
+   "n": 30,
+   "hits_top5": 3,
+   "random_expectation": 0.833
+  },
+  {
+   "accession": "P04183",
+   "n": 12,
+   "hits_top5": 2,
+   "random_expectation": 2.083
+  },
+  {
+   "accession": "P04818",
+   "n": 15,
+   "hits_top5": 3,
+   "random_expectation": 1.667
+  },
+  {
+   "accession": "P05121",
+   "n": 13,
+   "hits_top5": 4,
+   "random_expectation": 1.923
+  },
+  {
+   "accession": "P07195",
+   "n": 10,
+   "hits_top5": 5,
+   "random_expectation": 2.5
+  },
+  {
+   "accession": "P07477",
+   "n": 24,
+   "hits_top5": 4,
+   "random_expectation": 1.042
+  },
+  {
+   "accession": "P07550",
+   "n": 25,
+   "hits_top5": 5,
+   "random_expectation": 1.0
+  },
+  {
+   "accession": "P07607",
+   "n": 14,
+   "hits_top5": 3,
+   "random_expectation": 1.786
+  },
+  {
+   "accession": "P07711",
+   "n": 29,
+   "hits_top5": 2,
+   "random_expectation": 0.862
+  },
+  {
+   "accession": "P07858",
+   "n": 30,
+   "hits_top5": 2,
+   "random_expectation": 0.833
+  },
+  {
+   "accession": "P09467",
+   "n": 28,
+   "hits_top5": 4,
+   "random_expectation": 0.893
+  },
+  {
+   "accession": "P0ABQ4",
+   "n": 27,
+   "hits_top5": 4,
+   "random_expectation": 0.926
+  },
+  {
+   "accession": "P13945",
+   "n": 30,
+   "hits_top5": 3,
+   "random_expectation": 0.833
+  },
+  {
+   "accession": "P14061",
+   "n": 28,
+   "hits_top5": 3,
+   "random_expectation": 0.893
+  },
+  {
+   "accession": "P14324",
+   "n": 20,
+   "hits_top5": 3,
+   "random_expectation": 1.25
+  },
+  {
+   "accession": "P15121",
+   "n": 30,
+   "hits_top5": 3,
+   "random_expectation": 0.833
+  },
+  {
+   "accession": "P15692",
+   "n": 13,
+   "hits_top5": 2,
+   "random_expectation": 1.923
+  },
+  {
+   "accession": "P16083",
+   "n": 13,
+   "hits_top5": 2,
+   "random_expectation": 1.923
+  },
+  {
+   "accession": "P16184",
+   "n": 30,
+   "hits_top5": 3,
+   "random_expectation": 0.833
+  },
+  {
+   "accession": "P16257",
+   "n": 30,
+   "hits_top5": 2,
+   "random_expectation": 0.833
+  },
+  {
+   "accession": "P17612",
+   "n": 13,
+   "hits_top5": 3,
+   "random_expectation": 1.923
+  },
+  {
+   "accession": "P17706",
+   "n": 30,
+   "hits_top5": 4,
+   "random_expectation": 0.833
+  },
+  {
+   "accession": "P18405",
+   "n": 20,
+   "hits_top5": 2,
+   "random_expectation": 1.25
+  },
+  {
+   "accession": "P21452",
+   "n": 28,
+   "hits_top5": 3,
+   "random_expectation": 0.893
+  },
+  {
+   "accession": "P21453",
+   "n": 30,
+   "hits_top5": 2,
+   "random_expectation": 0.833
+  },
+  {
+   "accession": "P21556",
+   "n": 12,
+   "hits_top5": 2,
+   "random_expectation": 2.083
+  },
+  {
+   "accession": "P21731",
+   "n": 29,
+   "hits_top5": 1,
+   "random_expectation": 0.862
+  },
+  {
+   "accession": "P21964",
+   "n": 11,
+   "hits_top5": 3,
+   "random_expectation": 2.273
+  },
+  {
+   "accession": "P22906",
+   "n": 21,
+   "hits_top5": 4,
+   "random_expectation": 1.19
+  },
+  {
+   "accession": "P23280",
+   "n": 21,
+   "hits_top5": 4,
+   "random_expectation": 1.19
+  },
+  {
+   "accession": "P23946",
+   "n": 17,
+   "hits_top5": 0,
+   "random_expectation": 1.471
+  },
+  {
+   "accession": "P25021",
+   "n": 10,
+   "hits_top5": 3,
+   "random_expectation": 2.5
+  },
+  {
+   "accession": "P25025",
+   "n": 30,
+   "hits_top5": 0,
+   "random_expectation": 0.833
+  },
+  {
+   "accession": "P25103",
+   "n": 30,
+   "hits_top5": 4,
+   "random_expectation": 0.833
+  },
+  {
+   "accession": "P25105",
+   "n": 12,
+   "hits_top5": 5,
+   "random_expectation": 2.083
+  },
+  {
+   "accession": "P25774",
+   "n": 21,
+   "hits_top5": 3,
+   "random_expectation": 1.19
+  },
+  {
+   "accession": "P25929",
+   "n": 13,
+   "hits_top5": 3,
+   "random_expectation": 1.923
+  },
+  {
+   "accession": "P27361",
+   "n": 12,
+   "hits_top5": 3,
+   "random_expectation": 2.083
+  },
+  {
+   "accession": "P28221",
+   "n": 24,
+   "hits_top5": 1,
+   "random_expectation": 1.042
+  },
+  {
+   "accession": "P28222",
+   "n": 22,
+   "hits_top5": 3,
+   "random_expectation": 1.136
+  },
+  {
+   "accession": "P28564",
+   "n": 27,
+   "hits_top5": 1,
+   "random_expectation": 0.926
+  },
+  {
+   "accession": "P30518",
+   "n": 30,
+   "hits_top5": 2,
+   "random_expectation": 0.833
+  },
+  {
+   "accession": "P30543",
+   "n": 29,
+   "hits_top5": 3,
+   "random_expectation": 0.862
+  },
+  {
+   "accession": "P30556",
+   "n": 29,
+   "hits_top5": 2,
+   "random_expectation": 0.862
+  },
+  {
+   "accession": "P30559",
+   "n": 28,
+   "hits_top5": 3,
+   "random_expectation": 0.893
+  },
+  {
+   "accession": "P30874",
+   "n": 15,
+   "hits_top5": 3,
+   "random_expectation": 1.667
+  },
+  {
+   "accession": "P30968",
+   "n": 28,
+   "hits_top5": 2,
+   "random_expectation": 0.893
+  },
+  {
+   "accession": "P30969",
+   "n": 17,
+   "hits_top5": 3,
+   "random_expectation": 1.471
+  },
+  {
+   "accession": "P31213",
+   "n": 15,
+   "hits_top5": 1,
+   "random_expectation": 1.667
+  },
+  {
+   "accession": "P31391",
+   "n": 28,
+   "hits_top5": 4,
+   "random_expectation": 0.893
+  },
+  {
+   "accession": "P32246",
+   "n": 30,
+   "hits_top5": 3,
+   "random_expectation": 0.833
+  },
+  {
+   "accession": "P32300",
+   "n": 28,
+   "hits_top5": 3,
+   "random_expectation": 0.893
+  },
+  {
+   "accession": "P32745",
+   "n": 17,
+   "hits_top5": 3,
+   "random_expectation": 1.471
+  },
+  {
+   "accession": "P33032",
+   "n": 25,
+   "hits_top5": 2,
+   "random_expectation": 1.0
+  },
+  {
+   "accession": "P33533",
+   "n": 29,
+   "hits_top5": 2,
+   "random_expectation": 0.862
+  },
+  {
+   "accession": "P33534",
+   "n": 14,
+   "hits_top5": 4,
+   "random_expectation": 1.786
+  },
+  {
+   "accession": "P34995",
+   "n": 24,
+   "hits_top5": 5,
+   "random_expectation": 1.042
+  },
+  {
+   "accession": "P34998",
+   "n": 29,
+   "hits_top5": 3,
+   "random_expectation": 0.862
+  },
+  {
+   "accession": "P35218",
+   "n": 14,
+   "hits_top5": 4,
+   "random_expectation": 1.786
+  },
+  {
+   "accession": "P35236",
+   "n": 30,
+   "hits_top5": 0,
+   "random_expectation": 0.833
+  },
+  {
+   "accession": "P35346",
+   "n": 30,
+   "hits_top5": 4,
+   "random_expectation": 0.833
+  },
+  {
+   "accession": "P37058",
+   "n": 13,
+   "hits_top5": 5,
+   "random_expectation": 1.923
+  },
+  {
+   "accession": "P37288",
+   "n": 30,
+   "hits_top5": 2,
+   "random_expectation": 0.833
+  },
+  {
+   "accession": "P41146",
+   "n": 30,
+   "hits_top5": 1,
+   "random_expectation": 0.833
+  },
+  {
+   "accession": "P41597",
+   "n": 29,
+   "hits_top5": 2,
+   "random_expectation": 0.862
+  },
+  {
+   "accession": "P42574",
+   "n": 30,
+   "hits_top5": 3,
+   "random_expectation": 0.833
+  },
+  {
+   "accession": "P43115",
+   "n": 28,
+   "hits_top5": 3,
+   "random_expectation": 0.893
+  },
+  {
+   "accession": "P43116",
+   "n": 28,
+   "hits_top5": 2,
+   "random_expectation": 0.893
+  },
+  {
+   "accession": "P43119",
+   "n": 12,
+   "hits_top5": 3,
+   "random_expectation": 2.083
+  },
+  {
+   "accession": "P43166",
+   "n": 28,
+   "hits_top5": 4,
+   "random_expectation": 0.893
+  },
+  {
+   "accession": "P43235",
+   "n": 30,
+   "hits_top5": 4,
+   "random_expectation": 0.833
+  },
+  {
+   "accession": "P47900",
+   "n": 21,
+   "hits_top5": 3,
+   "random_expectation": 1.19
+  },
+  {
+   "accession": "P48039",
+   "n": 30,
+   "hits_top5": 3,
+   "random_expectation": 0.833
+  },
+  {
+   "accession": "P48729",
+   "n": 14,
+   "hits_top5": 2,
+   "random_expectation": 1.786
+  },
+  {
+   "accession": "P48730",
+   "n": 29,
+   "hits_top5": 5,
+   "random_expectation": 0.862
+  },
+  {
+   "accession": "P48775",
+   "n": 29,
+   "hits_top5": 3,
+   "random_expectation": 0.862
+  },
+  {
+   "accession": "P49137",
+   "n": 30,
+   "hits_top5": 1,
+   "random_expectation": 0.833
+  },
+  {
+   "accession": "P49286",
+   "n": 30,
+   "hits_top5": 1,
+   "random_expectation": 0.833
+  },
+  {
+   "accession": "P49674",
+   "n": 17,
+   "hits_top5": 5,
+   "random_expectation": 1.471
+  },
+  {
+   "accession": "P49862",
+   "n": 21,
+   "hits_top5": 2,
+   "random_expectation": 1.19
+  },
+  {
+   "accession": "P50052",
+   "n": 29,
+   "hits_top5": 2,
+   "random_expectation": 0.862
+  },
+  {
+   "accession": "P50172",
+   "n": 30,
+   "hits_top5": 2,
+   "random_expectation": 0.833
+  },
+  {
+   "accession": "P50750",
+   "n": 30,
+   "hits_top5": 2,
+   "random_expectation": 0.833
+  },
+  {
+   "accession": "P51452",
+   "n": 30,
+   "hits_top5": 3,
+   "random_expectation": 0.833
+  },
+  {
+   "accession": "P51677",
+   "n": 29,
+   "hits_top5": 4,
+   "random_expectation": 0.862
+  },
+  {
+   "accession": "P51679",
+   "n": 23,
+   "hits_top5": 2,
+   "random_expectation": 1.087
+  },
+  {
+   "accession": "P51681",
+   "n": 24,
+   "hits_top5": 5,
+   "random_expectation": 1.042
+  },
+  {
+   "accession": "P55263",
+   "n": 21,
+   "hits_top5": 3,
+   "random_expectation": 1.19
+  },
+  {
+   "accession": "P61073",
+   "n": 16,
+   "hits_top5": 3,
+   "random_expectation": 1.562
+  },
+  {
+   "accession": "P63085",
+   "n": 16,
+   "hits_top5": 2,
+   "random_expectation": 1.562
+  },
+  {
+   "accession": "P68400",
+   "n": 20,
+   "hits_top5": 5,
+   "random_expectation": 1.25
+  },
+  {
+   "accession": "P9WGR1",
+   "n": 13,
+   "hits_top5": 2,
+   "random_expectation": 1.923
+  },
+  {
+   "accession": "Q00534",
+   "n": 13,
+   "hits_top5": 4,
+   "random_expectation": 1.923
+  },
+  {
+   "accession": "Q02127",
+   "n": 29,
+   "hits_top5": 4,
+   "random_expectation": 0.862
+  },
+  {
+   "accession": "Q02750",
+   "n": 30,
+   "hits_top5": 3,
+   "random_expectation": 0.833
+  },
+  {
+   "accession": "Q02769",
+   "n": 12,
+   "hits_top5": 3,
+   "random_expectation": 2.083
+  },
+  {
+   "accession": "Q13639",
+   "n": 18,
+   "hits_top5": 2,
+   "random_expectation": 1.389
+  },
+  {
+   "accession": "Q15119",
+   "n": 28,
+   "hits_top5": 4,
+   "random_expectation": 0.893
+  },
+  {
+   "accession": "Q15722",
+   "n": 25,
+   "hits_top5": 4,
+   "random_expectation": 1.0
+  },
+  {
+   "accession": "Q15759",
+   "n": 14,
+   "hits_top5": 4,
+   "random_expectation": 1.786
+  },
+  {
+   "accession": "Q16739",
+   "n": 19,
+   "hits_top5": 2,
+   "random_expectation": 1.316
+  },
+  {
+   "accession": "Q6GI75",
+   "n": 22,
+   "hits_top5": 1,
+   "random_expectation": 1.136
+  },
+  {
+   "accession": "Q920D2",
+   "n": 30,
+   "hits_top5": 5,
+   "random_expectation": 0.833
+  },
+  {
+   "accession": "Q92633",
+   "n": 26,
+   "hits_top5": 3,
+   "random_expectation": 0.962
+  },
+  {
+   "accession": "Q92847",
+   "n": 22,
+   "hits_top5": 4,
+   "random_expectation": 1.136
+  },
+  {
+   "accession": "Q95323",
+   "n": 11,
+   "hits_top5": 4,
+   "random_expectation": 2.273
+  },
+  {
+   "accession": "Q96DB2",
+   "n": 30,
+   "hits_top5": 2,
+   "random_expectation": 0.833
+  },
+  {
+   "accession": "Q99500",
+   "n": 30,
+   "hits_top5": 3,
+   "random_expectation": 0.833
+  },
+  {
+   "accession": "Q99571",
+   "n": 14,
+   "hits_top5": 2,
+   "random_expectation": 1.786
+  },
+  {
+   "accession": "Q9H244",
+   "n": 29,
+   "hits_top5": 4,
+   "random_expectation": 0.862
+  },
+  {
+   "accession": "Q9H3N8",
+   "n": 30,
+   "hits_top5": 3,
+   "random_expectation": 0.833
+  },
+  {
+   "accession": "Q9R0C9",
+   "n": 29,
+   "hits_top5": 2,
+   "random_expectation": 0.862
+  },
+  {
+   "accession": "Q9ULX7",
+   "n": 18,
+   "hits_top5": 4,
+   "random_expectation": 1.389
+  },
+  {
+   "accession": "Q9Y2D0",
+   "n": 13,
+   "hits_top5": 2,
+   "random_expectation": 1.923
+  }
+ ]
+}

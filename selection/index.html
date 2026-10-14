@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="
+  default-src 'none'; script-src 'self';
+  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+  font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data:;
+  connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Which Five To Make</title>
+<meta name="description" content="A laboratory can synthesise five of the compounds it is considering. Pick a protein and see which five this method nominates, and which five were actually best.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&family=DM+Mono:wght@400;500&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../findings/findings.css">
+<style>
+  .pickrow { display: flex; gap: 0.7rem; align-items: center; flex-wrap: wrap;
+             padding: 0.85rem 1rem; border: 1px solid var(--rule-major);
+             background: var(--paper-lit); margin: 1.4rem 0 0; }
+  .pickrow label { font: 600 0.64rem/1 var(--f-display); text-transform: uppercase;
+                   letter-spacing: 0.09em; opacity: 0.65; }
+  .pickrow select { font: 400 0.9rem/1.3 var(--f-body); padding: 0.35rem 0.5rem;
+                    border: 1px solid var(--rule-major); background: var(--paper-hi);
+                    color: var(--graphite); flex: 1 1 18rem; max-width: 100%; }
+  .pickrow button { font: 600 0.66rem/1 var(--f-display); text-transform: uppercase;
+                    letter-spacing: 0.07em; padding: 0.42rem 0.7rem;
+                    border: 1px solid var(--rule-major); background: var(--paper-hi);
+                    color: var(--graphite); cursor: pointer; }
+  .pickrow button:hover { background: var(--paper); }
+
+  .verdict { border: 1px solid var(--rule-major); border-top: 0;
+             background: var(--paper-lit); padding: 0.9rem 1rem;
+             display: flex; gap: 1.6rem; flex-wrap: wrap; align-items: baseline; }
+  .verdict .big { font: 500 1.9rem/1 var(--f-data); font-variant-numeric: tabular-nums; }
+  .verdict .lab { font: 600 0.62rem/1.3 var(--f-display); text-transform: uppercase;
+                  letter-spacing: 0.09em; opacity: 0.65; }
+
+  .wide { overflow-x: auto; margin: 1.2rem 0; }
+  table.sel { width: 100%; border-collapse: collapse; font-size: 0.85rem;
+              min-width: 36rem; }
+  table.sel th, table.sel td { padding: 0.38rem 0.6rem; text-align: left;
+                               border-bottom: 1px solid var(--rule-minor); }
+  table.sel th { font: 600 0.62rem/1 var(--f-display); text-transform: uppercase;
+                 letter-spacing: 0.08em; }
+  table.sel td.n { text-align: right; font-family: var(--f-data);
+                   font-variant-numeric: tabular-nums; }
+  table.sel tr.hit { background: rgba(87, 55, 155, 0.085); }
+  table.sel tr.miss td:first-child { border-left: 3px solid var(--pen-clay);
+                                     padding-left: calc(0.6rem - 3px); }
+  .mark { font: 600 0.6rem/1 var(--f-display); text-transform: uppercase;
+          letter-spacing: 0.08em; padding: 0.18rem 0.36rem;
+          border: 1px solid currentColor; white-space: nowrap; }
+  .m-both { color: var(--pen-violet); }
+  .m-missed { color: var(--pen-clay); }
+  .m-false { color: var(--graphite); opacity: 0.55; }
+
+  .dist { display: grid; grid-template-columns: auto 1fr auto; gap: 0.3rem 0.6rem;
+          align-items: center; margin: 1rem 0; font-size: 0.84rem; }
+  .dist .bar { height: 0.7rem; background: var(--pen-violet); opacity: 0.75; }
+  .dist .cnt { font-family: var(--f-data); font-variant-numeric: tabular-nums;
+               opacity: 0.7; }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-in">
+    <a class="wordmark" href="../">VESSARI</a>
+    <span class="masthead-sub">selection</span>
+    <nav class="topnav" aria-label="Sections">
+      <a href="../what/">what this is</a>
+      <a href="../">assessment</a>
+      <a href="../selection/">selection</a>
+      <a href="../sim/">simulation</a>
+      <a href="../findings/">findings</a>
+      <a href="../notes/">notes</a>
+      <a href="../data/">data</a>
+    </nav>
+  </div>
+</header>
+
+<main class="strip">
+  <div class="f-intro">
+    <h1 class="h1">Which five to make</h1>
+    <p class="lede">A laboratory looking at thirty compounds can afford to
+      synthesise five. That is the decision this method exists to inform, so
+      this page measures it directly rather than through an error statistic.</p>
+  </div>
+
+  <p class="body">For every protein below, the held-out compounds were ranked
+    twice. Once by the affinity measured in a laboratory, which is the answer.
+    Once by the affinity this method predicted from a folded structure, which
+    is the guess. The question is how many of the genuinely best five appear in
+    the five we would have nominated.</p>
+
+  <div id="summary"></div>
+
+  <div class="pickrow">
+    <label for="target">Protein</label>
+    <select id="target"></select>
+    <button id="random" type="button">Pick one at random</button>
+  </div>
+  <div class="verdict" id="verdict"></div>
+
+  <div class="wide"><table class="sel" id="table"></table></div>
+
+  <p class="body" id="caption"></p>
+
+  <h2 class="h2">Across every protein</h2>
+  <div id="dist"></div>
+
+  <h2 class="h2">What this number does not say</h2>
+
+  <p class="body">These held-out sets are built to spread evenly across the
+    affinity range, so the best five are separable by construction. A real
+    campaign often tests variations on one idea, where the compounds sit much
+    closer together in potency and the ranking is harder. This figure is not a
+    promise about an arbitrary list.</p>
+
+  <p class="body">The sets were also built under a clustering rule later found
+    to be weaker than the one documented, which let members of one chemical
+    series into a set. The corpus is being re-measured under the corrected rule
+    and this page should be recomputed when that finishes. What is already
+    measured on 27 of those targets is a mean drop in rank correlation of 0.038
+    with an interval of [-0.086, +0.004], so expect this number to move a
+    little and downward.</p>
+
+  <p class="body">And every result here is retrospective. No compound was
+    nominated by this method and then made.</p>
+
+  <p class="f-foot">The per-protein data on this page is
+    <a href="targets.json">targets.json</a>, 119 proteins and 2,761 compounds
+    as the runs wrote them. The summary figures and the caveats are in
+    <a href="../data-files/top5-selection.json">top5-selection.json</a>.</p>
+</main>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <span>Vessari</span>
+    <nav><a href="../">Back to the assessment</a></nav>
+  </div>
+</footer>
+
+<script src="selection.js"></script>
+</body></html>
