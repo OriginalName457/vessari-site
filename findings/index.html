@@ -55,6 +55,63 @@
   </div>
 
   <article class="finding">
+    <p class="f-label f-label--own">Our own error, caught four targets into the
+      run, in the search rather than in the science.</p>
+    <h2 class="h2">The search for data-poor targets was counting in the wrong
+      unit, and would have ended at half the registered size</h2>
+    <p class="body">The registration for the data-poor experiment asks for 25
+      scored targets. The scan that finds them stopped when it had 25
+      <em>eligible</em> targets. Those sound like the same number and they are
+      not, because an eligible target can still fail to produce a scorable
+      held-out set.</p>
+    <p class="body">A held-out set is built so that no two compounds come from
+      the same chemical cluster. On a target with 17 measured compounds that
+      are all analogues of each other, single-linkage clustering collapses them
+      to two or three distinct groups, which is fewer than the five a scored
+      comparison needs. Of the first nine eligible targets to reach the
+      experiment, <strong>five were declined for exactly that</strong>. Carbonic
+      anhydrase 2 reduced to two clusters. Adenosine kinase reduced to one.</p>
+    <p class="body">So the attrition between eligible and scored is roughly
+      half. A search stopping at 25 eligible targets would have delivered about
+      twelve to the analysis and then reported the population as exhausted. The
+      interval on twelve targets is far wider than on 25, and the registration's
+      decision rule turns on whether that interval excludes zero. The search
+      would have decided the experiment's power by accident.</p>
+    <p class="body">The same scan also stopped walking at offset 6,000. ChEMBL
+      holds <strong>11,055 single proteins</strong>, so it was examining 54
+      percent of the population for no stated reason. That number was an
+      arbitrary stopping point for a search, never a bound from the
+      registration, and the rest of the walk costs network time and no
+      compute.</p>
+    <p class="body">Both are fixed. The scan now reads the experiment's results
+      file and stops on scored targets, and it asks ChEMBL for the population
+      size and covers all of it. No registered bound moved. Compounds stay 15 to
+      45, residues stay 150 to 420, the pool ceiling stays 90.</p>
+    <p class="body">A second defect sat next to it. A target that failed for a
+      reason that will never change took a silent branch and left no record, so
+      the next run reached it again, refetched its pool and failed at the same
+      step. Four consecutive runs died on the same target that way. Declines are
+      now written down, in a different file from targets rejected for having too
+      much data, because one kind never belonged in the population and the other
+      kind does. Keeping them together would make the denominator wrong.</p>
+    <p class="body">Both changes were made with one target scored and before the
+      rest ran, which is the only reason they are reportable rather than
+      suspicious. A search that is widened after the results look
+      disappointing is a different act from the same change made blind. The
+      <a href="../data/">pre-registration</a> carries the amendment, including
+      a limitation the longer walk creates: ChEMBL identifier order runs roughly
+      oldest to newest, older targets carry more published chemistry, so a
+      longer walk is weighted toward proteins nobody has screened. That does not
+      affect a comparison made within a target, and it rules out any claim from
+      this scan about how often the data-poor regime occurs.</p>
+    <p class="body">Every run of the analysis before its stopping condition is
+      now logged with the target count and the interim number at that moment.
+      The decision rule and the stopping rule are both fixed, so looking cannot
+      change the result, and it can still look as though the stop was chosen
+      when the numbers were kind. That is not a thing to settle by assertion.</p>
+  </article>
+
+  <article class="finding">
     <p class="f-label f-label--own">Our own error, caught one target into the
       run. Our first explanation for it was also wrong.</p>
     <h2 class="h2">An experiment about data-poor targets was selecting targets

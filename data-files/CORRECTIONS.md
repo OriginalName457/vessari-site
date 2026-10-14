@@ -5,6 +5,36 @@ changed and why. A result that moves without a record of having moved is worse
 than one that was never published, so this file exists to make the movement
 visible rather than to tidy it away.
 
+## The published pre-registration was missing two of its amendments
+
+**Published:** the data-poor registration as it stood on 14 October at 01:50,
+156 lines, carrying its first amendment only.
+
+**Corrected to:** the current file, 264 lines, carrying all three. Regenerate
+with `scripts/export_data_index.py`.
+
+The registration lives in `benchmarks/preregistered`. The publisher read only
+`benchmarks/results`, where a copy of it had been made so the publisher could
+find it. Amendments were written to the real file and the copy never moved, so
+the site served a registration without its second amendment for about twelve
+hours and without its third from the moment it was written.
+
+The second amendment is the one that matters here. It records that the two arms
+had been scored on different compounds, that the fix moved the ligand arm from
+0.881 to 0.657, and that the mismatch had been flattering the ligand arm rather
+than ours. A reader of the site during that window saw a registration that did
+not mention it.
+
+Nothing computed from the registration was wrong. What was wrong is that a
+correction we had already made was not visible to anyone reading the public
+copy, which defeats the point of publishing it.
+
+Three other registrations were duplicated the same way and happened to still
+match. The publisher now searches both directories and refuses to publish a
+filename that exists in both with different contents, naming the file and
+stopping rather than letting one copy win silently. The duplicates in
+`benchmarks/results` are deleted, so each registration has one source.
+
 ## ABL1 affinity ranking, corrected twice
 
 **Reported first:** Spearman 0.563 on 30 held-out compounds, commit `85703ae`.
@@ -26,7 +56,7 @@ which is false and is retracted at the bottom of this file.
 Two further defects were found and fixed in the same pass. Medians were taken
 in linear nanomolar on log-normal data, which for a compound measured three
 times at 2 nM and three times at 18 nM returns 10 nM where the correct central
-value is 6; nineteen of the thirty compounds had an even number of assays and
+value is 6. Nineteen of the thirty compounds had an even number of assays and
 were therefore affected. And two compounds carried three identical records each
 of exactly 10,000 and exactly 20,000 nM, which is an assay ceiling deposited
 three times rather than three assays agreeing.
@@ -99,7 +129,7 @@ about why.
 
 Two smaller claims in the same sentence were also loose. Seven of the eight
 share a benzamide, not eight: CHEMBL2324925 carries a urea on a pyrazole. And
-six of the eight differ only in the fused heteroaryl cap; CHEMBL2316585 also
+six of the eight differ only in the fused heteroaryl cap. CHEMBL2316585 also
 swaps a methyl for cyclopropyl.
 
 The finding is a replication rather than a discovery, which the page now says.
@@ -159,7 +189,7 @@ three unrelated folds:
     below 0.60                 n=23   median error    43x   worst   18,168x
 
 The useful property is the bound rather than the median. A pose above 0.90 has
-not been wrong by more than about 400 fold in anything measured here; below it,
+not been wrong by more than about 400 fold in anything measured here. Below it,
 errors of ten thousand fold occur. The thresholds in
 src/vessari/uncertainty/pose.py were set from one target and are now set from
 three, moving from 0.85 and 0.50 to 0.90 and 0.60.

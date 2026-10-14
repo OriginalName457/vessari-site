@@ -154,3 +154,111 @@ That is itself an answer to the question the experiment was asked to settle,
 and it is the one the registration already anticipated in its closing section:
 the regime where a ligand model cannot be built needs a laboratory, not a
 corpus. No result is claimed from it yet. The scan continues.
+
+## Second amendment, 2026-10-14, after one target and before any analysis
+
+The two arms were being scored on different compounds. The structure arm drops
+any compound the folding model returns no affinity for, and the ligand arm was
+scored on the full held-out set, so on the first target six compounds were
+compared against eight. The registration says the held-out set is the same set
+for both arms, and it was not.
+
+The ligand arm is now scored on exactly the compounds the structure arm
+produced a number for, and a target with fewer than five such compounds is not
+compared at all. The ligand arm's result on the full held-out set is still
+recorded, under `ligand_on_full_held_out`, so the size of the effect stays
+visible.
+
+The expectation going in was that this favoured the structure arm, because a
+compound the folding model cannot handle is an unusual one and unusual
+compounds are where errors are largest. On the one target available it ran the
+other way. The ligand arm fell from 0.881 to 0.657 when restricted to the
+shared six, so the mismatch had been flattering the ligand arm and the
+correction widens the structure arm's lead. One target is not evidence about
+the direction of this bias in general.
+
+The earlier result is kept at `low-data-results-superseded-20261014.jsonl` with
+a note, because it was read and discussed before the mismatch was found.
+
+### Where the experiment stands
+
+One target scored. Carbonic anhydrase 2 reached the experiment and produced
+only two compounds after clustering, which is not a scorable set, so it is
+recorded as declined rather than as a result. The registration asks for 25
+targets or as many as exist, and the scan has walked 1,800 of its 6,000 target
+cap. No analysis will be run until the scan finishes or the target count is
+reached, and the decision rule is unchanged.
+
+## Third amendment, 2026-10-14, with one target scored
+
+Two changes to the search, both made with one result in hand and before the
+other eligible targets were run, so neither can have been chosen to suit an
+answer. Neither touches a registered bound. The compound range stays 15 to 45,
+the residue range stays 150 to 420, and the pool ceiling stays 90.
+
+### The search was counting in the wrong unit
+
+The scan stopped when it had 25 eligible targets. This registration asks for 25
+scored targets. Those are different numbers, because an eligible target can
+still fail to produce a scorable held-out set when its measured compounds do
+not spread across enough distinct chemistry. Of the two eligible targets that
+have reached the experiment, one scored and one was declined with two clusters.
+
+At that rate a search stopping at 25 eligible targets would have handed the
+analysis about twelve and reported the population as exhausted. The scan now
+reads the experiment's results file and stops when 25 targets have been scored.
+
+### The walk covered half the population for no reason
+
+The walk stopped at offset 6000. ChEMBL holds 11,055 single proteins, so the
+old cap examined 54 percent of them. The number 6000 was an arbitrary stopping
+point for a search, not a scientific bound, and the remaining 46 percent costs
+network time and no compute. The walk now asks ChEMBL for the population size
+and covers all of it.
+
+### A limitation this creates, stated now
+
+The walk proceeds in ChEMBL target identifier order, which runs roughly from
+targets registered long ago to targets registered recently. Older targets carry
+more published medicinal chemistry, so extending the walk samples proteins that
+are more likely to be data-poor. The targets this experiment scores are
+therefore not a random sample of the proteome. They are weighted toward
+proteins that entered ChEMBL late, which is the same thing as weighted toward
+proteins nobody has run a large screen against.
+
+For the hypothesis this does not matter, because the comparison is within a
+target: both arms see the same protein and the same held-out set. For any
+statement about how often the data-poor regime occurs, it matters a great deal,
+and no such statement will be made from this scan.
+
+### Targets that cannot be scored are now on the record
+
+A target that fails for a reason that will not change, too few compounds
+surviving the clustering rule or a pool too small to split, is written to
+`low-data-declined.json` with the stage and the reason. Before this it took a
+silent branch, so four consecutive runs reached carbonic anhydrase 2, refetched
+its pool and failed at the same step.
+
+This file is kept apart from `low-data-skipped.json`. A skipped target never
+belonged in the population, because its pool exceeds the ceiling. A declined
+target does belong and still cannot be scored. The write-up needs both counts
+and needs them separate, or the denominator is wrong.
+
+### An observation about the eligible targets, not a registered analysis
+
+Six of the thirteen eligible targets found so far are pathogen proteins:
+Toxoplasma gondii adenosine kinase, Mycobacterium tuberculosis PtpB,
+Helicobacter pylori and Methanosarcina thermophila carbonic anhydrases,
+Enterococcus faecalis beta-ketoacyl synthase, and Stenotrophomonas maltophilia
+beta-lactamase L1. The corpus of 121 scored targets holds two pathogen proteins.
+
+This is an observation about which proteins have little public measurement and
+it is labelled exploratory. It was not predicted and no test is attached to it.
+
+## The analysis, written before the results
+
+`scripts/analyse_low_data.py` was committed with one target scored. It
+implements the decision rule above without reinterpreting it, applies it to the
+Spearman difference alone because the hypothesis names Spearman alone, reports
+median fold error without letting it decide anything, and withholds the verdict
+until 25 targets are scored or the walk is finished.
