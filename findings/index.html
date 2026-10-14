@@ -55,6 +55,49 @@
   </div>
 
   <article class="finding">
+    <p class="f-label f-label--own">Our own error, caught one target into the
+      run. Our first explanation for it was also wrong.</p>
+    <h2 class="h2">An experiment about data-poor targets was selecting targets
+      that are not data-poor</h2>
+    <p class="body">This project's reason to exist is that a structure-based
+      prediction earns its cost where there is little ligand data, because a
+      model trained on known actives cannot be built without known actives. The
+      experiment registered to test it picks ChEMBL targets with 15 to 45
+      measured compounds and runs a structure arm and a ligand-only arm on the
+      same held-out set.</p>
+    <p class="body">The first target it ran was adenosine deaminase, queued as a
+      39 compound target. The pool it fetched held <strong>255 compounds and the
+      ligand arm trained on 247 of them</strong>. That is the data-rich regime
+      wearing the label of the data-poor one, which is the single comparison the
+      experiment exists to avoid.</p>
+    <p class="body">The first explanation was that ChEMBL caps a response at
+      1,000 records and returns the first 1,000 without saying so, so the
+      scanner had been counting inside a truncated window. A paged recount of
+      all twelve queued targets was run to confirm it. Every count matched
+      exactly, 39 against 39, 35 against 35, 45 against 45. The truncation had
+      not happened and the explanation was wrong.</p>
+    <p class="body">The real defect is that two different populations were being
+      counted. The scanner counts compounds measured in two or more assays,
+      which is what the held-out builder needs. The ligand arm trains on every
+      compound in the pool, including the ones measured once. For a busy target
+      those numbers are an order of magnitude apart. Caspase-7 has 39 compounds
+      measured twice and <strong>471 in total</strong>.</p>
+    <p class="body">Eleven of the twelve queued targets fail once pool size is
+      checked. Their pools are 103, 123, 148, 151, 160, 174, 254, 255, 263, 471
+      and 601 compounds. One survives with a pool of 66.</p>
+    <p class="body">It cost nothing in the record, because the run was stopped
+      before any target produced a result and the results file did not exist
+      when the fix was made. What it would have cost is a published comparison
+      labelled data-poor and computed on data-rich targets, supporting the
+      product claim for a reason that is not true.</p>
+    <p class="body">The ceiling is now checked after the pool is fetched, where
+      the true number is known, so it holds even if the scanner is wrong again.
+      The <a href="../data/">pre-registration</a> carries an amendment written
+      before any result existed, and the failed targets keep their queue entries
+      with their real pool sizes rather than disappearing.</p>
+  </article>
+
+  <article class="finding">
     <p class="f-label f-label--own">Our own error, and the same one twice. An
       audit found it and our first check of that audit got it wrong.</p>
     <h2 class="h2">Eight members of one chemical series were in a thirty
