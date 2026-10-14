@@ -1517,5 +1517,36 @@
         "why": "A document outside the retrieved corpus cannot support anything, whatever it may say elsewhere. The run only stands on what the run actually read."
       }
     ]
+  },
+  "corpus": {
+    "n_scored": 121,
+    "n_declined": 199,
+    "n_compounds": 2777,
+    "median_fold": 4.4,
+    "median_fold_ci": [
+      4.0,
+      4.8
+    ],
+    "mean_spearman": 0.577,
+    "mean_spearman_ci": [
+      0.532,
+      0.618
+    ],
+    "median_spearman": 0.607,
+    "positive": "117 of 121",
+    "above_half": "82 of 121",
+    "gpu_hours": 55.4,
+    "source": "corpus-121-targets.json"
+  },
+  "selection": {
+    "n_targets": 119,
+    "hits": 2.87,
+    "ci": [
+      2.66,
+      3.08
+    ],
+    "random": 1.21,
+    "enrichment": 2.4,
+    "at_least_one": "115 of 119"
   }
 }

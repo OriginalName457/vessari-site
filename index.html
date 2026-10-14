@@ -62,12 +62,26 @@
     <div class="hero">
       <div class="hero-copy">
         <h1 class="h1">We assess drug targets, and we run the controls that decide whether the assessment is worth acting on.</h1>
-        <p class="lede">Structure prediction, binding affinity, absorption and toxicity, and the literature behind each claim, run as one pipeline on hardware we own. Across <span data-num="fep_repro.n_targets" data-fmt="int">&#183;&#183;</span> targets of the public FEP+ set, <span data-num="fep_repro.n" data-fmt="int">&#183;&#183;&#183;</span> compounds, it reaches Pearson <span data-num="fep_repro.pearson" data-fmt="3">&#183;&#183;&#183;</span> within target. Every affinity number it produces is then scored against a model given no protein at all, and the verdict is printed whichever way it falls. On the target below, it fell against us.</p>
+        <p class="lede">Structure prediction, binding affinity, absorption and toxicity, and the literature behind each claim, run as one pipeline on hardware we own. Across <span data-num="corpus.n_scored" data-fmt="int">&#183;&#183;&#183;</span> proteins it has held out <span data-num="corpus.n_compounds" data-fmt="int">&#183;&#183;&#183;</span> measured compounds the model never saw and predicted every one, with a median error of <span data-num="corpus.median_fold" data-fmt="1">&#183;&#183;</span> fold. Every affinity number is then scored against a model given no protein at all, and the verdict is printed whichever way it falls.</p>
         <dl class="hero-stats">
           <div>
-            <dt>FEP+ within target, Pearson</dt>
-            <dd><span data-num="fep_repro.pearson" data-fmt="3">&#183;&#183;&#183;</span>
-              <span class="hero-stats__unit">over <span data-num="fep_repro.n_targets" data-fmt="int">&#183;&#183;</span> targets</span></dd>
+            <dt>proteins scored</dt>
+            <dd><span data-num="corpus.n_scored" data-fmt="int">&#183;&#183;&#183;</span>
+              <span class="hero-stats__unit"><span data-num="corpus.n_compounds" data-fmt="int">&#183;&#183;&#183;</span> compounds held out</span></dd>
+          </div>
+          <div>
+            <dt>median error against measurement</dt>
+            <dd><span data-num="corpus.median_fold" data-fmt="1">&#183;&#183;</span>x
+              <span class="hero-stats__unit">95% CI <span data-num="corpus.median_fold_ci.0" data-fmt="1">&#183;&#183;</span> to <span data-num="corpus.median_fold_ci.1" data-fmt="1">&#183;&#183;</span></span></dd>
+          </div>
+          <div>
+            <dt>best five found, choosing five</dt>
+            <dd><span data-num="selection.hits" data-fmt="2">&#183;&#183;&#183;</span>
+              <span class="hero-stats__unit">against <span data-num="selection.random" data-fmt="2">&#183;&#183;&#183;</span> at random</span></dd>
+          </div>
+          <div>
+            <dt>targets it ranks in the right direction</dt>
+            <dd><span data-num="corpus.positive" data-fmt="text">&#183;&#183;&#183;</span></dd>
           </div>
           <div>
             <dt>control arms per claim</dt>
@@ -76,10 +90,6 @@
           <div>
             <dt>our claims the controls overturned</dt>
             <dd>1<span class="hero-stats__unit">, before release</span></dd>
-          </div>
-          <div>
-            <dt>ADMET endpoints, no failures</dt>
-            <dd><span data-num="admet.count" data-fmt="int">&#183;&#183;</span></dd>
           </div>
         </dl>
       </div>

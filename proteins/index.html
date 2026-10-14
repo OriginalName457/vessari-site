@@ -164,10 +164,11 @@
 <main class="strip" id="main">
   <div class="f-intro">
     <h1 class="h1">Every protein we have run</h1>
-    <p class="lede">Three hundred and ten proteins went into the pipeline. One
-      hundred and twenty one came out with a score. This page holds all of them,
-      including the ones that failed, because a corpus of 121 shown without the
-      189 is a filtered set presented as a complete one.</p>
+    <p class="lede"><span id="n-attempted">&#183;&#183;&#183;</span> proteins
+      have gone into the pipeline. <span id="n-scored">&#183;&#183;&#183;</span>
+      came out with a score. This page holds all of them, including the ones
+      that failed, because the scored set shown without the rest is a filtered
+      set presented as a complete one.</p>
   </div>
 
   <p class="body">Each scored protein has a held-out set of measured compounds
@@ -225,7 +226,7 @@
       </select>
     </div>
     <label class="check"><input type="checkbox" id="onlyPose"> has a structure</label>
-    <label class="check"><input type="checkbox" id="showFailed"> show the 189 unscored</label>
+    <label class="check"><input type="checkbox" id="showFailed"> show the unscored</label>
   </div>
 
   <p class="count" id="count"></p>
@@ -248,13 +249,13 @@
     </table>
   </div>
 
-  <h2 class="h2">Why 189 did not score</h2>
+  <h2 class="h2">Why <span id="n-failed">&#183;&#183;&#183;</span> did not score</h2>
 
   <p class="body">A target is only scored if at least 12 of its measured
     compounds survive the selection rule, which keeps one compound per chemical
     cluster so that a held-out set cannot be eight members of the same series.
     Most proteins in ChEMBL do not have 12 compounds that far apart from each
-    other. That is the whole reason the corpus is 121.</p>
+    other. That is the whole reason the corpus is the size it is.</p>
 
   <div class="fail-list" id="fails"></div>
 

@@ -81,6 +81,7 @@ a:hover { color: var(--graphite); }
 /* ---------- masthead ---------- */
 
 .masthead {
+  overflow: hidden;
   position: sticky;
   top: 0;
   z-index: 10;
@@ -96,7 +97,9 @@ a:hover { color: var(--graphite); }
   display: flex;
   align-items: center;
   gap: 16px;
+  min-width: 0;
 }
+.masthead-in > .wordmark { flex: 0 0 auto; }
 .wordmark {
   font-family: var(--f-display);
   font-weight: 600;
@@ -293,7 +296,11 @@ a:hover { color: var(--graphite); }
   line-height: 1.05;
   letter-spacing: -0.015em;
   margin: 0 0 18px;
-  max-width: 26ch;
+  /* 26ch alone is wider than a 400px screen once the clamp floors the type at
+     2.125rem, so the headline ran past the right edge and took the page with
+     it. The container bound has to come first. */
+  max-width: min(26ch, 100%);
+  overflow-wrap: break-word;
 }
 .body { max-width: 68ch; margin: 0 0 14px; }
 .swap { transition: opacity 180ms ease, filter 180ms ease; }
@@ -1371,7 +1378,15 @@ a:hover { color: var(--graphite); }
 
 /* Top navigation. The masthead carried a wordmark and a subtitle and then a
    great deal of nothing, which is where the sections belong. */
-.topnav{margin-left:auto;display:flex;gap:1.4rem;align-items:center}
+/* Eight links do not fit beside the wordmark below about 1040px. The nav
+   scrolls inside itself rather than widening the masthead, because an
+   overflowing header gives the whole page a horizontal scrollbar and cuts the
+   last two links off with no way to reach them. */
+.topnav{margin-left:auto;display:flex;gap:1.4rem;align-items:center;
+        min-width:0;overflow-x:auto;overscroll-behavior-x:contain;
+        scrollbar-width:none;-ms-overflow-style:none}
+.topnav::-webkit-scrollbar{display:none}
+.topnav a{white-space:nowrap;flex:0 0 auto}
 .topnav a{font-family:var(--mono,ui-monospace,Menlo,Consolas,monospace);
           font-size:.72rem;text-transform:uppercase;letter-spacing:.11em;
           color:var(--muted);text-decoration:none;padding:.25rem 0;
@@ -1379,8 +1394,12 @@ a:hover { color: var(--graphite); }
 .topnav a:hover{color:var(--ink);border-bottom-color:var(--ink)}
 .topnav a:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 a.wordmark{text-decoration:none;color:inherit}
+@media (max-width:1040px){
+  .topnav{gap:1rem}
+  .topnav a{font-size:.68rem;letter-spacing:.08em}
+  .masthead-sub{display:none}
+}
 @media (max-width:720px){
   .topnav{gap:.9rem}
   .topnav a{font-size:.64rem;letter-spacing:.07em}
-  .masthead-sub{display:none}
 }

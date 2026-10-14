@@ -72,7 +72,7 @@ function fillWalker(root) {
     }
     if (fmt === 'pct') el.textContent = (value * 100).toFixed(1) + '%';
     else if (fmt === 'text') el.textContent = String(value);
-    else if (fmt === 'int') el.textContent = String(Math.round(value));
+    else if (fmt === 'int') el.textContent = Math.round(value).toLocaleString('en-US');
     else el.textContent = fixed(value, parseInt(fmt, 10));
   });
 }

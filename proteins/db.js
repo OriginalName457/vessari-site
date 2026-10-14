@@ -67,6 +67,15 @@
 
   function composition() {
     var s = state.summary;
+    // The intro sentences name these counts, and the worker is still adding
+    // targets, so they are written from the data rather than typed into the
+    // page where they would quietly go stale.
+    var words = {"n-attempted": s.attempted, "n-scored": s.scored,
+                 "n-failed": s.not_scored};
+    Object.keys(words).forEach(function (id) {
+      var n = document.getElementById(id);
+      if (n) n.textContent = words[id];
+    });
     var wrap = document.getElementById("comp");
     wrap.innerHTML = "";
     wrap.appendChild(cell("proteins scored", s.scored,
@@ -395,8 +404,9 @@
     box.appendChild(el("h3", "d-h", "A predicted complex"));
     if (!d.pose) {
       box.appendChild(el("p", "d-sub",
-        "No structure kept for this target. Poses were archived for 28 of the "
-        + "121 and the rest hold numbers only, because the full pose archive is "
+        "No structure kept for this target. Poses were archived for "
+        + state.summary.with_pose + " of the " + state.summary.scored
+        + " and the rest hold numbers only, because the full pose archive is "
         + "163 MB and would not deploy."));
       return box;
     }
