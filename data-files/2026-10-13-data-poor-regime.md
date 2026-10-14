@@ -92,3 +92,65 @@ none. The regime where a ligand model cannot be built at all is still not
 tested by this and cannot be tested retrospectively, because a target with no
 public measurements has nothing to score against. That regime needs a
 laboratory, not a corpus.
+
+## Amendment, 2026-10-14, before any target was scored
+
+A target was queued as data-poor and turned out not to be. Adenosine deaminase
+entered the queue at 39 compounds and its real pool is 255. The ligand arm
+trained on 247 of them before the run was stopped, with no result written.
+
+### The cause, after a wrong first answer
+
+The first diagnosis was that ChEMBL caps a request at 1000 records and the
+scanner read one page, so its count came from a truncated window. That was
+checked against a paged recount of all twelve queued targets and it is wrong.
+Every count matched exactly: 39 against 39, 35 against 35, 45 against 45.
+
+The real cause is a mismatch between what the scanner selects on and what the
+experiment uses. The scanner counts compounds measured in two or more assays,
+which is what the held-out builder requires. The ligand arm trains on the whole
+pool, which includes every compound measured once. Those are different
+populations and for a busy target they are very different sizes. Caspase-7 has
+39 compounds measured twice and 471 compounds in total.
+
+So the queue was selecting targets with few well measured compounds, not
+targets with little data, and only the second is the regime this registration
+is about.
+
+### What changed
+
+1. The scanner records pool size and rejects a target whose pool exceeds 90
+   compounds, twice the registered upper bound of 45.
+2. The experiment checks the pool size itself, after fetching it, and writes
+   any target above the ceiling to `low-data-skipped.json` with the count that
+   disqualified it. This sits where the true number is known, so it holds even
+   if the scanner is wrong again.
+3. The scanner also pages activities to exhaustion rather than reading one
+   page. This fixed nothing that was broken, and it is kept as a guard against
+   a truncation that has not happened yet rather than as the fix for this.
+
+This enforces the registered bound of 15 to 45 compounds rather than moving it.
+The ceiling of 90 is new as a number and is recorded here because the original
+text did not name one.
+
+### What the recount did to the queue
+
+Eleven of the twelve queued targets fail the corrected rule. Their pools are
+66, 103, 123, 148, 151, 160, 174, 254, 255, 263, 471 and 601 compounds. One
+survives, methylated DNA protein cysteine methyltransferase, with 25 compounds
+measured twice in a pool of 66.
+
+Each failed target keeps its queue entry with its real pool size and
+`eligible` set to false, rather than being removed.
+
+### What this does to the experiment
+
+The scan has examined 925 ChEMBL single proteins and produced one target that
+is genuinely in the regime. The registration asks for 25 or as many as exist,
+and the honest reading so far is that very few exist among proteins with enough
+public measurement to score at all.
+
+That is itself an answer to the question the experiment was asked to settle,
+and it is the one the registration already anticipated in its closing section:
+the regime where a ligand model cannot be built needs a laboratory, not a
+corpus. No result is claimed from it yet. The scan continues.
