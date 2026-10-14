@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="
+  default-src 'none';
+  script-src 'self' https://cdn.jsdelivr.net 'wasm-unsafe-eval' 'unsafe-eval' blob:;
+  worker-src blob:;
+  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+  font-src 'self' https://fonts.gstatic.com data:;
+  img-src 'self' data: blob:; connect-src 'self';
+  base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Protein Database</title>
+<meta name="description" content="Every protein the pipeline has been run against, scored or failed, with the compounds, the error, the predicted structure and the simulation where one exists.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&family=DM+Mono:wght@400;500&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  /* ---------- composition strip ---------- */
+  .comp { display: grid; gap: 1px; background: var(--grid);
+          border: 1px solid var(--grid); margin: 1.75rem 0; }
+  @media (min-width: 640px) { .comp { grid-template-columns: repeat(4, 1fr); } }
+  .comp-cell { background: var(--paper-lit); padding: 0.85rem 1rem; }
+  .comp-k { font: 600 0.62rem/1 var(--f-display); text-transform: uppercase;
+            letter-spacing: 0.09em; opacity: 0.6; }
+  .comp-v { font: 500 1.65rem/1.1 var(--f-data); font-variant-numeric: tabular-nums;
+            margin-top: 0.25rem; }
+  .comp-n { font: 400 0.74rem/1.4 var(--f-body); opacity: 0.72; margin-top: 0.2rem; }
+
+  /* ---------- controls ---------- */
+  .ctrl { display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: flex-end;
+          margin: 1.5rem 0 0.75rem; }
+  .ctrl label { display: block; font: 600 0.62rem/1 var(--f-display);
+                text-transform: uppercase; letter-spacing: 0.09em;
+                opacity: 0.6; margin-bottom: 0.3rem; }
+  .ctrl input[type=search], .ctrl select {
+    font: 400 0.9rem/1.3 var(--f-body); padding: 0.4rem 0.55rem;
+    border: 1px solid var(--grid); background: var(--paper-hi);
+    color: var(--graphite); min-width: 0; }
+  .ctrl input[type=search] { flex: 1 1 14rem; }
+  .ctrl .check { font: 400 0.84rem/1.3 var(--f-body); display: flex;
+                 align-items: center; gap: 0.4rem; padding-bottom: 0.45rem; }
+  .ctrl .check input { accent-color: var(--pen-violet); }
+  .count { font: 400 0.78rem/1.4 var(--f-data); opacity: 0.7;
+           margin: 0 0 0.6rem; font-variant-numeric: tabular-nums; }
+
+  /* ---------- table ---------- */
+  .tbl-wrap { overflow-x: auto; border: 1px solid var(--grid);
+              background: var(--paper-lit); }
+  table.db { width: 100%; border-collapse: collapse;
+             font: 400 0.84rem/1.4 var(--f-body); min-width: 46rem; }
+  table.db th { text-align: left; font: 600 0.62rem/1.2 var(--f-display);
+                text-transform: uppercase; letter-spacing: 0.08em;
+                padding: 0.6rem 0.7rem; border-bottom: 1px solid var(--grid);
+                background: var(--paper-hi); white-space: nowrap;
+                position: sticky; top: 0; z-index: 1; }
+  table.db th button { all: unset; cursor: pointer; display: inline-flex;
+                       gap: 0.25rem; align-items: center; }
+  table.db th button:focus-visible { outline: 2px solid var(--pen-violet);
+                                     outline-offset: 2px; }
+  table.db th .arrow { opacity: 0.45; font-size: 0.8em; }
+  table.db td { padding: 0.5rem 0.7rem; border-bottom: 1px solid var(--rule-minor);
+                vertical-align: top; }
+  table.db tbody tr { cursor: pointer; }
+  table.db tbody tr:hover { background: var(--paper-hi); }
+  table.db tbody tr.open { background: var(--paper-hi); }
+  .num-cell { font-family: var(--f-data); font-variant-numeric: tabular-nums;
+              white-space: nowrap; }
+  .pname { font-weight: 600; }
+  .pgene { font: 400 0.72rem/1 var(--f-data); opacity: 0.62; }
+  .fam { font: 400 0.72rem/1.3 var(--f-body); opacity: 0.8; white-space: nowrap; }
+  .chip { display: inline-block; white-space: nowrap; font: 600 0.58rem/1 var(--f-display);
+          text-transform: uppercase; letter-spacing: 0.07em;
+          padding: 0.22rem 0.35rem; border: 1px solid var(--grid);
+          background: var(--paper); margin-right: 0.25rem; }
+  .chip--pose { border-color: var(--pen-violet); color: var(--pen-violet); }
+  .chip--sim { border-color: var(--pen-clay); color: var(--pen-clay); }
+  .chip--none { opacity: 0.55; }
+  .bar { position: relative; height: 0.55rem; background: var(--paper);
+         border: 1px solid var(--rule-major); min-width: 4rem; margin-top: 0.25rem; }
+  .bar i { position: absolute; top: 0; bottom: 0; background: var(--pen-violet); }
+  .bar i.neg { background: var(--pen-clay); }
+  .bar u { position: absolute; top: -2px; bottom: -2px; width: 1px;
+           background: var(--graphite); opacity: 0.4; }
+
+  /* ---------- detail ---------- */
+  tr.detail > td { background: var(--paper); padding: 0; }
+  .d-in { padding: 1.25rem 1rem 1.5rem; display: grid; gap: 1.25rem; }
+  @media (min-width: 1000px) { .d-in { grid-template-columns: 1fr 1fr; } }
+  .d-full { grid-column: 1 / -1; }
+  .d-h { font: 500 1.1rem/1.25 var(--f-display); margin: 0 0 0.3rem; }
+  .d-sub { font: 400 0.8rem/1.5 var(--f-body); opacity: 0.75; margin: 0 0 0.6rem; }
+  .d-note { font: 400 0.78rem/1.55 var(--f-body); opacity: 0.8; margin: 0.5rem 0 0; }
+  .d-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
+            gap: 1px; background: var(--grid); border: 1px solid var(--grid); }
+  .d-cell { background: var(--paper-lit); padding: 0.55rem 0.7rem; }
+  .d-k { font: 600 0.58rem/1 var(--f-display); text-transform: uppercase;
+         letter-spacing: 0.08em; opacity: 0.6; }
+  .d-v { font: 500 0.95rem/1.3 var(--f-data); font-variant-numeric: tabular-nums;
+         margin-top: 0.18rem; }
+  .scatter { width: 100%; height: auto; background: var(--paper-lit);
+             border: 1px solid var(--grid); display: block; }
+  .scatter text { font: 400 9px var(--f-data); fill: var(--graphite); opacity: 0.7; }
+  .scatter .ax { stroke: var(--grid); stroke-width: 1; }
+  .scatter .ideal { stroke: var(--graphite); stroke-width: 1;
+                    stroke-dasharray: 3 3; opacity: 0.35; }
+  .scatter circle { fill: var(--pen-violet); fill-opacity: 0.55;
+                    stroke: var(--pen-violet); stroke-width: 0.6; }
+  .scatter circle:hover { fill-opacity: 0.95; }
+  .stage3d { position: relative; width: 100%; aspect-ratio: 4 / 3;
+             background: #0D1210; border: 1px solid var(--grid); }
+  .stage3d .note { position: absolute; inset: 0; display: grid; place-items: center;
+                   color: #A8B2AC; font: 400 0.8rem/1.5 var(--f-body);
+                   text-align: center; padding: 1.25rem; }
+  .legend3 { display: flex; gap: 0.9rem; flex-wrap: wrap; padding: 0.45rem 0 0;
+             font: 400 0.72rem/1.4 var(--f-body); }
+  .legend3 span::before { content: ""; display: inline-block; width: 0.7rem;
+                          height: 0.7rem; margin-right: 0.3rem;
+                          vertical-align: -1px; border-radius: 2px; }
+  .lg-l::before { background: #E8A33D; }
+  .lg-p::before { background: #6FA8C7; }
+  .lg-b::before { background: #8E9A93; }
+  table.cmp { width: 100%; border-collapse: collapse;
+              font: 400 0.78rem/1.35 var(--f-data); }
+  table.cmp th { text-align: left; font: 600 0.58rem/1.2 var(--f-display);
+                 text-transform: uppercase; letter-spacing: 0.07em;
+                 padding: 0.4rem 0.5rem; border-bottom: 1px solid var(--grid);
+                 opacity: 0.7; }
+  table.cmp td { padding: 0.32rem 0.5rem; border-bottom: 1px solid var(--rule-minor);
+                 font-variant-numeric: tabular-nums; white-space: nowrap; }
+  table.cmp td.smi { font-size: 0.68rem; max-width: 16rem; overflow: hidden;
+                     text-overflow: ellipsis; white-space: nowrap; opacity: 0.7; }
+  .cmp-scroll { max-height: 19rem; overflow: auto;
+                border: 1px solid var(--grid); background: var(--paper-lit); }
+  .off-hi { color: var(--pen-clay); }
+
+  .fail-list { font: 400 0.8rem/1.6 var(--f-body); }
+  .fail-list code { font: 400 0.76rem/1 var(--f-data); }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="masthead-in">
+    <a class="wordmark" href="../">VESSARI</a>
+    <span class="masthead-sub">proteins</span>
+    <nav class="topnav" aria-label="Sections">
+      <a href="../what/">what this is</a>
+      <a href="../">assessment</a>
+      <a href="../proteins/">proteins</a>
+      <a href="../selection/">selection</a>
+      <a href="../sim/">simulation</a>
+      <a href="../findings/">findings</a>
+      <a href="../notes/">notes</a>
+      <a href="../data/">data</a>
+    </nav>
+  </div>
+</header>
+
+<main class="strip" id="main">
+  <div class="f-intro">
+    <h1 class="h1">Every protein we have run</h1>
+    <p class="lede">Three hundred and ten proteins went into the pipeline. One
+      hundred and twenty one came out with a score. This page holds all of them,
+      including the ones that failed, because a corpus of 121 shown without the
+      189 is a filtered set presented as a complete one.</p>
+  </div>
+
+  <p class="body">Each scored protein has a held-out set of measured compounds
+    that no part of the pipeline saw, a prediction for each compound, and the
+    error between them. Open any row for the compounds, the error against
+    measurement, and the predicted structure where we kept one.</p>
+
+  <div class="comp" id="comp" aria-label="Corpus composition"></div>
+
+  <h2 class="h2">What the corpus is made of</h2>
+
+  <p class="body">Protein family comes from UniProt molecular function keywords,
+    which are curated and cited, so any one of them can be checked against the
+    entry. It is not our reading of the protein name.</p>
+
+  <p class="body">The composition is lopsided and the number matters more than
+    the table. <strong>Fifty six of the 121 scored proteins are G protein
+    coupled receptors.</strong> That is 46 percent of the corpus in one family,
+    which happens because ChEMBL holds more measured compounds for receptors
+    than for anything else and our selection rule needs at least 12 compounds
+    that survive clustering.</p>
+
+  <p class="body">A reviewer will ask whether the headline is really a statement
+    about receptors. We checked. Median Spearman is 0.602 across the 56
+    receptors and 0.607 across the other 65, and median fold error is 4.6 and
+    4.1. The skew is real and it does not drive the result.</p>
+
+  <p class="body">On disease, we have less than we would like. UniProt names a
+    disease for 15 of the 121 and carries a disease comment for 37. An earlier
+    version of this page grouped all 121 into therapeutic areas, which was our
+    own reading of the names rather than anything a reader could check, so it is
+    gone. Where UniProt names a disease it appears in the row. Where it does not,
+    the row says nothing.</p>
+
+  <h2 class="h2">The database</h2>
+
+  <div class="ctrl">
+    <div style="flex:1 1 14rem">
+      <label for="q">Search name, gene or accession</label>
+      <input type="search" id="q" placeholder="angiotensin, ABL1, P30556" autocomplete="off">
+    </div>
+    <div>
+      <label for="fam">Family</label>
+      <select id="fam"></select>
+    </div>
+    <div>
+      <label for="sort">Sort by</label>
+      <select id="sort">
+        <option value="spearman">rank correlation</option>
+        <option value="median_fold">fold error</option>
+        <option value="n">compounds tested</option>
+        <option value="chembl_compounds">compounds in ChEMBL</option>
+        <option value="residues">length</option>
+        <option value="name">name</option>
+      </select>
+    </div>
+    <label class="check"><input type="checkbox" id="onlyPose"> has a structure</label>
+    <label class="check"><input type="checkbox" id="showFailed"> show the 189 unscored</label>
+  </div>
+
+  <p class="count" id="count"></p>
+
+  <div class="tbl-wrap">
+    <table class="db" id="db">
+      <thead>
+        <tr>
+          <th scope="col">Protein</th>
+          <th scope="col">Family</th>
+          <th scope="col">Organism</th>
+          <th scope="col">Compounds</th>
+          <th scope="col">Rank correlation</th>
+          <th scope="col">Median error</th>
+          <th scope="col">Within 10x</th>
+          <th scope="col">Shown</th>
+        </tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+
+  <h2 class="h2">Why 189 did not score</h2>
+
+  <p class="body">A target is only scored if at least 12 of its measured
+    compounds survive the selection rule, which keeps one compound per chemical
+    cluster so that a held-out set cannot be eight members of the same series.
+    Most proteins in ChEMBL do not have 12 compounds that far apart from each
+    other. That is the whole reason the corpus is 121.</p>
+
+  <div class="fail-list" id="fails"></div>
+
+  <p class="body">This is worth stating plainly, because it is the limitation a
+    reviewer should press on. The corpus is not a sample of proteins. It is the
+    set of proteins with enough chemically diverse public measurements to score
+    one, which is a different and much smaller population.</p>
+
+  <footer class="foot">
+    <p>Built from <code>~/.vessari/corpus/corpus.jsonl</code>, UniProt entries
+      fetched 2026-10-13, and the pose archive. Rebuilt by
+      <code>scripts/export_protein_db.py</code>.</p>
+    <nav><a href="../">Back to the assessment</a></nav>
+  </footer>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/ngl@2.5.0/dist/ngl.js"></script>
+<script src="db.js"></script>
+</body>
+</html>
