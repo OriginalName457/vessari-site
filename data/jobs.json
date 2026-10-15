@@ -1,13 +1,13 @@
 {
  "what_this_is": "What the machines are doing right now. Each count is read from the file that job writes as it works, not typed in by hand. Nothing here is a result. Results go to the data page when the job that produced them finishes.",
- "generated_at": "2026-10-15T14:01:34+00:00",
- "generated_unix": 1792072894,
+ "generated_at": "2026-10-15T14:42:59+00:00",
+ "generated_unix": 1792075379,
  "jobs": [
   {
    "id": "data-poor-regime",
    "title": "Does a structure help when almost nothing has been measured",
    "kind": "registered experiment",
-   "running": true,
+   "running": false,
    "done": 18,
    "total": 25,
    "unit": "proteins scored",
@@ -34,7 +34,7 @@
    "title": "Rescoring every published protein under the corrected pipeline",
    "kind": "verification",
    "running": true,
-   "done": 98,
+   "done": 99,
    "total": 115,
    "unit": "proteins rescored",
    "note": "Every figure on this site was computed before two defects were fixed. This recomputes all of them to find out whether the published numbers move. Whatever it returns goes on the site, including if it goes against us.",
