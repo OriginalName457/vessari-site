@@ -1,7 +1,7 @@
 {
  "what_this_is": "What the machines are doing right now. Each count is read from the file that job writes as it works, not typed in by hand. Nothing here is a result. Results go to the data page when the job that produced them finishes.",
- "generated_at": "2026-10-15T00:39:03+00:00",
- "generated_unix": 1792024743,
+ "generated_at": "2026-10-15T00:39:16+00:00",
+ "generated_unix": 1792024756,
  "jobs": [
   {
    "id": "data-poor-regime",
@@ -24,7 +24,7 @@
    "done": 5200,
    "total": 11055,
    "unit": "proteins examined",
-   "note": "29 qualify so far. A protein qualifies with 15 to 45 measured compounds and 150 to 420 residues, which is few enough that a model trained on known actives has almost nothing to learn from.",
+   "note": "30 qualify so far. A protein qualifies with 15 to 45 measured compounds and 150 to 420 residues, which is few enough that a model trained on known actives has almost nothing to learn from.",
    "why_it_matters": "The experiment above cannot finish until this finds enough proteins, so this is the thing holding it up.",
    "link": "data-files/2026-10-13-data-poor-regime.md",
    "link_text": "what counts as qualifying"
