@@ -55,6 +55,42 @@
   </div>
 
   <article class="finding">
+    <p class="f-label f-label--own">Our own error, found by an outside reader,
+      after we had published the result three times.</p>
+    <h2 class="h2">We simulated a membrane receptor in a box of water with no
+      membrane in it</h2>
+    <p class="body">We ran molecular dynamics on two predicted complexes to ask
+      whether a pose that falls apart under simulation is a pose whose affinity
+      was wrong. One prediction was almost right. The other was wrong by nearly
+      three thousand fold. The replicas scattered 4.24 angstroms among
+      themselves while the two poses differed by 1.1, so the measurement could
+      not separate them and we reported it as a null.</p>
+    <p class="body">Both complexes are P30556, the angiotensin II type 1
+      receptor. That is a class A G protein coupled receptor with seven
+      transmembrane helices. We built the system with amber14 and TIP3P water,
+      29,094 waters in a 9.9 nanometre box. There is no lipid anywhere in the
+      build.</p>
+    <p class="body">A seven helix bundle has nothing holding it together
+      outside a membrane. So some of that 4.24 angstrom replica scatter is the
+      receptor coming apart for reasons that have nothing to do with the
+      ligand. We read an instrument that was not plugged in.</p>
+    <p class="body">The pre-registration for this run checked the protocol
+      against five published molecular dynamics studies and caught five
+      divergences. It never mentioned a membrane. We checked the protocol
+      against papers and forgot to check it against the protein.</p>
+    <p class="body">We have withdrawn the result. It does not become a positive
+      signal. We do not know whether pose stability tells you anything, and we
+      no longer claim to have measured it. The count of candidate trust signals
+      tested drops from five to four, which changes three pages.</p>
+    <p class="body">An outside reader found this, asked to look at the site as a
+      working biochemist. The same reader said we hide a loss to a molecular
+      weight baseline. We checked that one and it is wrong. The arm is on the
+      front page and on the current split we score 0.284 against molecular
+      weight at 0.209. They were reading a control file the site stopped using
+      two versions ago.</p>
+  </article>
+
+  <article class="finding">
     <p class="f-label f-label--own">Our own error, caught four targets into the
       run, in the search rather than in the science.</p>
     <h2 class="h2">The search for data-poor targets was counting in the wrong
@@ -261,7 +297,7 @@
       can judge any individual result. The headline is a median error of
       <strong>4.4 fold across 98 targets</strong>, interval [3.9, 4.8], and it
       has moved by 0.1 fold while the corpus tripled.</p>
-    <p class="f-repro">Reproduce: all five candidate explanations, with
+    <p class="f-repro">Reproduce: all four candidate explanations that survive, with
       uncorrected and corrected intervals and both the 41 and 98 target
       versions, are in
       <a href="../data-files/error-sources.json">error-sources.json</a>, and the

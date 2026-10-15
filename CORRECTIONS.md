@@ -5,6 +5,48 @@ changed and why. A result that moves without a record of having moved is worse
 than one that was never published, so this file exists to make the movement
 visible rather than to tidy it away.
 
+## We simulated a membrane receptor without a membrane, and called the result a null
+
+**Reported:** five candidate ways to tell a trustworthy prediction from an
+untrustworthy one were tested and all five came back null. The fifth was
+stability under molecular dynamics.
+
+**Corrected to:** four signals tested, four null. The fifth is withdrawn. We
+cannot say whether pose stability carries information, because the measurement
+we ran cannot answer it.
+
+The two complexes we simulated are P30556, the angiotensin II type 1 receptor.
+That is a class A G protein coupled receptor with seven transmembrane helices.
+We built the system with `addSolvent`, amber14 and TIP3P water, and ran it with
+29,094 waters in a 9.9 nm box. There is no lipid in the build. We put a
+membrane protein in a box of water.
+
+A seven helix bundle has no reason to hold its packing without the membrane
+that normally surrounds it. So the 4.24 angstrom scatter between replicas,
+which we reported as the reason the measurement could not separate the two
+poses, is at least partly the receptor coming apart for a reason that has
+nothing to do with the ligand. We read an instrument that was not connected.
+
+The pre-registration is `benchmarks/preregistered/2026-10-12-pose-stability-v2.md`.
+It caught five protocol divergences against the published literature. It did
+not specify a membrane, and neither did the first version. We checked the
+protocol against papers and did not check it against the protein.
+
+This does not turn the null into a positive result. We do not know whether a
+pose that falls apart under dynamics is a pose whose affinity was wrong. We
+know that we have not measured it.
+
+What it costs: one of the five entries in "we cannot tell you which predictions
+to trust" was not evidence. The claim that we cannot tell you stands, because
+four signals remain null and no signal came back positive. The count was wrong
+and the count is on three pages.
+
+Found by an outside reader asked to look at the site as a biochemist. The same
+reader said we hide our loss to a molecular weight baseline. That one is wrong,
+and it is recorded here because we checked it: the arm is on the front page,
+and on the current split we score 0.284 against molecular weight's 0.209. The
+reader was reading `abl1-controls-v2.json`, which the site stopped using.
+
 ## The published pre-registration was missing two of its amendments
 
 **Published:** the data-poor registration as it stood on 14 October at 01:50,

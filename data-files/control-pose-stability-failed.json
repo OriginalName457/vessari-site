@@ -58,5 +58,10 @@
   "The restrained phase works as intended: the protein held to 0.26 and 0.27 angstroms across both poses and all ten replicas, so the settling phase did what it claimed and the release took effect.",
   "The literature lens predicted this. Every published validation of pose stability is against pose correctness rather than affinity error, and the one published measurement of RMSD against affinity error is near-null. That was in the registration as a stated prior and the measurement agrees with it."
  ],
- "the_open_problem_is_unchanged": "Five candidate signals for predicting which affinity predictions to trust have now been tested and all five are null: interface pTM, ensemble spread, measurement noise in the answer key, undefined stereochemistry, and pose stability under dynamics. The honest position is that the error is not concentrated in one detectable place, and a user should treat every prediction as carrying the same risk until something is found that works."
+ "the_open_problem_is_unchanged": "Five candidate signals for predicting which affinity predictions to trust have now been tested and all five are null: interface pTM, ensemble spread, measurement noise in the answer key, undefined stereochemistry, and pose stability under dynamics. The honest position is that the error is not concentrated in one detectable place, and a user should treat every prediction as carrying the same risk until something is found that works.",
+ "withdrawn": {
+  "on": "2026-10-15",
+  "why": "The two complexes are P30556, the angiotensin II type 1 receptor, a seven transmembrane class A GPCR, and the system was built with amber14 and TIP3P water and no lipid. A helical bundle has nothing holding it together outside a membrane, so the replica scatter this result rests on is confounded by the receptor destabilising for reasons unrelated to the ligand. This is not a null result about pose stability. It is a measurement that cannot answer the question.",
+  "status": "withdrawn, not superseded. No replacement run exists."
+ }
 }
