@@ -1,17 +1,17 @@
 {
  "what_this_is": "What the machines are doing right now. Each count is read from the file that job writes as it works, not typed in by hand. Nothing here is a result. Results go to the data page when the job that produced them finishes.",
- "generated_at": "2026-10-15T00:39:16+00:00",
- "generated_unix": 1792024756,
+ "generated_at": "2026-10-15T00:59:26+00:00",
+ "generated_unix": 1792025966,
  "jobs": [
   {
    "id": "data-poor-regime",
    "title": "Does a structure help when almost nothing has been measured",
    "kind": "registered experiment",
    "running": true,
-   "done": 9,
+   "done": 10,
    "total": 25,
    "unit": "proteins scored",
-   "note": "15 further proteins were declined, because their measured compounds do not spread across enough distinct chemistry to split into a held-out set. The registration asks for 25 or as many as exist.",
+   "note": "17 further proteins were declined, because their measured compounds do not spread across enough distinct chemistry to split into a held-out set. The registration asks for 25 or as many as exist.",
    "why_it_matters": "This is the claim the product rests on. If a model trained only on known actives wins here, the claim is withdrawn.",
    "link": "data-files/2026-10-13-data-poor-regime.md",
    "link_text": "the registration, written before any result"
@@ -21,10 +21,10 @@
    "title": "Searching every protein in ChEMBL for ones nobody has measured",
    "kind": "search",
    "running": true,
-   "done": 5200,
+   "done": 5500,
    "total": 11055,
    "unit": "proteins examined",
-   "note": "30 qualify so far. A protein qualifies with 15 to 45 measured compounds and 150 to 420 residues, which is few enough that a model trained on known actives has almost nothing to learn from.",
+   "note": "31 qualify so far. A protein qualifies with 15 to 45 measured compounds and 150 to 420 residues, which is few enough that a model trained on known actives has almost nothing to learn from.",
    "why_it_matters": "The experiment above cannot finish until this finds enough proteins, so this is the thing holding it up.",
    "link": "data-files/2026-10-13-data-poor-regime.md",
    "link_text": "what counts as qualifying"
