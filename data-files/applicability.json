@@ -1,0 +1,79 @@
+{
+ "what_this_is": "Whether we can tell, before folding anything, which proteins the ranking will work on. Features are all knowable in advance. The target is the per-target Spearman we measured. Evaluation is leave one out across every scored protein.",
+ "n_targets": 121,
+ "measured_spearman": {
+  "median": 0.607,
+  "lower_quartile": 0.473,
+  "below_0_3": 14,
+  "negative": 4
+ },
+ "model": {
+  "kind": "ridge regression, standardised features, lambda 1.0",
+  "features": [
+   "clusters",
+   "held_out_n",
+   "is_enzyme",
+   "is_gpcr",
+   "is_human",
+   "is_kinase",
+   "log_chembl",
+   "log_pdb",
+   "log_residues",
+   "max_tanimoto"
+  ],
+  "weights": [
+   {
+    "feature": "log_chembl",
+    "weight": 0.0383
+   },
+   {
+    "feature": "log_residues",
+    "weight": 0.0315
+   },
+   {
+    "feature": "is_human",
+    "weight": -0.0285
+   },
+   {
+    "feature": "log_pdb",
+    "weight": 0.0172
+   },
+   {
+    "feature": "max_tanimoto",
+    "weight": 0.0145
+   },
+   {
+    "feature": "is_enzyme",
+    "weight": 0.0126
+   },
+   {
+    "feature": "held_out_n",
+    "weight": 0.012
+   },
+   {
+    "feature": "clusters",
+    "weight": 0.012
+   },
+   {
+    "feature": "is_gpcr",
+    "weight": 0.0052
+   },
+   {
+    "feature": "is_kinase",
+    "weight": 0.0036
+   }
+  ]
+ },
+ "leave_one_out": {
+  "rank_correlation_predicted_vs_realised": 0.003,
+  "mean_absolute_error": 0.1971,
+  "mean_absolute_error_of_predicting_the_mean": 0.1865,
+  "beats_predicting_the_mean": false
+ },
+ "quartiles_by_predicted_reliability": {
+  "n_per_quartile": 30,
+  "realised_median_in_bottom_quarter": 0.627,
+  "realised_median_in_top_quarter": 0.622,
+  "separation": -0.005
+ }
+}

@@ -171,11 +171,18 @@
   <div class="claim claim--not">
     <h3>Telling you which predictions to trust</h3>
     <p class="body">A user wants to know which five of forty numbers to
-      believe. We cannot tell them. Four candidate signals have been tested and
-      all four were null: the model's confidence in the structure it built, the
+      believe. We cannot tell them yet. Five candidate signals have been tested and
+      all five were null: the model's confidence in the structure it built, the
       disagreement between its two affinity heads, noise in the laboratory
       values, and an arbitrary stereochemical choice affecting a fifth of
-      predictions. Every prediction currently carries the same risk.</p>
+      predictions. The fifth was a model built to predict, before anything is
+      folded, which proteins the ranking will work on, from ten features
+      knowable in advance. Across 121 proteins, leave one out, it does worse
+      than predicting the same number every time, and sorting proteins by its
+      prediction separates the best thirty from the worst thirty by minus
+      0.005. Every prediction currently carries the same risk, and the
+      <a href="../data-files/2026-10-15-applicability.md">result is
+      published</a>.</p>
       <p class="body">A fifth signal, stability under molecular dynamics, was
       withdrawn on 15 October 2026. We simulated a membrane receptor in a box
       of water with no lipid in it, so the helices had nothing holding them
