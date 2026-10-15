@@ -1403,3 +1403,89 @@ a.wordmark{text-decoration:none;color:inherit}
   .topnav{gap:.9rem}
   .topnav a{font-size:.64rem;letter-spacing:.07em}
 }
+
+/* Running jobs, the section under the hero. Built from the same tokens as the
+   rest of the sheet. The bar is a measurement, so it reads like the plots do
+   rather than like a download indicator: a thin rule with a filled portion,
+   no rounding, no animation on load. */
+.live {
+  margin: 0 0 3rem;
+  padding: 1.5rem 0 0;
+  border-top: 1px solid var(--rule-major);
+}
+.live-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.75rem 1.25rem;
+}
+.live-age {
+  margin: 0;
+  font-family: var(--f-data);
+  font-size: var(--t-label);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--graphite-2);
+}
+.live-age--stale { color: var(--pen-clay); }
+.live-intro { max-width: 62ch; margin: 0.5rem 0 1.75rem; }
+.live-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1.75rem;
+}
+@media (min-width: 900px) {
+  .live-list { grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr)); }
+}
+.live-job { min-width: 0; }
+.live-job__head { margin: 0 0 0.6rem; display: grid; gap: 0.3rem; }
+.live-job__kind {
+  font-family: var(--f-data);
+  font-size: var(--t-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--pen-violet);
+}
+.live-job--stopped .live-job__kind { color: var(--pen-clay); }
+.live-job__title {
+  font-family: var(--f-display);
+  font-size: var(--t-h3);
+  line-height: 1.25;
+  color: var(--graphite);
+  text-wrap: balance;
+}
+.live-bar {
+  height: 6px;
+  background: var(--grid);
+  overflow: hidden;
+}
+.live-bar__fill {
+  display: block;
+  height: 100%;
+  background: var(--pen-violet);
+}
+.live-job--stopped .live-bar__fill { background: var(--graphite-2); }
+.live-job__count {
+  margin: 0.5rem 0 0;
+  font-family: var(--f-data);
+  font-size: var(--t-data);
+  font-variant-numeric: tabular-nums;
+  color: var(--graphite);
+}
+.live-job__note {
+  margin: 0.65rem 0 0;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--graphite-2);
+  max-width: 48ch;
+}
+.live-job__link {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-family: var(--f-data);
+  font-size: var(--t-label);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}

@@ -1321,3 +1321,100 @@ boot().catch(() => declareUnavailable());
   const wanted = document.getElementById('tab-' + location.hash.replace('#', ''));
   if (wanted) show(wanted, false);
 })();
+
+/* Running jobs. Read from data/jobs.json, which is rewritten by
+   scripts/export_job_status.py from each job's own state file.
+
+   The age is shown rather than hidden. A page that says "in progress" over a
+   count written six hours ago is worse than a page that says nothing, so the
+   file carries the time it was written and this states it plainly. If the file
+   is missing or will not parse, the whole section stays hidden rather than
+   rendering an empty shell that implies nothing is running. */
+(function liveJobs() {
+  const AGE_STALE_MIN = 90;
+
+  function ago(seconds) {
+    const m = Math.round(seconds / 60);
+    if (m < 1) return 'just now';
+    if (m === 1) return '1 minute ago';
+    if (m < 90) return m + ' minutes ago';
+    const h = Math.round(m / 60);
+    return h === 1 ? '1 hour ago' : h + ' hours ago';
+  }
+
+  function render(data) {
+    const section = document.getElementById('live');
+    const list = document.getElementById('live-list');
+    const age = document.getElementById('live-age');
+    if (!section || !list || !Array.isArray(data.jobs) || !data.jobs.length) return;
+
+    const seconds = Math.max(0, Math.floor(Date.now() / 1000) - (data.generated_unix || 0));
+    const minutes = seconds / 60;
+    age.textContent = 'counted ' + ago(seconds);
+    if (minutes > AGE_STALE_MIN) {
+      age.textContent += ', which is old enough that a job may have moved on since';
+      age.classList.add('live-age--stale');
+    }
+
+    list.textContent = '';
+    data.jobs.forEach((j) => {
+      const pct = j.total ? Math.min(100, (100 * j.done) / j.total) : 0;
+      const li = document.createElement('li');
+      li.className = 'live-job' + (j.running ? '' : ' live-job--stopped');
+
+      const head = document.createElement('p');
+      head.className = 'live-job__head';
+      const kind = document.createElement('span');
+      kind.className = 'live-job__kind';
+      kind.textContent = j.running ? j.kind : j.kind + ', not running';
+      const title = document.createElement('span');
+      title.className = 'live-job__title';
+      title.textContent = j.title;
+      head.appendChild(kind);
+      head.appendChild(title);
+      li.appendChild(head);
+
+      const bar = document.createElement('div');
+      bar.className = 'live-bar';
+      bar.setAttribute('role', 'progressbar');
+      bar.setAttribute('aria-valuemin', '0');
+      bar.setAttribute('aria-valuemax', String(j.total));
+      bar.setAttribute('aria-valuenow', String(j.done));
+      bar.setAttribute('aria-label', j.title);
+      const fill = document.createElement('span');
+      fill.className = 'live-bar__fill';
+      fill.style.width = pct.toFixed(1) + '%';
+      bar.appendChild(fill);
+      li.appendChild(bar);
+
+      const count = document.createElement('p');
+      count.className = 'live-job__count';
+      count.textContent = j.done.toLocaleString() + ' of ' + j.total.toLocaleString()
+        + ' ' + j.unit + ', ' + pct.toFixed(0) + '%';
+      li.appendChild(count);
+
+      [j.note, j.why_it_matters].forEach((t) => {
+        if (!t) return;
+        const para = document.createElement('p');
+        para.className = 'live-job__note';
+        para.textContent = t;
+        li.appendChild(para);
+      });
+
+      if (j.link && j.link_text) {
+        const a = document.createElement('a');
+        a.className = 'live-job__link';
+        a.href = j.link;
+        a.textContent = j.link_text;
+        li.appendChild(a);
+      }
+      list.appendChild(li);
+    });
+    section.hidden = false;
+  }
+
+  fetch('data/jobs.json', { cache: 'no-store' })
+    .then((r) => (r.ok ? r.json() : null))
+    .then((d) => { if (d) render(d); })
+    .catch(() => {});
+})();
