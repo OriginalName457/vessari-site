@@ -1,7 +1,7 @@
 {
  "what_this_is": "What the machines are doing right now. Each count is read from the file that job writes as it works, not typed in by hand. Nothing here is a result. Results go to the data page when the job that produced them finishes.",
- "generated_at": "2026-10-15T12:36:25+00:00",
- "generated_unix": 1792067785,
+ "generated_at": "2026-10-15T12:58:37+00:00",
+ "generated_unix": 1792069117,
  "jobs": [
   {
    "id": "data-poor-regime",
@@ -21,7 +21,7 @@
    "title": "Searching every protein in ChEMBL for ones nobody has measured",
    "kind": "search",
    "running": true,
-   "done": 10500,
+   "done": 10700,
    "total": 11055,
    "unit": "proteins examined",
    "note": "52 qualify so far. A protein qualifies with 15 to 45 measured compounds and 150 to 420 residues, which is few enough that a model trained on known actives has almost nothing to learn from.",
@@ -34,7 +34,7 @@
    "title": "Rescoring every published protein under the corrected pipeline",
    "kind": "verification",
    "running": true,
-   "done": 95,
+   "done": 96,
    "total": 115,
    "unit": "proteins rescored",
    "note": "Every figure on this site was computed before two defects were fixed. This recomputes all of them to find out whether the published numbers move. Whatever it returns goes on the site, including if it goes against us.",
