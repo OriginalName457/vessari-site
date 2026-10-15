@@ -47,11 +47,9 @@
     <p class="lede">A log of things that did not work. Some are claims we tested
       and could not reproduce. Some are traps in tools everyone uses. Several
       are our own numbers, which moved after we had already published them.</p>
-    <p class="body">Each entry says in its first line what kind of finding it is.
-      Where somebody established a result before us, they are named there and
-      not in a footnote. A replication is still worth writing down, because a
-      result that only exists in one paper is a result nobody has checked, but
-      it is not a discovery and will not be dressed as one.</p>
+    <p class="body">Each entry says in its first line what kind of finding it
+      is. When somebody got there before us, we name them in that line. We also
+      write down replications, and we call them replications.</p>
   </div>
 
   <article class="finding">
@@ -144,7 +142,7 @@
       now logged with the target count and the interim number at that moment.
       The decision rule and the stopping rule are both fixed, so looking cannot
       change the result, and it can still look as though the stop was chosen
-      when the numbers were kind. That is not a thing to settle by assertion.</p>
+      when the numbers were kind. We would rather you could check that than take our word for it.</p>
   </article>
 
   <article class="finding">
@@ -262,7 +260,7 @@
     <p class="body">So the corpus mean was reporting two things at once and we
       were describing it as one. This should have been checked long before the
       corpus reached forty targets.</p>
-    <p class="body">The fix was fixed in advance. The pre-registration for this
+    <p class="body">We decided the fix in advance. The pre-registration for this
       analysis said that if the spread came out significant, median fold error
       becomes the headline, because it measures how far off each prediction is
       and does not care how far apart the answers are. That holds: the
@@ -290,8 +288,7 @@
       of Spearman's, but describing median fold error as clean was wrong and we
       withdraw the word. A positive relationship is also what should have been
       expected: a wider range means more extreme values in the set, and extreme
-      values are harder to predict in absolute terms. Its absence at 41 targets
-      was the surprising result, not its presence at 98.</p>
+      values are harder to predict in absolute terms. We were surprised it was missing at 41 targets, not that it showed up at 98.</p>
     <p class="body">No single number here is free of the property, so the
       affinity range of every target is published next to its score and a reader
       can judge any individual result. The headline is a median error of
@@ -422,8 +419,7 @@
       of the usual recipe. Ours is single task for this reason, which costs us
       the transfer that makes multitask attractive on the sparse endpoints.</p>
     <p class="f-repro">Reproduce with the official TDC archive through
-      <code>src/vessari/admet/dataset.py</code>. The overlap is a property of the
-      published splits, not of anything we did to them.</p>
+      <code>src/vessari/admet/dataset.py</code>. The published splits overlap. We did not make them overlap.</p>
   </article>
 
   <article class="finding">

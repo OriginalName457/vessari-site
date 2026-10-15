@@ -62,7 +62,7 @@
     <div class="hero">
       <div class="hero-copy">
         <h1 class="h1">We assess drug targets, and we run the controls that decide whether the assessment is worth acting on.</h1>
-        <p class="lede">Structure prediction, binding affinity, absorption and toxicity, and the literature behind each claim, run as one pipeline on hardware we own. Across <span data-num="corpus.n_scored" data-fmt="int">&#183;&#183;&#183;</span> proteins it has held out <span data-num="corpus.n_compounds" data-fmt="int">&#183;&#183;&#183;</span> measured compounds the model never saw and predicted every one, with a median error of <span data-num="corpus.median_fold" data-fmt="1">&#183;&#183;</span> fold. Every affinity number is then scored against a model given no protein at all, and the verdict is printed whichever way it falls.</p>
+        <p class="lede">We run one pipeline on our own hardware. It predicts the structure, scores how tightly a compound binds, profiles absorption and toxicity, and pulls the literature behind every claim. Across <span data-num="corpus.n_scored" data-fmt="int">&#183;&#183;&#183;</span> proteins it has held out <span data-num="corpus.n_compounds" data-fmt="int">&#183;&#183;&#183;</span> measured compounds the model never saw and predicted every one, with a median error of <span data-num="corpus.median_fold" data-fmt="1">&#183;&#183;</span> fold. Every affinity number is then scored against a model given no protein at all, and the verdict is printed whichever way it falls.</p>
         <dl class="hero-stats">
           <div>
             <dt>proteins scored</dt>
@@ -331,7 +331,7 @@
     <section class="channel" id="ch-interval" aria-labelledby="h-interval">
       <div class="channel-head">
         <span class="channel-no">04</span>
-        <h2 class="h2" id="h-interval">A number is not useful unless it comes with what it might be wrong by</h2>
+        <h2 class="h2" id="h-interval">A number needs an error bar</h2>
       </div>
       <p class="body">Our affinity model ranks compounds well inside a chemical series and near
         chance across series, which is measured above and is not fixable: a search of the
@@ -509,8 +509,7 @@
             <h3 class="program-name">ADMET properties</h3>
           </div>
           <p class="program-note">Absorption, metabolism and toxicity across 22 public endpoints, plus
-            a live blind challenge on pharmaceutical data we have never seen. This is the part of the
-            pipeline that holds up under its own controls.</p>
+            a live blind challenge on pharmaceutical data we have never seen. This part of the pipeline passes its own controls.</p>
           <dl class="program-facts">
             <div><dt>endpoints</dt><dd><span data-num="derived.admet_count" data-fmt="int">&#183;&#183;</span></dd></div>
             <div><dt>blind entry</dt><dd>750 compounds</dd></div>
@@ -519,8 +518,7 @@
       </ul>
 
       <p class="cap">A program moves from preparation to running when it has a scaffold separated
-        held-out set large enough to carry an error bar. That is the bar for appearing above with a
-        number next to it.</p>
+        held-out set large enough to carry an error bar. A target needs that before we print a number for it.</p>
     </section>
     <section class="channel" id="ch06" aria-labelledby="h06">
       <div class="channel-head">
@@ -559,11 +557,11 @@
         <span class="channel-no" aria-hidden="true">10</span>
         <h2 class="h2" id="h07">Scope of this page</h2>
       </div>
-      <p class="body">What the figures above cover, and what they do not. We would rather you arrive at this list from us than from your own reading of the numbers.</p>
+      <p class="body">What the figures above cover, and what they do not.</p>
       <ul class="limits">
-        <li><span class="limit-h">One target in the viewer.</span> The structure at the top of this page is one prediction for one protein with one ligand. It is an example of what the output looks like, not evidence of accuracy on any other target.</li>
+        <li><span class="limit-h">One target in the viewer.</span> The structure at the top of this page is one prediction for one protein with one ligand. It shows you what the output looks like. It says nothing about accuracy on any other target.</li>
         <li><span class="limit-h">No bench work of ours.</span> The measured values in the residual strip carry ChEMBL identifiers and come from the source dataset. We have not measured any of them ourselves.</li>
-        <li><span class="limit-h">The sample is small.</span> A rank correlation on <span data-num="holdout.n" data-fmt="int">&#183;&#183;&#183;</span> compounds carries a standard error of <span data-num="derived.se" data-fmt="2">&#183;&#183;</span>. That width is drawn on the axis, not rounded away, and it is wide.</li>
+        <li><span class="limit-h">The sample is small.</span> A rank correlation on <span data-num="holdout.n" data-fmt="int">&#183;&#183;&#183;</span> compounds carries a standard error of <span data-num="derived.se" data-fmt="2">&#183;&#183;</span>. We draw that width on the axis instead of rounding it away. It is wide.</li>
         <li><span class="limit-h">One ADMET configuration, not twenty-two.</span> The same model and the same features are fitted to every endpoint. A per endpoint search would score better and would stop the comparison being like for like, so the numbers below are one honest configuration rather than the best each endpoint could reach.</li>
         <li><span class="limit-h">Confidence is self reported.</span> The Boltz-2 numbers beside the structure describe how well the model agrees with itself. They are not agreement with a solved structure.</li>
       </ul>

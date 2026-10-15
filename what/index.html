@@ -67,17 +67,19 @@
   <div class="f-intro">
     <h1 class="h1">What this is, and what it is not</h1>
     <p class="lede">A laboratory with forty compound ideas and the budget to
-      make five has to choose. Vessari predicts how tightly each one would bind
-      its protein target, so the five are chosen on evidence rather than
-      intuition. This page is for someone deciding whether that is worth
-      funding, and it includes the parts that argue against.</p>
+      make five has to choose. We predict how tightly each compound would bind
+      the protein, and rank them, so the chemist picks the five on evidence
+      instead of a hunch. This page also gives you the numbers that argue
+      against us.</p>
   </div>
 
   <h2 class="h2">How it works, in one paragraph</h2>
 
-  <p class="body">Give it a protein and a list of compounds. For each one it
-    folds the protein and the compound together into a predicted three
-    dimensional complex, then reads a binding affinity off that structure. It
+  <p class="body">Give it a protein sequence and a list of compounds. For each
+    pair we run Boltz-2, which places the compound and folds the protein around
+    it into a predicted complex. A regression head inside the same model then
+    gives a binding affinity. That affinity is a learned number arriving with a
+    pose attached. We do not measure it off the coordinates. It
     returns a ranked list with a calibrated interval on every number, and it
     refuses to answer where it cannot give one. The whole thing runs on three
     consumer graphics cards, not a cluster.</p>
@@ -95,9 +97,13 @@
       <div class="n">targets refused, each with its reason published</div></div>
   </div>
 
-  <p class="body">The headline has barely moved as the corpus grew: 4.5 fold at
-    28 proteins, 4.5 at 41, 4.4 at 121. An estimate that holds while the sample
-    more than quadruples is the main reason to believe it.</p>
+  <p class="body">The headline has barely moved as the corpus grew: 4.5 fold
+    at 28 proteins, 4.5 at 41, 4.4 at 121. We used to call that the main reason
+    to believe it. We were wrong. The corpus is not a random sample of
+    proteins. It is the set with enough chemically diverse public measurement
+    to score at all, and we kept drawing from the same families. A number that
+    holds while a filtered sample grows tells you the filter is stable. It does
+    not tell you the method is right.</p>
 
   <p class="body">Every figure on this site reads from a file you can download,
     and the files include the ones that were later withdrawn.</p>
@@ -183,7 +189,7 @@
       compounds and could not run the primary test: ChEMBL's affinity data has
       a median publication year of 2004 and only 38 of 805 compounds were
       published after 2020. No prediction from this system has been tested at a
-      bench. That is the gap a first collaboration would close.</p>
+      bench. A first collaboration would close that gap.</p>
   </div>
 
   <h2 class="h2">Why the negative results are the asset</h2>
@@ -220,11 +226,16 @@
 
   <h2 class="h2">What funding would buy</h2>
 
-  <p class="body">The gating item is not compute and not code. It is one
-    collaboration with a laboratory willing to test a handful of nominated
-    compounds at the bench. That converts every claim here from retrospective
-    to prospective, and it is the single change that would most alter how this
-    work should be judged.</p>
+  <p class="body">We do not need compute and we do not need code. We need one
+    laboratory to measure sixty compounds against a protein of their choosing,
+    after we have sealed our ranking and published its digest. Every number on
+    this page was computed on measurements that already existed. A bench result
+    would be the first that was not.</p>
+  <p class="body">Sixty is a calculation rather than a preference. At forty
+    compounds, a method whose true rank correlation is 0.3 gives an interval
+    from minus 0.011 to plus 0.564, which contains zero. At sixty that interval
+    excludes zero. Forty compounds cannot separate a method that half works
+    from one that does not work at all.</p>
 
   <p class="f-foot">Every number on this page comes from a file in
     <a href="../data/">the data section</a>. The things that failed are in
