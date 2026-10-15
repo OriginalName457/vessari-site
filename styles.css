@@ -1489,3 +1489,5 @@ a.wordmark{text-decoration:none;color:inherit}
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
+.live-job--done .live-job__kind { color: var(--graphite-2); }
+.live-job--done .live-bar__fill { background: var(--graphite); }

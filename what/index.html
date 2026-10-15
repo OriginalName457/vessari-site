@@ -141,9 +141,24 @@
       beats us 60.8 percent of the time trained on five compounds and 97.5
       percent on twenty five. Every protein in our corpus has at least 190
       known compounds, so every target we have measured sits where that cheaper
-      model would win. The regime this method is supposed to be for, a protein
-      with almost nothing known about it, we have never tested. An experiment
-      to settle it is registered and running.</p>
+      model would win. We have now tested the regime this
+      method is meant for. We searched all 11,055 single proteins in ChEMBL,
+      found 50 with between 15 and 45 measured compounds, and scored 18 of
+      them. The other 32 held too few distinct chemical clusters to split into
+      a held-out set.</p>
+    <p class="body">On those 18 proteins we cannot tell the two methods apart.
+      The structure arm ranked better on 7 and the ligand model on 11. The mean
+      difference is plus 0.033 and the interval runs from minus 0.212 to plus
+      0.274, so it contains zero. The width is 0.486. We registered that rule
+      before we ran it, and it returns unresolved rather than a result either
+      way.</p>
+    <p class="body">So the claim is not supported and not refuted. What we can
+      still say is narrower. On a protein with no public measurements at all,
+      nobody can train a ligand model, and we can still give a ranking with a
+      calibrated interval. This experiment could not test that, because a
+      protein with nothing measured has nothing to score against. That one
+      needs a laboratory. The full result is in the
+      <a href="../data/">data section</a>.</p>
   </div>
 
   <div class="claim claim--not">

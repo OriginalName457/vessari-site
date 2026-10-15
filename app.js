@@ -1360,13 +1360,16 @@ boot().catch(() => declareUnavailable());
     data.jobs.forEach((j) => {
       const pct = j.total ? Math.min(100, (100 * j.done) / j.total) : 0;
       const li = document.createElement('li');
-      li.className = 'live-job' + (j.running ? '' : ' live-job--stopped');
+      li.className = 'live-job'
+        + (j.finished ? ' live-job--done' : j.running ? '' : ' live-job--stopped');
 
       const head = document.createElement('p');
       head.className = 'live-job__head';
       const kind = document.createElement('span');
       kind.className = 'live-job__kind';
-      kind.textContent = j.running ? j.kind : j.kind + ', not running';
+      kind.textContent = j.finished
+        ? j.kind + ', finished' + (j.verdict ? ', ' + j.verdict : '')
+        : j.running ? j.kind : j.kind + ', not running';
       const title = document.createElement('span');
       title.className = 'live-job__title';
       title.textContent = j.title;
