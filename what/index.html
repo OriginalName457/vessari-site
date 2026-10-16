@@ -141,7 +141,8 @@
     people who built the model.</p>
 
   <p class="body">Our corpus median of 0.607 belongs on the public side of that
-    gap. Our within-window median of <strong>0.318</strong>, measured in the
+    gap. Our within-window median of
+    <strong><span data-claim="ws_structure2">0.318</span></strong>, measured in the
     1.5 log potency range a chemist works in, lands beside their private 0.39.
     Different statistics on different sets, and they agree. The narrow window
     figure is what this model does on medicinal chemistry data, reproduced from
@@ -241,25 +242,34 @@
       question. We registered the narrower one and ran it on the predictions
       already on disk.</p>
     <p class="body">Take each target's median measured potency and keep the
-      compounds within 0.75 log of it. Across 31 targets, the structure arm
-      reaches a median rank correlation of 0.318 inside that window and a
-      fingerprint model trained on the same target reaches 0.336. The mean
-      difference is minus 0.0856 and the interval runs from minus 0.2195 to
-      plus 0.0478, so it contains zero. Inside a potency window we cannot tell
-      the two apart.</p>
-    <p class="body">On the full held-out sets of those same 31 targets the
-      fingerprint model is ahead by 0.174, with an interval from minus 0.287 to
-      minus 0.067 that excludes zero. Its advantage disappears inside the
+      compounds within 0.75 log of it. Across
+      <span data-claim="ws_n">35</span> targets, the structure arm
+      reaches a median rank correlation of
+      <span data-claim="ws_structure">0.318</span> inside that window and a
+      fingerprint model trained on the same target reaches
+      <span data-claim="ws_ligand">0.319</span>. The mean
+      difference is <span data-claim="ws_diff">minus 0.0627</span> and the
+      interval runs from <span data-claim="ws_ci">minus 0.1854 to plus
+      0.0559</span>, so it contains zero. Inside a potency window we cannot
+      tell the two apart.</p>
+    <p class="body">On the full held-out sets of those same
+      <span data-claim="ws_n2">35</span> targets the
+      fingerprint model is ahead by
+      <span data-claim="ws_full_gap">0.165</span>, with an interval from
+      <span data-claim="ws_full_ci">minus 0.272 to minus 0.062</span> that
+      excludes zero. Its advantage disappears inside the
       window. Both arms lose accuracy as the range narrows and the fingerprint
-      model loses more, 0.292 against 0.203.</p>
+      model loses more, <span data-claim="ws_ligand_drop">0.283</span> against
+      <span data-claim="ws_structure_drop">0.203</span>.</p>
     <p class="body">A narrow window also holds fewer compounds, and that alone
       moves a rank correlation, so we drew 200 random subsets of each full set
-      at the window's size with no restriction on potency. Those score 0.449.
-      Narrowing the range costs 0.183 beyond what losing compounds costs.
-      Thirty three percent of the compounds in these windows have their own
-      ChEMBL assays disagreeing with each other by more than our error on that
-      target.</p>
-    <p class="body">This is interim at 34 of 123 targets and the run continues
+      at the window's size with no restriction on potency. Those score
+      <span data-claim="ws_subset">0.449</span>.
+      Narrowing the range costs
+      <span data-claim="ws_range_cost">0.213</span> beyond what losing
+      compounds costs.</p>
+    <p class="body">This is interim at
+      <span data-claim="ws_n3">35</span> of 123 targets and the run continues
       as the remaining ChEMBL pools arrive. The
       <a href="../data-files/2026-10-16-within-series-result.md">result is
       published</a> and so is the
@@ -269,9 +279,10 @@
       a narrow potency band, so the task is the same and the measurements are
       not. A congeneric set comes from one paper with one assay and one
       protocol. These windows are cut from ChEMBL, which pools IC50 and Ki
-      across many laboratories, and <strong>33 percent of the compounds inside
-      them have their own ChEMBL assays disagreeing with each other by more
-      than our prediction error on that target</strong>. On one target we
+      across many laboratories, and <strong><span data-claim="ws_noisy">31</span>
+      percent of the compounds inside them have their own ChEMBL assays
+      disagreeing with each other by more than our prediction error on that
+      target</strong>. On one target we
       counted 923 compounds measured by IC50 only, 311 by Ki only and 45 by
       both, with no Cheng-Prusoff correction available for any of them.</p>
     <p class="body">So bring a series measured in your own assay and expect
