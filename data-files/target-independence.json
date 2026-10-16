@@ -1,0 +1,932 @@
+{
+ "what_this_is": "Whether the bootstrap over targets is treating related proteins as independent draws, and what the published intervals become when groups of related targets are resampled instead.",
+ "method": "Relatedness is the fraction of one protein's distinct 6-mers also present in the other, over the shorter sequence. A screen rather than an alignment. Single linkage at 0.25.",
+ "k": 6,
+ "threshold": 0.25,
+ "draws": 40000,
+ "n_targets": 123,
+ "n_groups": 113,
+ "missing_sequence": [],
+ "largest_group": 2,
+ "group_size_distribution": [
+  2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1
+ ],
+ "groups": {
+  "0": [
+   "O95136"
+  ],
+  "1": [
+   "O95977"
+  ],
+  "10": [
+   "P00338",
+   "P07195"
+  ],
+  "111": [
+   "P00374",
+   "Q920D2"
+  ],
+  "4": [
+   "P00491"
+  ],
+  "5": [
+   "P00811"
+  ],
+  "6": [
+   "P01375"
+  ],
+  "7": [
+   "P04183"
+  ],
+  "13": [
+   "P04818",
+   "P07607"
+  ],
+  "9": [
+   "P05121"
+  ],
+  "11": [
+   "P07477"
+  ],
+  "12": [
+   "P07550"
+  ],
+  "14": [
+   "P07711"
+  ],
+  "15": [
+   "P07858"
+  ],
+  "16": [
+   "P09467"
+  ],
+  "17": [
+   "P0ABQ4"
+  ],
+  "18": [
+   "P13945"
+  ],
+  "19": [
+   "P14061"
+  ],
+  "20": [
+   "P14324"
+  ],
+  "21": [
+   "P15121"
+  ],
+  "22": [
+   "P15692"
+  ],
+  "23": [
+   "P16083"
+  ],
+  "24": [
+   "P16184"
+  ],
+  "25": [
+   "P16257"
+  ],
+  "26": [
+   "P17612"
+  ],
+  "27": [
+   "P17706"
+  ],
+  "28": [
+   "P18405"
+  ],
+  "29": [
+   "P21452"
+  ],
+  "30": [
+   "P21453"
+  ],
+  "41": [
+   "P21556",
+   "P25105"
+  ],
+  "32": [
+   "P21730"
+  ],
+  "33": [
+   "P21731"
+  ],
+  "34": [
+   "P21964"
+  ],
+  "35": [
+   "P22906"
+  ],
+  "36": [
+   "P23280"
+  ],
+  "37": [
+   "P23946"
+  ],
+  "38": [
+   "P25021"
+  ],
+  "39": [
+   "P25025"
+  ],
+  "40": [
+   "P25103"
+  ],
+  "42": [
+   "P25774"
+  ],
+  "43": [
+   "P25929"
+  ],
+  "98": [
+   "P27361",
+   "P63085"
+  ],
+  "45": [
+   "P28221"
+  ],
+  "47": [
+   "P28222",
+   "P28564"
+  ],
+  "48": [
+   "P30518"
+  ],
+  "49": [
+   "P30543"
+  ],
+  "50": [
+   "P30556"
+  ],
+  "51": [
+   "P30559"
+  ],
+  "52": [
+   "P30874"
+  ],
+  "54": [
+   "P30968",
+   "P30969"
+  ],
+  "55": [
+   "P31213"
+  ],
+  "56": [
+   "P31391"
+  ],
+  "57": [
+   "P32246"
+  ],
+  "61": [
+   "P32300",
+   "P33533"
+  ],
+  "59": [
+   "P32745"
+  ],
+  "60": [
+   "P33032"
+  ],
+  "62": [
+   "P33534"
+  ],
+  "63": [
+   "P34995"
+  ],
+  "64": [
+   "P34998"
+  ],
+  "65": [
+   "P35218"
+  ],
+  "66": [
+   "P35236"
+  ],
+  "67": [
+   "P35346"
+  ],
+  "68": [
+   "P37058"
+  ],
+  "69": [
+   "P37288"
+  ],
+  "70": [
+   "P41146"
+  ],
+  "95": [
+   "P41597",
+   "P51681"
+  ],
+  "72": [
+   "P42574"
+  ],
+  "73": [
+   "P43115"
+  ],
+  "74": [
+   "P43116"
+  ],
+  "75": [
+   "P43119"
+  ],
+  "76": [
+   "P43166"
+  ],
+  "77": [
+   "P43235"
+  ],
+  "78": [
+   "P47898"
+  ],
+  "79": [
+   "P47900"
+  ],
+  "80": [
+   "P48039"
+  ],
+  "81": [
+   "P48729"
+  ],
+  "87": [
+   "P48730",
+   "P49674"
+  ],
+  "83": [
+   "P48775"
+  ],
+  "84": [
+   "P49137"
+  ],
+  "85": [
+   "P49146"
+  ],
+  "86": [
+   "P49286"
+  ],
+  "88": [
+   "P49862"
+  ],
+  "89": [
+   "P50052"
+  ],
+  "90": [
+   "P50172"
+  ],
+  "91": [
+   "P50750"
+  ],
+  "92": [
+   "P51452"
+  ],
+  "93": [
+   "P51677"
+  ],
+  "94": [
+   "P51679"
+  ],
+  "96": [
+   "P55263"
+  ],
+  "97": [
+   "P61073"
+  ],
+  "99": [
+   "P68400"
+  ],
+  "100": [
+   "P9WGR1"
+  ],
+  "101": [
+   "Q00534"
+  ],
+  "102": [
+   "Q02127"
+  ],
+  "103": [
+   "Q02750"
+  ],
+  "104": [
+   "Q02769"
+  ],
+  "105": [
+   "Q13639"
+  ],
+  "106": [
+   "Q15119"
+  ],
+  "107": [
+   "Q15722"
+  ],
+  "108": [
+   "Q15759"
+  ],
+  "109": [
+   "Q16739"
+  ],
+  "110": [
+   "Q6GI75"
+  ],
+  "112": [
+   "Q92633"
+  ],
+  "113": [
+   "Q92847"
+  ],
+  "114": [
+   "Q95323"
+  ],
+  "115": [
+   "Q96DB2"
+  ],
+  "116": [
+   "Q99500"
+  ],
+  "117": [
+   "Q99571"
+  ],
+  "118": [
+   "Q9H244"
+  ],
+  "119": [
+   "Q9H3N8"
+  ],
+  "120": [
+   "Q9R0C9"
+  ],
+  "121": [
+   "Q9ULX7"
+  ],
+  "122": [
+   "Q9Y2D0"
+  ]
+ },
+ "groups_by_protein_name": {
+  "sphingosine 1-phosphate receptor": [
+   "O95136",
+   "O95977",
+   "P21453",
+   "Q99500"
+  ],
+  "l-lactate dehydrogenase a chain": [
+   "P00338"
+  ],
+  "dihydrofolate reductase": [
+   "P00374",
+   "P0ABQ4",
+   "P16184",
+   "P22906",
+   "Q920D2"
+  ],
+  "purine nucleoside phosphorylase": [
+   "P00491"
+  ],
+  "beta-lactamase": [
+   "P00811"
+  ],
+  "tumor necrosis factor": [
+   "P01375"
+  ],
+  "thymidine kinase, cytosolic": [
+   "P04183"
+  ],
+  "thymidylate synthase": [
+   "P04818",
+   "P07607"
+  ],
+  "plasminogen activator inhibitor": [
+   "P05121"
+  ],
+  "l-lactate dehydrogenase b chain": [
+   "P07195"
+  ],
+  "serine protease": [
+   "P07477"
+  ],
+  "beta-2 adrenergic receptor": [
+   "P07550"
+  ],
+  "procathepsin": [
+   "P07711"
+  ],
+  "cathepsin": [
+   "P07858",
+   "P25774",
+   "P43235"
+  ],
+  "fructose-1,6-bisphosphatase": [
+   "P09467"
+  ],
+  "beta-3 adrenergic receptor": [
+   "P13945"
+  ],
+  "17-beta-hydroxysteroid dehydrogenase": [
+   "P14061",
+   "P37058"
+  ],
+  "farnesyl pyrophosphate synthase": [
+   "P14324"
+  ],
+  "aldo-keto reductase family 1 member b1": [
+   "P15121"
+  ],
+  "vascular endothelial growth factor a, long form": [
+   "P15692"
+  ],
+  "ribosyldihydronicotinamide dehydrogenase [quinone]": [
+   "P16083"
+  ],
+  "translocator protein": [
+   "P16257"
+  ],
+  "camp-dependent protein kinase catalytic": [
+   "P17612"
+  ],
+  "tyrosine-protein phosphatase non-receptor": [
+   "P17706",
+   "P35236"
+  ],
+  "3-oxo-5-alpha-steroid 4-dehydrogenase": [
+   "P18405",
+   "P31213"
+  ],
+  "substance-k receptor": [
+   "P21452"
+  ],
+  "platelet-activating factor receptor": [
+   "P21556",
+   "P25105"
+  ],
+  "c5a anaphylatoxin chemotactic receptor": [
+   "P21730"
+  ],
+  "thromboxane a2 receptor": [
+   "P21731"
+  ],
+  "catechol o-methyltransferase": [
+   "P21964"
+  ],
+  "carbonic anhydrase": [
+   "P23280",
+   "P43166",
+   "Q95323",
+   "Q9ULX7"
+  ],
+  "chymase": [
+   "P23946"
+  ],
+  "histamine h2 receptor": [
+   "P25021"
+  ],
+  "c-x-c chemokine receptor": [
+   "P25025",
+   "P61073"
+  ],
+  "substance-p receptor": [
+   "P25103"
+  ],
+  "neuropeptide y receptor": [
+   "P25929",
+   "P49146"
+  ],
+  "mitogen-activated protein kinase": [
+   "P27361",
+   "P63085",
+   "Q15759"
+  ],
+  "5-hydroxytryptamine receptor 1d": [
+   "P28221"
+  ],
+  "5-hydroxytryptamine receptor 1b": [
+   "P28222",
+   "P28564"
+  ],
+  "vasopressin v2 receptor": [
+   "P30518"
+  ],
+  "adenosine receptor a2a": [
+   "P30543"
+  ],
+  "type-1 angiotensin ii receptor": [
+   "P30556"
+  ],
+  "oxytocin receptor": [
+   "P30559"
+  ],
+  "somatostatin receptor": [
+   "P30874",
+   "P31391",
+   "P32745",
+   "P35346"
+  ],
+  "gonadotropin-releasing hormone receptor": [
+   "P30968",
+   "P30969"
+  ],
+  "c-c chemokine receptor": [
+   "P32246",
+   "P41597",
+   "P51677",
+   "P51679",
+   "P51681"
+  ],
+  "delta-type opioid receptor": [
+   "P32300",
+   "P33533"
+  ],
+  "melanocortin receptor": [
+   "P33032"
+  ],
+  "kappa-type opioid receptor": [
+   "P33534"
+  ],
+  "prostaglandin e2 receptor ep1 subtype": [
+   "P34995"
+  ],
+  "corticotropin-releasing hormone receptor": [
+   "P34998"
+  ],
+  "carbonic anhydrase 5a, mitochondrial": [
+   "P35218"
+  ],
+  "vasopressin v1a receptor": [
+   "P37288"
+  ],
+  "nociceptin receptor": [
+   "P41146"
+  ],
+  "caspase-3": [
+   "P42574"
+  ],
+  "prostaglandin e2 receptor ep3 subtype": [
+   "P43115"
+  ],
+  "prostaglandin e2 receptor ep2 subtype": [
+   "P43116"
+  ],
+  "prostacyclin receptor": [
+   "P43119"
+  ],
+  "5-hydroxytryptamine receptor 5a": [
+   "P47898"
+  ],
+  "p2y purinoceptor": [
+   "P47900",
+   "Q9H244"
+  ],
+  "melatonin receptor": [
+   "P48039",
+   "P49286"
+  ],
+  "casein kinase": [
+   "P48729",
+   "P48730",
+   "P49674"
+  ],
+  "tryptophan 2,3-dioxygenase": [
+   "P48775"
+  ],
+  "map kinase-activated protein kinase": [
+   "P49137"
+  ],
+  "kallikrein-7": [
+   "P49862"
+  ],
+  "type-2 angiotensin ii receptor": [
+   "P50052"
+  ],
+  "11-beta-hydroxysteroid dehydrogenase": [
+   "P50172"
+  ],
+  "cyclin-dependent kinase": [
+   "P50750",
+   "Q00534"
+  ],
+  "dual specificity protein phosphatase": [
+   "P51452"
+  ],
+  "adenosine kinase": [
+   "P55263"
+  ],
+  "casein kinase ii": [
+   "P68400"
+  ],
+  "enoyl-[acyl-carrier-protein] reductase [nadh]": [
+   "P9WGR1"
+  ],
+  "dihydroorotate dehydrogenase (quinone), mitochondrial": [
+   "Q02127"
+  ],
+  "dual specificity mitogen-activated protein kinase kinase": [
+   "Q02750"
+  ],
+  "squalene synthase": [
+   "Q02769"
+  ],
+  "5-hydroxytryptamine receptor": [
+   "Q13639"
+  ],
+  "[pyruvate dehydrogenase (acetyl-transferring)] kinase isozyme 2, mitochondrial": [
+   "Q15119"
+  ],
+  "leukotriene b4 receptor": [
+   "Q15722"
+  ],
+  "ceramide glucosyltransferase": [
+   "Q16739"
+  ],
+  "enoyl-[acyl-carrier-protein] reductase [nadph] fabi": [
+   "Q6GI75"
+  ],
+  "lysophosphatidic acid receptor": [
+   "Q92633"
+  ],
+  "growth hormone secretagogue receptor": [
+   "Q92847"
+  ],
+  "histone deacetylase": [
+   "Q96DB2"
+  ],
+  "p2x purinoceptor": [
+   "Q99571"
+  ],
+  "histamine h4 receptor": [
+   "Q9H3N8"
+  ],
+  "sigma non-opioid intracellular receptor": [
+   "Q9R0C9"
+  ],
+  "carbonic anhydrase 5b, mitochondrial": [
+   "Q9Y2D0"
+  ]
+ },
+ "related_pairs": [
+  {
+   "a": "P32300",
+   "b": "P33533",
+   "relatedness": 0.8747
+  },
+  {
+   "a": "P28222",
+   "b": "P28564",
+   "relatedness": 0.7165
+  },
+  {
+   "a": "P48730",
+   "b": "P49674",
+   "relatedness": 0.6561
+  },
+  {
+   "a": "P04818",
+   "b": "P07607",
+   "relatedness": 0.6391
+  },
+  {
+   "a": "P30968",
+   "b": "P30969",
+   "relatedness": 0.5248
+  },
+  {
+   "a": "P00374",
+   "b": "Q920D2",
+   "relatedness": 0.5165
+  },
+  {
+   "a": "P27361",
+   "b": "P63085",
+   "relatedness": 0.5156
+  },
+  {
+   "a": "P21556",
+   "b": "P25105",
+   "relatedness": 0.4006
+  },
+  {
+   "a": "P41597",
+   "b": "P51681",
+   "relatedness": 0.3285
+  },
+  {
+   "a": "P00338",
+   "b": "P07195",
+   "relatedness": 0.2661
+  }
+ ],
+ "median_pair_relatedness": 0.0,
+ "statistics": {
+  "spearman": {
+   "point": 0.607,
+   "over_targets": [
+    0.546,
+    0.654
+   ],
+   "n_targets": 123,
+   "by_sequence": {
+    "ci": [
+     0.541,
+     0.652
+    ],
+    "n_units": 113
+   },
+   "by_protein_name": {
+    "ci": [
+     0.503,
+     0.654
+    ],
+    "n_units": 87
+   },
+   "every_receptor_as_one": {
+    "ci": [
+     0.498,
+     0.662
+    ],
+    "n_units": 63
+   }
+  },
+  "mean_spearman": {
+   "point": 0.555,
+   "over_targets": [
+    0.5076,
+    0.6003
+   ],
+   "n_targets": 123,
+   "by_sequence": {
+    "ci": [
+     0.4961,
+     0.5942
+    ],
+    "n_units": 113
+   },
+   "by_protein_name": {
+    "ci": [
+     0.4726,
+     0.5902
+    ],
+    "n_units": 87
+   },
+   "every_receptor_as_one": {
+    "ci": [
+     0.4353,
+     0.5905
+    ],
+    "n_units": 63
+   }
+  },
+  "median_fold": {
+   "point": 4.6,
+   "over_targets": [
+    4.2,
+    5.0
+   ],
+   "n_targets": 123,
+   "by_sequence": {
+    "ci": [
+     4.2,
+     5.0
+    ],
+    "n_units": 113
+   },
+   "by_protein_name": {
+    "ci": [
+     4.3,
+     5.0
+    ],
+    "n_units": 87
+   },
+   "every_receptor_as_one": {
+    "ci": [
+     4.1,
+     5.0
+    ],
+    "n_units": 63
+   }
+  }
+ },
+ "n_gpcr": 56,
+ "organisms": {
+  "Homo sapiens": 102,
+  "Escherichia coli (strain K12)": 2,
+  "Mus musculus": 5,
+  "Pneumocystis carinii": 1,
+  "Rattus norvegicus": 8,
+  "Cavia porcellus": 1,
+  "Candida albicans": 1,
+  "Mycobacterium tuberculosis (strain ATCC 25618 / H37Rv)": 1,
+  "Staphylococcus aureus (strain MRSA252)": 1,
+  "Bos taurus": 1
+ },
+ "at": "2026-10-16T19:59:09+00:00"
+}

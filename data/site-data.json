@@ -1524,19 +1524,48 @@
     "n_compounds": 2462,
     "median_fold": 4.6,
     "median_fold_ci": [
-      4.2,
+      4.3,
       5.0
     ],
     "mean_spearman": 0.555,
     "mean_spearman_ci": [
-      0.507,
-      0.601
+      0.4726,
+      0.5902
     ],
     "median_spearman": 0.607,
     "positive": "116 of 123",
     "above_half": "82 of 123",
     "gpu_hours": 48.1,
-    "source": "corpus-123-targets.json"
+    "source": "corpus-123-targets.json",
+    "median_spearman_ci": [
+      0.503,
+      0.654
+    ],
+    "resampling": "87 protein units, not 123 targets",
+    "resampling_note": "A bootstrap over targets treats five dihydrofolate reductases as five independent draws. These intervals resample protein units, where the same protein in several species is one draw.",
+    "median_fold_ci_over_targets": [
+      4.2,
+      5.0
+    ],
+    "median_spearman_ci_over_targets": [
+      0.546,
+      0.654
+    ],
+    "mean_spearman_ci_over_targets": [
+      0.5076,
+      0.6003
+    ],
+    "ci_every_receptor_as_one": {
+      "median_spearman": [
+        0.498,
+        0.662
+      ],
+      "median_fold": [
+        4.1,
+        5.0
+      ],
+      "n_units": 63
+    }
   },
   "selection": {
     "n_targets": 119,

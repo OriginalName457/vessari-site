@@ -5,6 +5,44 @@ changed and why. A result that moves without a record of having moved is worse
 than one that was never published, so this file exists to make the movement
 visible rather than to tidy it away.
 
+## The published intervals were computed over targets that are not independent
+
+**Reported:** median rank correlation 0.607 with a mean Spearman interval of
+0.507 to 0.601, and median absolute error 4.6 fold with an interval of 4.2 to
+5.0, every interval resampling the 123 targets.
+
+**Corrected to:** the same point estimates, with intervals resampling 87
+protein units. Median rank correlation 0.607, interval **0.503 to 0.654**.
+Mean Spearman 0.555, interval **0.473 to 0.590**. Median absolute error 4.6
+fold, interval **4.3 to 5.0**. Regenerate with
+`scripts/target_independence.py` then `scripts/export_site_data.py`.
+
+**Why it moved:** a bootstrap over targets treats the 123 targets as 123
+independent draws. The corpus holds dihydrofolate reductase from E. coli,
+human, Candida, rat and Pneumocystis, scoring 0.680, 0.648, 0.607, 0.901 and
+0.820, and the bootstrap counted those five as five independent units. It also
+holds five chemokine receptors, four somatostatin receptors, four carbonic
+anhydrases, four sphingosine 1-phosphate receptors, three MAP kinases, three
+casein kinases and three cathepsins. Twenty one protein names cover more than
+one target.
+
+Grouping by protein name with the species and the isoform stripped gives 87
+units and widens the rank correlation interval by 40 percent, moving the lower
+bound from 0.546 to 0.503. The point estimates do not move under any grouping.
+
+A sequence based grouping, which only joins close orthologues, gives 113 units
+and widens the interval by 3 percent. Treating every one of the 56 receptors as
+a single draw gives 63 units and widens it by 52 percent, to 0.498 to 0.662.
+That far bound is reported and not adopted, because a beta-2 adrenergic
+receptor and a prostaglandin receptor are genuinely different targets.
+
+**Found by:** an outside reader agent, which said the corpus holds five
+dihydrofolate reductases that the bootstrap treats as independent. That was
+correct. The reader also suggested the effect was large, and it moves the lower
+bound by 0.043.
+
+The audit is `benchmarks/results/2026-10-16-target-independence.md`.
+
 ## The corpus headline moved from 4.4 fold to 4.6 fold
 
 **Reported:** median absolute error 4.4 fold, 95 percent interval 4.0 to 4.8,

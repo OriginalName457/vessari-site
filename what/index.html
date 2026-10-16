@@ -107,6 +107,39 @@
     holds while a filtered sample grows tells you the filter is stable. It does
     not tell you the method is right.</p>
 
+  <h2 class="h2">Our intervals now resample proteins, not targets</h2>
+
+  <p class="body">Every interval on this site used to resample the 123 targets,
+    which treats them as 123 independent draws. An outside reader pointed out
+    that the corpus holds dihydrofolate reductase from five species. It does:
+    E. coli, human, Candida, rat and Pneumocystis, scoring 0.680, 0.648, 0.607,
+    0.901 and 0.820. It also holds five chemokine receptors, four somatostatin
+    receptors, four carbonic anhydrases, four sphingosine 1-phosphate
+    receptors, three MAP kinases, three casein kinases and three cathepsins.
+    Twenty one protein names cover more than one target.</p>
+
+  <p class="body">We measured the relatedness from the sequences, grouped the
+    targets three ways and recomputed every interval. The point estimates do
+    not move. Median rank correlation stays 0.607 and median error stays 4.6
+    fold under every grouping.</p>
+
+  <p class="body">Grouping by protein name, so the same protein in several
+    species is one draw, gives 87 units and widens the rank correlation
+    interval by 40 percent. The lower bound moves from 0.546 to
+    <strong>0.503</strong>. That is now the published interval. A sequence
+    based grouping, which only joins close orthologues, gives 113 units and
+    widens it by 3 percent. Treating all 56 receptors as a single draw gives 63
+    units and widens it by 52 percent, to 0.498 to 0.662, and we report that
+    far bound without adopting it, because a beta-2 adrenergic receptor and a
+    prostaglandin receptor are different targets.</p>
+
+  <p class="body">The old intervals are in the
+    <a href="../data-files/CORRECTIONS.md">corrections record</a> and the
+    <a href="../data-files/2026-10-16-target-independence.md">audit is
+    published</a>. Fifty six of the 123 targets are G protein coupled
+    receptors and 102 are human, with 8 rat, 5 mouse, 2 E. coli and one each
+    from Pneumocystis and guinea pig.</p>
+
   <h2 class="h2">The folding model's training set is not a control we own</h2>
 
   <p class="body">Our clustering rule controls two things. No two compounds in
