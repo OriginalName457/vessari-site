@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="
+  default-src 'none'; script-src 'none';
+  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+  font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data:;
+  connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Our error in kilocalories</title>
+<meta name="description" content="Engineering notes: converting a 4.6 fold error into kilocalories per mole, and which free energy perturbation numbers it can honestly be compared with.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&family=DM+Mono:wght@400;500&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../findings/findings.css">
+<style>
+  .ct { width: 100%; border-collapse: collapse; margin: 1.6rem 0;
+         font-size: 0.86rem; }
+  .ct th, .ct td { padding: 0.3rem 0.6rem; text-align: left;
+                    border-bottom: 1px solid var(--rule, #e4e1db); }
+  .ct th { font: 600 0.72rem/1 'Barlow Semi Condensed', system-ui, sans-serif;
+            text-transform: uppercase; letter-spacing: 0.06em; }
+  .ct .num { text-align: right; font-family: 'DM Mono', ui-monospace, monospace;
+              font-variant-numeric: tabular-nums; }
+  .wrap { overflow-x: auto; }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-in">
+    <a class="wordmark" href="../">VESSARI</a>
+    <span class="masthead-sub">notes</span>
+    <nav class="topnav" aria-label="Sections">
+      <a href="../what/">what we do</a>
+      <a href="../">assessment</a>
+      <a href="../selection/">selection</a>
+      <a href="../sim/">simulation</a>
+      <a href="../findings/">findings</a>
+      <a href="../notes/">notes</a>
+      <a href="../data/">data</a>
+    </nav>
+  </div>
+</header>
+
+<main class="strip">
+  <div class="f-intro">
+    <h1 class="h1">Our error in kilocalories</h1>
+    <p class="lede">Our headline is a 4.6 fold median absolute error, which is
+      0.904 kilocalories per mole. Free energy perturbation is quoted in those
+      units, so somebody will lay the two side by side. This note says which
+      comparison holds and which does not, and gives the one number that is
+      measured the same way on the same pairs.</p>
+  </div>
+
+  <h2 class="h2">The conversion</h2>
+
+  <p class="body">A fold error in a dissociation constant becomes an energy
+    through RT ln of the fold. At 298.15 K, RT is 0.59248 kilocalories per
+    mole. So 4.6 fold is <strong>0.904 kcal/mol</strong>, and our published
+    interval of 4.3 to 5.0 fold is <strong>0.864 to 0.954 kcal/mol</strong>.</p>
+
+  <div class="wrap">
+  <table class="ct">
+    <thead><tr><th>Figure</th><th class="num">Fold</th>
+      <th class="num">kcal/mol</th></tr></thead>
+    <tbody>
+      <tr><td>Corpus median absolute error, 123 proteins</td><td class="num">4.6x</td><td class="num">0.904</td></tr>
+      <tr><td>Lower end of its interval</td><td class="num">4.3x</td><td class="num">0.864</td></tr>
+      <tr><td>Upper end of its interval</td><td class="num">5.0x</td><td class="num">0.954</td></tr>
+      <tr><td>Inside a 1.5 log potency window</td><td class="num">3.0x</td><td class="num">0.651</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2 class="h2">What that number cannot be compared with</h2>
+
+  <p class="body">A hand tuned FEP+ protocol reaches a weighted pairwise RMSE
+    of 1.20 kcal/mol on a large public benchmark, as recomputed by the Open
+    Free Energy consortium. Printing 0.904 next to 1.20 would say we beat it.
+    We do not, and three differences make that comparison empty.</p>
+
+  <p class="body">The first is single point against pairwise. Ours is the error
+    in one predicted affinity against one measured affinity. Theirs is the
+    error in the difference between two compounds, which is the quantity a
+    medicinal chemist uses and the harder one to get right, because the errors
+    in the two endpoints do not cancel.</p>
+
+  <p class="body">The second is median absolute error against root mean square
+    error. A median ignores the tail. An RMSE is dominated by it. Our own
+    distribution has a long tail, so the two statistics are not the same claim
+    about the same predictions.</p>
+
+  <p class="body">The third is the measurement underneath. We fetch IC50 and Ki
+    values in nanomolar with an exact relation from ChEMBL and reduce the
+    repeats for one compound to a geometric median. We do not fetch Kd. We also
+    do not record which type each value was, so our headline pools inhibition
+    constants and binding constants without distinguishing them. An IC50 is not
+    a binding constant: it depends on the substrate or radioligand
+    concentration in that assay through the Cheng-Prusoff relation, which we
+    have not applied. The free energy benchmarks are curated to one assay type
+    per series. Recording the type per activity is a small change to the
+    fetcher and it is on the list.</p>
+
+  <h2 class="h2">The comparison that does hold</h2>
+
+  <p class="body">We already measure the pairwise quantity. Every held-out set
+    is turned into within-target compound pairs, and the error in the predicted
+    difference is scored in kilocalories per mole, which is the same statistic
+    FEP+ reports.</p>
+
+  <p class="body">On 518 pairs where both we and FEP+ have an answer, our
+    pairwise RMSE is <strong>1.31 kcal/mol</strong> against
+    <strong>1.012</strong> for FEP+. We get the direction of the change right
+    76.8 percent of the time against 85.9 percent. Same pairs, same statistic,
+    and we are 0.30 kcal/mol behind a method that needs hand parameterisation
+    and orders of magnitude more compute.</p>
+
+  <div class="wrap">
+  <table class="ct">
+    <thead><tr><th>Pairs scored</th><th class="num">n</th>
+      <th class="num">Our RMSE</th><th class="num">Predicting no change</th>
+      <th class="num">Direction right</th></tr></thead>
+    <tbody>
+      <tr><td>All pairs, 15 targets</td><td class="num">4,852</td><td class="num">1.123</td><td class="num">1.507</td><td class="num">73.2%</td></tr>
+      <tr><td>Real change above 0.5 kcal/mol</td><td class="num">3,504</td><td class="num">1.261</td><td class="num">1.764</td><td class="num">79.3%</td></tr>
+      <tr><td>Real change above 1.0 kcal/mol</td><td class="num">2,301</td><td class="num">1.445</td><td class="num">2.107</td><td class="num">85.3%</td></tr>
+      <tr><td>Real change above 2.0 kcal/mol</td><td class="num">875</td><td class="num">1.879</td><td class="num">2.850</td><td class="num">91.1%</td></tr>
+      <tr><td>Head to head subset, FEP+ 1.012</td><td class="num">518</td><td class="num">1.310</td><td class="num"></td><td class="num">76.8%</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p class="body">The RMSE rises as the threshold rises because a larger real
+    change is a larger number to get wrong. The column beside it is what you
+    would score by predicting that nothing changes, which is the floor any
+    method has to clear. We clear it at every threshold.</p>
+
+  <h2 class="h2">The sentence to use</h2>
+
+  <p class="body">Our single point error is 0.904 kcal/mol and it is not
+    comparable to a free energy perturbation number. Our pairwise error is 1.31
+    kcal/mol on the pairs FEP+ also scored, where FEP+ reaches 1.012. Quote the
+    second one when the comparison is to a physics method.</p>
+
+  <p class="f-foot">Every figure here reads from
+    <a href="../data-files/paired-validation.json">paired-validation.json</a>
+    and <a href="../data-files/corpus-123-targets.json">corpus-123-targets.json</a>,
+    which are what the runs wrote. The FEP+ figure of 1.20 kcal/mol comes from
+    10.1021/acs.jcim.6c00089, which recomputes previously published FEP+ runs
+    on the Open Free Energy system list rather than running FEP+ fresh, and the
+    1.012 figure is FEP+ on our own head to head subset.</p>
+</main>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <span>Vessari</span>
+    <nav><a href="./">Back to the notes</a></nav>
+  </div>
+</footer>
+</body></html>
