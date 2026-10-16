@@ -1491,3 +1491,20 @@ a.wordmark{text-decoration:none;color:inherit}
 }
 .live-job--done .live-job__kind { color: var(--graphite-2); }
 .live-job--done .live-bar__fill { background: var(--graphite); }
+
+/* The simulation gallery. Cards hold a viewer that loads on request. */
+.g-list { list-style: none; margin: 2rem 0 0; padding: 0; display: grid; gap: 2rem; }
+@media (min-width: 820px) { .g-list { grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr)); } }
+.g-card { min-width: 0; border-top: 1px solid var(--rule-major); padding-top: 1rem; }
+.g-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
+.g-acc { margin: 0; font-family: var(--f-data); font-size: var(--t-h3); color: var(--graphite); }
+.g-env { margin: 0; font-family: var(--f-data); font-size: var(--t-label); letter-spacing: 0.06em; text-transform: uppercase; }
+.g-env--lipid { color: var(--pen-violet); }
+.g-env--water { color: var(--graphite-2); }
+.g-stage { position: relative; width: 100%; aspect-ratio: 4 / 3; background: #0D1210; margin-top: 0.75rem; }
+.g-note { position: absolute; inset: 0; display: grid; place-items: center; margin: 0; color: var(--paper); font-family: var(--f-data); font-size: var(--t-data); }
+.g-open { margin-top: 0.75rem; font-family: var(--f-data); font-size: var(--t-label); letter-spacing: 0.08em; text-transform: uppercase; background: none; border: 1px solid var(--graphite); color: var(--graphite); padding: 0.45rem 0.9rem; cursor: pointer; }
+.g-open:hover { background: var(--graphite); color: var(--paper-hi); }
+.g-stats { margin: 1rem 0 0; display: grid; grid-template-columns: auto 1fr; gap: 0.3rem 1rem; font-family: var(--f-data); font-size: var(--t-data); }
+.g-k { color: var(--graphite-2); }
+.g-v { margin: 0; color: var(--graphite); font-variant-numeric: tabular-nums; text-align: right; }

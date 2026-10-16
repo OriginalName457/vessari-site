@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="
+  default-src 'none';
+  script-src 'self' https://cdn.jsdelivr.net 'wasm-unsafe-eval' 'unsafe-eval' blob:;
+  worker-src blob:;
+  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+  font-src 'self' https://fonts.gstatic.com data:;
+  img-src 'self' data: blob:; connect-src 'self';
+  base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simulation library</title>
+<meta name="description" content="One simulated protein ligand complex per protein, receptors in a lipid bilayer and the rest in water, played back frame by frame.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&family=DM+Mono:wght@400;500&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  .sim-wrap { display: grid; gap: 1.5rem; margin: 2rem 0; }
+  @media (min-width: 900px) { .sim-wrap { grid-template-columns: 1fr 1fr; } }
+
+  .sim { border: 1px solid var(--rule-major); background: var(--paper-lit);
+         display: flex; flex-direction: column; }
+  .sim-head { padding: 0.85rem 1rem; border-bottom: 1px solid var(--rule-major); }
+  .sim-tag { font: 600 0.68rem/1 var(--f-display); text-transform: uppercase;
+             letter-spacing: 0.1em; color: var(--pen-violet); }
+  .sim-tag--bad { color: var(--pen-clay); }
+  .sim-name { font: 500 1.05rem/1.2 var(--f-display); margin: 0.3rem 0 0; }
+  .sim-id { font: 400 0.72rem/1 var(--f-data); opacity: 0.6; }
+
+  .stage { position: relative; width: 100%; aspect-ratio: 4 / 3;
+           background: #0D1210; }
+  .stage canvas { display: block; }
+  .stage-note { position: absolute; inset: 0; display: grid; place-items: center;
+                color: #A8B2AC; font: 400 0.82rem/1.5 var(--f-body);
+                text-align: center; padding: 1.5rem; }
+
+  .nums { display: grid; grid-template-columns: 1fr 1fr;
+          border-top: 1px solid var(--rule-major); }
+  .num { padding: 0.6rem 1rem; border-right: 1px solid var(--rule-minor); }
+  .num:last-child { border-right: 0; }
+  .num-k { font: 600 0.62rem/1 var(--f-display); text-transform: uppercase;
+           letter-spacing: 0.09em; opacity: 0.6; }
+  .num-v { font: 500 1rem/1.3 var(--f-data); font-variant-numeric: tabular-nums;
+           margin-top: 0.18rem; }
+
+  .ctl { display: flex; align-items: center; gap: 0.6rem; padding: 0.7rem 1rem;
+         border-top: 1px solid var(--rule-major); flex-wrap: wrap; }
+  .ctl button { font: 600 0.7rem/1 var(--f-display); text-transform: uppercase;
+                letter-spacing: 0.07em; padding: 0.4rem 0.7rem;
+                border: 1px solid var(--rule-major); background: var(--paper-hi);
+                color: var(--graphite); cursor: pointer; }
+  .ctl button:hover { background: var(--paper); }
+  .ctl button:focus-visible { outline: 2px solid var(--pen-violet);
+                              outline-offset: 2px; }
+  .ctl input[type=range] { flex: 1 1 90px; min-width: 70px; accent-color: var(--pen-violet); }
+  .ctl .frame { font: 400 0.72rem/1 var(--f-data); opacity: 0.7;
+                font-variant-numeric: tabular-nums; min-width: 4.5em; }
+
+  .legend { display: flex; gap: 1rem; flex-wrap: wrap; padding: 0.55rem 1rem;
+            border-top: 1px solid var(--rule-minor);
+            font: 400 0.72rem/1.4 var(--f-body); }
+  .legend span::before { content: ""; display: inline-block; width: 0.7rem;
+                         height: 0.7rem; margin-right: 0.35rem;
+                         vertical-align: -1px; border-radius: 2px; }
+  .lg-lig::before { background: #E8A33D; }
+  .lg-pocket::before { background: #6FA8C7; }
+  .lg-chain::before { background: #8E9A93; }
+
+  .wide { overflow-x: auto; }
+  table.cmp { width: 100%; border-collapse: collapse; font-size: 0.86rem;
+              margin: 1.2rem 0; }
+  table.cmp th, table.cmp td { padding: 0.4rem 0.7rem; text-align: left;
+                               border-bottom: 1px solid var(--rule-minor); }
+  table.cmp th { font: 600 0.66rem/1 var(--f-display); text-transform: uppercase;
+                 letter-spacing: 0.08em; }
+  table.cmp .n { text-align: right; font-family: var(--f-data);
+                 font-variant-numeric: tabular-nums; }
+</style>
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-in">
+    <a class="wordmark" href="../">VESSARI</a>
+    <span class="masthead-sub">simulation library</span>
+    <nav class="topnav" aria-label="Sections">
+      <a href="../what/">what we do</a>
+      <a href="../">assessment</a>
+      <a href="../proteins/">proteins</a>
+      <a href="../selection/">selection</a>
+      <a href="../sim/">simulation</a>
+      <a href="../library/">library</a>
+      <a href="../findings/">findings</a>
+      <a href="../notes/">notes</a>
+      <a href="../data/">data</a>
+    </nav>
+  </div>
+</header>
+<div class="strip">
+  <main class="sheet">
+
+    <div class="hero" style="display:block">
+      <h1 class="h1">Simulation library</h1>
+      <p class="lede">Every protein we hold a predicted pose for, simulated as
+        a complex and played back frame by frame. <span id="g-count">0</span>
+        proteins so far, <span id="g-lipid">0</span> of them sitting in a lipid
+        bilayer.</p>
+      <p class="body">The compound shown for each protein is the one this
+        pipeline predicted most accurately, and that compound's error is on the
+        card. The full record for every protein, including the ones we predict
+        badly, is on the <a href="../proteins/">protein page</a>.</p>
+      <p class="body">A protein that crosses a membrane is built into a POPC
+        bilayer. The rest are built in water. The builder decides from UniProt
+        and then checks the structure itself, because an annotation describes a
+        gene and we simulate a structure. Tumour necrosis factor is annotated
+        transmembrane, correctly, and the form that binds drugs is the shed
+        soluble trimer, so it is here in water.</p>
+      <p class="body">These runs are short and made to be watched. None of them
+        is a measurement.</p>
+    </div>
+
+    <ul class="g-list" id="g-list"></ul>
+
+    <p class="f-foot">Each viewer loads only when you ask for it. Water, ions
+      and lipid are stripped from the playback, and the residues within 5
+      angstroms of the compound are drawn in full.</p>
+  </main>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/ngl@2.5.0/dist/ngl.js"></script>
+<script src="gallery.js"></script>
+</body>
+</html>

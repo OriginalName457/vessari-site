@@ -47,8 +47,24 @@
    "ligand_iptm": 0.8322339653968811,
    "ns": 0.2,
    "minutes": 9.8
+  },
+  {
+   "accession": "P30968",
+   "chembl_id": "CHEMBL50663",
+   "environment": "lipid bilayer, POPC",
+   "membrane_reason": "UniProt keyword Transmembrane, Transmembrane helix",
+   "n_lipids": 482,
+   "n_waters": 41926,
+   "n_atoms": 196061,
+   "box_nm": 12.74,
+   "measured_nm": 91.214034007931,
+   "predicted_nm": 93.0120546213309,
+   "fold_error": 1.02,
+   "ligand_iptm": 0.9330471754074097,
+   "ns": 0.2,
+   "minutes": 28.4
   }
  ],
  "what_this_is": "One simulated complex per protein. The compound shown is the one this pipeline predicted most accurately for that protein, and the fold error on the card is that compound's. Proteins that cross a membrane are built in a POPC bilayer, the rest in water. These are short runs made to be watched. None of them is a measurement.",
- "generated_at": "2026-10-16T00:10:16+00:00"
+ "generated_at": "2026-10-16T00:38:41+00:00"
 }
