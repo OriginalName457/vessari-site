@@ -1,0 +1,396 @@
+{
+ "what_this_is": "How much of a ChEMBL built screening library anybody can buy. A compound is counted as purchasable when PubChem's categories view lists at least one chemical vendor for it.",
+ "source": "PubChem PUG REST and PUG View, queried directly",
+ "sampled_from": "47 screening libraries",
+ "seed": 20261016,
+ "groups": {
+  "known_binders": {
+   "n_sampled": 15,
+   "in_pubchem": 15,
+   "with_a_vendor": 3,
+   "share_with_a_vendor": 0.2,
+   "median_vendors": 0,
+   "rows": [
+    {
+     "chembl_id": "CHEMBL523374",
+     "cid": 25181502,
+     "vendors": 0,
+     "vendor_names": [],
+     "in_pubchem": true
+    },
+    {
+     "chembl_id": "CHEMBL196779",
+     "cid": 9911469,
+     "vendors": 9,
+     "vendor_names": [
+      "TargetMol",
+      "MedChemexpress MCE",
+      "Biorbyt",
+      "AstaTech, Inc.",
+      "Molport"
+     ],
+     "in_pubchem": true
+    },
+    {
+     "chembl_id": "CHEMBL5564604",
+     "cid": 177376718,
+     "vendors": 0,
+     "vendor_names": [],
+     "in_pubchem": true
+    },
+    {
+     "chembl_id": "CHEMBL1221683",
+     "cid": 49864397,
+     "vendors": 0,
+     "vendor_names": [],
+     "in_pubchem": true
+    },
+    {
+     "chembl_id": "CHEMBL3354622",
+     "cid": 118720302,
+     "vendors": 0,
+     "vendor_names": [],
+     "in_pubchem": true
+    },
+    {
+     "chembl_id": "CHEMBL77517",
+     "cid": 216468,
+     "vendors": 69,
+     "vendor_names": [
+      "Mcule",
+      "Accela ChemBio Inc.",
+      "Ambeed",
+      "Enamine",
+      "Enamine"
+     ],
+     "in_pubchem": true
+    },
+    {
+     "chembl_id": "CHEMBL74085",
+     "cid": 9831168,
+     "vendors": 0,
+     "vendor_names": [],
+     "in_pubchem": true
+    },
+    {
+     "chembl_id": "CHEMBL1221732",
+     "cid": 49864412,
+     "vendors": 0,
+     "vendor_names": [],
+     "in_pubchem": true
+    },
+    {
+     "chembl_id": "CHEMBL500",
+     "cid": 4828,
+     "vendors": 70,
+     "vendor_names": [
+      "LGC Standards",
+      "LGC Standards",
+      "LGC Standards",
+      "LGC Standards",
+      "LGC Standards"
+     ],
+     "in_pubchem": true
+    },
+    {
+     "chembl_id": "CHEMBL1089630",
+     "cid": 46884905,
+     "vendors": 0,
+     "vendor_names": [],
+     "in_pubchem": true
+    },
+    {
+     "chembl_id": "CHEMBL1161331",
+     "cid": 44368398,
+     "vendors": 0,
+     "vendor_names": [],
+     "in_pubchem": true
+    },
+    {
+     "chembl_id": "CHEMBL5996937",
+     "cid": 134352621,
+     "vendors": 0,
+     "vendor_names": [],
+     "in_pubchem": true
+    },
+    {
+     "chembl_id": "CHEMBL3143012",
+     "cid": 10010400,
+     "vendors": 0,
+     "vendor_names": [],
+     "in_pubchem": true
+    },
+    {
+     "chembl_id": "CHEMBL593153",
+     "cid": 44263447,
+     "vendors": 0,
+     "vendor_names": [],
+     "in_pubchem": true
+    },
+    {
+     "chembl_id": "CHEMBL2093026",
+     "cid": 70689221,
+     "vendors": 0,
+     "vendor_names": [],
+     "in_pubchem": true
+    }
+   ]
+  },
+  "decoys": {
+   "n_sampled": 15,
+   "in_pubchem": 15,
+   "with_a_vendor": 5,
+   "share_with_a_vendor": 0.333,
+   "median_vendors": 0,
+   "rows": [
+    {
+     "chembl_id": "CHEMBL2402424",
+     "cid": 71740182,
+     "vendors": 0,
+     "vendor_names": [],
+     "in_pubchem": true
+    },
+    {
+     "chembl_id": "CHEMBL3349600",
+     "cid": 118718463,
+     "vendors": 0,
+     "vendor_names": [],
+     "in_pubchem": true
+    },
+    {
+     "chembl_id": "CHEMBL5998867",
+     "cid": 146422017,
+     "vendors": 0,
+     "vendor_names": [],
+     "in_pubchem": true
+    },
+    {
+     "chembl_id": "CHEMBL5843700",
+     "cid": 146401935,
+     "vendors": 0,
+     "vendor_names": [],
+     "in_pubchem": true
+    },
+    {
+     "chembl_id": "CHEMBL341426",
+     "cid": 23276770,
+     "vendors": 0,
+     "vendor_names": [],
+     "in_pubchem": true
+    },
+    {
+     "chembl_id": "CHEMBL9953",
+     "cid": 11402676,
+     "vendors": 4,
+     "vendor_names": [
+      "J&H Chemical Co.,ltd",
+      "RR Scientific",
+      "AKos Consulting & Solutions",
+      "Starshine Chemical"
+     ],
+     "in_pubchem": true
+    },
+    {
+     "chembl_id": "CHEMBL161556",
+     "cid": 10759546,
+     "vendors": 0,
+     "vendor_names": [],
+     "in_pubchem": true
+    },
+    {
+     "chembl_id": "CHEMBL388978",
+     "cid": 44259,
+     "vendors": 60,
+     "vendor_names": [
+      "Clinivex",
+      "Clinivex",
+      "CymitQuimica",
+      "Smolecule",
+      "Enamine"
+     ],
+     "in_pubchem": true
+    },
+    {
+     "chembl_id": "CHEMBL230326",
+     "cid": 23625786,
+     "vendors": 0,
+     "vendor_names": [],
+     "in_pubchem": true
+    },
+    {
+     "chembl_id": "CHEMBL323332",
+     "cid": 10059864,
+     "vendors": 3,
+     "vendor_names": [
+      "RR Scientific",
+      "Alfa Chemistry",
+      "BOC Sciences"
+     ],
+     "in_pubchem": true
+    },
+    {
+     "chembl_id": "CHEMBL1700643",
+     "cid": 771737,
+     "vendors": 12,
+     "vendor_names": [
+      "AKos Consulting & Solutions",
+      "BenchChem",
+      "MuseChem",
+      "Mcule",
+      "A2B Chem"
+     ],
+     "in_pubchem": true
+    },
+    {
+     "chembl_id": "CHEMBL610280",
+     "cid": 9912632,
+     "vendors": 0,
+     "vendor_names": [],
+     "in_pubchem": true
+    },
+    {
+     "chembl_id": "CHEMBL195222",
+     "cid": 44402934,
+     "vendors": 0,
+     "vendor_names": [],
+     "in_pubchem": true
+    },
+    {
+     "chembl_id": "CHEMBL1090742",
+     "cid": 24750734,
+     "vendors": 0,
+     "vendor_names": [],
+     "in_pubchem": true
+    },
+    {
+     "chembl_id": "CHEMBL174454",
+     "cid": 10623837,
+     "vendors": 1,
+     "vendor_names": [
+      "RR Scientific"
+     ],
+     "in_pubchem": true
+    }
+   ]
+  },
+  "our_top_50": {
+   "n_sampled": 15,
+   "in_pubchem": 15,
+   "with_a_vendor": 1,
+   "share_with_a_vendor": 0.067,
+   "median_vendors": 0,
+   "rows": [
+    {
+     "chembl_id": "CHEMBL316666",
+     "cid": 44330521,
+     "vendors": 0,
+     "vendor_names": [],
+     "in_pubchem": true
+    },
+    {
+     "chembl_id": "CHEMBL5922366",
+     "cid": 58389182,
+     "vendors": 3,
+     "vendor_names": [
+      "EvitaChem",
+      "Key Organics/BIONET",
+      "Enamine"
+     ],
+     "in_pubchem": true
+    },
+    {
+     "chembl_id": "CHEMBL5842331",
+     "cid": 146440333,
+     "vendors": 0,
+     "vendor_names": [],
+     "in_pubchem": true
+    },
+    {
+     "chembl_id": "CHEMBL99773",
+     "cid": 44330460,
+     "vendors": 0,
+     "vendor_names": [],
+     "in_pubchem": true
+    },
+    {
+     "chembl_id": "CHEMBL5805950",
+     "cid": 155046710,
+     "vendors": 0,
+     "vendor_names": [],
+     "in_pubchem": true
+    },
+    {
+     "chembl_id": "CHEMBL182947",
+     "cid": 44390560,
+     "vendors": 0,
+     "vendor_names": [],
+     "in_pubchem": true
+    },
+    {
+     "chembl_id": "CHEMBL6018774",
+     "cid": 146436163,
+     "vendors": 0,
+     "vendor_names": [],
+     "in_pubchem": true
+    },
+    {
+     "chembl_id": "CHEMBL123892",
+     "cid": 5742621,
+     "vendors": 0,
+     "vendor_names": [],
+     "in_pubchem": true
+    },
+    {
+     "chembl_id": "CHEMBL2059810",
+     "cid": 57340477,
+     "vendors": 0,
+     "vendor_names": [],
+     "in_pubchem": true
+    },
+    {
+     "chembl_id": "CHEMBL400860",
+     "cid": 25132999,
+     "vendors": 0,
+     "vendor_names": [],
+     "in_pubchem": true
+    },
+    {
+     "chembl_id": "CHEMBL320371",
+     "cid": 44330596,
+     "vendors": 0,
+     "vendor_names": [],
+     "in_pubchem": true
+    },
+    {
+     "chembl_id": "CHEMBL5557651",
+     "cid": 177646514,
+     "vendors": 0,
+     "vendor_names": [],
+     "in_pubchem": true
+    },
+    {
+     "chembl_id": "CHEMBL168144",
+     "cid": 44380248,
+     "vendors": 0,
+     "vendor_names": [],
+     "in_pubchem": true
+    },
+    {
+     "chembl_id": "CHEMBL6056844",
+     "cid": 146436220,
+     "vendors": 0,
+     "vendor_names": [],
+     "in_pubchem": true
+    },
+    {
+     "chembl_id": "CHEMBL4877797",
+     "cid": 121461706,
+     "vendors": 0,
+     "vendor_names": [],
+     "in_pubchem": true
+    }
+   ]
+  }
+ },
+ "at": "2026-10-16T21:48:36+00:00"
+}
