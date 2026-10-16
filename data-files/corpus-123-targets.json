@@ -3,13 +3,13 @@
  "supersedes": "corpus-121-targets.json",
  "pipeline": "Rebuilt under the corrected clustering rule. Every target in the 121 target version was scored before two defects were fixed, and this is all of them computed again.",
  "n_scored": 123,
- "n_declined": 0,
+ "n_declined": 243,
  "n_compounds_scored": 2462,
  "headline": {
   "metric": "median fold error",
   "value": 4.6,
   "ci95": [
-   4.3,
+   4.2,
    5.0
   ],
   "why_this_metric": "Spearman depends on how far apart the true affinities are, so a target whose compounds span four orders of magnitude scores better than one spanning two for reasons that have nothing to do with the model. Fold error does not."
@@ -2997,5 +2997,1950 @@
    "finished_at": "2026-10-15T13:56:42.299260+00:00"
   }
  ],
- "declined": []
+ "declined": [
+  {
+   "target": "Peptidyl-prolyl cis-trans isomerase B",
+   "accession": "P23284",
+   "residues": 216,
+   "failed": true,
+   "reason": "only 1 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-09-29T19:21:27.707010+00:00"
+  },
+  {
+   "target": "Beta-lactamase TEM",
+   "accession": "P62593",
+   "residues": 286,
+   "failed": true,
+   "reason": "only 5 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-09-29T20:51:03.815166+00:00"
+  },
+  {
+   "target": "Adenosine deaminase",
+   "accession": "P00813",
+   "residues": 363,
+   "failed": true,
+   "reason": "only 6 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-09-29T21:43:24.813709+00:00"
+  },
+  {
+   "target": "UDP-N-acetylglucosamine 1-carboxyvinyltransferase",
+   "accession": "P0A749",
+   "residues": 419,
+   "failed": true,
+   "reason": "only 5 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-09-30T00:07:53.582937+00:00"
+  },
+  {
+   "target": "Peptidyl-prolyl cis-trans isomerase A",
+   "accession": "P62937",
+   "residues": 165,
+   "failed": true,
+   "reason": "only 5 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-07T19:49:19.930866+00:00"
+  },
+  {
+   "target": "Enoyl-[acyl-carrier-protein] reductase [NADH] FabI",
+   "accession": "P0AEK4",
+   "residues": 262,
+   "failed": true,
+   "reason": "only 7 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-07T20:37:27.803581+00:00"
+  },
+  {
+   "target": "Adrenocorticotropic hormone receptor",
+   "accession": "Q01718",
+   "residues": 297,
+   "failed": true,
+   "reason": "only 3 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-07T20:37:30.812569+00:00"
+  },
+  {
+   "target": "Cysteinyl leukotriene receptor 1",
+   "accession": "Q9Y271",
+   "residues": 337,
+   "failed": true,
+   "reason": "no sequence",
+   "finished_at": "2026-10-07T21:10:10.256428+00:00"
+  },
+  {
+   "target": "Prostaglandin F2-alpha receptor",
+   "accession": "P43088",
+   "residues": 359,
+   "failed": true,
+   "reason": "only 9 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-07T22:44:14.313575+00:00"
+  },
+  {
+   "target": "Thymidine kinase",
+   "accession": "P06479",
+   "residues": 376,
+   "failed": true,
+   "reason": "only 4 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-08T00:10:39.114505+00:00"
+  },
+  {
+   "target": "4-hydroxyphenylpyruvate dioxygenase",
+   "accession": "P32754",
+   "residues": 393,
+   "failed": true,
+   "reason": "only 0 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-08T01:20:09.538788+00:00"
+  },
+  {
+   "target": "Bcl2-associated agonist of cell death",
+   "accession": "Q92934",
+   "residues": 168,
+   "failed": true,
+   "reason": "only 1 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-08T17:53:35.271077+00:00"
+  },
+  {
+   "target": "C-8 sterol isomerase ERG2",
+   "accession": "P32352",
+   "residues": 222,
+   "failed": true,
+   "reason": "only 0 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-08T17:53:38.736556+00:00"
+  },
+  {
+   "target": "Beta-lactamase",
+   "accession": "P00807",
+   "residues": 281,
+   "failed": true,
+   "reason": "only 4 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-08T17:53:43.814628+00:00"
+  },
+  {
+   "target": "P2Y purinoceptor 6",
+   "accession": "Q15077",
+   "residues": 328,
+   "failed": true,
+   "reason": "only 5 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-08T18:44:43.795839+00:00"
+  },
+  {
+   "target": "Transcription factor Jun",
+   "accession": "P05412",
+   "residues": 331,
+   "failed": true,
+   "reason": "only 6 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-08T18:44:50.602640+00:00"
+  },
+  {
+   "target": "Histidine-rich protein PFHRP-II",
+   "accession": "P05227",
+   "residues": 332,
+   "failed": true,
+   "reason": "only 2 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-08T18:44:58.007203+00:00"
+  },
+  {
+   "target": "Cysteinyl leukotriene receptor 2",
+   "accession": "Q9NS75",
+   "residues": 346,
+   "failed": true,
+   "reason": "only 4 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-08T19:45:16.099202+00:00"
+  },
+  {
+   "target": "Type-2 angiotensin II receptor",
+   "accession": "P35351",
+   "residues": 363,
+   "failed": true,
+   "reason": "could not build a held-out set",
+   "finished_at": "2026-10-08T19:46:16.421031+00:00"
+  },
+  {
+   "target": "5-hydroxytryptamine receptor 1F",
+   "accession": "P30939",
+   "residues": 366,
+   "failed": true,
+   "reason": "only 5 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-08T19:47:01.103574+00:00"
+  },
+  {
+   "target": "Gastricsin",
+   "accession": "P20142",
+   "residues": 388,
+   "failed": true,
+   "reason": "only 0 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-08T20:33:20.783047+00:00"
+  },
+  {
+   "target": "B2 bradykinin receptor",
+   "accession": "P30411",
+   "residues": 391,
+   "failed": true,
+   "reason": "only 11 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-08T20:33:37.823370+00:00"
+  },
+  {
+   "target": "Thyrotropin-releasing hormone receptor",
+   "accession": "P21761",
+   "residues": 393,
+   "failed": true,
+   "reason": "only 1 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-08T21:08:43.905741+00:00"
+  },
+  {
+   "target": "Scytalone dehydratase",
+   "accession": "P56221",
+   "residues": 172,
+   "failed": true,
+   "reason": "only 8 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-09T23:16:59.203917+00:00"
+  },
+  {
+   "target": "GTPase HRas",
+   "accession": "P01112",
+   "residues": 189,
+   "failed": true,
+   "reason": "only 2 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-09T23:17:02.342630+00:00"
+  },
+  {
+   "target": "Dihydrofolate reductase",
+   "accession": "P00378",
+   "residues": 189,
+   "failed": true,
+   "reason": "only 3 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-09T23:17:06.288612+00:00"
+  },
+  {
+   "target": "Dihydrofolate reductase",
+   "accession": "P07807",
+   "residues": 211,
+   "failed": true,
+   "reason": "only 0 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-09T23:38:44.140292+00:00"
+  },
+  {
+   "target": "Hypoxanthine-guanine phosphoribosyltransferase",
+   "accession": "P00492",
+   "residues": 218,
+   "failed": true,
+   "reason": "only 10 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-09T23:38:48.580628+00:00"
+  },
+  {
+   "target": "Glutathione S-transferase Mu 2",
+   "accession": "P28161",
+   "residues": 218,
+   "failed": true,
+   "reason": "only 1 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-09T23:38:51.680911+00:00"
+  },
+  {
+   "target": "Peptide deformylase, mitochondrial",
+   "accession": "Q9HBH1",
+   "residues": 243,
+   "failed": true,
+   "reason": "only 0 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T00:08:31.147855+00:00"
+  },
+  {
+   "target": "Chymotrypsinogen A",
+   "accession": "P00766",
+   "residues": 245,
+   "failed": true,
+   "reason": "only 2 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T00:08:37.127063+00:00"
+  },
+  {
+   "target": "Folate receptor alpha",
+   "accession": "P15328",
+   "residues": 257,
+   "failed": true,
+   "reason": "only 3 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T00:50:36.221829+00:00"
+  },
+  {
+   "target": "Deoxycytidine kinase",
+   "accession": "P27707",
+   "residues": 260,
+   "failed": true,
+   "reason": "only 1 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T00:50:40.526140+00:00"
+  },
+  {
+   "target": "Carbonic anhydrase 3",
+   "accession": "P07451",
+   "residues": 260,
+   "failed": true,
+   "reason": "only 5 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T00:50:45.034528+00:00"
+  },
+  {
+   "target": "Methionine aminopeptidase",
+   "accession": "P0AE18",
+   "residues": 264,
+   "failed": true,
+   "reason": "only 5 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T00:50:51.277208+00:00"
+  },
+  {
+   "target": "S-methyl-5'-thioadenosine phosphorylase",
+   "accession": "Q13126",
+   "residues": 283,
+   "failed": true,
+   "reason": "only 5 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T01:23:22.933992+00:00"
+  },
+  {
+   "target": "Geranylgeranyl pyrophosphate synthase",
+   "accession": "O95749",
+   "residues": 300,
+   "failed": true,
+   "reason": "only 10 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T01:23:51.964880+00:00"
+  },
+  {
+   "target": "UDP-3-O-acyl-N-acetylglucosamine deacetylase",
+   "accession": "P47205",
+   "residues": 303,
+   "failed": true,
+   "reason": "only 10 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T01:25:24.231579+00:00"
+  },
+  {
+   "target": "Low affinity immunoglobulin epsilon Fc receptor",
+   "accession": "P06734",
+   "residues": 321,
+   "failed": true,
+   "reason": "only 2 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T01:49:06.385348+00:00"
+  },
+  {
+   "target": "Serine/threonine-protein phosphatase PP1-alpha catalytic sub",
+   "accession": "P62136",
+   "residues": 330,
+   "failed": true,
+   "reason": "only 1 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T01:49:10.254585+00:00"
+  },
+  {
+   "target": "Glyceraldehyde-3-phosphate dehydrogenase, cytosolic",
+   "accession": "Q01558",
+   "residues": 331,
+   "failed": true,
+   "reason": "only 0 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T01:49:13.667133+00:00"
+  },
+  {
+   "target": "Melanocortin receptor 4",
+   "accession": "P56450",
+   "residues": 332,
+   "failed": true,
+   "reason": "only 2 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T01:49:17.671975+00:00"
+  },
+  {
+   "target": "Urokinase plasminogen activator surface receptor",
+   "accession": "Q03405",
+   "residues": 335,
+   "failed": true,
+   "reason": "only 1 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T02:33:56.483150+00:00"
+  },
+  {
+   "target": "Galanin receptor type 1",
+   "accession": "P47211",
+   "residues": 349,
+   "failed": true,
+   "reason": "only 0 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T02:33:59.934695+00:00"
+  },
+  {
+   "target": "Histamine H2 receptor",
+   "accession": "P47747",
+   "residues": 359,
+   "failed": true,
+   "reason": "only 2 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T02:34:03.265276+00:00"
+  },
+  {
+   "target": "Cannabinoid receptor 2",
+   "accession": "Q9QZN9",
+   "residues": 360,
+   "failed": true,
+   "reason": "only 3 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T02:34:08.781653+00:00"
+  },
+  {
+   "target": "Alcohol dehydrogenase class-3",
+   "accession": "P11766",
+   "residues": 374,
+   "failed": true,
+   "reason": "only 0 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T03:17:20.122334+00:00"
+  },
+  {
+   "target": "Neuropeptide Y receptor type 4",
+   "accession": "P50391",
+   "residues": 375,
+   "failed": true,
+   "reason": "only 2 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T03:17:31.898185+00:00"
+  },
+  {
+   "target": "Dipeptidase 1",
+   "accession": "P22412",
+   "residues": 409,
+   "failed": true,
+   "reason": "only 1 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T04:26:17.601651+00:00"
+  },
+  {
+   "target": "Phosphoglycerate kinase 1",
+   "accession": "P00558",
+   "residues": 417,
+   "failed": true,
+   "reason": "only 0 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T04:26:21.519163+00:00"
+  },
+  {
+   "target": "Lactoylglutathione lyase",
+   "accession": "Q04760",
+   "residues": 184,
+   "failed": true,
+   "reason": "only 5 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T04:39:07.657749+00:00"
+  },
+  {
+   "target": "Thymidylate kinase",
+   "accession": "P9WKE1",
+   "residues": 214,
+   "failed": true,
+   "reason": "only 4 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T05:08:48.416276+00:00"
+  },
+  {
+   "target": "Sigma non-opioid intracellular receptor 1",
+   "accession": "O55242",
+   "residues": 223,
+   "failed": true,
+   "reason": "only 0 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T05:08:54.279336+00:00"
+  },
+  {
+   "target": "GTP:AMP phosphotransferase AK3, mitochondrial",
+   "accession": "P29411",
+   "residues": 227,
+   "failed": true,
+   "reason": "only 1 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T05:08:58.264772+00:00"
+  },
+  {
+   "target": "Indolethylamine N-methyltransferase",
+   "accession": "O95050",
+   "residues": 263,
+   "failed": true,
+   "reason": "only 1 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T05:32:55.531469+00:00"
+  },
+  {
+   "target": "Interleukin-2 receptor subunit alpha",
+   "accession": "P01590",
+   "residues": 268,
+   "failed": true,
+   "reason": "only 0 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T05:32:58.759636+00:00"
+  },
+  {
+   "target": "NH(3)-dependent NAD(+) synthetase",
+   "accession": "P08164",
+   "residues": 272,
+   "failed": true,
+   "reason": "only 0 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T05:33:02.042775+00:00"
+  },
+  {
+   "target": "11-beta-hydroxysteroid dehydrogenase 1",
+   "accession": "P16232",
+   "residues": 288,
+   "failed": true,
+   "reason": "only 10 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T05:33:06.192669+00:00"
+  },
+  {
+   "target": "Purine nucleoside phosphorylase",
+   "accession": "P85973",
+   "residues": 289,
+   "failed": true,
+   "reason": "only 1 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T05:33:09.079766+00:00"
+  },
+  {
+   "target": "Dual specificity mitogen-activated protein kinase kinase 6",
+   "accession": "P52564",
+   "residues": 334,
+   "failed": true,
+   "reason": "only 1 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T05:51:58.284923+00:00"
+  },
+  {
+   "target": "DNA polymerase beta",
+   "accession": "P06746",
+   "residues": 335,
+   "failed": true,
+   "reason": "only 4 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T05:52:02.345033+00:00"
+  },
+  {
+   "target": "Cannabinoid receptor 2",
+   "accession": "P47936",
+   "residues": 347,
+   "failed": true,
+   "reason": "only 11 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T05:52:12.197486+00:00"
+  },
+  {
+   "target": "Type-1 angiotensin II receptor B",
+   "accession": "P29089",
+   "residues": 359,
+   "failed": true,
+   "reason": "only 9 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T05:52:18.147434+00:00"
+  },
+  {
+   "target": "Somatostatin receptor type 5",
+   "accession": "O08858",
+   "residues": 362,
+   "failed": true,
+   "reason": "only 6 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T05:52:24.512972+00:00"
+  },
+  {
+   "target": "Methionine aminopeptidase 1",
+   "accession": "P53582",
+   "residues": 386,
+   "failed": true,
+   "reason": "only 4 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T06:26:42.980710+00:00"
+  },
+  {
+   "target": "Histamine H4 receptor",
+   "accession": "Q91ZY1",
+   "residues": 391,
+   "failed": true,
+   "reason": "only 6 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T06:56:58.973738+00:00"
+  },
+  {
+   "target": "P2X purinoceptor 3",
+   "accession": "P49654",
+   "residues": 397,
+   "failed": true,
+   "reason": "only 6 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T06:57:06.628661+00:00"
+  },
+  {
+   "target": "Dihydrofolate reductase",
+   "accession": "P04174",
+   "residues": 162,
+   "failed": true,
+   "reason": "only 1 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T11:02:07.207402+00:00"
+  },
+  {
+   "target": "Dihydrofolate reductase",
+   "accession": "P00381",
+   "residues": 163,
+   "failed": true,
+   "reason": "only 9 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T11:02:13.706811+00:00"
+  },
+  {
+   "target": "Peptide deformylase",
+   "accession": "P68825",
+   "residues": 183,
+   "failed": true,
+   "reason": "only 0 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T11:02:18.370395+00:00"
+  },
+  {
+   "target": "Imidazoleglycerol-phosphate dehydratase",
+   "accession": "P0CO23",
+   "residues": 202,
+   "failed": true,
+   "reason": "only 4 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T11:02:22.759282+00:00"
+  },
+  {
+   "target": "Glutathione S-transferase A1",
+   "accession": "P08263",
+   "residues": 222,
+   "failed": true,
+   "reason": "only 4 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T11:33:13.252773+00:00"
+  },
+  {
+   "target": "Trypsin",
+   "accession": "P00761",
+   "residues": 231,
+   "failed": true,
+   "reason": "only 0 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T11:33:17.192426+00:00"
+  },
+  {
+   "target": "Serine protease 1",
+   "accession": "P00760",
+   "residues": 246,
+   "failed": true,
+   "reason": "could not build a held-out set",
+   "finished_at": "2026-10-10T11:38:09.005160+00:00"
+  },
+  {
+   "target": "Trypsin II",
+   "accession": "Q29463",
+   "residues": 247,
+   "failed": true,
+   "reason": "only 6 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T11:38:15.164754+00:00"
+  },
+  {
+   "target": "Cathepsin G",
+   "accession": "P08311",
+   "residues": 255,
+   "failed": true,
+   "reason": "only 5 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T11:38:21.958001+00:00"
+  },
+  {
+   "target": "Prostate-specific antigen",
+   "accession": "P07288",
+   "residues": 261,
+   "failed": true,
+   "reason": "only 1 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T11:38:25.601991+00:00"
+  },
+  {
+   "target": "Signal peptidase I",
+   "accession": "P00803",
+   "residues": 324,
+   "failed": true,
+   "reason": "only 1 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T11:38:28.567790+00:00"
+  },
+  {
+   "target": "Cathepsin K",
+   "accession": "O35186",
+   "residues": 329,
+   "failed": true,
+   "reason": "only 1 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T12:28:02.368920+00:00"
+  },
+  {
+   "target": "Procathepsin L",
+   "accession": "P25975",
+   "residues": 334,
+   "failed": true,
+   "reason": "only 0 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T14:04:42.651930+00:00"
+  },
+  {
+   "target": "Papain",
+   "accession": "P00784",
+   "residues": 345,
+   "failed": true,
+   "reason": "only 3 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T14:39:17.111914+00:00"
+  },
+  {
+   "target": "B2 bradykinin receptor",
+   "accession": "P25023",
+   "residues": 396,
+   "failed": true,
+   "reason": "only 0 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T15:44:37.243673+00:00"
+  },
+  {
+   "target": "Neurotensin receptor type 2",
+   "accession": "O95665",
+   "residues": 410,
+   "failed": true,
+   "reason": "only 0 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T15:44:41.198440+00:00"
+  },
+  {
+   "target": "Neurotensin receptor type 2",
+   "accession": "Q63384",
+   "residues": 416,
+   "failed": true,
+   "reason": "only 4 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T15:44:44.095872+00:00"
+  },
+  {
+   "target": "Carboxypeptidase A1",
+   "accession": "P15085",
+   "residues": 419,
+   "failed": true,
+   "reason": "only 4 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T15:44:47.654519+00:00"
+  },
+  {
+   "target": "5-hydroxytryptamine receptor 5A",
+   "accession": "P30966",
+   "residues": 357,
+   "failed": true,
+   "reason": "only 2 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T19:09:30.612477+00:00"
+  },
+  {
+   "target": "Prostaglandin E2 receptor EP2 subtype",
+   "accession": "Q62053",
+   "residues": 362,
+   "failed": true,
+   "reason": "only 8 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T19:35:41.772113+00:00"
+  },
+  {
+   "target": "P2Y purinoceptor 4",
+   "accession": "P51582",
+   "residues": 365,
+   "failed": true,
+   "reason": "only 2 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T19:35:46.193508+00:00"
+  },
+  {
+   "target": "5-hydroxytryptamine receptor 1E",
+   "accession": "P28566",
+   "residues": 365,
+   "failed": true,
+   "reason": "only 5 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T19:35:50.747528+00:00"
+  },
+  {
+   "target": "Nociceptin receptor",
+   "accession": "P35377",
+   "residues": 367,
+   "failed": true,
+   "reason": "only 0 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T19:35:53.862434+00:00"
+  },
+  {
+   "target": "5-hydroxytryptamine receptor 1D",
+   "accession": "P28565",
+   "residues": 374,
+   "failed": true,
+   "reason": "only 0 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T20:36:38.931127+00:00"
+  },
+  {
+   "target": "Kappa-type opioid receptor",
+   "accession": "P34975",
+   "residues": 380,
+   "failed": true,
+   "reason": "only 11 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T20:37:25.829142+00:00"
+  },
+  {
+   "target": "Protein phosphatase 1A",
+   "accession": "P35813",
+   "residues": 382,
+   "failed": true,
+   "reason": "only 1 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T20:37:50.938629+00:00"
+  },
+  {
+   "target": "Pepsin A",
+   "accession": "P00791",
+   "residues": 385,
+   "failed": true,
+   "reason": "only 0 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T20:38:12.019643+00:00"
+  },
+  {
+   "target": "Oxytocin receptor",
+   "accession": "P70536",
+   "residues": 388,
+   "failed": true,
+   "reason": "only 9 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T21:13:23.686778+00:00"
+  },
+  {
+   "target": "P2X purinoceptor 1",
+   "accession": "P51575",
+   "residues": 399,
+   "failed": true,
+   "reason": "only 4 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T21:13:28.090715+00:00"
+  },
+  {
+   "target": "Mu-type opioid receptor",
+   "accession": "P79350",
+   "residues": 401,
+   "failed": true,
+   "reason": "only 5 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T21:13:31.241710+00:00"
+  },
+  {
+   "target": "Prostaglandin E2 receptor EP1 subtype",
+   "accession": "P35375",
+   "residues": 405,
+   "failed": true,
+   "reason": "only 3 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T21:30:21.281453+00:00"
+  },
+  {
+   "target": "5-hydroxytryptamine receptor 4",
+   "accession": "Q62758",
+   "residues": 406,
+   "failed": true,
+   "reason": "only 11 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T21:30:26.605831+00:00"
+  },
+  {
+   "target": "Deoxynucleoside kinase",
+   "accession": "Q9XZT6",
+   "residues": 250,
+   "failed": true,
+   "reason": "only 1 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T22:51:40.805593+00:00"
+  },
+  {
+   "target": "B1 bradykinin receptor",
+   "accession": "P97583",
+   "residues": 337,
+   "failed": true,
+   "reason": "only 3 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T22:51:43.604378+00:00"
+  },
+  {
+   "target": "Apelin receptor",
+   "accession": "Q9JHG3",
+   "residues": 377,
+   "failed": true,
+   "reason": "only 0 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T23:58:58.171092+00:00"
+  },
+  {
+   "target": "Geranylgeranyl transferase type-1 subunit beta",
+   "accession": "P53609",
+   "residues": 377,
+   "failed": true,
+   "reason": "only 1 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T23:59:02.372528+00:00"
+  },
+  {
+   "target": "Sialidase-2",
+   "accession": "Q9Y3R4",
+   "residues": 380,
+   "failed": true,
+   "reason": "only 5 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T23:59:06.808996+00:00"
+  },
+  {
+   "target": "Methionine aminopeptidase 1",
+   "accession": "Q01662",
+   "residues": 387,
+   "failed": true,
+   "reason": "only 3 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T23:59:11.088014+00:00"
+  },
+  {
+   "target": "Bombesin receptor subtype-3",
+   "accession": "P32247",
+   "residues": 399,
+   "failed": true,
+   "reason": "only 8 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T23:59:14.644467+00:00"
+  },
+  {
+   "target": "Substance-P receptor",
+   "accession": "P14600",
+   "residues": 407,
+   "failed": true,
+   "reason": "only 5 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T23:59:20.130147+00:00"
+  },
+  {
+   "target": "Adenosine receptor A2a",
+   "accession": "Q60613",
+   "residues": 410,
+   "failed": true,
+   "reason": "only 1 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-10T23:59:24.262465+00:00"
+  },
+  {
+   "target": "Phospholipase A2",
+   "accession": "P00630",
+   "residues": 167,
+   "failed": true,
+   "reason": "only 1 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-11T05:00:05.902952+00:00"
+  },
+  {
+   "target": "Kallikrein-14",
+   "accession": "Q9P0G3",
+   "residues": 251,
+   "failed": true,
+   "reason": "only 1 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-11T05:29:46.981709+00:00"
+  },
+  {
+   "target": "Major prion protein",
+   "accession": "P04156",
+   "residues": 253,
+   "failed": true,
+   "reason": "only 0 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-11T05:29:51.632833+00:00"
+  },
+  {
+   "target": "Chymotrypsinogen B",
+   "accession": "P17538",
+   "residues": 263,
+   "failed": true,
+   "reason": "only 2 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-11T05:29:55.211539+00:00"
+  },
+  {
+   "target": "Thymidylate synthase",
+   "accession": "P0A884",
+   "residues": 264,
+   "failed": true,
+   "reason": "only 1 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-11T05:29:58.465600+00:00"
+  },
+  {
+   "target": "Chymotrypsin-like protease CTRL-1",
+   "accession": "P40313",
+   "residues": 264,
+   "failed": true,
+   "reason": "only 6 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-11T05:30:03.383311+00:00"
+  },
+  {
+   "target": "Phenylethanolamine N-methyltransferase",
+   "accession": "P11086",
+   "residues": 282,
+   "failed": true,
+   "reason": "only 4 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-11T05:30:07.957220+00:00"
+  },
+  {
+   "target": "Lysophosphatidic acid receptor 2",
+   "accession": "Q9HBW0",
+   "residues": 348,
+   "failed": true,
+   "reason": "only 6 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-11T05:30:12.016129+00:00"
+  },
+  {
+   "target": "Leukotriene B4 receptor 2",
+   "accession": "Q9NPC1",
+   "residues": 358,
+   "failed": true,
+   "reason": "only 4 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-11T05:30:15.656909+00:00"
+  },
+  {
+   "target": "HLA class I histocompatibility antigen, A alpha chain",
+   "accession": "P04439",
+   "residues": 365,
+   "failed": true,
+   "reason": "only 0 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-11T05:59:48.576835+00:00"
+  },
+  {
+   "target": "Vasopressin V2 receptor",
+   "accession": "Q00788",
+   "residues": 371,
+   "failed": true,
+   "reason": "only 8 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-11T06:00:07.777729+00:00"
+  },
+  {
+   "target": "Prostatic acid phosphatase",
+   "accession": "P15309",
+   "residues": 386,
+   "failed": true,
+   "reason": "only 2 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-11T06:34:33.502528+00:00"
+  },
+  {
+   "target": "Urotensin-2 receptor",
+   "accession": "P49684",
+   "residues": 386,
+   "failed": true,
+   "reason": "only 1 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-11T06:35:28.937803+00:00"
+  },
+  {
+   "target": "Urotensin-2 receptor",
+   "accession": "Q9UKP6",
+   "residues": 389,
+   "failed": true,
+   "reason": "could not build a held-out set",
+   "finished_at": "2026-10-11T06:36:19.740856+00:00"
+  },
+  {
+   "target": "Prolyl hydroxylase EGLN2",
+   "accession": "Q96KS0",
+   "residues": 407,
+   "failed": true,
+   "reason": "only 10 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-11T06:36:57.247175+00:00"
+  },
+  {
+   "target": "Corticotropin-releasing factor receptor 2",
+   "accession": "Q13324",
+   "residues": 411,
+   "failed": true,
+   "reason": "only 1 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-11T07:09:49.958432+00:00"
+  },
+  {
+   "target": "Corticotropin-releasing factor receptor 1",
+   "accession": "P35353",
+   "residues": 415,
+   "failed": true,
+   "reason": "only 10 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-11T07:09:59.331953+00:00"
+  },
+  {
+   "target": "Carboxypeptidase B",
+   "accession": "P15086",
+   "residues": 417,
+   "failed": true,
+   "reason": "only 0 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-11T07:10:02.264749+00:00"
+  },
+  {
+   "target": "Carbonic anhydrase 13",
+   "accession": "Q9D6N1",
+   "residues": 262,
+   "failed": true,
+   "reason": "could not build a held-out set",
+   "finished_at": "2026-10-11T11:10:29.107461+00:00"
+  },
+  {
+   "target": "Melanocortin receptor 3",
+   "accession": "P41968",
+   "residues": 323,
+   "failed": true,
+   "reason": "could not build a held-out set",
+   "finished_at": "2026-10-11T12:29:42.114001+00:00"
+  },
+  {
+   "target": "Melanocortin receptor 3",
+   "accession": "P33033",
+   "residues": 323,
+   "failed": true,
+   "reason": "only 0 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-11T12:29:48.967698+00:00"
+  },
+  {
+   "target": "P2Y purinoceptor 12",
+   "accession": "Q9EPX4",
+   "residues": 343,
+   "failed": true,
+   "reason": "only 2 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-11T13:20:03.184785+00:00"
+  },
+  {
+   "target": "Calcium/calmodulin-dependent protein kinase type 1",
+   "accession": "Q14012",
+   "residues": 370,
+   "failed": true,
+   "reason": "only 4 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-11T13:20:11.153111+00:00"
+  },
+  {
+   "target": "Substance-K receptor",
+   "accession": "P16610",
+   "residues": 390,
+   "failed": true,
+   "reason": "only 2 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-11T13:51:34.926907+00:00"
+  },
+  {
+   "target": "Neuromedin-B receptor",
+   "accession": "P28336",
+   "residues": 390,
+   "failed": true,
+   "reason": "only 4 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-11T13:51:48.710612+00:00"
+  },
+  {
+   "target": "Dual specificity mitogen-activated protein kinase kinase 4",
+   "accession": "P45985",
+   "residues": 399,
+   "failed": true,
+   "reason": "only 7 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-11T13:51:54.899101+00:00"
+  },
+  {
+   "target": "Dual specificity mitogen-activated protein kinase kinase 2",
+   "accession": "P36507",
+   "residues": 400,
+   "failed": true,
+   "reason": "only 11 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-11T13:52:00.341287+00:00"
+  },
+  {
+   "target": "Motilin receptor",
+   "accession": "O43193",
+   "residues": 412,
+   "failed": true,
+   "reason": "only 4 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-11T13:52:08.823140+00:00"
+  },
+  {
+   "target": "Protein-lysine 6-oxidase",
+   "accession": "P28300",
+   "residues": 417,
+   "failed": true,
+   "reason": "only 3 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-11T14:13:11.740717+00:00"
+  },
+  {
+   "target": "3-beta-hydroxysteroid-Delta(8),Delta(7)-isomerase",
+   "accession": "Q15125",
+   "residues": 230,
+   "failed": true,
+   "reason": "only 1 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-11T17:49:29.508501+00:00"
+  },
+  {
+   "target": "Glutathione S-transferase omega-1",
+   "accession": "P78417",
+   "residues": 241,
+   "failed": true,
+   "reason": "only 4 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-11T17:49:32.842673+00:00"
+  },
+  {
+   "target": "Chymotrypsin-like elastase family member 2A",
+   "accession": "P08419",
+   "residues": 269,
+   "failed": true,
+   "reason": "only 5 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-11T17:49:37.114621+00:00"
+  },
+  {
+   "target": "Tissue factor",
+   "accession": "P13726",
+   "residues": 295,
+   "failed": true,
+   "reason": "only 5 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-11T17:49:40.483742+00:00"
+  },
+  {
+   "target": "B1 bradykinin receptor",
+   "accession": "P46663",
+   "residues": 353,
+   "failed": true,
+   "reason": "could not build a held-out set",
+   "finished_at": "2026-10-11T18:22:53.149409+00:00"
+  },
+  {
+   "target": "Mitogen-activated protein kinase 13",
+   "accession": "O15264",
+   "residues": 365,
+   "failed": true,
+   "reason": "only 9 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-11T19:16:21.512424+00:00"
+  },
+  {
+   "target": "Caspase-4",
+   "accession": "P49662",
+   "residues": 377,
+   "failed": true,
+   "reason": "only 8 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-11T19:16:26.114923+00:00"
+  },
+  {
+   "target": "Gastrin-releasing peptide receptor",
+   "accession": "P30550",
+   "residues": 384,
+   "failed": true,
+   "reason": "only 1 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-11T19:16:31.633690+00:00"
+  },
+  {
+   "target": "Gastrin-releasing peptide receptor",
+   "accession": "P21729",
+   "residues": 384,
+   "failed": true,
+   "reason": "only 0 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-11T19:16:47.798653+00:00"
+  },
+  {
+   "target": "Squalene synthase",
+   "accession": "P37268",
+   "residues": 417,
+   "failed": true,
+   "reason": "only 4 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-11T19:53:35.467740+00:00"
+  },
+  {
+   "target": "Aldo-keto reductase family 1 member B1",
+   "accession": "P80276",
+   "residues": 316,
+   "failed": true,
+   "reason": "only 0 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-11T23:33:07.872389+00:00"
+  },
+  {
+   "target": "Aldo-keto reductase family 1 member A1",
+   "accession": "P14550",
+   "residues": 325,
+   "failed": true,
+   "reason": "only 6 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-11T23:33:13.019113+00:00"
+  },
+  {
+   "target": "Malate dehydrogenase, cytoplasmic",
+   "accession": "P40925",
+   "residues": 334,
+   "failed": true,
+   "reason": "only 1 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-11T23:33:16.016295+00:00"
+  },
+  {
+   "target": "Group 10 secretory phospholipase A2",
+   "accession": "O15496",
+   "residues": 165,
+   "failed": true,
+   "reason": "only 4 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-12T05:22:01.107653+00:00"
+  },
+  {
+   "target": "Glutathione S-transferase P",
+   "accession": "P09211",
+   "residues": 210,
+   "failed": true,
+   "reason": "only 5 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-12T05:22:04.865254+00:00"
+  },
+  {
+   "target": "Myeloblastin",
+   "accession": "P24158",
+   "residues": 256,
+   "failed": true,
+   "reason": "only 0 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-12T05:22:07.783655+00:00"
+  },
+  {
+   "target": "Insulin-like growth factor-binding protein 3",
+   "accession": "P17936",
+   "residues": 291,
+   "failed": true,
+   "reason": "only 1 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-12T05:22:11.470951+00:00"
+  },
+  {
+   "target": "Ribose-phosphate pyrophosphokinase 1",
+   "accession": "P60891",
+   "residues": 318,
+   "failed": true,
+   "reason": "only 0 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-12T05:39:03.451121+00:00"
+  },
+  {
+   "target": "S-adenosylmethionine decarboxylase proenzyme",
+   "accession": "P17707",
+   "residues": 334,
+   "failed": true,
+   "reason": "only 3 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-12T06:09:12.286108+00:00"
+  },
+  {
+   "target": "Thymidine kinase",
+   "accession": "P09250",
+   "residues": 341,
+   "failed": true,
+   "reason": "only 1 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-12T06:42:46.855996+00:00"
+  },
+  {
+   "target": "Sorbitol dehydrogenase",
+   "accession": "Q00796",
+   "residues": 357,
+   "failed": true,
+   "reason": "only 6 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-12T06:42:52.439523+00:00"
+  },
+  {
+   "target": "Galanin receptor type 2",
+   "accession": "O43603",
+   "residues": 387,
+   "failed": true,
+   "reason": "only 6 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-12T07:25:13.096067+00:00"
+  },
+  {
+   "target": "Chorismate synthase",
+   "accession": "P0A2Y6",
+   "residues": 388,
+   "failed": true,
+   "reason": "only 0 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-12T07:25:16.458621+00:00"
+  },
+  {
+   "target": "P-selectin glycoprotein ligand 1",
+   "accession": "Q14242",
+   "residues": 412,
+   "failed": true,
+   "reason": "only 0 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-12T08:02:56.328672+00:00"
+  },
+  {
+   "target": "3-oxo-5-alpha-steroid 4-dehydrogenase 1",
+   "accession": "P24008",
+   "residues": 259,
+   "failed": true,
+   "reason": "only 1 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-12T11:55:37.066051+00:00"
+  },
+  {
+   "target": "Pro-cathepsin H",
+   "accession": "P09668",
+   "residues": 335,
+   "failed": true,
+   "reason": "only 2 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-12T12:30:36.940630+00:00"
+  },
+  {
+   "target": "Fructose-1,6-bisphosphatase 1",
+   "accession": "P00636",
+   "residues": 338,
+   "failed": true,
+   "reason": "only 3 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-12T12:30:42.106181+00:00"
+  },
+  {
+   "target": "C-X-C chemokine receptor type 1",
+   "accession": "P25024",
+   "residues": 350,
+   "failed": true,
+   "reason": "only 6 of 12 predictions succeeded, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-12T12:42:29.857308+00:00"
+  },
+  {
+   "target": "Growth hormone secretagogue receptor type 1",
+   "accession": "O08725",
+   "residues": 364,
+   "failed": true,
+   "reason": "only 2 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-12T13:10:26.992657+00:00"
+  },
+  {
+   "target": "Dihydroorotate dehydrogenase (quinone), mitochondrial",
+   "accession": "O35435",
+   "residues": 395,
+   "failed": true,
+   "reason": "only 2 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-13T01:14:11.940758+00:00"
+  },
+  {
+   "target": "Caspase-1",
+   "accession": "P29466",
+   "residues": 404,
+   "failed": true,
+   "reason": "only 6 of 23 predictions succeeded, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-13T01:28:52.037936+00:00"
+  },
+  {
+   "target": "Casein kinase I isoform gamma-2",
+   "accession": "P78368",
+   "residues": 415,
+   "failed": true,
+   "reason": "no sequence",
+   "finished_at": "2026-10-13T01:28:54.678421+00:00"
+  },
+  {
+   "target": "Carboxypeptidase B",
+   "accession": "P09955",
+   "residues": 416,
+   "failed": true,
+   "reason": "no sequence",
+   "finished_at": "2026-10-13T01:28:56.785631+00:00"
+  },
+  {
+   "target": "Chymotrypsin-C",
+   "accession": "Q99895",
+   "residues": 268,
+   "failed": true,
+   "reason": "only 4 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-13T14:21:01.176552+00:00"
+  },
+  {
+   "target": "Melanocyte-stimulating hormone receptor",
+   "accession": "Q01726",
+   "residues": 317,
+   "failed": true,
+   "reason": "only 10 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-13T14:51:02.790872+00:00"
+  },
+  {
+   "target": "Adenosine receptor A1",
+   "accession": "Q60612",
+   "residues": 326,
+   "failed": true,
+   "reason": "only 1 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-13T14:51:06.304754+00:00"
+  },
+  {
+   "target": "Glyceraldehyde-3-phosphate dehydrogenase",
+   "accession": "P04406",
+   "residues": 335,
+   "failed": true,
+   "reason": "only 0 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-13T14:51:19.407084+00:00"
+  },
+  {
+   "target": "C-C chemokine receptor type 1",
+   "accession": "P51675",
+   "residues": 355,
+   "failed": true,
+   "reason": "only 1 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-13T15:08:12.160840+00:00"
+  },
+  {
+   "target": "Cathepsin E",
+   "accession": "P14091",
+   "residues": 396,
+   "failed": true,
+   "reason": "only 2 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-13T15:10:07.482614+00:00"
+  },
+  {
+   "target": "Caspase-1",
+   "accession": "P29452",
+   "residues": 402,
+   "failed": true,
+   "reason": "only 1 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-13T15:10:19.355891+00:00"
+  },
+  {
+   "target": "Adenylate kinase 2, mitochondrial",
+   "accession": "P29410",
+   "residues": 239,
+   "failed": true,
+   "reason": "only 1 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-13T20:23:10.952741+00:00"
+  },
+  {
+   "target": "Caspase-6",
+   "accession": "P55212",
+   "residues": 293,
+   "failed": true,
+   "reason": "only 3 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-13T20:23:17.584439+00:00"
+  },
+  {
+   "target": "Aldo-keto reductase family 1 member A1",
+   "accession": "P51635",
+   "residues": 325,
+   "failed": true,
+   "reason": "only 1 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-13T20:23:23.264176+00:00"
+  },
+  {
+   "target": "P2Y purinoceptor 2",
+   "accession": "P41231",
+   "residues": 377,
+   "failed": true,
+   "reason": "only 4 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-13T21:13:45.413792+00:00"
+  },
+  {
+   "target": "Neuropeptide Y receptor type 2",
+   "accession": "Q9ERC0",
+   "residues": 381,
+   "failed": true,
+   "reason": "only 0 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-13T21:13:48.611185+00:00"
+  },
+  {
+   "target": "Sphingosine kinase 1",
+   "accession": "Q9NYA1",
+   "residues": 384,
+   "failed": true,
+   "reason": "only 7 of 23 predictions succeeded, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-13T22:03:09.592472+00:00"
+  },
+  {
+   "target": "P2X purinoceptor 4",
+   "accession": "P51577",
+   "residues": 388,
+   "failed": true,
+   "reason": "only 1 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-13T22:03:16.379265+00:00"
+  },
+  {
+   "target": "Sphingosine 1-phosphate receptor 5",
+   "accession": "Q9H228",
+   "residues": 398,
+   "failed": true,
+   "reason": "only 7 of 13 predictions succeeded, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-14T00:46:18.577643+00:00"
+  },
+  {
+   "target": "Caspase-9",
+   "accession": "P55211",
+   "residues": 416,
+   "failed": true,
+   "reason": "only 1 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-14T00:46:36.883735+00:00"
+  },
+  {
+   "target": "Growth factor receptor-bound protein 2",
+   "accession": "P62993",
+   "residues": 217,
+   "failed": true,
+   "reason": "only 2 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-14T04:40:56.374686+00:00"
+  },
+  {
+   "target": "Dihydropteroate synthase",
+   "accession": "P0AC13",
+   "residues": 282,
+   "failed": true,
+   "reason": "only 1 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-14T04:41:34.148670+00:00"
+  },
+  {
+   "target": "Phenylethanolamine N-methyltransferase",
+   "accession": "P10938",
+   "residues": 283,
+   "failed": true,
+   "reason": "could not build a held-out set",
+   "finished_at": "2026-10-14T04:42:00.139296+00:00"
+  },
+  {
+   "target": "Cyclin-dependent kinase 1",
+   "accession": "P06493",
+   "residues": 297,
+   "failed": true,
+   "reason": "only 5 of 30 predictions succeeded, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-14T05:34:52.336919+00:00"
+  },
+  {
+   "target": "Caspase-7",
+   "accession": "P55210",
+   "residues": 303,
+   "failed": true,
+   "reason": "only 7 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-14T05:39:12.893305+00:00"
+  },
+  {
+   "target": "Adenosine receptor A3",
+   "accession": "P28647",
+   "residues": 320,
+   "failed": true,
+   "reason": "only 9 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-14T05:40:39.412919+00:00"
+  },
+  {
+   "target": "Adenosine receptor A1",
+   "accession": "P28190",
+   "residues": 326,
+   "failed": true,
+   "reason": "only 2 of 20 predictions succeeded, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-14T06:17:18.627057+00:00"
+  },
+  {
+   "target": "S-adenosylmethionine decarboxylase proenzyme",
+   "accession": "P17708",
+   "residues": 333,
+   "failed": true,
+   "reason": "only 1 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-14T06:17:22.278050+00:00"
+  },
+  {
+   "target": "Cathepsin B",
+   "accession": "P07688",
+   "residues": 335,
+   "failed": true,
+   "reason": "only 1 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-14T06:17:26.507791+00:00"
+  },
+  {
+   "target": "2-oxoglutarate receptor 1",
+   "accession": "Q6Y1R5",
+   "residues": 337,
+   "failed": true,
+   "reason": "only 1 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-14T06:17:30.126830+00:00"
+  },
+  {
+   "target": "Mitogen-activated protein kinase 14",
+   "accession": "P70618",
+   "residues": 360,
+   "failed": true,
+   "reason": "only 0 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-14T06:17:33.354549+00:00"
+  },
+  {
+   "target": "Adenosine kinase",
+   "accession": "Q64640",
+   "residues": 361,
+   "failed": true,
+   "reason": "only 6 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-14T06:17:37.145687+00:00"
+  },
+  {
+   "target": "Adenosine deaminase",
+   "accession": "P56658",
+   "residues": 363,
+   "failed": true,
+   "reason": "only 7 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-14T06:17:50.092381+00:00"
+  },
+  {
+   "target": "D(4) dopamine receptor",
+   "accession": "P30729",
+   "residues": 387,
+   "failed": true,
+   "reason": "only 4 of 15 predictions succeeded, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-14T07:08:20.406371+00:00"
+  },
+  {
+   "target": "Renin",
+   "accession": "P08424",
+   "residues": 402,
+   "failed": true,
+   "reason": "only 1 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-14T07:08:56.390916+00:00"
+  },
+  {
+   "target": "Dihydrofolate reductase",
+   "accession": "P00375",
+   "residues": 187,
+   "failed": true,
+   "reason": "only 3 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-14T16:22:32.322900+00:00"
+  },
+  {
+   "target": "Melanocortin receptor 5",
+   "accession": "P41149",
+   "residues": 325,
+   "failed": true,
+   "reason": "only 0 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-14T16:23:01.104582+00:00"
+  },
+  {
+   "target": "DNA polymerase beta",
+   "accession": "P06766",
+   "residues": 335,
+   "failed": true,
+   "reason": "only 8 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-14T16:23:16.194705+00:00"
+  },
+  {
+   "target": "Thromboxane A2 receptor",
+   "accession": "P34978",
+   "residues": 341,
+   "failed": true,
+   "reason": "only 0 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-14T16:23:22.721706+00:00"
+  },
+  {
+   "target": "cAMP-dependent protein kinase catalytic subunit alpha",
+   "accession": "P00517",
+   "residues": 351,
+   "failed": true,
+   "reason": "only 0 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-14T16:23:45.114155+00:00"
+  },
+  {
+   "target": "C-C chemokine receptor type 5",
+   "accession": "P51682",
+   "residues": 354,
+   "failed": true,
+   "reason": "could not build a held-out set",
+   "finished_at": "2026-10-14T16:24:06.226946+00:00"
+  },
+  {
+   "target": "Probable C-C chemokine receptor type 3",
+   "accession": "P51678",
+   "residues": 359,
+   "failed": true,
+   "reason": "only 3 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-14T16:25:38.022577+00:00"
+  },
+  {
+   "target": "Prostaglandin E2 receptor EP3 subtype",
+   "accession": "P30557",
+   "residues": 365,
+   "failed": true,
+   "reason": "only 8 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-14T16:25:52.832170+00:00"
+  },
+  {
+   "target": "Thymidine kinase",
+   "accession": "Q6L709",
+   "residues": 376,
+   "failed": true,
+   "reason": "only 4 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-14T16:26:23.962954+00:00"
+  },
+  {
+   "target": "Pepsin A",
+   "accession": "P0DJD9",
+   "residues": 388,
+   "failed": true,
+   "reason": "only 0 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-14T16:26:36.205859+00:00"
+  },
+  {
+   "target": "Dihydroorotate dehydrogenase (quinone), mitochondrial",
+   "accession": "Q63707",
+   "residues": 395,
+   "failed": true,
+   "reason": "only 3 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-14T16:27:08.178203+00:00"
+  },
+  {
+   "target": "Corticotropin-releasing factor receptor 2",
+   "accession": "Q60748",
+   "residues": 411,
+   "failed": true,
+   "reason": "only 0 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-14T16:51:09.158684+00:00"
+  },
+  {
+   "target": "Dihydrofolate reductase type 1",
+   "accession": "P00382",
+   "residues": 157,
+   "failed": true,
+   "reason": "only 1 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-14T20:21:31.871948+00:00"
+  },
+  {
+   "target": "Kallikrein-6",
+   "accession": "Q92876",
+   "residues": 244,
+   "failed": true,
+   "reason": "only 2 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-14T20:21:37.197871+00:00"
+  },
+  {
+   "target": "Granzyme B",
+   "accession": "P10144",
+   "residues": 247,
+   "failed": true,
+   "reason": "only 1 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-14T20:21:45.114059+00:00"
+  },
+  {
+   "target": "Catechol O-methyltransferase",
+   "accession": "P22734",
+   "residues": 264,
+   "failed": true,
+   "reason": "only 10 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-14T20:21:52.535940+00:00"
+  },
+  {
+   "target": "1-acyl-sn-glycerol-3-phosphate acyltransferase beta",
+   "accession": "O15120",
+   "residues": 278,
+   "failed": true,
+   "reason": "only 1 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-14T20:21:58.385976+00:00"
+  },
+  {
+   "target": "Kallikrein-5",
+   "accession": "Q9Y337",
+   "residues": 293,
+   "failed": true,
+   "reason": "only 11 of 12 predictions succeeded, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-15T12:28:16.065278+00:00"
+  },
+  {
+   "target": "Aldo-keto reductase family 1 member B1",
+   "accession": "P07943",
+   "residues": 316,
+   "failed": true,
+   "reason": "could not build a held-out set",
+   "finished_at": "2026-10-15T12:30:01.208550+00:00"
+  },
+  {
+   "target": "Cathepsin L2",
+   "accession": "O60911",
+   "residues": 334,
+   "failed": true,
+   "reason": "only 9 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-15T12:31:22.187899+00:00"
+  },
+  {
+   "target": "Prostaglandin D2 receptor",
+   "accession": "Q13258",
+   "residues": 359,
+   "failed": true,
+   "reason": "only 11 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-15T15:04:34.837267+00:00"
+  },
+  {
+   "target": "Mitogen-activated protein kinase 14",
+   "accession": "P47811",
+   "residues": 360,
+   "failed": true,
+   "reason": "only 2 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-15T15:04:42.199613+00:00"
+  },
+  {
+   "target": "Fructose-1,6-bisphosphatase 1",
+   "accession": "P19112",
+   "residues": 363,
+   "failed": true,
+   "reason": "only 1 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-15T15:04:47.584801+00:00"
+  },
+  {
+   "target": "Gastrin-releasing peptide receptor",
+   "accession": "P52500",
+   "residues": 384,
+   "failed": true,
+   "reason": "only 0 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-15T15:05:01.623791+00:00"
+  },
+  {
+   "target": "[Pyruvate dehydrogenase (acetyl-transferring)] kinase isozym",
+   "accession": "Q15120",
+   "residues": 406,
+   "failed": true,
+   "reason": "could not build a held-out set",
+   "finished_at": "2026-10-15T15:05:28.097118+00:00"
+  },
+  {
+   "target": "[Pyruvate dehydrogenase (acetyl-transferring)] kinase isozym",
+   "accession": "Q16654",
+   "residues": 411,
+   "failed": true,
+   "reason": "could not build a held-out set",
+   "finished_at": "2026-10-15T15:06:58.068827+00:00"
+  },
+  {
+   "target": "Methylated-DNA--protein-cysteine methyltransferase",
+   "accession": "P16455",
+   "residues": 207,
+   "failed": true,
+   "reason": "only 8 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-15T20:35:58.043924+00:00"
+  },
+  {
+   "target": "Casein kinase II subunit beta",
+   "accession": "P67870",
+   "residues": 215,
+   "failed": true,
+   "reason": "no sequence",
+   "finished_at": "2026-10-15T20:37:20.595741+00:00"
+  },
+  {
+   "target": "Matrilysin",
+   "accession": "P09237",
+   "residues": 267,
+   "failed": true,
+   "reason": "no sequence",
+   "finished_at": "2026-10-15T20:37:58.251659+00:00"
+  },
+  {
+   "target": "Tryptase beta-1",
+   "accession": "Q15661",
+   "residues": 275,
+   "failed": true,
+   "reason": "only 2 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-15T20:39:21.901025+00:00"
+  },
+  {
+   "target": "Melanocyte-stimulating hormone receptor",
+   "accession": "Q01727",
+   "residues": 315,
+   "failed": true,
+   "reason": "only 2 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-15T20:39:31.645769+00:00"
+  },
+  {
+   "target": "Cyclin-dependent kinase 7",
+   "accession": "P50613",
+   "residues": 346,
+   "failed": true,
+   "reason": "no sequence",
+   "finished_at": "2026-10-15T20:40:40.731328+00:00"
+  },
+  {
+   "target": "Casein kinase II subunit alpha'",
+   "accession": "P19784",
+   "residues": 350,
+   "failed": true,
+   "reason": "only 5 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-15T20:41:33.033812+00:00"
+  },
+  {
+   "target": "Type-1 angiotensin II receptor",
+   "accession": "P25104",
+   "residues": 359,
+   "failed": true,
+   "reason": "only 6 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-15T20:41:50.209805+00:00"
+  },
+  {
+   "target": "Type-1 angiotensin II receptor A",
+   "accession": "P25095",
+   "residues": 359,
+   "failed": true,
+   "reason": "only 4 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-15T20:41:59.737822+00:00"
+  },
+  {
+   "target": "C-X-C chemokine receptor type 3",
+   "accession": "P49682",
+   "residues": 368,
+   "failed": true,
+   "reason": "could not build a held-out set",
+   "finished_at": "2026-10-15T20:45:08.561785+00:00"
+  },
+  {
+   "target": "L-selectin",
+   "accession": "P14151",
+   "residues": 372,
+   "failed": true,
+   "reason": "only 0 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-15T20:46:09.609465+00:00"
+  },
+  {
+   "target": "Beta-lactamase",
+   "accession": "P05364",
+   "residues": 381,
+   "failed": true,
+   "reason": "only 9 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-15T20:46:24.033597+00:00"
+  },
+  {
+   "target": "Neuromedin-B receptor",
+   "accession": "P24053",
+   "residues": 390,
+   "failed": true,
+   "reason": "only 0 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-15T20:48:20.591935+00:00"
+  },
+  {
+   "target": "Somatostatin receptor type 1",
+   "accession": "P30872",
+   "residues": 391,
+   "failed": true,
+   "reason": "only 8 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-15T20:48:53.628569+00:00"
+  },
+  {
+   "target": "Phosphorylase b kinase gamma catalytic chain, liver/testis i",
+   "accession": "P15735",
+   "residues": 406,
+   "failed": true,
+   "reason": "only 4 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-15T20:49:03.725283+00:00"
+  },
+  {
+   "target": "Sialidase-1",
+   "accession": "Q99519",
+   "residues": 415,
+   "failed": true,
+   "reason": "only 1 compounds survived selection, fewer than the 12 a scored set needs",
+   "finished_at": "2026-10-15T20:49:20.429616+00:00"
+  }
+ ]
 }

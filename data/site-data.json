@@ -1520,11 +1520,11 @@
   },
   "corpus": {
     "n_scored": 123,
-    "n_declined": 0,
+    "n_declined": 243,
     "n_compounds": 2462,
     "median_fold": 4.6,
     "median_fold_ci": [
-      4.3,
+      4.2,
       5.0
     ],
     "mean_spearman": 0.555,
