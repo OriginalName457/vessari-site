@@ -1,0 +1,100 @@
+{
+ "what_this_is": "Measured time and energy for every stage of the pipeline, on the hardware that runs it. One RTX 3090, measured rather than divided from a total. Nothing here is projected from a benchmark somebody else ran.",
+ "measured_on": "2026-10-16",
+ "hardware": {
+  "cards": 3,
+  "card": "NVIDIA GeForce RTX 3090, 24 GB",
+  "concurrent_folding_jobs": 1,
+  "why_one": "The host has 15.9 GB of system memory and one folding job reserves 11.2 GB of it, so src/vessari/assess/lease.py holds an exclusive lock. Two jobs together is an out of memory kill, which cost four predictions on 14 October. The limit on this rig is the host, not the cards, and three cards do not divide any time below by three.",
+  "card_power_draw_under_load_watts": 242,
+  "card_power_limit_watts": 390,
+  "host_power_not_metered": true
+ },
+ "stages": [
+  {
+   "stage": "co-fold and read an affinity",
+   "seconds_per_compound": 62.0,
+   "how_measured": "a batch of 6 in 370 seconds with the alignment cached, 16 October",
+   "corpus_median": 78,
+   "corpus_p10": 66,
+   "corpus_p90": 120,
+   "published_figure": 20,
+   "published_source": "bioRxiv 10.1101/2025.06.14.659707, generative screening section",
+   "note": "Three times slower than the published figure. The paper does not say whether its 20 seconds includes the alignment and the structure pass. Any throughput claim we make uses our number.",
+   "device": "gpu",
+   "card_watt_hours": 4.17
+  },
+  {
+   "stage": "restrained minimisation of the pose",
+   "seconds_per_compound": 18,
+   "how_measured": "190 poses relaxed, median taken",
+   "range_seconds": [
+    6,
+    36
+   ],
+   "device": "openmm on this host",
+   "note": "Takes PoseBusters validity from 70.2 percent to 98.5 percent. Run once per pose that fails a check, so a run where every pose passes pays none of this."
+  },
+  {
+   "stage": "PoseBusters validity check",
+   "seconds_per_compound": 3.0,
+   "how_measured": "10 complexes in 29.96 seconds, 16 October",
+   "device": "cpu"
+  },
+  {
+   "stage": "multiple sequence alignment",
+   "seconds_per_compound": 0,
+   "note": "Paid once per protein, not per compound, and cached at ~/.vessari/msa. The batch path fetched it per compound until 16 October. Removing that did not change the wall clock, because the alignment server call runs while the card works.",
+   "device": "network"
+  }
+ ],
+ "shortlists": [
+  {
+   "compounds": 60,
+   "fold_hours": 1.0,
+   "relax_hours": 0.1,
+   "check_hours": 0.05,
+   "total_hours": 1.2,
+   "total_days": 0.05,
+   "card_kwh": 0.25
+  },
+  {
+   "compounds": 100,
+   "fold_hours": 1.7,
+   "relax_hours": 0.1,
+   "check_hours": 0.08,
+   "total_hours": 2.0,
+   "total_days": 0.08,
+   "card_kwh": 0.42
+  },
+  {
+   "compounds": 300,
+   "fold_hours": 5.2,
+   "relax_hours": 0.5,
+   "check_hours": 0.25,
+   "total_hours": 5.9,
+   "total_days": 0.24,
+   "card_kwh": 1.25
+  },
+  {
+   "compounds": 1000,
+   "fold_hours": 17.2,
+   "relax_hours": 1.5,
+   "check_hours": 0.83,
+   "total_hours": 19.6,
+   "total_days": 0.81,
+   "card_kwh": 4.17
+  },
+  {
+   "compounds": 10000,
+   "fold_hours": 172.2,
+   "relax_hours": 15.0,
+   "check_hours": 8.33,
+   "total_hours": 195.6,
+   "total_days": 8.15,
+   "card_kwh": 41.68
+  }
+ ],
+ "relax_fraction_assumed": 0.3,
+ "relax_fraction_note": "Measured: 196 of 658 complexes failed a PoseBusters check, which is 30 percent, so relaxation is costed at 30 percent of compounds rather than all of them."
+}

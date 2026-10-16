@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="
+  default-src 'none'; script-src 'none';
+  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+  font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data:;
+  connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What a prediction costs</title>
+<meta name="description" content="Engineering notes: measured seconds and watt hours for every stage of the pipeline, on the hardware that runs it, with the wall clock for shortlists from sixty to ten thousand compounds.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&family=DM+Mono:wght@400;500&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../findings/findings.css">
+<style>
+  .ct { width: 100%; border-collapse: collapse; margin: 1.6rem 0;
+         font-size: 0.86rem; }
+  .ct th, .ct td { padding: 0.3rem 0.6rem; text-align: left;
+                    border-bottom: 1px solid var(--rule, #e4e1db); }
+  .ct th { font: 600 0.72rem/1 'Barlow Semi Condensed', system-ui, sans-serif;
+            text-transform: uppercase; letter-spacing: 0.06em; }
+  .ct .num { text-align: right; font-family: 'DM Mono', ui-monospace, monospace;
+              font-variant-numeric: tabular-nums; }
+  .wrap { overflow-x: auto; }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-in">
+    <a class="wordmark" href="../">VESSARI</a>
+    <span class="masthead-sub">notes</span>
+    <nav class="topnav" aria-label="Sections">
+      <a href="../what/">what we do</a>
+      <a href="../">assessment</a>
+      <a href="../selection/">selection</a>
+      <a href="../sim/">simulation</a>
+      <a href="../findings/">findings</a>
+      <a href="../notes/">notes</a>
+      <a href="../data/">data</a>
+    </nav>
+  </div>
+</header>
+
+<main class="strip">
+  <div class="f-intro">
+    <h1 class="h1">What a prediction costs</h1>
+    <p class="lede">Sixty two seconds and four watt hours of card energy per
+      compound, measured on the rig rather than divided out of a total. Three
+      cards do not make it three times faster, and this note says why.</p>
+  </div>
+
+  <h2 class="h2">Per stage, measured</h2>
+
+  <div class="wrap">
+  <table class="ct">
+    <thead><tr><th>Stage</th><th>Runs on</th>
+      <th class="num">Seconds per compound</th>
+      <th class="num">Card watt hours</th></tr></thead>
+    <tbody>
+      <tr><td>Multiple sequence alignment</td><td>network, once per protein</td><td class="num">0</td><td class="num">0</td></tr>
+      <tr><td>Co-fold the complex and read an affinity</td><td>one RTX 3090</td><td class="num">62</td><td class="num">4.17</td></tr>
+      <tr><td>PoseBusters validity check</td><td>host CPU</td><td class="num">3</td><td class="num">0</td></tr>
+      <tr><td>Restrained minimisation of the pose</td><td>OpenMM on this host</td><td class="num">18</td><td class="num">0</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p class="body">The folding figure is a batch of six compounds in 370
+    seconds with the alignment already cached. Across the 2,462 complexes in
+    the published corpus the median is 78 seconds, with the tenth percentile at
+    66 and the ninetieth at 120, so 62 is the fast end of a real spread and the
+    spread comes from protein length.</p>
+
+  <p class="body">The relaxation figure is the median of 190 poses, from 6
+    seconds to 36. It is only run on a pose that fails a check. One hundred and
+    ninety six of our 658 complexes failed one, so the tables below cost
+    relaxation at 30 percent of compounds.</p>
+
+  <p class="body">The alignment is paid once per protein and cached on disk. It
+    was being fetched once per compound until 16 October, which put 150
+    requests on the link for one protein in a 150 compound screen. Removing
+    that did not change the wall clock, because the alignment call runs while
+    the card works.</p>
+
+  <h2 class="h2">The published figure is 20 seconds</h2>
+
+  <p class="body">The Boltz-2 preprint states approximately 20 seconds to
+    score one ligand. We measure 62 on an RTX 3090. The paper does not say
+    whether its figure includes the alignment and the structure pass, and the
+    sentence appears in a section about generative screening where a cached
+    receptor is plausible. We are three times slower than the number a reader
+    will take from the paper, and every throughput figure on this site uses
+    ours.</p>
+
+  <h2 class="h2">Three cards, one lane</h2>
+
+  <p class="body">The rig has three RTX 3090s and 15.9 GB of system memory. One
+    folding job reserves 11.2 GB of that, so the pipeline holds an exclusive
+    lock and runs one job at a time. Two together is an out of memory kill,
+    which cost four predictions on 14 October and is why the lock exists. The
+    constraint here is the host, so none of the times below divide by three.</p>
+
+  <p class="body">Two of the four memory slots on this board are empty. Filling
+    them is the difference between one lane and three, and until they are
+    filled the ceiling below is the ceiling.</p>
+
+  <h2 class="h2">Wall clock for a shortlist</h2>
+
+  <div class="wrap">
+  <table class="ct">
+    <thead><tr><th class="num">Compounds</th><th class="num">Folding</th>
+      <th class="num">Relaxation</th><th class="num">Checks</th>
+      <th class="num">Total hours</th><th class="num">Card kWh</th></tr></thead>
+    <tbody>
+      <tr><td class="num">60</td><td class="num">1.0</td><td class="num">0.1</td><td class="num">0.05</td><td class="num">1.2</td><td class="num">0.25</td></tr>
+      <tr><td class="num">100</td><td class="num">1.7</td><td class="num">0.1</td><td class="num">0.08</td><td class="num">2.0</td><td class="num">0.42</td></tr>
+      <tr><td class="num">300</td><td class="num">5.2</td><td class="num">0.5</td><td class="num">0.25</td><td class="num">5.9</td><td class="num">1.25</td></tr>
+      <tr><td class="num">1,000</td><td class="num">17.2</td><td class="num">1.5</td><td class="num">0.83</td><td class="num">19.6</td><td class="num">4.17</td></tr>
+      <tr><td class="num">10,000</td><td class="num">172.2</td><td class="num">15.0</td><td class="num">8.33</td><td class="num">195.6 (8.15 days)</td><td class="num">41.68</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p class="body">Sixty compounds is the size of the laboratory validation set
+    in our protocol, and it takes an hour and a quarter. A thousand compounds
+    is under a day. Ten thousand is eight days and that is the honest edge of
+    what this hardware screens, which is why the screen we registered puts a
+    fingerprint model in front of the folding stage and sends it only the top
+    150.</p>
+
+  <p class="body">Ten thousand compounds draws 41.7 kWh, which costs a few
+    dollars at any domestic rate. The figure a buyer should price is the eight
+    days of wall clock. Filling the two empty memory slots is what moves it.</p>
+
+  <p class="f-foot">Every number here is in
+    <a href="../data-files/compute-cost.json">compute-cost.json</a>, with how
+    each one was measured. Card power is a mean of 242 watts sampled under
+    folding load against a 390 watt limit. The host draw is not metered, so
+    the watt hours above are card only and the true figure is higher.</p>
+</main>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <span>Vessari</span>
+    <nav><a href="./">Back to the notes</a></nav>
+  </div>
+</footer>
+</body></html>
