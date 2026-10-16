@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="
+  default-src 'none'; script-src 'none';
+  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+  font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data:;
+  connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Finding binders in a library</title>
+<meta name="description" content="Fifty known binders hidden in a library of five thousand. A fingerprint prefilter ranks all of them and the top hundred and fifty are co-folded and re-ranked.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&family=DM+Mono:wght@400;500&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../findings/findings.css">
+<style>
+  .ct { width: 100%; border-collapse: collapse; margin: 1.6rem 0;
+         font-size: 0.86rem; }
+  .ct th, .ct td { padding: 0.3rem 0.6rem; text-align: left;
+                    border-bottom: 1px solid var(--rule, #e4e1db); }
+  .ct th { font: 600 0.72rem/1 'Barlow Semi Condensed', system-ui, sans-serif;
+            text-transform: uppercase; letter-spacing: 0.06em; }
+  .ct .num { text-align: right; font-family: 'DM Mono', ui-monospace, monospace;
+              font-variant-numeric: tabular-nums; }
+  .wrap { overflow-x: auto; }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-in">
+    <a class="wordmark" href="../">VESSARI</a>
+    <span class="masthead-sub">screen</span>
+    <nav class="topnav" aria-label="Sections">
+      <a href="../what/">what we do</a>
+      <a href="../">assessment</a>
+      <a href="../selection/">selection</a>
+      <a href="../sim/">simulation</a>
+      <a href="../screen/">screen</a>
+      <a href="../findings/">findings</a>
+      <a href="../notes/">notes</a>
+      <a href="../data/">data</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .tgt { border: 1px solid var(--rule-major); background: var(--paper-lit);
+         padding: 1.2rem 1.3rem; margin: 2rem 0; }
+  .tgt-name { font: 500 1.15rem/1.25 var(--f-display); margin: 0; }
+  .tgt-id { font: 400 0.76rem/1.5 var(--f-data); opacity: 0.68;
+            margin: 0.3rem 0 1rem; }
+  .arms { display: grid; gap: 1rem; grid-template-columns: 1fr 1fr;
+          margin-bottom: 1rem; }
+  .arm { border-left: 2px solid var(--rule-major); padding-left: 0.8rem; }
+  .arm-k { font: 600 0.64rem/1.3 var(--f-display); text-transform: uppercase;
+           letter-spacing: 0.08em; opacity: 0.75; }
+  .arm-v { font: 500 1.5rem/1.1 var(--f-data); margin: 0.2rem 0; }
+  .arm-n { font: 400 0.74rem/1.4 var(--f-body); opacity: 0.7; }
+  .tgt-note { font: 400 0.82rem/1.55 var(--f-body); opacity: 0.85;
+              margin: 0.6rem 0 0; }
+  .ct { width: 100%; border-collapse: collapse; margin: 1rem 0 0.4rem;
+        font-size: 0.82rem; }
+  .ct th, .ct td { padding: 0.28rem 0.55rem; text-align: left;
+                   border-bottom: 1px solid var(--rule-minor); }
+  .ct th { font: 600 0.64rem/1 var(--f-display); text-transform: uppercase;
+           letter-spacing: 0.06em; }
+  .ct .num { text-align: right; font-family: var(--f-data);
+             font-variant-numeric: tabular-nums; }
+  .ct .mono { font-family: var(--f-data); font-size: 0.78rem; }
+  .ct tr.hit td { background: color-mix(in srgb, var(--pen-violet) 9%,
+                  transparent); font-weight: 600; }
+  .wrap { overflow-x: auto; }
+  .state { border-left: 3px solid var(--pen-violet); padding: 0.1rem 0 0.1rem 1rem;
+           margin: 1.5rem 0; }
+</style>
+<main class="strip">
+  <div class="f-intro">
+    <h1 class="h1">Finding binders in a library</h1>
+    <p class="lede">Fifty known binders hidden among 4,950 decoys matched on molecular weight and logP. A fingerprint model ranks all 5,000, the top 150 are folded against the protein and re-ranked, and the question is whether the folding earns its cost.</p>
+  </div>
+
+  <div class="state">
+    <p class="body">Stage one has built and scored all 45 libraries. Stage two has co-folded <strong>2 of 45</strong> targets and set aside 1 whose shortlist held no binder, where neither arm can score above zero. At about 2.6 hours a target on one card this finishes in several days.</p>
+    <p class="body">No verdict is drawn here. The registration decides the question on an interval over targets and that interval needs the run to finish. We have reported an interim reading as a conclusion twice before and been wrong both times.</p>
+  </div>
+
+  <h2 class="h2">How a library is built</h2>
+  <p class="body">Each target has a pool of compounds measured against it in ChEMBL. Those measured at 1 micromolar or better are the binders. They are clustered by chemical series at an ECFP4 Tanimoto of 0.6, whole series go to training or to test, and only test series enter the library. So the prefilter has never seen a library binder, or any close analogue of one.</p>
+  <p class="body">Fifty test binders are kept, taken whole series at a time, and 4,950 decoys fill the rest. A decoy is a compound measured against an unrelated protein that falls inside the weight and logP window of those 50, so a reader cannot pick the binders out by their size. One percent binders is what a real screening library holds.</p>
+  <p class="body">Enrichment at one percent is the share of binders in the top 50 of the ranking divided by the share expected at random. An enrichment of 1 is no better than picking at random.</p>
+
+  <h2 class="h2">What the prefilter alone does</h2>
+  <p class="body">Across all 45 libraries the fingerprint prefilter reaches a mean enrichment of <strong>13.3x</strong>, median 8.0x, and finds nothing at all on 12 of them. The folding stage has to beat that to be worth running.</p>
+
+  <h2 class="h2">Every target stage two has finished</h2>
+  <p class="body">A highlighted row is a compound measured as a binder in ChEMBL. The heads column is how far the model's two affinity heads disagree about that compound, printed because the top of a ranking is not stable to that disagreement and a reader should see it rather than take a first place on trust.</p>
+<section class="tgt" id="P01375">
+  <h3 class="tgt-name">Tumor necrosis factor</h3>
+  <p class="tgt-id">P01375 &middot; 5,000 compounds in the library, 50 of them known binders the prefilter never trained on</p>
+  <div class="arms">
+    <div class="arm">
+      <div class="arm-k">Fingerprint prefilter alone</div>
+      <div class="arm-v">24.0x</div>
+      <div class="arm-n">12 binders in the top 50 &middot; the control</div>
+    </div>
+    <div class="arm">
+      <div class="arm-k">Prefilter then co-folding</div>
+      <div class="arm-v">34.0x</div>
+      <div class="arm-n">17 binders in the top 50 &middot; the funnel</div>
+    </div>
+  </div>
+  <p class="tgt-note">The shortlist held 18 binders, so co-folding could have reached 36.0x at best. It reached 34.0x.</p>
+  <p class="tgt-note">The two affinity heads disagree by a median of 2.43x across these 150 compounds.</p>
+  <div class="wrap">
+  <table class="ct">
+    <thead><tr><th class="num">#</th><th>Compound</th><th class="num">Predicted</th><th class="num">Heads differ</th><th class="num">Pose</th><th>Known binder</th></tr></thead>
+    <tbody>
+      <tr class="hit"><td class="num">1</td><td class="mono">CHEMBL6027012</td><td class="num">39.5 nM</td><td class="num">2.18x</td><td class="num">0.68</td><td>yes</td></tr>
+      <tr class="hit"><td class="num">2</td><td class="mono">CHEMBL5987661</td><td class="num">45.1 nM</td><td class="num">7.9x</td><td class="num">0.69</td><td>yes</td></tr>
+      <tr class="hit"><td class="num">3</td><td class="mono">CHEMBL6056844</td><td class="num">55.6 nM</td><td class="num">2.35x</td><td class="num">0.70</td><td>yes</td></tr>
+      <tr class="hit"><td class="num">4</td><td class="mono">CHEMBL5760701</td><td class="num">90.0 nM</td><td class="num">1.3x</td><td class="num">0.79</td><td>yes</td></tr>
+      <tr><td class="num">5</td><td class="mono">CHEMBL4763863</td><td class="num">97.7 nM</td><td class="num">1.36x</td><td class="num">0.70</td><td></td></tr>
+      <tr class="hit"><td class="num">6</td><td class="mono">CHEMBL5819936</td><td class="num">114.8 nM</td><td class="num">3.35x</td><td class="num">0.75</td><td>yes</td></tr>
+      <tr><td class="num">7</td><td class="mono">CHEMBL5542670</td><td class="num">116.4 nM</td><td class="num">1.69x</td><td class="num">0.73</td><td></td></tr>
+      <tr><td class="num">8</td><td class="mono">CHEMBL50284</td><td class="num">126.2 nM</td><td class="num">6.14x</td><td class="num">0.66</td><td></td></tr>
+      <tr class="hit"><td class="num">9</td><td class="mono">CHEMBL5952290</td><td class="num">127.3 nM</td><td class="num">6.49x</td><td class="num">0.74</td><td>yes</td></tr>
+      <tr class="hit"><td class="num">10</td><td class="mono">CHEMBL5842331</td><td class="num">136.5 nM</td><td class="num">2.64x</td><td class="num">0.73</td><td>yes</td></tr>
+      <tr class="hit"><td class="num">11</td><td class="mono">CHEMBL5949264</td><td class="num">144.3 nM</td><td class="num">1.63x</td><td class="num">0.76</td><td>yes</td></tr>
+      <tr><td class="num">12</td><td class="mono">CHEMBL391271</td><td class="num">147.5 nM</td><td class="num">1.01x</td><td class="num">0.81</td><td></td></tr>
+      <tr class="hit"><td class="num">13</td><td class="mono">CHEMBL5922366</td><td class="num">153.7 nM</td><td class="num">1.72x</td><td class="num">0.77</td><td>yes</td></tr>
+      <tr class="hit"><td class="num">14</td><td class="mono">CHEMBL3989927</td><td class="num">154.2 nM</td><td class="num">3.34x</td><td class="num">0.78</td><td>yes</td></tr>
+      <tr><td class="num">15</td><td class="mono">CHEMBL4762895</td><td class="num">167.6 nM</td><td class="num">4.41x</td><td class="num">0.74</td><td></td></tr>
+      <tr><td class="num">16</td><td class="mono">CHEMBL1790896</td><td class="num">201.8 nM</td><td class="num">1.37x</td><td class="num">0.65</td><td></td></tr>
+      <tr class="hit"><td class="num">17</td><td class="mono">CHEMBL5764944</td><td class="num">215.8 nM</td><td class="num">3.16x</td><td class="num">0.70</td><td>yes</td></tr>
+      <tr class="hit"><td class="num">18</td><td class="mono">CHEMBL6063214</td><td class="num">218.9 nM</td><td class="num">3.77x</td><td class="num">0.82</td><td>yes</td></tr>
+      <tr><td class="num">19</td><td class="mono">CHEMBL76086</td><td class="num">226.7 nM</td><td class="num">2.02x</td><td class="num">0.75</td><td></td></tr>
+      <tr><td class="num">20</td><td class="mono">CHEMBL1169435</td><td class="num">228.0 nM</td><td class="num">15.24x</td><td class="num">0.70</td><td></td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="tgt-note">Top 20 of 150 co-folded, 12 of them known binders. The full ranking is in the file linked at the foot of this page.</p>
+</section>
+<section class="tgt" id="Q9H244">
+  <h3 class="tgt-name">P2Y purinoceptor 12</h3>
+  <p class="tgt-id">Q9H244 &middot; 5,000 compounds in the library, 50 of them known binders the prefilter never trained on</p>
+  <div class="arms">
+    <div class="arm">
+      <div class="arm-k">Fingerprint prefilter alone</div>
+      <div class="arm-v">2.0x</div>
+      <div class="arm-n">1 binders in the top 50 &middot; the control</div>
+    </div>
+    <div class="arm">
+      <div class="arm-k">Prefilter then co-folding</div>
+      <div class="arm-v">4.0x</div>
+      <div class="arm-n">2 binders in the top 50 &middot; the funnel</div>
+    </div>
+  </div>
+  <p class="tgt-note">The shortlist held 2 binders, so co-folding could have reached 4.0x at best. It reached 4.0x.</p>
+  <p class="tgt-note">The two affinity heads disagree by a median of 3.31x across these 150 compounds.</p>
+  <div class="wrap">
+  <table class="ct">
+    <thead><tr><th class="num">#</th><th>Compound</th><th class="num">Predicted</th><th class="num">Heads differ</th><th class="num">Pose</th><th>Known binder</th></tr></thead>
+    <tbody>
+      <tr><td class="num">1</td><td class="mono">CHEMBL2059809</td><td class="num">13.1 nM</td><td class="num">8.35x</td><td class="num">0.82</td><td></td></tr>
+      <tr><td class="num">2</td><td class="mono">CHEMBL2059810</td><td class="num">26.1 nM</td><td class="num">1.37x</td><td class="num">0.80</td><td></td></tr>
+      <tr><td class="num">3</td><td class="mono">CHEMBL2059812</td><td class="num">36.6 nM</td><td class="num">1.03x</td><td class="num">0.87</td><td></td></tr>
+      <tr><td class="num">4</td><td class="mono">CHEMBL5781634</td><td class="num">37.1 nM</td><td class="num">1.91x</td><td class="num">0.88</td><td></td></tr>
+      <tr><td class="num">5</td><td class="mono">CHEMBL99773</td><td class="num">45.9 nM</td><td class="num">7.5x</td><td class="num">0.86</td><td></td></tr>
+      <tr><td class="num">6</td><td class="mono">CHEMBL4215052</td><td class="num">52.9 nM</td><td class="num">8.66x</td><td class="num">0.80</td><td></td></tr>
+      <tr><td class="num">7</td><td class="mono">CHEMBL4877797</td><td class="num">59.1 nM</td><td class="num">1.41x</td><td class="num">0.88</td><td></td></tr>
+      <tr><td class="num">8</td><td class="mono">CHEMBL5750443</td><td class="num">73.2 nM</td><td class="num">17.08x</td><td class="num">0.89</td><td></td></tr>
+      <tr><td class="num">9</td><td class="mono">CHEMBL4203793</td><td class="num">78.5 nM</td><td class="num">36.69x</td><td class="num">0.83</td><td></td></tr>
+      <tr><td class="num">10</td><td class="mono">CHEMBL4100845</td><td class="num">81.5 nM</td><td class="num">1.25x</td><td class="num">0.89</td><td></td></tr>
+      <tr><td class="num">11</td><td class="mono">CHEMBL319811</td><td class="num">86.8 nM</td><td class="num">1.01x</td><td class="num">0.86</td><td></td></tr>
+      <tr><td class="num">12</td><td class="mono">CHEMBL309165</td><td class="num">89.1 nM</td><td class="num">3.54x</td><td class="num">0.90</td><td></td></tr>
+      <tr><td class="num">13</td><td class="mono">CHEMBL319609</td><td class="num">98.9 nM</td><td class="num">1.71x</td><td class="num">0.86</td><td></td></tr>
+      <tr class="hit"><td class="num">14</td><td class="mono">CHEMBL1784235</td><td class="num">112.0 nM</td><td class="num">2.57x</td><td class="num">0.91</td><td>yes</td></tr>
+      <tr><td class="num">15</td><td class="mono">CHEMBL99385</td><td class="num">112.3 nM</td><td class="num">3.65x</td><td class="num">0.84</td><td></td></tr>
+      <tr><td class="num">16</td><td class="mono">CHEMBL5179920</td><td class="num">114.3 nM</td><td class="num">48.26x</td><td class="num">0.89</td><td></td></tr>
+      <tr><td class="num">17</td><td class="mono">CHEMBL1801714</td><td class="num">128.1 nM</td><td class="num">4.27x</td><td class="num">0.87</td><td></td></tr>
+      <tr><td class="num">18</td><td class="mono">CHEMBL4159182</td><td class="num">129.6 nM</td><td class="num">1.19x</td><td class="num">0.77</td><td></td></tr>
+      <tr><td class="num">19</td><td class="mono">CHEMBL309367</td><td class="num">137.6 nM</td><td class="num">2.62x</td><td class="num">0.91</td><td></td></tr>
+      <tr><td class="num">20</td><td class="mono">CHEMBL4761804</td><td class="num">148.1 nM</td><td class="num">1.18x</td><td class="num">0.88</td><td></td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="tgt-note">Top 20 of 150 co-folded, 1 of them known binders. The full ranking is in the file linked at the foot of this page.</p>
+</section>
+  <h2 class="h2">Set aside</h2>
+  <p class="body">1 targets hand co-folding a shortlist with no known binder in it, and the prefilter found none in its own top 50 either, so both arms score zero and the difference is zero whatever the folding predicts. They are named in the fourth amendment to the registration, which was written before any of their rows existed because setting a guaranteed zero aside raises the mean difference. Prostaglandin E2 receptor EP1 subtype.</p>
+
+  <p class="f-foot">Every figure here reads from <a href="../data-files/virtual-screen.json">virtual-screen.json</a> for the libraries and <a href="../data-files/virtual-screen-funnel.json">virtual-screen-funnel.json</a> for the folded targets. The <a href="../data-files/2026-10-16-virtual-screen.md">registration and its four amendments</a> were each written before the stage they affect had run. A retrospective screen recovers binders somebody already found, often made as a series, so a fingerprint can learn the series rather than the binding. The series split reduces that and does not remove it.</p>
+</main>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <span>Vessari</span>
+    <nav><a href="../">Back to the assessment</a></nav>
+  </div>
+</footer>
+</body></html>

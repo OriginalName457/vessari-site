@@ -56,6 +56,7 @@
       <a href="../proteins/">proteins</a>
       <a href="../selection/">selection</a>
       <a href="../sim/">simulation</a>
+      <a href="../screen/">screen</a>
       <a href="../library/">library</a>
       <a href="../findings/">findings</a>
       <a href="../notes/">notes</a>
@@ -175,7 +176,7 @@
 
   <p class="body">Our corpus median of 0.607 belongs on the public side of that
     gap. Our within-window median of
-    <strong><span data-claim="ws_structure2">0.332</span></strong>, measured in the
+    <strong><span data-claim="ws_structure2">0.318</span></strong>, measured in the
     1.5 log potency range a chemist works in, lands beside their private 0.39.
     Different statistics on different sets, and they agree. The narrow window
     figure is what this model does on medicinal chemistry data, reproduced from
@@ -276,32 +277,32 @@
       already on disk.</p>
     <p class="body">Take each target's median measured potency and keep the
       compounds within 0.75 log of it. Across
-      <span data-claim="ws_n">36</span> targets, the structure arm
+      <span data-claim="ws_n">37</span> targets, the structure arm
       reaches a median rank correlation of
-      <span data-claim="ws_structure">0.332</span> inside that window and a
+      <span data-claim="ws_structure">0.318</span> inside that window and a
       fingerprint model trained on the same target reaches
-      <span data-claim="ws_ligand">0.328</span>. The mean
-      difference is <span data-claim="ws_diff">minus 0.0544</span> and the
-      interval runs from <span data-claim="ws_ci">minus 0.1758 to plus 0.0636</span>, so it contains zero. Inside a potency window we cannot
+      <span data-claim="ws_ligand">0.319</span>. The mean
+      difference is <span data-claim="ws_diff">minus 0.0520</span> and the
+      interval runs from <span data-claim="ws_ci">minus 0.1702 to plus 0.0631</span>, so it contains zero. Inside a potency window we cannot
       tell the two apart.</p>
     <p class="body">On the full held-out sets of those same
-      <span data-claim="ws_n2">36</span> targets the
+      <span data-claim="ws_n2">37</span> targets the
       fingerprint model is ahead by
       <span data-claim="ws_full_gap">0.164</span>, with an interval from
-      <span data-claim="ws_full_ci">minus 0.263 to minus 0.067</span> that
+      <span data-claim="ws_full_ci">minus 0.262 to minus 0.073</span> that
       excludes zero. Its advantage disappears inside the
       window. Both arms lose accuracy as the range narrows and the fingerprint
-      model loses more, <span data-claim="ws_ligand_drop">0.327</span> against
-      <span data-claim="ws_structure_drop">0.217</span>.</p>
+      model loses more, <span data-claim="ws_ligand_drop">0.334</span> against
+      <span data-claim="ws_structure_drop">0.222</span>.</p>
     <p class="body">A narrow window also holds fewer compounds, and that alone
       moves a rank correlation, so we drew 200 random subsets of each full set
       at the window's size with no restriction on potency. Those score
-      <span data-claim="ws_subset">0.501</span>.
+      <span data-claim="ws_subset">0.522</span>.
       Narrowing the range costs
-      <span data-claim="ws_range_cost">0.198</span> beyond what losing
+      <span data-claim="ws_range_cost">0.203</span> beyond what losing
       compounds costs.</p>
     <p class="body">This is interim at
-      <span data-claim="ws_n3">36</span> of 123 targets and the run continues
+      <span data-claim="ws_n3">37</span> of 123 targets and the run continues
       as the remaining ChEMBL pools arrive. The
       <a href="../data-files/2026-10-16-within-series-result.md">result is
       published</a> and so is the
@@ -336,6 +337,10 @@
       cannot give the answer away. One percent actives is what a real screening
       library holds. The actives in the library come from chemical series the
       cheap model never trained on.</p>
+    <p class="body">The ranked output is
+      <a href="../screen/">on its own page</a>, one target at a time, with the
+      known binders marked and the model's head disagreement printed beside
+      every compound.</p>
     <p class="body">Stage one is finished across 45 targets. The fingerprint
       prefilter alone recovers a mean of 13.3 times more actives in the top one
       percent than picking at random, with an interval from 8.6 to 18.7, and it

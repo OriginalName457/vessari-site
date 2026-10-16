@@ -1,0 +1,92 @@
+[
+ {
+  "accession": "P01375",
+  "target": "Tumor necrosis factor",
+  "library_size": 5000,
+  "n_test_actives": 50,
+  "depth": 150,
+  "n_folded": 150,
+  "n_fold_failures": 0,
+  "test_actives_in_shortlist": 18,
+  "prefilter": {
+   "top_k": 50,
+   "hits": 12,
+   "hit_rate": 0.24,
+   "expected_rate": 0.01,
+   "enrichment": 24.0
+  },
+  "funnel": {
+   "top_k": 50,
+   "hits": 17,
+   "hit_rate": 0.34,
+   "expected_rate": 0.01,
+   "enrichment": 34.0
+  },
+  "difference": 10.0,
+  "ceiling": 36.0,
+  "minutes": 45.3,
+  "at": "2026-10-16T17:34:39+00:00",
+  "folded_this_run": 48,
+  "seconds_per_compound": 56.6,
+  "timing_note": "The run was restarted after 102 compounds were already on disk, so the elapsed time covers the 48 folded afterwards.",
+  "median_head_disagreement_fold": 2.43
+ },
+ {
+  "accession": "P34995",
+  "target": "Prostaglandin E2 receptor EP1 subtype",
+  "library_size": 5000,
+  "n_test_actives": 50,
+  "depth": 150,
+  "test_actives_in_shortlist": 0,
+  "prefilter": {
+   "top_k": 50,
+   "hits": 0,
+   "hit_rate": 0.0,
+   "expected_rate": 0.01,
+   "enrichment": 0.0
+  },
+  "funnel": {
+   "top_k": 50,
+   "hits": 0,
+   "hit_rate": 0.0,
+   "expected_rate": 0.01,
+   "enrichment": 0.0
+  },
+  "difference": 0.0,
+  "ceiling": 0.0,
+  "not_folded": true,
+  "why": "no known active in the folded shortlist, so neither arm can score above zero and the difference is zero by construction",
+  "at": "2026-10-16T17:53:02+00:00"
+ },
+ {
+  "accession": "Q9H244",
+  "target": "P2Y purinoceptor 12",
+  "library_size": 5000,
+  "n_test_actives": 50,
+  "depth": 150,
+  "n_folded": 150,
+  "n_fold_failures": 0,
+  "test_actives_in_shortlist": 2,
+  "prefilter": {
+   "top_k": 50,
+   "hits": 1,
+   "hit_rate": 0.02,
+   "expected_rate": 0.01,
+   "enrichment": 2.0
+  },
+  "funnel": {
+   "top_k": 50,
+   "hits": 2,
+   "hit_rate": 0.04,
+   "expected_rate": 0.01,
+   "enrichment": 4.0
+  },
+  "difference": 2.0,
+  "ceiling": 4.0,
+  "minutes": 150.8,
+  "folded_this_run": 150,
+  "seconds_per_compound": 60.3,
+  "at": "2026-10-16T20:23:49+00:00",
+  "median_head_disagreement_fold": 3.31
+ }
+]
