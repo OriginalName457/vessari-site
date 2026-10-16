@@ -1,0 +1,15 @@
+{
+ "label": "P25105",
+ "frames": 40,
+ "atoms_shown": 841,
+ "atoms_in_simulation": 190187,
+ "atoms_hidden": 189346,
+ "pocket_residues_shown_in_full": 25,
+ "what_was_removed": "Water and ions. Residues within 5 angstroms of the compound keep every atom; the rest of the chain is reduced to its alpha carbon trace, which is what a cartoon is drawn through anyway. The simulation ran with all 190187 atoms; this is what is drawn.",
+ "ligand_atoms": 61,
+ "measurements": {
+  "environment": "lipid bilayer, POPC",
+  "lipids": 486,
+  "fold error of this compound": 1.05
+ }
+}

@@ -63,8 +63,72 @@
    "ligand_iptm": 0.9330471754074097,
    "ns": 0.2,
    "minutes": 28.4
+  },
+  {
+   "accession": "P25105",
+   "chembl_id": "CHEMBL449395",
+   "environment": "lipid bilayer, POPC",
+   "membrane_reason": "UniProt keyword Transmembrane, Transmembrane helix",
+   "n_lipids": 486,
+   "n_waters": 39727,
+   "n_atoms": 190187,
+   "box_nm": 12.74,
+   "measured_nm": 48.98979485566358,
+   "predicted_nm": 51.491281297107705,
+   "fold_error": 1.05,
+   "ligand_iptm": 0.965146541595459,
+   "ns": 0.2,
+   "minutes": 27.3
+  },
+  {
+   "accession": "Q13639",
+   "chembl_id": "CHEMBL550064",
+   "environment": "lipid bilayer, POPC",
+   "membrane_reason": "UniProt keyword Transmembrane, Transmembrane helix",
+   "n_lipids": 478,
+   "n_waters": 46797,
+   "n_atoms": 210918,
+   "box_nm": 12.74,
+   "measured_nm": 63.1,
+   "predicted_nm": 59.63050243832262,
+   "fold_error": 1.06,
+   "ligand_iptm": 0.9787970781326294,
+   "ns": 0.2,
+   "minutes": 30.0
+  },
+  {
+   "accession": "P30556",
+   "chembl_id": "CHEMBL6149456",
+   "environment": "lipid bilayer, POPC",
+   "membrane_reason": "UniProt keyword Transmembrane, Transmembrane helix",
+   "n_lipids": 480,
+   "n_waters": 36992,
+   "n_atoms": 181477,
+   "box_nm": 12.74,
+   "measured_nm": 11490.766292984981,
+   "predicted_nm": 12173.176507902084,
+   "fold_error": 1.06,
+   "ligand_iptm": 0.907026469707489,
+   "ns": 0.2,
+   "minutes": 27.0
+  },
+  {
+   "accession": "P21731",
+   "chembl_id": "CHEMBL383484",
+   "environment": "lipid bilayer, POPC",
+   "membrane_reason": "UniProt keyword Transmembrane, Transmembrane helix",
+   "n_lipids": 482,
+   "n_waters": 36674,
+   "n_atoms": 180223,
+   "box_nm": 12.74,
+   "measured_nm": 3174.901573277508,
+   "predicted_nm": 2976.0547646557416,
+   "fold_error": 1.07,
+   "ligand_iptm": 0.982291579246521,
+   "ns": 0.2,
+   "minutes": 26.5
   }
  ],
  "what_this_is": "One simulated complex per protein. The compound shown is the one this pipeline predicted most accurately for that protein, and the fold error on the card is that compound's. Proteins that cross a membrane are built in a POPC bilayer, the rest in water. These are short runs made to be watched. None of them is a measurement.",
- "generated_at": "2026-10-16T00:38:41+00:00"
+ "generated_at": "2026-10-16T03:29:14+00:00"
 }

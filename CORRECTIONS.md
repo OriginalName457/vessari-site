@@ -5,6 +5,36 @@ changed and why. A result that moves without a record of having moved is worse
 than one that was never published, so this file exists to make the movement
 visible rather than to tidy it away.
 
+## The corpus headline moved from 4.4 fold to 4.6 fold
+
+**Reported:** median absolute error 4.4 fold, 95 percent interval 4.0 to 4.8,
+across 121 proteins and 2,777 held-out compounds.
+
+**Corrected to:** 4.6 fold, interval 4.3 to 5.0, across 123 proteins and 2,462
+compounds. Regenerate with `scripts/rebuild_corpus.py` then
+`scripts/summarise_corpus.py ~/.vessari/corpus/corpus-v2.jsonl`.
+
+Every number on the site was computed before two defects were fixed. One was a
+clustering rule documented one way and implemented another. The other was a
+corpus gate comparing against the wrong variable. We rescored all of them.
+
+On the same 123 targets, scored both ways, the median fold error went from 4.50
+to 4.60 and the mean per-target rank correlation changed by minus 0.0177 with
+an interval of minus 0.039 to plus 0.004. That interval contains zero, so the
+corrected pipeline is not measurably better or worse at ranking. The ranking
+median is unchanged at 0.607.
+
+The compound count fell because the corrected rule clusters over the whole
+candidate pool rather than the selected set, so each held-out set is smaller
+and its compounds are less like each other. That is a harder test, which is
+the direction the error moved.
+
+Twice during the run we read the interval on the rank correlation as excluding
+zero, at 106 targets and again at 119. The last four targets moved it back
+across. Both interim readings are in this conversation's record and both were
+wrong about the final answer. The full write-up is
+`benchmarks/results/2026-10-16-rebuild-result.md`.
+
 ## We simulated a membrane receptor without a membrane, and called the result a null
 
 **Reported:** five candidate ways to tell a trustworthy prediction from an

@@ -1,7 +1,7 @@
 {
  "what_this_is": "What the machines are doing right now. Each count is read from the file that job writes as it works, not typed in by hand. Nothing here is a result. Results go to the data page when the job that produced them finishes.",
- "generated_at": "2026-10-16T00:52:55+00:00",
- "generated_unix": 1792111975,
+ "generated_at": "2026-10-16T03:20:50+00:00",
+ "generated_unix": 1792120850,
  "jobs": [
   {
    "id": "data-poor-regime",
@@ -38,7 +38,7 @@
    "kind": "verification",
    "running": true,
    "finished": false,
-   "done": 119,
+   "done": 123,
    "total": 123,
    "unit": "proteins rescored",
    "note": "Every figure on this site was computed before two defects were fixed. This recomputes all of them to find out whether the published numbers move. Whatever it returns goes on the site, including if it goes against us.",

@@ -1519,24 +1519,24 @@
     ]
   },
   "corpus": {
-    "n_scored": 121,
-    "n_declined": 199,
-    "n_compounds": 2777,
-    "median_fold": 4.4,
+    "n_scored": 123,
+    "n_declined": 0,
+    "n_compounds": 2462,
+    "median_fold": 4.6,
     "median_fold_ci": [
-      4.0,
-      4.8
+      4.3,
+      5.0
     ],
-    "mean_spearman": 0.577,
+    "mean_spearman": 0.555,
     "mean_spearman_ci": [
-      0.532,
-      0.618
+      0.507,
+      0.601
     ],
     "median_spearman": 0.607,
-    "positive": "117 of 121",
-    "above_half": "82 of 121",
-    "gpu_hours": 55.4,
-    "source": "corpus-121-targets.json"
+    "positive": "116 of 123",
+    "above_half": "82 of 123",
+    "gpu_hours": 48.1,
+    "source": "corpus-123-targets.json"
   },
   "selection": {
     "n_targets": 119,
