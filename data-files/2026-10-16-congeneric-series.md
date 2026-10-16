@@ -74,6 +74,29 @@ Cheng-Prusoff correction available for any of them.
 So mixed public literature puts its own ceiling on within-window ranking. The
 same model on the same kind of task, with one assay behind it, reaches 0.660.
 
+## The alternative explanation, tested and not supported
+
+The congeneric sets differ from our ChEMBL sets in two ways at once. They are
+narrower in potency, and they come from one assay in one paper rather than
+from many laboratories. The write-up above attributes the gap to the second.
+The first is testable inside our own corpus and was tested.
+
+Across the 60 corpus targets that have both arms, the potency range of the
+held-out set spans 2.26 to 9.29 log units with a median of 4.29. The rank
+correlation between that range and the structure minus ligand difference is
+**plus 0.096, with a 95 percent interval of minus 0.157 to plus 0.341**, which
+contains zero. Splitting at the median range gives minus 0.199 for the
+narrower half and minus 0.141 for the wider half, which is the opposite
+direction from the one the width explanation predicts.
+
+So inside this corpus the width of a set does not explain how the two arms
+compare. That leaves the provenance of the measurements as the operative
+difference between a congeneric set and a ChEMBL set, which is what the
+earlier sections argue from the assay spread directly.
+
+This analysis is exploratory. It was run after the congeneric numbers existed,
+to test an explanation of them rather than a hypothesis written in advance.
+
 ## Against the physics
 
 On the four series where FEP+ has published values, 71 compounds and 700
