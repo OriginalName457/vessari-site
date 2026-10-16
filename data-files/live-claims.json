@@ -1,6 +1,6 @@
 {
  "what_this_is": "Every figure on the site that moves while a job is still running, recomputed from the results on disk. The page reads the same values.",
- "refreshed_at": "2026-10-16T18:40:12+00:00",
+ "refreshed_at": "2026-10-16T18:45:13+00:00",
  "claims": {
   "ws_n": "35",
   "ws_n2": "35",
@@ -18,6 +18,11 @@
   "ws_subset": "0.522",
   "ws_range_cost": "0.213",
   "ws_noisy": "31",
+  "rs_spread": "2.76",
+  "rs_spread90": "13.9",
+  "rs_top1": "40",
+  "rs_top5": "78.7",
+  "rs_spearman": "0.892",
   "scr_n": "45",
   "scr_prefilter": "13.3",
   "scr_prefilter_ci": "8.6 to 18.7",

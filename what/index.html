@@ -314,6 +314,41 @@
   </div>
 
   <div class="claim claim--not">
+    <h3>Which single compound to make</h3>
+    <p class="body">The affinity head returns two values for every compound and
+      we record how far apart they are. Across the 2,462 compounds in the
+      corpus the two heads disagree by a median of
+      <span data-claim="rs_spread">2.76</span> fold about the same compound,
+      with a ninetieth percentile of
+      <span data-claim="rs_spread90">13.9</span> fold and 353 compounds above
+      tenfold. Our published median error is 4.6 fold, so a large part of it is
+      the model disagreeing with itself rather than with the laboratory.</p>
+    <p class="body">We registered the test and ran it. Setting every compound
+      to one or the other of its two values, ten thousand times per target
+      across 112 targets, <strong>the top ranked compound changes in
+      <span data-claim="rs_top1">40</span> percent of redraws</strong>. The
+      interval over targets runs from 35.4 to 44.9 percent and 91 of the 112
+      targets exceed one draw in five. First place is close to a coin flip.</p>
+    <p class="body">The list survives better than the winner. Spearman between
+      a redrawn ranking and the recorded one is
+      <span data-claim="rs_spearman">0.892</span>, the top five keeps
+      <span data-claim="rs_top5">78.7</span> percent of itself and the top
+      three keeps 74.7 percent. So the unit we hand anybody is a set of five
+      rather than a first row, and every shortlist now carries the
+      disagreement per compound beside the predicted affinity.</p>
+    <p class="body">The published interval is wider than this. Its median width
+      is 2.14 log units across the 12 calibrated targets, 4.8 times the median
+      disagreement, and it covers 82.4 percent against a stated 80, so it is
+      not understating this source. What remains untested is replication across
+      seeds, which measures the diffusion sampling and the alignment rather
+      than the choice of head. That run is 17 card hours and it is queued
+      behind the screen. The
+      <a href="../data-files/2026-10-16-rank-stability-result.md">result</a> and the
+      <a href="../data-files/2026-10-16-rank-stability.md">registration</a>
+      are both published.</p>
+  </div>
+
+  <div class="claim claim--not">
     <h3>Telling you which predictions to trust</h3>
     <p class="body">A user wants to know which five of forty numbers to
       believe. We cannot tell them yet. Five candidate signals have been tested and
