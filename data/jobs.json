@@ -1,7 +1,7 @@
 {
  "what_this_is": "What the machines are doing right now. Each count is read from the file that job writes as it works, not typed in by hand. Nothing here is a result. Results go to the data page when the job that produced them finishes.",
- "generated_at": "2026-10-16T14:59:29+00:00",
- "generated_unix": 1792162769,
+ "generated_at": "2026-10-16T15:23:03+00:00",
+ "generated_unix": 1792164183,
  "jobs": [
   {
    "id": "data-poor-regime",
@@ -45,6 +45,48 @@
    "why_it_matters": "If the headline moves, the headline changes and the old one stays in the corrections record.",
    "link": "data-files/CORRECTIONS.md",
    "link_text": "the corrections record"
+  },
+  {
+   "id": "ligand-baseline",
+   "title": "Does folding a complex beat a random forest on fingerprints",
+   "kind": "registered control",
+   "running": true,
+   "finished": false,
+   "done": 52,
+   "total": 123,
+   "unit": "proteins scored on both arms",
+   "note": "Three arms on the same held-out compounds. The structure predictions already recorded, a random forest trained on the ChEMBL pool with those compounds removed, and the rank average of the two with nothing fitted.",
+   "why_it_matters": "This is the control that could take the corpus number off the front page. If the ligand arm wins across the corpus, folding is not what produces the ranking.",
+   "link": "data-files/2026-10-16-within-series.md",
+   "link_text": "the related registration"
+  },
+  {
+   "id": "within-series",
+   "title": "Ranking inside the 1.5 log window a chemist works in",
+   "kind": "registered experiment",
+   "running": true,
+   "finished": false,
+   "done": 48,
+   "total": 123,
+   "unit": "proteins scored in the window",
+   "note": "Our headline is measured on held-out sets spanning four log units of potency. A medicinal chemist works inside one and a half. This scores both arms again with the range held fixed, on predictions already on disk, so it costs no GPU time. A timer reruns it every 30 minutes as the remaining ChEMBL pools arrive, so between firings it is armed rather than working.",
+   "why_it_matters": "This is the first question a medicinal chemist asks, and it had never been measured here.",
+   "link": "data-files/2026-10-16-within-series-result.md",
+   "link_text": "the interim result"
+  },
+  {
+   "id": "virtual-screen",
+   "title": "Finding known actives hidden in a library of 5,000",
+   "kind": "registered experiment",
+   "running": true,
+   "finished": false,
+   "done": 0,
+   "total": 45,
+   "unit": "libraries co-folded",
+   "note": "Each library holds 50 known actives among 4,950 decoys matched on weight and logP. A fingerprint prefilter ranks all 5,000 and the top 150 are folded and re-ranked. The prefilter alone is the control.",
+   "why_it_matters": "If the prefilter and the funnel enrich equally, the expensive stage is decoration and the registration says we publish that.",
+   "link": "data-files/2026-10-16-virtual-screen.md",
+   "link_text": "the registration and its three amendments"
   }
  ]
 }

@@ -170,6 +170,65 @@
   </div>
 
   <div class="claim claim--not">
+    <h3>Ranking inside the window a chemist works in</h3>
+    <p class="body">A medicinal chemist with forty analogues of one scaffold
+      and potencies spanning a log and a half wants them ranked. Our headline
+      is measured on held-out sets spanning a median of 4.15 log units, where
+      no two compounds share a scaffold, so it has never answered that
+      question. We registered the narrower one and ran it on the predictions
+      already on disk.</p>
+    <p class="body">Take each target's median measured potency and keep the
+      compounds within 0.75 log of it. Across 31 targets, the structure arm
+      reaches a median rank correlation of 0.318 inside that window and a
+      fingerprint model trained on the same target reaches 0.336. The mean
+      difference is minus 0.0856 and the interval runs from minus 0.2195 to
+      plus 0.0478, so it contains zero. Inside a potency window we cannot tell
+      the two apart.</p>
+    <p class="body">On the full held-out sets of those same 31 targets the
+      fingerprint model is ahead by 0.174, with an interval from minus 0.287 to
+      minus 0.067 that excludes zero. Its advantage disappears inside the
+      window. Both arms lose accuracy as the range narrows and the fingerprint
+      model loses more, 0.292 against 0.203.</p>
+    <p class="body">A narrow window also holds fewer compounds, and that alone
+      moves a rank correlation, so we drew 200 random subsets of each full set
+      at the window's size with no restriction on potency. Those score 0.449.
+      Narrowing the range costs 0.183 beyond what losing compounds costs.
+      Thirty three percent of the compounds in these windows have their own
+      ChEMBL assays disagreeing with each other by more than our error on that
+      target.</p>
+    <p class="body">This is interim at 31 of 123 targets and the run continues
+      as the remaining ChEMBL pools arrive. The number to expect from us inside
+      a 1.5 log window today is a rank correlation near 0.32. The
+      <a href="../data-files/2026-10-16-within-series-result.md">result is
+      published</a> and so is the
+      <a href="../data-files/2026-10-16-within-series.md">registration</a>.</p>
+  </div>
+
+  <div class="claim claim--not">
+    <h3>Finding actives hidden in a library</h3>
+    <p class="body">Ranking a list somebody hands you starts later than
+      discovery does. Discovery starts with a library and a question, which of
+      these thousands is worth making. We registered that screen before
+      building it and amended the registration three times before the
+      expensive stage ran, once because the first design trained the cheap
+      model on the compounds it ranks.</p>
+    <p class="body">Each library holds 5,000 compounds, 50 of them known
+      actives for the target and the rest drawn from compounds measured
+      against unrelated proteins and matched on weight and logP, so size
+      cannot give the answer away. One percent actives is what a real screening
+      library holds. The actives in the library come from chemical series the
+      cheap model never trained on.</p>
+    <p class="body">Stage one is finished across 45 targets. The fingerprint
+      prefilter alone recovers a mean of 13.3 times more actives in the top one
+      percent than picking at random, with an interval from 8.6 to 18.7, and it
+      finds nothing at all on 12 of the 45. Stage two folds the top 150
+      compounds per target and re-ranks them, which takes about four and a half
+      days on this rig and is running now. If both stages enrich equally, the
+      honest product is the prefilter and we will say so. That rule was fixed
+      before either arm ran.</p>
+  </div>
+
+  <div class="claim claim--not">
     <h3>Telling you which predictions to trust</h3>
     <p class="body">A user wants to know which five of forty numbers to
       believe. We cannot tell them yet. Five candidate signals have been tested and
