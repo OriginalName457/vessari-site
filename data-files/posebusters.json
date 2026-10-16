@@ -1,0 +1,5042 @@
+{
+ "what_this_is": "PoseBusters on every complex this pipeline has predicted. The check the field runs on a predicted pose before it reads the affinity, in dock mode, which tests chemical validity, geometry and whether the ligand sits inside the protein rather than through it. No crystal structure is involved, so there is no RMSD to a true pose here.",
+ "posebusters_version": "0.6.5",
+ "n_complexes": 658,
+ "n_evaluated": 658,
+ "n_unreadable": 0,
+ "n_passing_all_checks": 462,
+ "pass_rate": 0.7021,
+ "most_common_failures": [
+  {
+   "check": "minimum_distance_to_protein",
+   "n": 192
+  },
+  {
+   "check": "volume_overlap_with_protein",
+   "n": 3
+  },
+  {
+   "check": "double_bond_flatness",
+   "n": 2
+  },
+  {
+   "check": "sanitization",
+   "n": 2
+  },
+  {
+   "check": "inchi_convertible",
+   "n": 2
+  },
+  {
+   "check": "internal_steric_clash",
+   "n": 1
+  }
+ ],
+ "per_complex": [
+  {
+   "accession": "P00811",
+   "chembl_id": "CHEMBL104",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P00811",
+   "chembl_id": "CHEMBL109227",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P00811",
+   "chembl_id": "CHEMBL113381",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P00811",
+   "chembl_id": "CHEMBL1221",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P00811",
+   "chembl_id": "CHEMBL140723",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein",
+    "volume_overlap_with_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P00811",
+   "chembl_id": "CHEMBL140740",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P00811",
+   "chembl_id": "CHEMBL142592",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P00811",
+   "chembl_id": "CHEMBL143399",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P00811",
+   "chembl_id": "CHEMBL20945",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P00811",
+   "chembl_id": "CHEMBL226664",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P00811",
+   "chembl_id": "CHEMBL24878",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P00811",
+   "chembl_id": "CHEMBL298301",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P00811",
+   "chembl_id": "CHEMBL31741",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P00811",
+   "chembl_id": "CHEMBL34712",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P00811",
+   "chembl_id": "CHEMBL34964",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P00811",
+   "chembl_id": "CHEMBL3917939",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P00811",
+   "chembl_id": "CHEMBL4111477",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P00811",
+   "chembl_id": "CHEMBL4115678",
+   "passes_all": false,
+   "failed_checks": [
+    "double_bond_flatness",
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P00811",
+   "chembl_id": "CHEMBL46666",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P00811",
+   "chembl_id": "CHEMBL48760",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P00811",
+   "chembl_id": "CHEMBL51483",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P01375",
+   "chembl_id": "CHEMBL127042",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P01375",
+   "chembl_id": "CHEMBL1336829",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P01375",
+   "chembl_id": "CHEMBL1364793",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P01375",
+   "chembl_id": "CHEMBL1444568",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P01375",
+   "chembl_id": "CHEMBL1452157",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P01375",
+   "chembl_id": "CHEMBL1519375",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P01375",
+   "chembl_id": "CHEMBL1531328",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P01375",
+   "chembl_id": "CHEMBL1569174",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P01375",
+   "chembl_id": "CHEMBL255489",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P01375",
+   "chembl_id": "CHEMBL3326305",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P01375",
+   "chembl_id": "CHEMBL3326315",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P01375",
+   "chembl_id": "CHEMBL3640350",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P01375",
+   "chembl_id": "CHEMBL3642445",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P01375",
+   "chembl_id": "CHEMBL3642481",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P01375",
+   "chembl_id": "CHEMBL3740051",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P01375",
+   "chembl_id": "CHEMBL3740564",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P01375",
+   "chembl_id": "CHEMBL3741278",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P01375",
+   "chembl_id": "CHEMBL3741883",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P01375",
+   "chembl_id": "CHEMBL3741940",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P01375",
+   "chembl_id": "CHEMBL4060030",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P01375",
+   "chembl_id": "CHEMBL4742065",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P01375",
+   "chembl_id": "CHEMBL4759848",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P01375",
+   "chembl_id": "CHEMBL4764418",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P01375",
+   "chembl_id": "CHEMBL4776281",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P01375",
+   "chembl_id": "CHEMBL4785988",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P01375",
+   "chembl_id": "CHEMBL5774118",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P01375",
+   "chembl_id": "CHEMBL5892002",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P01375",
+   "chembl_id": "CHEMBL5895330",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P01375",
+   "chembl_id": "CHEMBL5930061",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P01375",
+   "chembl_id": "CHEMBL5939548",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P07607",
+   "chembl_id": "CHEMBL1161225",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P07607",
+   "chembl_id": "CHEMBL138870",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P07607",
+   "chembl_id": "CHEMBL139551",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P07607",
+   "chembl_id": "CHEMBL160498",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P07607",
+   "chembl_id": "CHEMBL160502",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P07607",
+   "chembl_id": "CHEMBL1762225",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P07607",
+   "chembl_id": "CHEMBL1762230",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P07607",
+   "chembl_id": "CHEMBL1791078",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P07607",
+   "chembl_id": "CHEMBL225071",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P07607",
+   "chembl_id": "CHEMBL34259",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P07607",
+   "chembl_id": "CHEMBL40321",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P07607",
+   "chembl_id": "CHEMBL55437",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P07607",
+   "chembl_id": "CHEMBL6325",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P07607",
+   "chembl_id": "CHEMBL886",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P13945",
+   "chembl_id": "CHEMBL1016",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P13945",
+   "chembl_id": "CHEMBL102836",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P13945",
+   "chembl_id": "CHEMBL1083994",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P13945",
+   "chembl_id": "CHEMBL117405",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P13945",
+   "chembl_id": "CHEMBL118",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P13945",
+   "chembl_id": "CHEMBL1258825",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P13945",
+   "chembl_id": "CHEMBL1403281",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P13945",
+   "chembl_id": "CHEMBL1800685",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P13945",
+   "chembl_id": "CHEMBL184407",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P13945",
+   "chembl_id": "CHEMBL284782",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P13945",
+   "chembl_id": "CHEMBL296419",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P13945",
+   "chembl_id": "CHEMBL305660",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P13945",
+   "chembl_id": "CHEMBL317621",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P13945",
+   "chembl_id": "CHEMBL333334",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P13945",
+   "chembl_id": "CHEMBL357995",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P13945",
+   "chembl_id": "CHEMBL3907057",
+   "passes_all": false,
+   "failed_checks": [
+    "sanitization",
+    "inchi_convertible"
+   ],
+   "n_checks": 15
+  },
+  {
+   "accession": "P13945",
+   "chembl_id": "CHEMBL404849",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P13945",
+   "chembl_id": "CHEMBL4285281",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P13945",
+   "chembl_id": "CHEMBL434063",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P13945",
+   "chembl_id": "CHEMBL4445645",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P13945",
+   "chembl_id": "CHEMBL4578164",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P13945",
+   "chembl_id": "CHEMBL499",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P13945",
+   "chembl_id": "CHEMBL5792571",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P13945",
+   "chembl_id": "CHEMBL584",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P13945",
+   "chembl_id": "CHEMBL631",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P13945",
+   "chembl_id": "CHEMBL633",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P13945",
+   "chembl_id": "CHEMBL7002",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P13945",
+   "chembl_id": "CHEMBL723",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P13945",
+   "chembl_id": "CHEMBL726",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P13945",
+   "chembl_id": "CHEMBL808",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P15121",
+   "chembl_id": "CHEMBL10413",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P15121",
+   "chembl_id": "CHEMBL117",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P15121",
+   "chembl_id": "CHEMBL143234",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P15121",
+   "chembl_id": "CHEMBL15770",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P15121",
+   "chembl_id": "CHEMBL168614",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P15121",
+   "chembl_id": "CHEMBL170853",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P15121",
+   "chembl_id": "CHEMBL171315",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P15121",
+   "chembl_id": "CHEMBL1908021",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P15121",
+   "chembl_id": "CHEMBL20169",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P15121",
+   "chembl_id": "CHEMBL23588",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P15121",
+   "chembl_id": "CHEMBL240725",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P15121",
+   "chembl_id": "CHEMBL269455",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P15121",
+   "chembl_id": "CHEMBL273910",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P15121",
+   "chembl_id": "CHEMBL284616",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P15121",
+   "chembl_id": "CHEMBL289277",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P15121",
+   "chembl_id": "CHEMBL303218",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P15121",
+   "chembl_id": "CHEMBL307279",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P15121",
+   "chembl_id": "CHEMBL319244",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P15121",
+   "chembl_id": "CHEMBL357460",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P15121",
+   "chembl_id": "CHEMBL395347",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P15121",
+   "chembl_id": "CHEMBL422920",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P15121",
+   "chembl_id": "CHEMBL4640749",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P15121",
+   "chembl_id": "CHEMBL5428185",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P15121",
+   "chembl_id": "CHEMBL56424",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein",
+    "volume_overlap_with_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P15121",
+   "chembl_id": "CHEMBL63055",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P15121",
+   "chembl_id": "CHEMBL69956",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P15121",
+   "chembl_id": "CHEMBL72752",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P15121",
+   "chembl_id": "CHEMBL73415",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P15121",
+   "chembl_id": "CHEMBL73560",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P15121",
+   "chembl_id": "CHEMBL84446",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P15692",
+   "chembl_id": "CHEMBL3115298",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P15692",
+   "chembl_id": "CHEMBL3649593",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P15692",
+   "chembl_id": "CHEMBL3649596",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P15692",
+   "chembl_id": "CHEMBL3649597",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P15692",
+   "chembl_id": "CHEMBL3649599",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P15692",
+   "chembl_id": "CHEMBL3649600",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P15692",
+   "chembl_id": "CHEMBL3649601",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P15692",
+   "chembl_id": "CHEMBL3649602",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P15692",
+   "chembl_id": "CHEMBL3649603",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P15692",
+   "chembl_id": "CHEMBL3649604",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P15692",
+   "chembl_id": "CHEMBL3652868",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P15692",
+   "chembl_id": "CHEMBL5849473",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P15692",
+   "chembl_id": "CHEMBL5936876",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P21556",
+   "chembl_id": "CHEMBL103753",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P21556",
+   "chembl_id": "CHEMBL280164",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P21556",
+   "chembl_id": "CHEMBL29067",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P21556",
+   "chembl_id": "CHEMBL295212",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P21556",
+   "chembl_id": "CHEMBL296973",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P21556",
+   "chembl_id": "CHEMBL297624",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P21556",
+   "chembl_id": "CHEMBL303357",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P21556",
+   "chembl_id": "CHEMBL325439",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P21556",
+   "chembl_id": "CHEMBL369225",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P21556",
+   "chembl_id": "CHEMBL514432",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P21556",
+   "chembl_id": "CHEMBL6270",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P21556",
+   "chembl_id": "CHEMBL64449",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P21731",
+   "chembl_id": "CHEMBL114324",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P21731",
+   "chembl_id": "CHEMBL114424",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P21731",
+   "chembl_id": "CHEMBL114901",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P21731",
+   "chembl_id": "CHEMBL116465",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P21731",
+   "chembl_id": "CHEMBL149724",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P21731",
+   "chembl_id": "CHEMBL172163",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P21731",
+   "chembl_id": "CHEMBL174984",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P21731",
+   "chembl_id": "CHEMBL20525",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P21731",
+   "chembl_id": "CHEMBL231184",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P21731",
+   "chembl_id": "CHEMBL23273",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P21731",
+   "chembl_id": "CHEMBL2402418",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P21731",
+   "chembl_id": "CHEMBL277689",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P21731",
+   "chembl_id": "CHEMBL280728",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P21731",
+   "chembl_id": "CHEMBL283128",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P21731",
+   "chembl_id": "CHEMBL324256",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P21731",
+   "chembl_id": "CHEMBL326047",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P21731",
+   "chembl_id": "CHEMBL361812",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P21731",
+   "chembl_id": "CHEMBL361939",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P21731",
+   "chembl_id": "CHEMBL364841",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P21731",
+   "chembl_id": "CHEMBL366990",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P21731",
+   "chembl_id": "CHEMBL367394",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P21731",
+   "chembl_id": "CHEMBL383484",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P21731",
+   "chembl_id": "CHEMBL395079",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P21731",
+   "chembl_id": "CHEMBL4643852",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P21731",
+   "chembl_id": "CHEMBL483991",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P21731",
+   "chembl_id": "CHEMBL561132",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P21731",
+   "chembl_id": "CHEMBL63040",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P21731",
+   "chembl_id": "CHEMBL65414",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P21731",
+   "chembl_id": "CHEMBL71685",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P25103",
+   "chembl_id": "CHEMBL104",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P25103",
+   "chembl_id": "CHEMBL107172",
+   "passes_all": false,
+   "failed_checks": [
+    "sanitization",
+    "inchi_convertible"
+   ],
+   "n_checks": 15
+  },
+  {
+   "accession": "P25103",
+   "chembl_id": "CHEMBL1090742",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P25103",
+   "chembl_id": "CHEMBL111244",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P25103",
+   "chembl_id": "CHEMBL119990",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P25103",
+   "chembl_id": "CHEMBL120781",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P25103",
+   "chembl_id": "CHEMBL149326",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P25103",
+   "chembl_id": "CHEMBL2017291",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P25103",
+   "chembl_id": "CHEMBL21815",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P25103",
+   "chembl_id": "CHEMBL23129",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P25103",
+   "chembl_id": "CHEMBL27006",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P25103",
+   "chembl_id": "CHEMBL281940",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P25103",
+   "chembl_id": "CHEMBL290364",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P25103",
+   "chembl_id": "CHEMBL296419",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P25103",
+   "chembl_id": "CHEMBL297068",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P25103",
+   "chembl_id": "CHEMBL307488",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P25103",
+   "chembl_id": "CHEMBL308148",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P25103",
+   "chembl_id": "CHEMBL309087",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P25103",
+   "chembl_id": "CHEMBL332796",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P25103",
+   "chembl_id": "CHEMBL346178",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P25103",
+   "chembl_id": "CHEMBL3608741",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P25103",
+   "chembl_id": "CHEMBL4115030",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P25103",
+   "chembl_id": "CHEMBL4160748",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P25103",
+   "chembl_id": "CHEMBL422931",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P25103",
+   "chembl_id": "CHEMBL433336",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P25103",
+   "chembl_id": "CHEMBL435564",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P25103",
+   "chembl_id": "CHEMBL441225",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P25103",
+   "chembl_id": "CHEMBL47146",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P25103",
+   "chembl_id": "CHEMBL52330",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P25103",
+   "chembl_id": "CHEMBL83",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P25105",
+   "chembl_id": "CHEMBL104",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P25105",
+   "chembl_id": "CHEMBL10971",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P25105",
+   "chembl_id": "CHEMBL160692",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P25105",
+   "chembl_id": "CHEMBL20359",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P25105",
+   "chembl_id": "CHEMBL2373416",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P25105",
+   "chembl_id": "CHEMBL277245",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P25105",
+   "chembl_id": "CHEMBL29067",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P25105",
+   "chembl_id": "CHEMBL297624",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P25105",
+   "chembl_id": "CHEMBL299944",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P25105",
+   "chembl_id": "CHEMBL34431",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P25105",
+   "chembl_id": "CHEMBL418608",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P25105",
+   "chembl_id": "CHEMBL449395",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30518",
+   "chembl_id": "CHEMBL104",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30518",
+   "chembl_id": "CHEMBL104839",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30518",
+   "chembl_id": "CHEMBL105961",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30518",
+   "chembl_id": "CHEMBL1254117",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30518",
+   "chembl_id": "CHEMBL128688",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30518",
+   "chembl_id": "CHEMBL1755",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30518",
+   "chembl_id": "CHEMBL196478",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30518",
+   "chembl_id": "CHEMBL2017869",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30518",
+   "chembl_id": "CHEMBL24781",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30518",
+   "chembl_id": "CHEMBL334376",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30518",
+   "chembl_id": "CHEMBL340893",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30518",
+   "chembl_id": "CHEMBL3416767",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30518",
+   "chembl_id": "CHEMBL3416770",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30518",
+   "chembl_id": "CHEMBL363910",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30518",
+   "chembl_id": "CHEMBL3890193",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30518",
+   "chembl_id": "CHEMBL3911148",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30518",
+   "chembl_id": "CHEMBL3915055",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30518",
+   "chembl_id": "CHEMBL3920097",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30518",
+   "chembl_id": "CHEMBL3942564",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30518",
+   "chembl_id": "CHEMBL3943296",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30518",
+   "chembl_id": "CHEMBL3949118",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30518",
+   "chembl_id": "CHEMBL3953766",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30518",
+   "chembl_id": "CHEMBL3965167",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30518",
+   "chembl_id": "CHEMBL3975038",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30518",
+   "chembl_id": "CHEMBL418890",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30518",
+   "chembl_id": "CHEMBL438523",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30518",
+   "chembl_id": "CHEMBL50",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30518",
+   "chembl_id": "CHEMBL5594994",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30518",
+   "chembl_id": "CHEMBL582857",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30518",
+   "chembl_id": "CHEMBL603708",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30556",
+   "chembl_id": "CHEMBL1332729",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30556",
+   "chembl_id": "CHEMBL1513",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30556",
+   "chembl_id": "CHEMBL1667999",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30556",
+   "chembl_id": "CHEMBL1668000",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30556",
+   "chembl_id": "CHEMBL1800685",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30556",
+   "chembl_id": "CHEMBL1801740",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30556",
+   "chembl_id": "CHEMBL2058860",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30556",
+   "chembl_id": "CHEMBL2063984",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30556",
+   "chembl_id": "CHEMBL2063985",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30556",
+   "chembl_id": "CHEMBL2435818",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30556",
+   "chembl_id": "CHEMBL278176",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30556",
+   "chembl_id": "CHEMBL279629",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30556",
+   "chembl_id": "CHEMBL288174",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30556",
+   "chembl_id": "CHEMBL302102",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30556",
+   "chembl_id": "CHEMBL307191",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30556",
+   "chembl_id": "CHEMBL308703",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30556",
+   "chembl_id": "CHEMBL315444",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30556",
+   "chembl_id": "CHEMBL4637519",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30556",
+   "chembl_id": "CHEMBL5271484",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30556",
+   "chembl_id": "CHEMBL5276125",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30556",
+   "chembl_id": "CHEMBL5287876",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30556",
+   "chembl_id": "CHEMBL539423",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30556",
+   "chembl_id": "CHEMBL6146392",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30556",
+   "chembl_id": "CHEMBL6149456",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30556",
+   "chembl_id": "CHEMBL6166097",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30556",
+   "chembl_id": "CHEMBL6168714",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30556",
+   "chembl_id": "CHEMBL72053",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30556",
+   "chembl_id": "CHEMBL7550",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30556",
+   "chembl_id": "CHEMBL97533",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30559",
+   "chembl_id": "CHEMBL1253853",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30559",
+   "chembl_id": "CHEMBL1254024",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30559",
+   "chembl_id": "CHEMBL1254116",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30559",
+   "chembl_id": "CHEMBL196603",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30559",
+   "chembl_id": "CHEMBL200368",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30559",
+   "chembl_id": "CHEMBL2017869",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30559",
+   "chembl_id": "CHEMBL2113185",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30559",
+   "chembl_id": "CHEMBL2113200",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30559",
+   "chembl_id": "CHEMBL24781",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30559",
+   "chembl_id": "CHEMBL284120",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30559",
+   "chembl_id": "CHEMBL296908",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30559",
+   "chembl_id": "CHEMBL31065",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30559",
+   "chembl_id": "CHEMBL363910",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30559",
+   "chembl_id": "CHEMBL3763823",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30559",
+   "chembl_id": "CHEMBL4203314",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30559",
+   "chembl_id": "CHEMBL4205046",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30559",
+   "chembl_id": "CHEMBL429736",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30559",
+   "chembl_id": "CHEMBL456263",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30559",
+   "chembl_id": "CHEMBL4594444",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30559",
+   "chembl_id": "CHEMBL467154",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30559",
+   "chembl_id": "CHEMBL467378",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30559",
+   "chembl_id": "CHEMBL475395",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30559",
+   "chembl_id": "CHEMBL492029",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30559",
+   "chembl_id": "CHEMBL515660",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30559",
+   "chembl_id": "CHEMBL582857",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30559",
+   "chembl_id": "CHEMBL594591",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30559",
+   "chembl_id": "CHEMBL6000224",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30559",
+   "chembl_id": "CHEMBL603708",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30874",
+   "chembl_id": "CHEMBL103769",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30874",
+   "chembl_id": "CHEMBL146536",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30874",
+   "chembl_id": "CHEMBL148309",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30874",
+   "chembl_id": "CHEMBL1766090",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30874",
+   "chembl_id": "CHEMBL1766102",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30874",
+   "chembl_id": "CHEMBL282618",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30874",
+   "chembl_id": "CHEMBL329684",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30874",
+   "chembl_id": "CHEMBL435631",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30874",
+   "chembl_id": "CHEMBL5175637",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30874",
+   "chembl_id": "CHEMBL5178013",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30874",
+   "chembl_id": "CHEMBL5202717",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30874",
+   "chembl_id": "CHEMBL5786618",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30874",
+   "chembl_id": "CHEMBL6022510",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30874",
+   "chembl_id": "CHEMBL6035636",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30874",
+   "chembl_id": "CHEMBL99895",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30968",
+   "chembl_id": "CHEMBL11149",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30968",
+   "chembl_id": "CHEMBL112466",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30968",
+   "chembl_id": "CHEMBL178457",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30968",
+   "chembl_id": "CHEMBL1800157",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30968",
+   "chembl_id": "CHEMBL183066",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30968",
+   "chembl_id": "CHEMBL22653",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30968",
+   "chembl_id": "CHEMBL22929",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30968",
+   "chembl_id": "CHEMBL261145",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30968",
+   "chembl_id": "CHEMBL296199",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30968",
+   "chembl_id": "CHEMBL302769",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30968",
+   "chembl_id": "CHEMBL327704",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30968",
+   "chembl_id": "CHEMBL353395",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30968",
+   "chembl_id": "CHEMBL387006",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30968",
+   "chembl_id": "CHEMBL401193",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30968",
+   "chembl_id": "CHEMBL423291",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30968",
+   "chembl_id": "CHEMBL425523",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30968",
+   "chembl_id": "CHEMBL430763",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30968",
+   "chembl_id": "CHEMBL434936",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30968",
+   "chembl_id": "CHEMBL460480",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30968",
+   "chembl_id": "CHEMBL4749790",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30968",
+   "chembl_id": "CHEMBL474991",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30968",
+   "chembl_id": "CHEMBL4749974",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30968",
+   "chembl_id": "CHEMBL4756920",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30968",
+   "chembl_id": "CHEMBL48192",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30968",
+   "chembl_id": "CHEMBL487627",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30968",
+   "chembl_id": "CHEMBL50663",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30968",
+   "chembl_id": "CHEMBL512893",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P30968",
+   "chembl_id": "CHEMBL5895782",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P31213",
+   "chembl_id": "CHEMBL110001",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P31213",
+   "chembl_id": "CHEMBL135993",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P31213",
+   "chembl_id": "CHEMBL136097",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P31213",
+   "chembl_id": "CHEMBL1627395",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P31213",
+   "chembl_id": "CHEMBL24850",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P31213",
+   "chembl_id": "CHEMBL24955",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P31213",
+   "chembl_id": "CHEMBL25081",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P31213",
+   "chembl_id": "CHEMBL25083",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P31213",
+   "chembl_id": "CHEMBL25093",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P31213",
+   "chembl_id": "CHEMBL25448",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P31213",
+   "chembl_id": "CHEMBL278283",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P31213",
+   "chembl_id": "CHEMBL300446",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P31213",
+   "chembl_id": "CHEMBL36392",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P31213",
+   "chembl_id": "CHEMBL4569322",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P31213",
+   "chembl_id": "CHEMBL76192",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P33534",
+   "chembl_id": "CHEMBL107670",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P33534",
+   "chembl_id": "CHEMBL108076",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P33534",
+   "chembl_id": "CHEMBL13470",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P33534",
+   "chembl_id": "CHEMBL19019",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P33534",
+   "chembl_id": "CHEMBL2419120",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P33534",
+   "chembl_id": "CHEMBL2419121",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P33534",
+   "chembl_id": "CHEMBL290543",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P33534",
+   "chembl_id": "CHEMBL4846243",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P33534",
+   "chembl_id": "CHEMBL4852987",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P33534",
+   "chembl_id": "CHEMBL4874877",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P33534",
+   "chembl_id": "CHEMBL508955",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P33534",
+   "chembl_id": "CHEMBL58362",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P33534",
+   "chembl_id": "CHEMBL61630",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P33534",
+   "chembl_id": "CHEMBL70",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P34995",
+   "chembl_id": "CHEMBL123794",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P34995",
+   "chembl_id": "CHEMBL207577",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P34995",
+   "chembl_id": "CHEMBL207688",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P34995",
+   "chembl_id": "CHEMBL214900",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P34995",
+   "chembl_id": "CHEMBL214971",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P34995",
+   "chembl_id": "CHEMBL231699",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P34995",
+   "chembl_id": "CHEMBL233043",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P34995",
+   "chembl_id": "CHEMBL233140",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P34995",
+   "chembl_id": "CHEMBL233155",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P34995",
+   "chembl_id": "CHEMBL233335",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P34995",
+   "chembl_id": "CHEMBL234398",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P34995",
+   "chembl_id": "CHEMBL234940",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P34995",
+   "chembl_id": "CHEMBL240029",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P34995",
+   "chembl_id": "CHEMBL2442485",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P34995",
+   "chembl_id": "CHEMBL2442490",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P34995",
+   "chembl_id": "CHEMBL290969",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P34995",
+   "chembl_id": "CHEMBL3092133",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P34995",
+   "chembl_id": "CHEMBL3127163",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P34995",
+   "chembl_id": "CHEMBL385955",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P34995",
+   "chembl_id": "CHEMBL3954031",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P34995",
+   "chembl_id": "CHEMBL3964563",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P34995",
+   "chembl_id": "CHEMBL427844",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P34995",
+   "chembl_id": "CHEMBL548",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P34995",
+   "chembl_id": "CHEMBL87371",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P34998",
+   "chembl_id": "CHEMBL169416",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P34998",
+   "chembl_id": "CHEMBL175536",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P34998",
+   "chembl_id": "CHEMBL182643",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P34998",
+   "chembl_id": "CHEMBL183148",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P34998",
+   "chembl_id": "CHEMBL188907",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P34998",
+   "chembl_id": "CHEMBL2046526",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P34998",
+   "chembl_id": "CHEMBL2049190",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P34998",
+   "chembl_id": "CHEMBL2063375",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P34998",
+   "chembl_id": "CHEMBL2087556",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P34998",
+   "chembl_id": "CHEMBL270738",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P34998",
+   "chembl_id": "CHEMBL286494",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P34998",
+   "chembl_id": "CHEMBL306618",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P34998",
+   "chembl_id": "CHEMBL309138",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P34998",
+   "chembl_id": "CHEMBL333713",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P34998",
+   "chembl_id": "CHEMBL3652116",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P34998",
+   "chembl_id": "CHEMBL3792517",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P34998",
+   "chembl_id": "CHEMBL380800",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P34998",
+   "chembl_id": "CHEMBL4069551",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P34998",
+   "chembl_id": "CHEMBL4226158",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P34998",
+   "chembl_id": "CHEMBL431067",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P34998",
+   "chembl_id": "CHEMBL432800",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P34998",
+   "chembl_id": "CHEMBL438888",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P34998",
+   "chembl_id": "CHEMBL445075",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P34998",
+   "chembl_id": "CHEMBL45187",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P34998",
+   "chembl_id": "CHEMBL45281",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P34998",
+   "chembl_id": "CHEMBL497653",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P34998",
+   "chembl_id": "CHEMBL63664",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P34998",
+   "chembl_id": "CHEMBL77527",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P34998",
+   "chembl_id": "CHEMBL78271",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P37288",
+   "chembl_id": "CHEMBL104839",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P37288",
+   "chembl_id": "CHEMBL114",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P37288",
+   "chembl_id": "CHEMBL1755",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P37288",
+   "chembl_id": "CHEMBL1837037",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P37288",
+   "chembl_id": "CHEMBL2017291",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P37288",
+   "chembl_id": "CHEMBL2017869",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P37288",
+   "chembl_id": "CHEMBL24781",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P37288",
+   "chembl_id": "CHEMBL318392",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P37288",
+   "chembl_id": "CHEMBL3416774",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P37288",
+   "chembl_id": "CHEMBL3416858",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P37288",
+   "chembl_id": "CHEMBL3416885",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P37288",
+   "chembl_id": "CHEMBL344159",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P37288",
+   "chembl_id": "CHEMBL363910",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P37288",
+   "chembl_id": "CHEMBL3763951",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P37288",
+   "chembl_id": "CHEMBL3890193",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P37288",
+   "chembl_id": "CHEMBL3915055",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P37288",
+   "chembl_id": "CHEMBL3919631",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P37288",
+   "chembl_id": "CHEMBL3920097",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P37288",
+   "chembl_id": "CHEMBL3943296",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P37288",
+   "chembl_id": "CHEMBL411",
+   "passes_all": false,
+   "failed_checks": [
+    "double_bond_flatness"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P37288",
+   "chembl_id": "CHEMBL4594444",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P37288",
+   "chembl_id": "CHEMBL467378",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P37288",
+   "chembl_id": "CHEMBL4799793",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P37288",
+   "chembl_id": "CHEMBL5542954",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P37288",
+   "chembl_id": "CHEMBL5563095",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P37288",
+   "chembl_id": "CHEMBL582857",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P37288",
+   "chembl_id": "CHEMBL594828",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P37288",
+   "chembl_id": "CHEMBL5989228",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P37288",
+   "chembl_id": "CHEMBL603708",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P37288",
+   "chembl_id": "CHEMBL6101825",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P41146",
+   "chembl_id": "CHEMBL101454",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P41146",
+   "chembl_id": "CHEMBL109509",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P41146",
+   "chembl_id": "CHEMBL140979",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P41146",
+   "chembl_id": "CHEMBL146191",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P41146",
+   "chembl_id": "CHEMBL184127",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P41146",
+   "chembl_id": "CHEMBL201805",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P41146",
+   "chembl_id": "CHEMBL201945",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P41146",
+   "chembl_id": "CHEMBL210292",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P41146",
+   "chembl_id": "CHEMBL211254",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P41146",
+   "chembl_id": "CHEMBL211390",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P41146",
+   "chembl_id": "CHEMBL228690",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P41146",
+   "chembl_id": "CHEMBL238819",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P41146",
+   "chembl_id": "CHEMBL263918",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P41146",
+   "chembl_id": "CHEMBL3262089",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P41146",
+   "chembl_id": "CHEMBL357076",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P41146",
+   "chembl_id": "CHEMBL360326",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P41146",
+   "chembl_id": "CHEMBL383610",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P41146",
+   "chembl_id": "CHEMBL3911970",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P41146",
+   "chembl_id": "CHEMBL391631",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P41146",
+   "chembl_id": "CHEMBL3951213",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P41146",
+   "chembl_id": "CHEMBL3969636",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P41146",
+   "chembl_id": "CHEMBL3977691",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P41146",
+   "chembl_id": "CHEMBL412098",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P41146",
+   "chembl_id": "CHEMBL466648",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P41146",
+   "chembl_id": "CHEMBL467057",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P41146",
+   "chembl_id": "CHEMBL559569",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P41146",
+   "chembl_id": "CHEMBL5836313",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P41146",
+   "chembl_id": "CHEMBL5856606",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P41146",
+   "chembl_id": "CHEMBL5991987",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P41146",
+   "chembl_id": "CHEMBL6048201",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P43116",
+   "chembl_id": "CHEMBL123794",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P43116",
+   "chembl_id": "CHEMBL1317823",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P43116",
+   "chembl_id": "CHEMBL1722929",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P43116",
+   "chembl_id": "CHEMBL222715",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P43116",
+   "chembl_id": "CHEMBL271896",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P43116",
+   "chembl_id": "CHEMBL3286797",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P43116",
+   "chembl_id": "CHEMBL3586312",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P43116",
+   "chembl_id": "CHEMBL3586330",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P43116",
+   "chembl_id": "CHEMBL3586346",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P43116",
+   "chembl_id": "CHEMBL3586347",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P43116",
+   "chembl_id": "CHEMBL3586361",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P43116",
+   "chembl_id": "CHEMBL3586362",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P43116",
+   "chembl_id": "CHEMBL3707245",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P43116",
+   "chembl_id": "CHEMBL3740325",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P43116",
+   "chembl_id": "CHEMBL383484",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P43116",
+   "chembl_id": "CHEMBL385955",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P43116",
+   "chembl_id": "CHEMBL3901873",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P43116",
+   "chembl_id": "CHEMBL3906016",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P43116",
+   "chembl_id": "CHEMBL3906402",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P43116",
+   "chembl_id": "CHEMBL3908484",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P43116",
+   "chembl_id": "CHEMBL3947001",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P43116",
+   "chembl_id": "CHEMBL4099851",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P43116",
+   "chembl_id": "CHEMBL423815",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P43116",
+   "chembl_id": "CHEMBL6028413",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P43116",
+   "chembl_id": "CHEMBL6058122",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P43116",
+   "chembl_id": "CHEMBL6149627",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P43116",
+   "chembl_id": "CHEMBL64246",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P43116",
+   "chembl_id": "CHEMBL87371",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P43119",
+   "chembl_id": "CHEMBL10241",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P43119",
+   "chembl_id": "CHEMBL10470",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P43119",
+   "chembl_id": "CHEMBL10742",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P43119",
+   "chembl_id": "CHEMBL1819603",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P43119",
+   "chembl_id": "CHEMBL234598",
+   "passes_all": false,
+   "failed_checks": [
+    "internal_steric_clash"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P43119",
+   "chembl_id": "CHEMBL3301604",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P43119",
+   "chembl_id": "CHEMBL361939",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P43119",
+   "chembl_id": "CHEMBL364841",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P43119",
+   "chembl_id": "CHEMBL3793911",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P43119",
+   "chembl_id": "CHEMBL494",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P43119",
+   "chembl_id": "CHEMBL495",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P43119",
+   "chembl_id": "CHEMBL94751",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P68400",
+   "chembl_id": "CHEMBL1652698",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P68400",
+   "chembl_id": "CHEMBL1652715",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P68400",
+   "chembl_id": "CHEMBL1652737",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P68400",
+   "chembl_id": "CHEMBL1682297",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P68400",
+   "chembl_id": "CHEMBL177820",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P68400",
+   "chembl_id": "CHEMBL2062577",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P68400",
+   "chembl_id": "CHEMBL289277",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P68400",
+   "chembl_id": "CHEMBL3681213",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P68400",
+   "chembl_id": "CHEMBL3699252",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P68400",
+   "chembl_id": "CHEMBL3699260",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P68400",
+   "chembl_id": "CHEMBL3699267",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P68400",
+   "chembl_id": "CHEMBL3699292",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P68400",
+   "chembl_id": "CHEMBL3699294",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P68400",
+   "chembl_id": "CHEMBL3699300",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P68400",
+   "chembl_id": "CHEMBL3699303",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P68400",
+   "chembl_id": "CHEMBL3700385",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "P68400",
+   "chembl_id": "CHEMBL3700386",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P68400",
+   "chembl_id": "CHEMBL3700400",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P68400",
+   "chembl_id": "CHEMBL3700406",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P68400",
+   "chembl_id": "CHEMBL3700407",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P68400",
+   "chembl_id": "CHEMBL3700431",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P68400",
+   "chembl_id": "CHEMBL3700489",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P68400",
+   "chembl_id": "CHEMBL4439686",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P68400",
+   "chembl_id": "CHEMBL4455046",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P68400",
+   "chembl_id": "CHEMBL4520531",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "P68400",
+   "chembl_id": "CHEMBL4526405",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q02127",
+   "chembl_id": "CHEMBL1450",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q02127",
+   "chembl_id": "CHEMBL154623",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q02127",
+   "chembl_id": "CHEMBL199574",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q02127",
+   "chembl_id": "CHEMBL202667",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q02127",
+   "chembl_id": "CHEMBL218467",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q02127",
+   "chembl_id": "CHEMBL2263632",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q02127",
+   "chembl_id": "CHEMBL3289671",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q02127",
+   "chembl_id": "CHEMBL3589752",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q02127",
+   "chembl_id": "CHEMBL3593990",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q02127",
+   "chembl_id": "CHEMBL3593998",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q02127",
+   "chembl_id": "CHEMBL3980486",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q02127",
+   "chembl_id": "CHEMBL4173846",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q02127",
+   "chembl_id": "CHEMBL435137",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q02127",
+   "chembl_id": "CHEMBL4634816",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q02127",
+   "chembl_id": "CHEMBL4644761",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q02127",
+   "chembl_id": "CHEMBL4751399",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q02127",
+   "chembl_id": "CHEMBL484594",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q02127",
+   "chembl_id": "CHEMBL5077508",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q02127",
+   "chembl_id": "CHEMBL5193821",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q02127",
+   "chembl_id": "CHEMBL5596906",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q02127",
+   "chembl_id": "CHEMBL5798342",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q02127",
+   "chembl_id": "CHEMBL5845915",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q02127",
+   "chembl_id": "CHEMBL5878639",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q02127",
+   "chembl_id": "CHEMBL5910343",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q02127",
+   "chembl_id": "CHEMBL5912716",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q02127",
+   "chembl_id": "CHEMBL6032087",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q02127",
+   "chembl_id": "CHEMBL6042237",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q02127",
+   "chembl_id": "CHEMBL960",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q02127",
+   "chembl_id": "CHEMBL999",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q13639",
+   "chembl_id": "CHEMBL2059590",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q13639",
+   "chembl_id": "CHEMBL2152922",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q13639",
+   "chembl_id": "CHEMBL2179582",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q13639",
+   "chembl_id": "CHEMBL2179674",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q13639",
+   "chembl_id": "CHEMBL2179707",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q13639",
+   "chembl_id": "CHEMBL2181170",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q13639",
+   "chembl_id": "CHEMBL286136",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q13639",
+   "chembl_id": "CHEMBL29846",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q13639",
+   "chembl_id": "CHEMBL3417009",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q13639",
+   "chembl_id": "CHEMBL3480577",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q13639",
+   "chembl_id": "CHEMBL356359",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q13639",
+   "chembl_id": "CHEMBL4457426",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q13639",
+   "chembl_id": "CHEMBL471036",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q13639",
+   "chembl_id": "CHEMBL538635",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q13639",
+   "chembl_id": "CHEMBL550064",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q13639",
+   "chembl_id": "CHEMBL74656",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q13639",
+   "chembl_id": "CHEMBL76370",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q13639",
+   "chembl_id": "CHEMBL97019",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q16739",
+   "chembl_id": "CHEMBL1029",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q16739",
+   "chembl_id": "CHEMBL1088158",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q16739",
+   "chembl_id": "CHEMBL1911678",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q16739",
+   "chembl_id": "CHEMBL1911818",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q16739",
+   "chembl_id": "CHEMBL1911829",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q16739",
+   "chembl_id": "CHEMBL2163826",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q16739",
+   "chembl_id": "CHEMBL2163830",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q16739",
+   "chembl_id": "CHEMBL2163839",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q16739",
+   "chembl_id": "CHEMBL4297611",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q16739",
+   "chembl_id": "CHEMBL5078078",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q16739",
+   "chembl_id": "CHEMBL5270537",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q16739",
+   "chembl_id": "CHEMBL5394721",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q16739",
+   "chembl_id": "CHEMBL5398133",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q16739",
+   "chembl_id": "CHEMBL5415209",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q16739",
+   "chembl_id": "CHEMBL5424264",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q16739",
+   "chembl_id": "CHEMBL5868265",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q16739",
+   "chembl_id": "CHEMBL5909936",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q16739",
+   "chembl_id": "CHEMBL5914151",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q16739",
+   "chembl_id": "CHEMBL5927031",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q16739",
+   "chembl_id": "CHEMBL5936253",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q16739",
+   "chembl_id": "CHEMBL5946579",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q16739",
+   "chembl_id": "CHEMBL5961372",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q16739",
+   "chembl_id": "CHEMBL5976403",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q9H244",
+   "chembl_id": "CHEMBL1784208",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q9H244",
+   "chembl_id": "CHEMBL1784234",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q9H244",
+   "chembl_id": "CHEMBL2103828",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q9H244",
+   "chembl_id": "CHEMBL2172140",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q9H244",
+   "chembl_id": "CHEMBL2172275",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q9H244",
+   "chembl_id": "CHEMBL2402142",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q9H244",
+   "chembl_id": "CHEMBL2402146",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q9H244",
+   "chembl_id": "CHEMBL2402153",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q9H244",
+   "chembl_id": "CHEMBL2402155",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q9H244",
+   "chembl_id": "CHEMBL2402249",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q9H244",
+   "chembl_id": "CHEMBL2402255",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q9H244",
+   "chembl_id": "CHEMBL2402261",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q9H244",
+   "chembl_id": "CHEMBL2402263",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q9H244",
+   "chembl_id": "CHEMBL2419483",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q9H244",
+   "chembl_id": "CHEMBL2419496",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q9H244",
+   "chembl_id": "CHEMBL3322653",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q9H244",
+   "chembl_id": "CHEMBL3325629",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q9H244",
+   "chembl_id": "CHEMBL3325792",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q9H244",
+   "chembl_id": "CHEMBL3326900",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q9H244",
+   "chembl_id": "CHEMBL3326901",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q9H244",
+   "chembl_id": "CHEMBL3652616",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q9H244",
+   "chembl_id": "CHEMBL3798029",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q9H244",
+   "chembl_id": "CHEMBL3798413",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q9H244",
+   "chembl_id": "CHEMBL437204",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein",
+    "volume_overlap_with_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q9H244",
+   "chembl_id": "CHEMBL540200",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q9H244",
+   "chembl_id": "CHEMBL549308",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q9H244",
+   "chembl_id": "CHEMBL561007",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q9H244",
+   "chembl_id": "CHEMBL568772",
+   "passes_all": false,
+   "failed_checks": [
+    "minimum_distance_to_protein"
+   ],
+   "n_checks": 22
+  },
+  {
+   "accession": "Q9H244",
+   "chembl_id": "CHEMBL589519",
+   "passes_all": true,
+   "failed_checks": [],
+   "n_checks": 22
+  }
+ ],
+ "generated_at": "2026-10-16T11:16:20+00:00"
+}
