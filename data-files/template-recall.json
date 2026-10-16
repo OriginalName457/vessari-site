@@ -1,0 +1,50 @@
+{
+ "what_this_is": "Whether the ranking holds on proteins with no solved structure. A co-folding model trains on the Protein Data Bank, so a method that only works where a structure already exists is retrieval rather than prediction.",
+ "n_scored": 123,
+ "by_solved_structures": [
+  {
+   "solved_structures": "none",
+   "n_proteins": 21,
+   "median_spearman": 0.553,
+   "mean_spearman": 0.6,
+   "above_0_5": 15,
+   "below_zero": 0
+  },
+  {
+   "solved_structures": "1 to 4",
+   "n_proteins": 28,
+   "median_spearman": 0.556,
+   "mean_spearman": 0.489,
+   "above_0_5": 18,
+   "below_zero": 4
+  },
+  {
+   "solved_structures": "5 to 19",
+   "n_proteins": 37,
+   "median_spearman": 0.604,
+   "mean_spearman": 0.568,
+   "above_0_5": 26,
+   "below_zero": 1
+  },
+  {
+   "solved_structures": "20 or more",
+   "n_proteins": 37,
+   "median_spearman": 0.648,
+   "mean_spearman": 0.567,
+   "above_0_5": 22,
+   "below_zero": 2
+  }
+ ],
+ "no_structure_against_well_solved": {
+  "n_with_none": 21,
+  "n_with_twenty_or_more": 37,
+  "median_difference": -0.095,
+  "ci95": [
+   -0.196,
+   0.221
+  ],
+  "interval_contains_zero": true
+ },
+ "reading": "21 proteins have no solved structure. Their median rank correlation is 0.553 against 0.648 for proteins with twenty or more structures. The difference is -0.095 with an interval of -0.196 to 0.221, which contains zero. 15 of the 21 score above 0.5 and 0 score below zero.",
+ "limits": "Having no structure is not the same as having no close relative in the training data. A protein with no entry of its own can sit beside a homologue the model knows well, and a sequence identity search against the training set with a date cutoff is the test that would separate those. We have not run it. This measurement can show a collapse and cannot rule out a milder effect."
+}
