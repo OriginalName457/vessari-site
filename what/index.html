@@ -171,6 +171,29 @@
   </div>
 
   <div class="claim">
+    <h3>Ranking forty analogues of one scaffold</h3>
+    <p class="body">On 14 published congeneric series, 359 compounds, each
+      series one scaffold measured in one assay from one paper, the median rank
+      correlation is <strong>0.660</strong> with an interval over series from
+      0.529 to 0.724. Eleven of the 14 score above 0.5. The centred error
+      across all 15 sets is 0.599 kcal/mol against 0.52 for FEP+ on the four
+      sets it covers, at 62 seconds a compound.</p>
+    <p class="body">These are series and not potency windows. Median pairwise
+      ligand similarity inside a set is 0.569, so the compounds share a
+      scaffold, and the median potency spread is 0.75 log units.</p>
+    <p class="body">A fingerprint model trained on the same sets reaches 0.567,
+      and the paired difference of plus 0.033 has an interval from minus 0.097
+      to plus 0.159, so we cannot tell the two apart. What the fingerprint
+      model needs is known actives for that target. We need a sequence.</p>
+    <p class="body">These proteins carry a leakage control our own corpus does
+      not. The folding model's authors excluded training proteins at 90 percent
+      or higher sequence identity to the FEP+ benchmark, and these series are
+      that benchmark. The
+      <a href="../data-files/2026-10-16-congeneric-series.md">result is
+      published</a>.</p>
+  </div>
+
+  <div class="claim">
     <h3>Direction of change, against a far more expensive method</h3>
     <p class="body">Across 4,899 within-target compound pairs, it calls the
       direction of an affinity change correctly 76.8 percent of the time. Free
@@ -236,12 +259,24 @@
       Thirty three percent of the compounds in these windows have their own
       ChEMBL assays disagreeing with each other by more than our error on that
       target.</p>
-    <p class="body">This is interim at 31 of 123 targets and the run continues
-      as the remaining ChEMBL pools arrive. The number to expect from us inside
-      a 1.5 log window today is a rank correlation near 0.32. The
+    <p class="body">This is interim at 34 of 123 targets and the run continues
+      as the remaining ChEMBL pools arrive. The
       <a href="../data-files/2026-10-16-within-series-result.md">result is
       published</a> and so is the
       <a href="../data-files/2026-10-16-within-series.md">registration</a>.</p>
+    <p class="body">We know why this number is lower than the 0.660 we reach on
+      published congeneric series. Both ask the model to order compounds inside
+      a narrow potency band, so the task is the same and the measurements are
+      not. A congeneric set comes from one paper with one assay and one
+      protocol. These windows are cut from ChEMBL, which pools IC50 and Ki
+      across many laboratories, and <strong>33 percent of the compounds inside
+      them have their own ChEMBL assays disagreeing with each other by more
+      than our prediction error on that target</strong>. On one target we
+      counted 923 compounds measured by IC50 only, 311 by Ki only and 45 by
+      both, with no Cheng-Prusoff correction available for any of them.</p>
+    <p class="body">So bring a series measured in your own assay and expect
+      0.66. Ask for a ranking of compounds pulled from mixed public literature
+      inside a narrow band and expect 0.3, where the limit is the literature.</p>
   </div>
 
   <div class="claim claim--not">
