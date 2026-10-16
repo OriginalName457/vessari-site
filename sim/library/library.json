@@ -1,0 +1,54 @@
+{
+ "entries": [
+  {
+   "accession": "P43116",
+   "chembl_id": "CHEMBL222715",
+   "environment": "lipid bilayer, POPC",
+   "membrane_reason": "UniProt keyword Transmembrane, Transmembrane helix",
+   "n_lipids": 482,
+   "n_waters": 39453,
+   "n_atoms": 188857,
+   "box_nm": 12.74,
+   "measured_nm": 124.89995996796803,
+   "predicted_nm": 125.26828843333627,
+   "fold_error": 1.0,
+   "ligand_iptm": 0.9705526828765869,
+   "ns": 0.2,
+   "minutes": 27.0
+  },
+  {
+   "accession": "P68400",
+   "chembl_id": "CHEMBL177820",
+   "environment": "water",
+   "membrane_reason": "no membrane keyword",
+   "n_lipids": 0,
+   "n_waters": 23465,
+   "n_atoms": 76851,
+   "box_nm": 9.311,
+   "measured_nm": 447.213595499958,
+   "predicted_nm": 452.7629228203122,
+   "fold_error": 1.01,
+   "ligand_iptm": 0.9624902606010437,
+   "ns": 0.2,
+   "minutes": 9.1
+  },
+  {
+   "accession": "P01375",
+   "chembl_id": "CHEMBL1444568",
+   "environment": "water",
+   "membrane_reason": "UniProt said transmembrane, and 58% of this structure's charged side chains landed inside the lipid core, above the 30% limit. That is a soluble domain, so it was rebuilt in water.",
+   "n_lipids": 0,
+   "n_waters": 24119,
+   "n_atoms": 76180,
+   "box_nm": 9.244,
+   "measured_nm": 4365.947777974447,
+   "predicted_nm": 4313.71980671099,
+   "fold_error": 1.01,
+   "ligand_iptm": 0.8322339653968811,
+   "ns": 0.2,
+   "minutes": 9.8
+  }
+ ],
+ "what_this_is": "One simulated complex per protein. The compound shown is the one this pipeline predicted most accurately for that protein, and the fold error on the card is that compound's. Proteins that cross a membrane are built in a POPC bilayer, the rest in water. These are short runs made to be watched. None of them is a measurement.",
+ "generated_at": "2026-10-16T00:10:16+00:00"
+}

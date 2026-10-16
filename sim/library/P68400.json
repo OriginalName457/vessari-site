@@ -1,0 +1,15 @@
+{
+ "label": "P68400",
+ "frames": 40,
+ "atoms_shown": 624,
+ "atoms_in_simulation": 76851,
+ "atoms_hidden": 76227,
+ "pocket_residues_shown_in_full": 14,
+ "what_was_removed": "Water and ions. Residues within 5 angstroms of the compound keep every atom; the rest of the chain is reduced to its alpha carbon trace, which is what a cartoon is drawn through anyway. The simulation ran with all 76851 atoms; this is what is drawn.",
+ "ligand_atoms": 14,
+ "measurements": {
+  "environment": "water",
+  "lipids": 0,
+  "fold error of this compound": 1.01
+ }
+}
