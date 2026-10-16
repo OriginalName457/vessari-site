@@ -249,22 +249,21 @@
       fingerprint model trained on the same target reaches
       <span data-claim="ws_ligand">0.319</span>. The mean
       difference is <span data-claim="ws_diff">minus 0.0627</span> and the
-      interval runs from <span data-claim="ws_ci">minus 0.1854 to plus
-      0.0559</span>, so it contains zero. Inside a potency window we cannot
+      interval runs from <span data-claim="ws_ci">minus 0.1854 to plus 0.0559</span>, so it contains zero. Inside a potency window we cannot
       tell the two apart.</p>
     <p class="body">On the full held-out sets of those same
       <span data-claim="ws_n2">35</span> targets the
       fingerprint model is ahead by
-      <span data-claim="ws_full_gap">0.165</span>, with an interval from
-      <span data-claim="ws_full_ci">minus 0.272 to minus 0.062</span> that
+      <span data-claim="ws_full_gap">0.156</span>, with an interval from
+      <span data-claim="ws_full_ci">minus 0.256 to minus 0.058</span> that
       excludes zero. Its advantage disappears inside the
       window. Both arms lose accuracy as the range narrows and the fingerprint
-      model loses more, <span data-claim="ws_ligand_drop">0.283</span> against
-      <span data-claim="ws_structure_drop">0.203</span>.</p>
+      model loses more, <span data-claim="ws_ligand_drop">0.326</span> against
+      <span data-claim="ws_structure_drop">0.233</span>.</p>
     <p class="body">A narrow window also holds fewer compounds, and that alone
       moves a rank correlation, so we drew 200 random subsets of each full set
       at the window's size with no restriction on potency. Those score
-      <span data-claim="ws_subset">0.449</span>.
+      <span data-claim="ws_subset">0.522</span>.
       Narrowing the range costs
       <span data-claim="ws_range_cost">0.213</span> beyond what losing
       compounds costs.</p>

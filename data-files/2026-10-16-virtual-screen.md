@@ -222,3 +222,48 @@ median of 9 per target, against 298 found by the prefilter in its own top 50.
 If co-folding ranked each shortlist perfectly the funnel would reach a mean
 enrichment of 28.98. That number is the ceiling on what stage two can show, and
 it is not a prediction.
+
+## Fourth amendment, 16 October 2026, after one target of stage two
+
+Stage two has produced one row. Seven of the 45 targets are set aside and the
+reason is written here before their rows exist, because the change cuts in the
+direction of finding an effect and nobody should have to take it on trust.
+
+### The seven cannot tell the arms apart
+
+The prefilter hands co-folding its top 150 compounds. On seven targets that
+shortlist holds **no known active at all**, and on those same seven the
+prefilter found none in its own top 50 either. Both arms therefore score an
+enrichment of zero and a difference of exactly zero, whatever co-folding
+predicts. The rows carry no information about the registered question and cost
+2.6 card hours each, 18 in total.
+
+The seven are P34995, P07607, Q6GI75, P22906, Q16739, P30874 and P30969.
+
+### Why this is not selection on the outcome
+
+Whether a shortlist holds an active is a property of the prefilter, which is
+the control arm, and it is known before a single complex is folded. It is not a
+property of the co-folding result being tested. A target excluded this way is a
+tied pair in a sign test rather than a target that performed badly.
+
+### Both intervals get reported
+
+Setting a guaranteed zero aside raises the mean difference, so the write-up
+will carry two numbers rather than one.
+
+- The paired interval over the targets whose shortlist holds at least one
+  active, which is the sharper test.
+- The paired interval over all 45, with the seven entered at a difference of
+  zero, which is the conservative one.
+
+The decision rule applies to the second one. If the conservative interval
+excludes zero, the co-folding stage earns its cost. If only the sharper one
+does, we say that and we say which targets the difference rests on.
+
+### What stage one already told us about these seven
+
+The prefilter recovered nothing on them. That is a finding about the prefilter
+and it is already in the stage one numbers, where 12 of 45 targets came back at
+an enrichment of zero. Setting seven aside for stage two does not remove them
+from stage one.

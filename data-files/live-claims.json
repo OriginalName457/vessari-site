@@ -1,0 +1,27 @@
+{
+ "what_this_is": "Every figure on the site that moves while a job is still running, recomputed from the results on disk. The page reads the same values.",
+ "refreshed_at": "2026-10-16T18:40:12+00:00",
+ "claims": {
+  "ws_n": "35",
+  "ws_n2": "35",
+  "ws_n3": "35",
+  "ws_scored_targets": "53",
+  "ws_structure": "0.318",
+  "ws_structure2": "0.318",
+  "ws_ligand": "0.319",
+  "ws_diff": "minus 0.0627",
+  "ws_ci": "minus 0.1854 to plus 0.0559",
+  "ws_full_gap": "0.156",
+  "ws_full_ci": "minus 0.256 to minus 0.058",
+  "ws_structure_drop": "0.233",
+  "ws_ligand_drop": "0.326",
+  "ws_subset": "0.522",
+  "ws_range_cost": "0.213",
+  "ws_noisy": "31",
+  "scr_n": "45",
+  "scr_prefilter": "13.3",
+  "scr_prefilter_ci": "8.6 to 18.7",
+  "scr_done": "2",
+  "scr_folded": "1"
+ }
+}
