@@ -176,7 +176,7 @@
 
   <p class="body">Our corpus median of 0.607 belongs on the public side of that
     gap. Our within-window median of
-    <strong><span data-claim="ws_structure2">0.296</span></strong>, measured in the
+    <strong><span data-claim="ws_structure2">0.310</span></strong>, measured in the
     1.5 log potency range a chemist works in, lands beside their private 0.39.
     Different statistics on different sets, and they agree. The narrow window
     figure is what this model does on medicinal chemistry data, reproduced from
@@ -277,32 +277,32 @@
       already on disk.</p>
     <p class="body">Take each target's median measured potency and keep the
       compounds within 0.75 log of it. Across
-      <span data-claim="ws_n">42</span> targets, the structure arm
+      <span data-claim="ws_n">43</span> targets, the structure arm
       reaches a median rank correlation of
-      <span data-claim="ws_structure">0.296</span> inside that window and a
+      <span data-claim="ws_structure">0.310</span> inside that window and a
       fingerprint model trained on the same target reaches
-      <span data-claim="ws_ligand">0.328</span>. The mean
-      difference is <span data-claim="ws_diff">minus 0.0699</span> and the
-      interval runs from <span data-claim="ws_ci">minus 0.1808 to plus 0.0381</span>, so it contains zero. Inside a potency window we cannot
+      <span data-claim="ws_ligand">0.336</span>. The mean
+      difference is <span data-claim="ws_diff">minus 0.0671</span> and the
+      interval runs from <span data-claim="ws_ci">minus 0.1768 to plus 0.0369</span>, so it contains zero. Inside a potency window we cannot
       tell the two apart.</p>
     <p class="body">On the full held-out sets of those same
-      <span data-claim="ws_n2">42</span> targets the
+      <span data-claim="ws_n2">43</span> targets the
       fingerprint model is ahead by
-      <span data-claim="ws_full_gap">0.169</span>, with an interval from
-      <span data-claim="ws_full_ci">minus 0.259 to minus 0.083</span> that
+      <span data-claim="ws_full_gap">0.174</span>, with an interval from
+      <span data-claim="ws_full_ci">minus 0.260 to minus 0.090</span> that
       excludes zero. Its advantage disappears inside the
       window. Both arms lose accuracy as the range narrows and the fingerprint
-      model loses more, <span data-claim="ws_ligand_drop">0.343</span> against
-      <span data-claim="ws_structure_drop">0.243</span>.</p>
+      model loses more, <span data-claim="ws_ligand_drop">0.345</span> against
+      <span data-claim="ws_structure_drop">0.239</span>.</p>
     <p class="body">A narrow window also holds fewer compounds, and that alone
       moves a rank correlation, so we drew 200 random subsets of each full set
       at the window's size with no restriction on potency. Those score
-      <span data-claim="ws_subset">0.528</span>.
+      <span data-claim="ws_subset">0.522</span>.
       Narrowing the range costs
-      <span data-claim="ws_range_cost">0.224</span> beyond what losing
+      <span data-claim="ws_range_cost">0.220</span> beyond what losing
       compounds costs.</p>
     <p class="body">This is interim at
-      <span data-claim="ws_n3">42</span> of 123 targets and the run continues
+      <span data-claim="ws_n3">43</span> of 123 targets and the run continues
       as the remaining ChEMBL pools arrive. The
       <a href="../data-files/2026-10-16-within-series-result.md">result is
       published</a> and so is the
@@ -312,7 +312,7 @@
       a narrow potency band, so the task is the same and the measurements are
       not. A congeneric set comes from one paper with one assay and one
       protocol. These windows are cut from ChEMBL, which pools IC50 and Ki
-      across many laboratories, and <strong><span data-claim="ws_noisy">29</span>
+      across many laboratories, and <strong><span data-claim="ws_noisy">28</span>
       percent of the compounds inside them have their own ChEMBL assays
       disagreeing with each other by more than our prediction error on that
       target</strong>. On one target we
