@@ -107,6 +107,46 @@
     holds while a filtered sample grows tells you the filter is stable. It does
     not tell you the method is right.</p>
 
+  <h2 class="h2">The folding model's training set is not a control we own</h2>
+
+  <p class="body">Our clustering rule controls two things. No two compounds in
+    a held-out set share an ECFP4 Tanimoto cluster at 0.6, and the ligand model
+    we compare against never sees a held-out compound. It controls nothing
+    about what the folding model saw before we started.</p>
+
+  <p class="body">Boltz-2's affinity head was trained on 1.2 million
+    measurements across about 2,000 targets and 600,000 compounds, drawn from
+    ChEMBL version 34 and BindingDB, keeping single protein targets with
+    maximum confidence annotations and standard types including IC50 and Ki.
+    Our corpus is 123 ChEMBL single proteins with a median of 730 measured
+    compounds each, and every one of them satisfies those filters. The authors
+    excluded training proteins at 90 percent or higher sequence identity to
+    their own benchmark proteins, which protected their benchmarks and not
+    ours. So our targets are very likely among those 2,000.</p>
+
+  <p class="body">The check cannot be run from outside. The training pairs are
+    not released, and an issue on the model's repository asking for them so
+    that overlap can be assessed has had no reply since 27 September 2026. No
+    group using these weights on public affinity data can rule overlap out, and
+    we are saying so rather than letting a reader assume our split handles it.
+    Our audit is
+    <a href="../data-files/2026-10-16-training-overlap.md">published</a>.</p>
+
+  <p class="body">There is a measurement that settles what it costs us. The
+    model's authors ran it on eight blinded private hit-to-lead assays from
+    Recursion, hundreds of compounds each, on targets they describe as not
+    accessible to external sources. It reached an average Pearson correlation
+    of <strong>0.39</strong> there, against 0.66 on the public four target FEP+
+    subset. That gap of 0.27 is the public benchmark premium, measured by the
+    people who built the model.</p>
+
+  <p class="body">Our corpus median of 0.607 belongs on the public side of that
+    gap. Our within-window median of <strong>0.318</strong>, measured in the
+    1.5 log potency range a chemist works in, lands beside their private 0.39.
+    Different statistics on different sets, and they agree. The narrow window
+    figure is what this model does on medicinal chemistry data, reproduced from
+    public measurements anybody can fetch and rerun.</p>
+
   <p class="body">Every figure on this site reads from a file you can download,
     and the files include the ones that were later withdrawn.</p>
 
