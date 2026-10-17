@@ -88,5 +88,126 @@
   "seconds_per_compound": 60.3,
   "at": "2026-10-16T20:23:49+00:00",
   "median_head_disagreement_fold": 3.31
+ },
+ {
+  "accession": "P21556",
+  "target": "Platelet-activating factor receptor",
+  "library_size": 5000,
+  "n_test_actives": 50,
+  "depth": 150,
+  "n_folded": 150,
+  "n_fold_failures": 0,
+  "test_actives_in_shortlist": 4,
+  "prefilter": {
+   "top_k": 50,
+   "hits": 4,
+   "hit_rate": 0.08,
+   "expected_rate": 0.01,
+   "enrichment": 8.0
+  },
+  "funnel": {
+   "top_k": 50,
+   "hits": 1,
+   "hit_rate": 0.02,
+   "expected_rate": 0.01,
+   "enrichment": 2.0
+  },
+  "difference": -6.0,
+  "ceiling": 8.0,
+  "median_head_disagreement_fold": 3.13,
+  "minutes": 142.4,
+  "folded_this_run": 138,
+  "seconds_per_compound": 61.9,
+  "at": "2026-10-16T23:01:59+00:00"
+ },
+ {
+  "accession": "Q13639",
+  "target": "5-hydroxytryptamine receptor 4",
+  "library_size": 5000,
+  "n_test_actives": 50,
+  "depth": 150,
+  "n_folded": 147,
+  "n_fold_failures": 3,
+  "test_actives_in_shortlist": 28,
+  "prefilter": {
+   "top_k": 50,
+   "hits": 26,
+   "hit_rate": 0.52,
+   "expected_rate": 0.01,
+   "enrichment": 52.0
+  },
+  "funnel": {
+   "top_k": 50,
+   "hits": 21,
+   "hit_rate": 0.42,
+   "expected_rate": 0.01,
+   "enrichment": 42.0
+  },
+  "difference": -10.0,
+  "ceiling": 56.0,
+  "median_head_disagreement_fold": 3.2,
+  "minutes": 167.4,
+  "folded_this_run": 147,
+  "seconds_per_compound": 68.3,
+  "at": "2026-10-17T01:49:25+00:00"
+ },
+ {
+  "accession": "P43116",
+  "target": "Prostaglandin E2 receptor EP2 subtype",
+  "library_size": 5000,
+  "n_test_actives": 50,
+  "depth": 150,
+  "n_folded": 150,
+  "n_fold_failures": 0,
+  "test_actives_in_shortlist": 4,
+  "prefilter": {
+   "top_k": 50,
+   "hits": 3,
+   "hit_rate": 0.06,
+   "expected_rate": 0.01,
+   "enrichment": 6.0
+  },
+  "funnel": {
+   "top_k": 50,
+   "hits": 0,
+   "hit_rate": 0.0,
+   "expected_rate": 0.01,
+   "enrichment": 0.0
+  },
+  "difference": -6.0,
+  "ceiling": 8.0,
+  "median_head_disagreement_fold": 3.29,
+  "minutes": null,
+  "folded_this_run": 138,
+  "seconds_per_compound": null,
+  "at": "2026-10-17T04:28:18+00:00",
+  "timing_note": "The wall clock moved backwards during this target, across a reboot that resynchronised time after the loop had started, so no duration was recorded. The run itself is unaffected."
+ },
+ {
+  "accession": "P07607",
+  "target": "Thymidylate synthase",
+  "library_size": 5000,
+  "n_test_actives": 50,
+  "depth": 150,
+  "test_actives_in_shortlist": 0,
+  "prefilter": {
+   "top_k": 50,
+   "hits": 0,
+   "hit_rate": 0.0,
+   "expected_rate": 0.01,
+   "enrichment": 0.0
+  },
+  "funnel": {
+   "top_k": 50,
+   "hits": 0,
+   "hit_rate": 0.0,
+   "expected_rate": 0.01,
+   "enrichment": 0.0
+  },
+  "difference": 0.0,
+  "ceiling": 0.0,
+  "not_folded": true,
+  "why": "no known active in the folded shortlist, so neither arm can score above zero and the difference is zero by construction",
+  "at": "2026-10-17T04:28:18+00:00"
  }
 ]

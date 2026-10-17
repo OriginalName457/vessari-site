@@ -13,8 +13,8 @@
  "stages": [
   {
    "stage": "co-fold and read an affinity",
-   "seconds_per_compound": 62.0,
-   "how_measured": "a batch of 6 in 370 seconds with the alignment cached, 16 October",
+   "seconds_per_compound": 61.1,
+   "how_measured": "four complete 150 compound screening targets, 56.6, 60.3, 61.9 and 68.3 seconds a compound, median 61.1. The earlier figure of 62 came from a single batch of six and the two agree.",
    "corpus_median": 78,
    "corpus_p10": 66,
    "corpus_p90": 120,
@@ -22,7 +22,13 @@
    "published_source": "bioRxiv 10.1101/2025.06.14.659707, generative screening section",
    "note": "Three times slower than the published figure. The paper does not say whether its 20 seconds includes the alignment and the structure pass. Any throughput claim we make uses our number.",
    "device": "gpu",
-   "card_watt_hours": 4.17
+   "card_watt_hours": 4.17,
+   "per_target_runs": [
+    56.6,
+    60.3,
+    61.9,
+    68.3
+   ]
   },
   {
    "stage": "restrained minimisation of the pose",
@@ -96,5 +102,6 @@
   }
  ],
  "relax_fraction_assumed": 0.3,
- "relax_fraction_note": "Measured: 196 of 658 complexes failed a PoseBusters check, which is 30 percent, so relaxation is costed at 30 percent of compounds rather than all of them."
+ "relax_fraction_note": "Measured: 196 of 658 complexes failed a PoseBusters check, which is 30 percent, so relaxation is costed at 30 percent of compounds rather than all of them.",
+ "timing_note": "Durations are taken from a monotonic clock. One target recorded minus 156.3 minutes when the machine rebooted and resynchronised time mid run, and that row's timing is withdrawn rather than carried."
 }
