@@ -1,6 +1,6 @@
 {
  "what_this_is": "Every figure on the site that moves while a job is still running, recomputed from the results on disk. The page reads the same values.",
- "refreshed_at": "2026-10-17T03:42:11+00:00",
+ "refreshed_at": "2026-10-17T04:39:40+00:00",
  "claims": {
   "ws_n": "84",
   "ws_n2": "84",
@@ -19,7 +19,7 @@
   "ws_range_cost": "0.264",
   "ws_noisy": "30",
   "ws_verdict": "excludes zero, so on this reading a fingerprint model trained on the same target ranks better inside a potency window",
-  "ws_status": "This is interim at 115 of 123 targets. The registration applies its decision rule when the run finishes, and we have called an interim reading a conclusion twice before and been wrong both times.",
+  "ws_status": "The run is complete. 115 targets scored and 8 excluded, six carrying fewer than eight compounds with both a prediction and a measurement and two with no ChEMBL pool. The registered decision rule applies.",
   "rs_spread": "2.76",
   "rs_spread90": "13.9",
   "rs_top1": "40",
@@ -28,7 +28,7 @@
   "scr_n": "45",
   "scr_prefilter": "13.3",
   "scr_prefilter_ci": "8.6 to 18.7",
-  "scr_done": "5",
-  "scr_folded": "4"
+  "scr_done": "7",
+  "scr_folded": "5"
  }
 }

@@ -24,6 +24,64 @@ which is the same model and the same code as the registered ligand baseline.
 Thirty one targets have 8 or more compounds inside the window and a pool the
 ligand arm can train on. The median window holds 10 compounds.
 
+## Final, 16 October 2026
+
+The run is complete. **115 targets scored and 8 excluded.** Six of the eight
+carry fewer than eight compounds with both a prediction and a measurement,
+which is the floor the registration set. Two have no ChEMBL pool, and they are
+the same two the ligand baseline excluded for the same reason.
+
+**Primary outcome, 1.5 log window, 84 qualifying targets and 953 compounds.**
+Structure median 0.271, ligand median 0.375. Mean difference **minus 0.1436,
+95 percent interval minus 0.2265 to minus 0.0625**, which excludes zero. The
+structure arm is ahead on 33 of 84.
+
+**Secondary, 1.0 log window, 44 qualifying targets and 458 compounds.**
+Structure median 0.143, ligand median 0.387, mean difference minus 0.2375 with
+an interval of minus 0.3415 to minus 0.1347.
+
+**Sample size control.** Against random subsets of the same size drawn with no
+restriction on potency, the window costs **0.264** in the 1.5 log case,
+interval minus 0.327 to minus 0.200, and 0.331 in the 1.0 log case. Narrowing
+the range costs more than losing the compounds does.
+
+**Ground truth noise.** Two hundred and eighty three of the 953 compounds
+inside the 1.5 log windows, **30 percent**, have their own ChEMBL assays
+disagreeing with each other by more than our prediction error on that target.
+
+### How the reading moved as the run grew
+
+Minus 0.0856 at 31 qualifying targets, minus 0.0627 at 35, minus 0.0516 at 38,
+minus 0.1118 at 68, minus 0.1436 at 84. The estimate moved away from zero and
+the interval tightened past it, so the early readings were the optimistic ones
+and waiting was the right call.
+
+### What the decision rule says
+
+The registration fixed it: an interval containing zero or lying below it means
+we publish that inside a potency window the structure arm does not rank better
+than a fingerprint model, put that sentence on the front page beside the
+headline, and name the within-window task as something the platform does not
+do. That is published and the sentence on the explainer is computed from the
+interval rather than typed beside it.
+
+### What it does not cover
+
+On 14 published congeneric series the two arms cannot be told apart, 0.660
+against 0.567 with an interval containing zero. Those sets span 0.75 log units
+and come from one assay in one paper. The windows here are cut from ChEMBL and
+pool IC50 and Ki across laboratories. We tested whether width explains the
+difference and it does not, which is argued in
+`benchmarks/results/2026-10-16-congeneric-series.md`.
+
+
+## The interim readings, kept because they were published
+
+The sections below were written while the run was going and are
+superseded by the final numbers above. They are kept rather than
+replaced, because a project that quietly overwrites what it said last
+week has no corrections record worth anything.
+
 ## The primary outcome
 
 Structure minus ligand, inside the window, paired over targets.
@@ -90,39 +148,10 @@ A 1.0 log window qualifies 15 targets. Structure median 0.143, ligand median
 secondary outcome and it rests on 15 targets. It is reported and it does not
 decide anything.
 
-## Update, 16 October, at 91 of 123 targets
+## Status, as it stood during the run
 
-The primary has crossed below zero as the sample grew. At 68 qualifying
-targets the mean difference is **minus 0.1118 with a 95 percent interval of
-minus 0.1995 to minus 0.0268**, which excludes zero. Median Spearman is 0.291
-for the structure arm and 0.352 for the fingerprint arm.
-
-The readings as the run has grown: minus 0.0856 at 31 qualifying targets,
-minus 0.0627 at 35, minus 0.0516 at 38, minus 0.1118 at 68. The estimate moved
-away from zero and the interval tightened past it.
-
-This is still interim. The registration applies its decision rule when every
-target with a fetched pool has been scored and 32 of the 123 have not been
-reached. Both branches of that rule lead to the same published sentence, so
-what the completion changes is the strength of the claim rather than its
-direction.
-
-The sentence on the explainer that reads this interval is now computed from
-the interval rather than typed beside it. The figures on that page refresh at
-every deploy and the prose did not, so for part of today the page said the
-interval contained zero while printing an interval that excluded it, which
-understated a result that runs against us.
-
-## Status
-
-Interim. The registration applies its decision rule when every target with a
-fetched pool has been scored, and 76 of the 123 are still waiting on the fetch.
-We have reported an interim reading as a conclusion twice before and been wrong
-both times, so the front page does not move on this yet.
-
-The number a chemist should expect from us inside a 1.5 log window is a rank
-correlation near 0.32, which is the same as a fingerprint model trained on the
-same target gets.
+Interim. That line stayed on this file until the run finished, and the
+readings it covered are above.
 
 ## What this does not cover
 
