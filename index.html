@@ -64,7 +64,7 @@
     <div class="hero">
       <div class="hero-copy">
         <h1 class="h1">We predict which compounds bind a protein, rank them, and simulate the complex atom by atom.</h1>
-        <p class="lede">One pipeline on our own hardware predicts the structure, scores how tightly a compound binds, profiles absorption and toxicity, and pulls the literature behind every claim. Every number we print is published with the control that tests it. Across <span data-num="corpus.n_scored" data-fmt="int">&#183;&#183;&#183;</span> proteins it has held out <span data-num="corpus.n_compounds" data-fmt="int">&#183;&#183;&#183;</span> measured compounds the model never saw and predicted every one, with a median error of <span data-num="corpus.median_fold" data-fmt="1">&#183;&#183;</span> fold. Every affinity number is then scored against a model given no protein at all, and the verdict is printed whichever way it falls.</p>
+        <p class="lede">One pipeline on our own hardware predicts the structure, scores how tightly a compound binds, profiles absorption and toxicity, and pulls the literature behind every claim. Every number we print is published with the control that tests it. Across <span data-num="corpus.n_scored" data-fmt="int">&#183;&#183;&#183;</span> proteins it has held out <span data-num="corpus.n_compounds" data-fmt="int">&#183;&#183;&#183;</span> measured compounds the model never saw and predicted every one, with a median error of <span data-num="corpus.median_fold" data-fmt="1">&#183;&#183;</span> fold. Every affinity number is then scored against a model given no protein at all, and the verdict is printed whichever way it falls. <strong>It has fallen against us.</strong> Across 121 of those proteins a random forest on fingerprints, trained on each target&rsquo;s own prior actives, ranks better than folding the complex: 0.736 against 0.607 in median rank correlation, a paired difference of minus 0.1445 with an interval from minus 0.191 to minus 0.0992. The structure arm is ahead on 33 of 121. <a href="data-files/2026-10-16-ligand-baseline-result.md">The result is published</a>, under <a href="data-files/2026-10-16-ligand-baseline.md">a registration written before the run</a>.</p>
         <dl class="hero-stats">
           <div>
             <dt>proteins scored</dt>
@@ -91,7 +91,7 @@
           </div>
           <div>
             <dt>our claims the controls overturned</dt>
-            <dd>1<span class="hero-stats__unit">, before release</span></dd>
+            <dd>2<span class="hero-stats__unit">, both published</span></dd>
           </div>
         </dl>
       </div>

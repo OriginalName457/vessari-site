@@ -5,6 +5,42 @@ changed and why. A result that moves without a record of having moved is worse
 than one that was never published, so this file exists to make the movement
 visible rather than to tidy it away.
 
+## The corpus number is not evidence that folding helps
+
+**Reported:** a median rank correlation of 0.607 and a median absolute error
+of 4.6 fold across the corpus, presented as what the pipeline achieves by
+folding a protein and a compound together.
+
+**Corrected to:** the same numbers, with the control beside them. Across 121
+of the 123 targets a random forest on ECFP4 fingerprints, trained on each
+target's own prior actives with the held-out compounds removed, reaches a
+median rank correlation of **0.736 against the structure arm's 0.607**. The
+paired difference is **minus 0.1445 with a 95 percent interval of minus 0.191
+to minus 0.0992**, which excludes zero. The structure arm is ahead on 33 of
+121 targets. Median fold error is 3.13x for the ligand model against 4.6x for
+the structure arm. Regenerate with `scripts/ligand_baseline.py`.
+
+**Why it moved:** the control had never been run across the corpus. It had
+been run on one target, ABL1, where the ligand model reached 0.871 against
+0.284, and that single result was published and described as a loss on one
+dense target. Running it everywhere shows it is not one target.
+
+**What was registered:** the comparison, the three arms, the statistic and the
+decision rule were fixed at
+`benchmarks/preregistered/2026-10-16-ligand-baseline.md` before any target was
+scored. The rule said that an interval entirely below zero means the front
+page stops describing the corpus number as evidence that folding helps and
+says a ligand model does better on the targets we have scored. A stopping rule
+was added at 66 of 123 targets, before the run ended, and no target was
+excluded for a fetch failure.
+
+**What did not move:** the corpus numbers themselves. Median rank correlation
+0.607, median absolute error 4.6 fold, intervals over 87 protein units. The
+combination of the two arms beats the structure arm alone by plus 0.1481,
+interval 0.1227 to 0.1743, and does not beat the ligand arm alone.
+
+The full result is `benchmarks/results/2026-10-16-ligand-baseline-result.md`.
+
 ## The published intervals were computed over targets that are not independent
 
 **Reported:** median rank correlation 0.607 with a mean Spearman interval of

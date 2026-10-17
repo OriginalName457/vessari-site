@@ -144,7 +144,7 @@
   </li>
   <li class="df">
     <a class="df-name" href="../data-files/live-claims.json">live-claims.json</a>
-    <span class="df-size">888 B</span>
+    <span class="df-size">1 KB</span>
     <p class="df-desc">Every figure on this site that moves while a job is still running, recomputed from the results on disk at each deploy. The pages read the same values, so a paragraph cannot hold a stale one.</p>
   </li>
   <li class="df">
@@ -199,13 +199,28 @@
   </li>
   <li class="df">
     <a class="df-name" href="../data-files/2026-10-16-within-series-result.md">2026-10-16-within-series-result.md</a>
-    <span class="df-size">5 KB</span>
+    <span class="df-size">7 KB</span>
     <p class="df-desc">Ranking inside a 1.5 log window of potency, which is the range a medicinal chemist works in. Both arms on the same compounds. Median Spearman 0.318 for the structure arm and 0.336 for a fingerprint model, and we cannot tell them apart. Interim at 31 of 123 targets.</p>
   </li>
   <li class="df">
     <a class="df-name" href="../data-files/within-series.json">within-series.json</a>
     <span class="df-size">31 KB</span>
     <p class="df-desc">One row per target: both arms, both windows, a control that holds the number of compounds fixed, and how many compounds disagree with themselves by more than the error.</p>
+  </li>
+  <li class="df">
+    <a class="df-name" href="../data-files/2026-10-16-ligand-baseline-result.md">2026-10-16-ligand-baseline-result.md</a>
+    <span class="df-size">5 KB</span>
+    <p class="df-desc">The control that decided the headline. Across 121 targets a random forest on fingerprints ranks better than folding the complex, 0.736 against 0.607, with an interval excluding zero.</p>
+  </li>
+  <li class="df">
+    <a class="df-name" href="../data-files/2026-10-16-ligand-baseline.md">2026-10-16-ligand-baseline.md</a>
+    <span class="df-size">6 KB</span>
+    <p class="df-desc">The registration for that, with the three arms, the statistic and the decision rule fixed before any target was scored, and a stopping rule added before the run ended.</p>
+  </li>
+  <li class="df">
+    <a class="df-name" href="../data-files/ligand-baseline.json">ligand-baseline.json</a>
+    <span class="df-size">47 KB</span>
+    <p class="df-desc">One row per target: all three arms, the pool size, the fold errors and the run time.</p>
   </li>
   <li class="df">
     <a class="df-name" href="../data-files/2026-10-16-purchasability.md">2026-10-16-purchasability.md</a>
@@ -351,7 +366,7 @@
   </li>
   <li class="df">
     <a class="df-name" href="../data-files/CORRECTIONS.md">CORRECTIONS.md</a>
-    <span class="df-size">21 KB</span>
+    <span class="df-size">23 KB</span>
     <p class="df-desc">Every number that moved after it was stated, and what moved it.</p>
   </li>
   </ul>

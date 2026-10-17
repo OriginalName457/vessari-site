@@ -1,7 +1,7 @@
 {
  "what_this_is": "What the machines are doing right now. Each count is read from the file that job writes as it works, not typed in by hand. Nothing here is a result. Results go to the data page when the job that produced them finishes.",
- "generated_at": "2026-10-17T03:32:01+00:00",
- "generated_unix": 1792207921,
+ "generated_at": "2026-10-17T03:41:39+00:00",
+ "generated_unix": 1792208499,
  "jobs": [
   {
    "id": "data-poor-regime",
@@ -51,14 +51,15 @@
    "title": "Does folding a complex beat a random forest on fingerprints",
    "kind": "registered control",
    "running": false,
-   "finished": false,
+   "finished": true,
+   "verdict": "the ligand model wins, minus 0.1445, interval minus 0.191 to minus 0.0992",
    "done": 121,
    "total": 123,
    "unit": "proteins scored on both arms",
-   "note": "Three arms on the same held-out compounds. The structure predictions already recorded, a random forest trained on the ChEMBL pool with those compounds removed, and the rank average of the two with nothing fitted.",
+   "note": "Three arms on the same held-out compounds. The structure predictions already recorded, a random forest trained on the ChEMBL pool with those compounds removed, and the rank average of the two with nothing fitted. Finished at 121 of 123. Two targets carry fewer than five compounds with both a prediction and a measurement and were excluded by a floor that predates the run.",
    "why_it_matters": "This is the control that could take the corpus number off the front page. If the ligand arm wins across the corpus, folding is not what produces the ranking.",
-   "link": "data-files/2026-10-16-within-series.md",
-   "link_text": "the related registration"
+   "link": "data-files/2026-10-16-ligand-baseline-result.md",
+   "link_text": "the result, and the rule it fired"
   },
   {
    "id": "within-series",
