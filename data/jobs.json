@@ -1,7 +1,7 @@
 {
  "what_this_is": "What the machines are doing right now. Each count is read from the file that job writes as it works, not typed in by hand. Nothing here is a result. Results go to the data page when the job that produced them finishes.",
- "generated_at": "2026-10-17T04:40:41+00:00",
- "generated_unix": 1792212041,
+ "generated_at": "2026-10-17T04:52:37+00:00",
+ "generated_unix": 1792212757,
  "jobs": [
   {
    "id": "data-poor-regime",
@@ -65,7 +65,7 @@
    "id": "within-series",
    "title": "Ranking inside the 1.5 log window a chemist works in",
    "kind": "registered experiment",
-   "running": true,
+   "running": false,
    "finished": true,
    "verdict": "the ligand model wins inside the window, minus 0.1436, interval minus 0.2265 to minus 0.0625",
    "done": 115,
