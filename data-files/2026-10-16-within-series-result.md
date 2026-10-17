@@ -90,6 +90,29 @@ A 1.0 log window qualifies 15 targets. Structure median 0.143, ligand median
 secondary outcome and it rests on 15 targets. It is reported and it does not
 decide anything.
 
+## Update, 16 October, at 91 of 123 targets
+
+The primary has crossed below zero as the sample grew. At 68 qualifying
+targets the mean difference is **minus 0.1118 with a 95 percent interval of
+minus 0.1995 to minus 0.0268**, which excludes zero. Median Spearman is 0.291
+for the structure arm and 0.352 for the fingerprint arm.
+
+The readings as the run has grown: minus 0.0856 at 31 qualifying targets,
+minus 0.0627 at 35, minus 0.0516 at 38, minus 0.1118 at 68. The estimate moved
+away from zero and the interval tightened past it.
+
+This is still interim. The registration applies its decision rule when every
+target with a fetched pool has been scored and 32 of the 123 have not been
+reached. Both branches of that rule lead to the same published sentence, so
+what the completion changes is the strength of the claim rather than its
+direction.
+
+The sentence on the explainer that reads this interval is now computed from
+the interval rather than typed beside it. The figures on that page refresh at
+every deploy and the prose did not, so for part of today the page said the
+interval contained zero while printing an interval that excluded it, which
+understated a result that runs against us.
+
 ## Status
 
 Interim. The registration applies its decision rule when every target with a
