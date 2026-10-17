@@ -1,7 +1,7 @@
 {
  "what_this_is": "What the machines are doing right now. Each count is read from the file that job writes as it works, not typed in by hand. Nothing here is a result. Results go to the data page when the job that produced them finishes.",
- "generated_at": "2026-10-17T01:15:41+00:00",
- "generated_unix": 1792199741,
+ "generated_at": "2026-10-17T01:36:10+00:00",
+ "generated_unix": 1792200970,
  "jobs": [
   {
    "id": "data-poor-regime",
@@ -52,7 +52,7 @@
    "kind": "registered control",
    "running": true,
    "finished": false,
-   "done": 84,
+   "done": 86,
    "total": 123,
    "unit": "proteins scored on both arms",
    "note": "Three arms on the same held-out compounds. The structure predictions already recorded, a random forest trained on the ChEMBL pool with those compounds removed, and the rank average of the two with nothing fitted.",
