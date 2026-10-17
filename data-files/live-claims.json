@@ -1,6 +1,6 @@
 {
  "what_this_is": "Every figure on the site that moves while a job is still running, recomputed from the results on disk. The page reads the same values.",
- "refreshed_at": "2026-10-17T03:32:05+00:00",
+ "refreshed_at": "2026-10-17T03:42:11+00:00",
  "claims": {
   "ws_n": "84",
   "ws_n2": "84",

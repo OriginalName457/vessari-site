@@ -1,0 +1,2664 @@
+{
+ "what_this_is": "How far the structure moves during the restrained minimisation that takes our complexes from 70.2 to 98.5 percent PoseBusters valid. Ligand RMSD is over heavy atoms in file order, backbone RMSD over atoms matched on chain, residue number and atom name. No superposition is applied, because the two structures are in the same frame and a fit would hide a translation.",
+ "summary": {
+  "n_compared": 188,
+  "skipped": {},
+  "ligand_rmsd_A": {
+   "median": 0.847,
+   "p90": 1.231,
+   "max": 1.882,
+   "under_0_5": 5,
+   "under_1_0": 132,
+   "over_2_0": 0
+  },
+  "ligand_max_shift_A": {
+   "median": 1.619,
+   "p90": 2.712,
+   "max": 4.58
+  },
+  "backbone_rmsd_A": {
+   "median": 0.1,
+   "p90": 0.114,
+   "max": 0.144,
+   "under_0_5": 188
+  }
+ },
+ "per_complex": [
+  {
+   "accession": "P00811",
+   "chembl_id": "CHEMBL3917939",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 30,
+   "n_backbone_atoms_matched": 1508,
+   "ligand_rmsd_A": 1.728,
+   "ligand_max_shift_A": 2.393,
+   "backbone_rmsd_A": 0.083,
+   "backbone_max_shift_A": 0.403
+  },
+  {
+   "accession": "P00811",
+   "chembl_id": "CHEMBL4115678",
+   "fixed": true,
+   "failed_before": [
+    "double_bond_flatness",
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 24,
+   "n_backbone_atoms_matched": 1508,
+   "ligand_rmsd_A": 1.633,
+   "ligand_max_shift_A": 3.011,
+   "backbone_rmsd_A": 0.075,
+   "backbone_max_shift_A": 0.35
+  },
+  {
+   "accession": "P00811",
+   "chembl_id": "CHEMBL46666",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 24,
+   "n_backbone_atoms_matched": 1508,
+   "ligand_rmsd_A": 0.694,
+   "ligand_max_shift_A": 1.159,
+   "backbone_rmsd_A": 0.08,
+   "backbone_max_shift_A": 0.396
+  },
+  {
+   "accession": "P00811",
+   "chembl_id": "CHEMBL51483",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 38,
+   "n_backbone_atoms_matched": 1508,
+   "ligand_rmsd_A": 0.571,
+   "ligand_max_shift_A": 1.653,
+   "backbone_rmsd_A": 0.081,
+   "backbone_max_shift_A": 0.466
+  },
+  {
+   "accession": "P01375",
+   "chembl_id": "CHEMBL127042",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 23,
+   "n_backbone_atoms_matched": 932,
+   "ligand_rmsd_A": 1.097,
+   "ligand_max_shift_A": 2.199,
+   "backbone_rmsd_A": 0.105,
+   "backbone_max_shift_A": 0.394
+  },
+  {
+   "accession": "P01375",
+   "chembl_id": "CHEMBL1519375",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 26,
+   "n_backbone_atoms_matched": 932,
+   "ligand_rmsd_A": 0.77,
+   "ligand_max_shift_A": 1.888,
+   "backbone_rmsd_A": 0.097,
+   "backbone_max_shift_A": 0.475
+  },
+  {
+   "accession": "P01375",
+   "chembl_id": "CHEMBL1531328",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 25,
+   "n_backbone_atoms_matched": 932,
+   "ligand_rmsd_A": 0.713,
+   "ligand_max_shift_A": 1.258,
+   "backbone_rmsd_A": 0.093,
+   "backbone_max_shift_A": 0.354
+  },
+  {
+   "accession": "P01375",
+   "chembl_id": "CHEMBL1569174",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 31,
+   "n_backbone_atoms_matched": 932,
+   "ligand_rmsd_A": 0.971,
+   "ligand_max_shift_A": 2.024,
+   "backbone_rmsd_A": 0.097,
+   "backbone_max_shift_A": 0.546
+  },
+  {
+   "accession": "P01375",
+   "chembl_id": "CHEMBL3326305",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 25,
+   "n_backbone_atoms_matched": 932,
+   "ligand_rmsd_A": 0.744,
+   "ligand_max_shift_A": 1.668,
+   "backbone_rmsd_A": 0.101,
+   "backbone_max_shift_A": 0.546
+  },
+  {
+   "accession": "P01375",
+   "chembl_id": "CHEMBL3326315",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 35,
+   "n_backbone_atoms_matched": 932,
+   "ligand_rmsd_A": 0.901,
+   "ligand_max_shift_A": 2.268,
+   "backbone_rmsd_A": 0.095,
+   "backbone_max_shift_A": 0.868
+  },
+  {
+   "accession": "P01375",
+   "chembl_id": "CHEMBL3642445",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 37,
+   "n_backbone_atoms_matched": 932,
+   "ligand_rmsd_A": 1.661,
+   "ligand_max_shift_A": 2.112,
+   "backbone_rmsd_A": 0.086,
+   "backbone_max_shift_A": 0.308
+  },
+  {
+   "accession": "P01375",
+   "chembl_id": "CHEMBL3642481",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 35,
+   "n_backbone_atoms_matched": 932,
+   "ligand_rmsd_A": 1.241,
+   "ligand_max_shift_A": 2.268,
+   "backbone_rmsd_A": 0.097,
+   "backbone_max_shift_A": 0.435
+  },
+  {
+   "accession": "P01375",
+   "chembl_id": "CHEMBL4742065",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 31,
+   "n_backbone_atoms_matched": 932,
+   "ligand_rmsd_A": 0.936,
+   "ligand_max_shift_A": 1.694,
+   "backbone_rmsd_A": 0.103,
+   "backbone_max_shift_A": 0.442
+  },
+  {
+   "accession": "P01375",
+   "chembl_id": "CHEMBL4785988",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 35,
+   "n_backbone_atoms_matched": 932,
+   "ligand_rmsd_A": 0.494,
+   "ligand_max_shift_A": 0.865,
+   "backbone_rmsd_A": 0.091,
+   "backbone_max_shift_A": 0.467
+  },
+  {
+   "accession": "P01375",
+   "chembl_id": "CHEMBL5774118",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 37,
+   "n_backbone_atoms_matched": 932,
+   "ligand_rmsd_A": 0.843,
+   "ligand_max_shift_A": 1.37,
+   "backbone_rmsd_A": 0.099,
+   "backbone_max_shift_A": 0.511
+  },
+  {
+   "accession": "P01375",
+   "chembl_id": "CHEMBL5930061",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 43,
+   "n_backbone_atoms_matched": 932,
+   "ligand_rmsd_A": 0.871,
+   "ligand_max_shift_A": 1.71,
+   "backbone_rmsd_A": 0.096,
+   "backbone_max_shift_A": 0.395
+  },
+  {
+   "accession": "P01375",
+   "chembl_id": "CHEMBL5939548",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 34,
+   "n_backbone_atoms_matched": 932,
+   "ligand_rmsd_A": 0.929,
+   "ligand_max_shift_A": 1.492,
+   "backbone_rmsd_A": 0.092,
+   "backbone_max_shift_A": 0.45
+  },
+  {
+   "accession": "P13945",
+   "chembl_id": "CHEMBL1016",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 33,
+   "n_backbone_atoms_matched": 1632,
+   "ligand_rmsd_A": 1.166,
+   "ligand_max_shift_A": 1.515,
+   "backbone_rmsd_A": 0.101,
+   "backbone_max_shift_A": 0.854
+  },
+  {
+   "accession": "P13945",
+   "chembl_id": "CHEMBL117405",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 18,
+   "n_backbone_atoms_matched": 1632,
+   "ligand_rmsd_A": 0.727,
+   "ligand_max_shift_A": 1.493,
+   "backbone_rmsd_A": 0.108,
+   "backbone_max_shift_A": 0.667
+  },
+  {
+   "accession": "P13945",
+   "chembl_id": "CHEMBL118",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 26,
+   "n_backbone_atoms_matched": 1632,
+   "ligand_rmsd_A": 0.731,
+   "ligand_max_shift_A": 1.329,
+   "backbone_rmsd_A": 0.103,
+   "backbone_max_shift_A": 0.722
+  },
+  {
+   "accession": "P13945",
+   "chembl_id": "CHEMBL184407",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 36,
+   "n_backbone_atoms_matched": 1632,
+   "ligand_rmsd_A": 0.682,
+   "ligand_max_shift_A": 1.577,
+   "backbone_rmsd_A": 0.101,
+   "backbone_max_shift_A": 0.835
+  },
+  {
+   "accession": "P13945",
+   "chembl_id": "CHEMBL357995",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 28,
+   "n_backbone_atoms_matched": 1632,
+   "ligand_rmsd_A": 0.744,
+   "ligand_max_shift_A": 1.425,
+   "backbone_rmsd_A": 0.102,
+   "backbone_max_shift_A": 0.825
+  },
+  {
+   "accession": "P13945",
+   "chembl_id": "CHEMBL434063",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 37,
+   "n_backbone_atoms_matched": 1632,
+   "ligand_rmsd_A": 0.771,
+   "ligand_max_shift_A": 2.302,
+   "backbone_rmsd_A": 0.106,
+   "backbone_max_shift_A": 0.579
+  },
+  {
+   "accession": "P13945",
+   "chembl_id": "CHEMBL5792571",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 38,
+   "n_backbone_atoms_matched": 1632,
+   "ligand_rmsd_A": 1.165,
+   "ligand_max_shift_A": 2.285,
+   "backbone_rmsd_A": 0.102,
+   "backbone_max_shift_A": 0.533
+  },
+  {
+   "accession": "P13945",
+   "chembl_id": "CHEMBL584",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 40,
+   "n_backbone_atoms_matched": 1632,
+   "ligand_rmsd_A": 0.837,
+   "ligand_max_shift_A": 1.809,
+   "backbone_rmsd_A": 0.102,
+   "backbone_max_shift_A": 0.631
+  },
+  {
+   "accession": "P13945",
+   "chembl_id": "CHEMBL7002",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 23,
+   "n_backbone_atoms_matched": 1632,
+   "ligand_rmsd_A": 1.346,
+   "ligand_max_shift_A": 2.492,
+   "backbone_rmsd_A": 0.102,
+   "backbone_max_shift_A": 0.459
+  },
+  {
+   "accession": "P13945",
+   "chembl_id": "CHEMBL726",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 30,
+   "n_backbone_atoms_matched": 1632,
+   "ligand_rmsd_A": 0.511,
+   "ligand_max_shift_A": 0.943,
+   "backbone_rmsd_A": 0.1,
+   "backbone_max_shift_A": 0.799
+  },
+  {
+   "accession": "P15121",
+   "chembl_id": "CHEMBL117",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 19,
+   "n_backbone_atoms_matched": 1264,
+   "ligand_rmsd_A": 0.932,
+   "ligand_max_shift_A": 1.468,
+   "backbone_rmsd_A": 0.088,
+   "backbone_max_shift_A": 0.561
+  },
+  {
+   "accession": "P15121",
+   "chembl_id": "CHEMBL170853",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 21,
+   "n_backbone_atoms_matched": 1264,
+   "ligand_rmsd_A": 1.201,
+   "ligand_max_shift_A": 1.531,
+   "backbone_rmsd_A": 0.09,
+   "backbone_max_shift_A": 0.506
+  },
+  {
+   "accession": "P15121",
+   "chembl_id": "CHEMBL171315",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 32,
+   "n_backbone_atoms_matched": 1264,
+   "ligand_rmsd_A": 0.868,
+   "ligand_max_shift_A": 1.553,
+   "backbone_rmsd_A": 0.086,
+   "backbone_max_shift_A": 0.506
+  },
+  {
+   "accession": "P15121",
+   "chembl_id": "CHEMBL1908021",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 20,
+   "n_backbone_atoms_matched": 1264,
+   "ligand_rmsd_A": 0.975,
+   "ligand_max_shift_A": 2.095,
+   "backbone_rmsd_A": 0.088,
+   "backbone_max_shift_A": 0.553
+  },
+  {
+   "accession": "P15121",
+   "chembl_id": "CHEMBL23588",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 20,
+   "n_backbone_atoms_matched": 1264,
+   "ligand_rmsd_A": 1.191,
+   "ligand_max_shift_A": 2.159,
+   "backbone_rmsd_A": 0.086,
+   "backbone_max_shift_A": 0.512
+  },
+  {
+   "accession": "P15121",
+   "chembl_id": "CHEMBL273910",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 28,
+   "n_backbone_atoms_matched": 1264,
+   "ligand_rmsd_A": 1.168,
+   "ligand_max_shift_A": 2.888,
+   "backbone_rmsd_A": 0.085,
+   "backbone_max_shift_A": 0.5
+  },
+  {
+   "accession": "P15121",
+   "chembl_id": "CHEMBL284616",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 25,
+   "n_backbone_atoms_matched": 1264,
+   "ligand_rmsd_A": 1.177,
+   "ligand_max_shift_A": 1.895,
+   "backbone_rmsd_A": 0.087,
+   "backbone_max_shift_A": 0.519
+  },
+  {
+   "accession": "P15121",
+   "chembl_id": "CHEMBL289277",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 20,
+   "n_backbone_atoms_matched": 1264,
+   "ligand_rmsd_A": 0.93,
+   "ligand_max_shift_A": 1.559,
+   "backbone_rmsd_A": 0.086,
+   "backbone_max_shift_A": 0.501
+  },
+  {
+   "accession": "P15121",
+   "chembl_id": "CHEMBL422920",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 15,
+   "n_backbone_atoms_matched": 1264,
+   "ligand_rmsd_A": 0.833,
+   "ligand_max_shift_A": 1.784,
+   "backbone_rmsd_A": 0.088,
+   "backbone_max_shift_A": 0.49
+  },
+  {
+   "accession": "P15121",
+   "chembl_id": "CHEMBL5428185",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 29,
+   "n_backbone_atoms_matched": 1264,
+   "ligand_rmsd_A": 0.847,
+   "ligand_max_shift_A": 1.15,
+   "backbone_rmsd_A": 0.092,
+   "backbone_max_shift_A": 0.507
+  },
+  {
+   "accession": "P15121",
+   "chembl_id": "CHEMBL56424",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein",
+    "volume_overlap_with_protein"
+   ],
+   "n_ligand_heavy_atoms": 19,
+   "n_backbone_atoms_matched": 1264,
+   "ligand_rmsd_A": 0.806,
+   "ligand_max_shift_A": 1.339,
+   "backbone_rmsd_A": 0.088,
+   "backbone_max_shift_A": 0.523
+  },
+  {
+   "accession": "P15121",
+   "chembl_id": "CHEMBL84446",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 20,
+   "n_backbone_atoms_matched": 1264,
+   "ligand_rmsd_A": 1.222,
+   "ligand_max_shift_A": 2.175,
+   "backbone_rmsd_A": 0.089,
+   "backbone_max_shift_A": 0.544
+  },
+  {
+   "accession": "P15692",
+   "chembl_id": "CHEMBL3115298",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 30,
+   "n_backbone_atoms_matched": 1580,
+   "ligand_rmsd_A": 0.983,
+   "ligand_max_shift_A": 1.814,
+   "backbone_rmsd_A": 0.134,
+   "backbone_max_shift_A": 0.879
+  },
+  {
+   "accession": "P15692",
+   "chembl_id": "CHEMBL3649596",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 29,
+   "n_backbone_atoms_matched": 1580,
+   "ligand_rmsd_A": 0.919,
+   "ligand_max_shift_A": 1.868,
+   "backbone_rmsd_A": 0.132,
+   "backbone_max_shift_A": 0.508
+  },
+  {
+   "accession": "P15692",
+   "chembl_id": "CHEMBL3649599",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 25,
+   "n_backbone_atoms_matched": 1580,
+   "ligand_rmsd_A": 0.706,
+   "ligand_max_shift_A": 1.69,
+   "backbone_rmsd_A": 0.144,
+   "backbone_max_shift_A": 0.631
+  },
+  {
+   "accession": "P15692",
+   "chembl_id": "CHEMBL3649601",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 32,
+   "n_backbone_atoms_matched": 1580,
+   "ligand_rmsd_A": 1.231,
+   "ligand_max_shift_A": 2.206,
+   "backbone_rmsd_A": 0.13,
+   "backbone_max_shift_A": 0.558
+  },
+  {
+   "accession": "P15692",
+   "chembl_id": "CHEMBL3649602",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 25,
+   "n_backbone_atoms_matched": 1580,
+   "ligand_rmsd_A": 1.081,
+   "ligand_max_shift_A": 1.853,
+   "backbone_rmsd_A": 0.126,
+   "backbone_max_shift_A": 0.611
+  },
+  {
+   "accession": "P15692",
+   "chembl_id": "CHEMBL5849473",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 26,
+   "n_backbone_atoms_matched": 1580,
+   "ligand_rmsd_A": 0.54,
+   "ligand_max_shift_A": 0.89,
+   "backbone_rmsd_A": 0.134,
+   "backbone_max_shift_A": 0.733
+  },
+  {
+   "accession": "P21556",
+   "chembl_id": "CHEMBL103753",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 32,
+   "n_backbone_atoms_matched": 1368,
+   "ligand_rmsd_A": 0.77,
+   "ligand_max_shift_A": 1.366,
+   "backbone_rmsd_A": 0.087,
+   "backbone_max_shift_A": 0.37
+  },
+  {
+   "accession": "P21556",
+   "chembl_id": "CHEMBL280164",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 31,
+   "n_backbone_atoms_matched": 1368,
+   "ligand_rmsd_A": 0.847,
+   "ligand_max_shift_A": 1.371,
+   "backbone_rmsd_A": 0.089,
+   "backbone_max_shift_A": 0.426
+  },
+  {
+   "accession": "P21556",
+   "chembl_id": "CHEMBL29067",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 44,
+   "n_backbone_atoms_matched": 1368,
+   "ligand_rmsd_A": 0.767,
+   "ligand_max_shift_A": 1.252,
+   "backbone_rmsd_A": 0.086,
+   "backbone_max_shift_A": 0.535
+  },
+  {
+   "accession": "P21556",
+   "chembl_id": "CHEMBL296973",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 43,
+   "n_backbone_atoms_matched": 1368,
+   "ligand_rmsd_A": 0.805,
+   "ligand_max_shift_A": 1.844,
+   "backbone_rmsd_A": 0.083,
+   "backbone_max_shift_A": 0.393
+  },
+  {
+   "accession": "P21556",
+   "chembl_id": "CHEMBL297624",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 29,
+   "n_backbone_atoms_matched": 1368,
+   "ligand_rmsd_A": 0.706,
+   "ligand_max_shift_A": 1.623,
+   "backbone_rmsd_A": 0.082,
+   "backbone_max_shift_A": 0.368
+  },
+  {
+   "accession": "P21556",
+   "chembl_id": "CHEMBL303357",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 28,
+   "n_backbone_atoms_matched": 1368,
+   "ligand_rmsd_A": 1.084,
+   "ligand_max_shift_A": 1.998,
+   "backbone_rmsd_A": 0.092,
+   "backbone_max_shift_A": 0.708
+  },
+  {
+   "accession": "P21556",
+   "chembl_id": "CHEMBL325439",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 32,
+   "n_backbone_atoms_matched": 1368,
+   "ligand_rmsd_A": 0.584,
+   "ligand_max_shift_A": 0.878,
+   "backbone_rmsd_A": 0.081,
+   "backbone_max_shift_A": 0.391
+  },
+  {
+   "accession": "P21556",
+   "chembl_id": "CHEMBL6270",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 43,
+   "n_backbone_atoms_matched": 1368,
+   "ligand_rmsd_A": 0.597,
+   "ligand_max_shift_A": 1.285,
+   "backbone_rmsd_A": 0.089,
+   "backbone_max_shift_A": 0.412
+  },
+  {
+   "accession": "P21556",
+   "chembl_id": "CHEMBL64449",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 31,
+   "n_backbone_atoms_matched": 1368,
+   "ligand_rmsd_A": 0.881,
+   "ligand_max_shift_A": 1.469,
+   "backbone_rmsd_A": 0.087,
+   "backbone_max_shift_A": 0.409
+  },
+  {
+   "accession": "P21731",
+   "chembl_id": "CHEMBL277689",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 33,
+   "n_backbone_atoms_matched": 1372,
+   "ligand_rmsd_A": 0.803,
+   "ligand_max_shift_A": 1.216,
+   "backbone_rmsd_A": 0.086,
+   "backbone_max_shift_A": 0.374
+  },
+  {
+   "accession": "P21731",
+   "chembl_id": "CHEMBL283128",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 25,
+   "n_backbone_atoms_matched": 1372,
+   "ligand_rmsd_A": 0.543,
+   "ligand_max_shift_A": 1.266,
+   "backbone_rmsd_A": 0.084,
+   "backbone_max_shift_A": 0.593
+  },
+  {
+   "accession": "P21731",
+   "chembl_id": "CHEMBL324256",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 31,
+   "n_backbone_atoms_matched": 1372,
+   "ligand_rmsd_A": 0.63,
+   "ligand_max_shift_A": 1.109,
+   "backbone_rmsd_A": 0.086,
+   "backbone_max_shift_A": 0.337
+  },
+  {
+   "accession": "P21731",
+   "chembl_id": "CHEMBL361939",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 31,
+   "n_backbone_atoms_matched": 1372,
+   "ligand_rmsd_A": 0.555,
+   "ligand_max_shift_A": 1.027,
+   "backbone_rmsd_A": 0.084,
+   "backbone_max_shift_A": 0.54
+  },
+  {
+   "accession": "P21731",
+   "chembl_id": "CHEMBL383484",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 31,
+   "n_backbone_atoms_matched": 1372,
+   "ligand_rmsd_A": 0.564,
+   "ligand_max_shift_A": 1.396,
+   "backbone_rmsd_A": 0.082,
+   "backbone_max_shift_A": 0.405
+  },
+  {
+   "accession": "P21731",
+   "chembl_id": "CHEMBL561132",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 29,
+   "n_backbone_atoms_matched": 1372,
+   "ligand_rmsd_A": 0.655,
+   "ligand_max_shift_A": 1.43,
+   "backbone_rmsd_A": 0.08,
+   "backbone_max_shift_A": 0.485
+  },
+  {
+   "accession": "P25103",
+   "chembl_id": "CHEMBL119990",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 34,
+   "n_backbone_atoms_matched": 1628,
+   "ligand_rmsd_A": 0.663,
+   "ligand_max_shift_A": 1.356,
+   "backbone_rmsd_A": 0.099,
+   "backbone_max_shift_A": 0.71
+  },
+  {
+   "accession": "P25103",
+   "chembl_id": "CHEMBL149326",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 45,
+   "n_backbone_atoms_matched": 1628,
+   "ligand_rmsd_A": 0.552,
+   "ligand_max_shift_A": 1.177,
+   "backbone_rmsd_A": 0.097,
+   "backbone_max_shift_A": 0.661
+  },
+  {
+   "accession": "P25103",
+   "chembl_id": "CHEMBL21815",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 35,
+   "n_backbone_atoms_matched": 1628,
+   "ligand_rmsd_A": 0.653,
+   "ligand_max_shift_A": 1.172,
+   "backbone_rmsd_A": 0.104,
+   "backbone_max_shift_A": 0.534
+  },
+  {
+   "accession": "P25103",
+   "chembl_id": "CHEMBL23129",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 27,
+   "n_backbone_atoms_matched": 1628,
+   "ligand_rmsd_A": 1.634,
+   "ligand_max_shift_A": 4.58,
+   "backbone_rmsd_A": 0.101,
+   "backbone_max_shift_A": 0.789
+  },
+  {
+   "accession": "P25103",
+   "chembl_id": "CHEMBL281940",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 32,
+   "n_backbone_atoms_matched": 1628,
+   "ligand_rmsd_A": 0.56,
+   "ligand_max_shift_A": 1.053,
+   "backbone_rmsd_A": 0.096,
+   "backbone_max_shift_A": 0.979
+  },
+  {
+   "accession": "P25103",
+   "chembl_id": "CHEMBL307488",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 37,
+   "n_backbone_atoms_matched": 1628,
+   "ligand_rmsd_A": 0.95,
+   "ligand_max_shift_A": 2.25,
+   "backbone_rmsd_A": 0.101,
+   "backbone_max_shift_A": 0.582
+  },
+  {
+   "accession": "P25103",
+   "chembl_id": "CHEMBL308148",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 38,
+   "n_backbone_atoms_matched": 1628,
+   "ligand_rmsd_A": 1.212,
+   "ligand_max_shift_A": 2.022,
+   "backbone_rmsd_A": 0.095,
+   "backbone_max_shift_A": 0.486
+  },
+  {
+   "accession": "P25103",
+   "chembl_id": "CHEMBL346178",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 42,
+   "n_backbone_atoms_matched": 1628,
+   "ligand_rmsd_A": 0.864,
+   "ligand_max_shift_A": 1.918,
+   "backbone_rmsd_A": 0.117,
+   "backbone_max_shift_A": 1.129
+  },
+  {
+   "accession": "P25103",
+   "chembl_id": "CHEMBL3608741",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 27,
+   "n_backbone_atoms_matched": 1628,
+   "ligand_rmsd_A": 0.859,
+   "ligand_max_shift_A": 1.48,
+   "backbone_rmsd_A": 0.094,
+   "backbone_max_shift_A": 0.435
+  },
+  {
+   "accession": "P25103",
+   "chembl_id": "CHEMBL52330",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 35,
+   "n_backbone_atoms_matched": 1628,
+   "ligand_rmsd_A": 0.607,
+   "ligand_max_shift_A": 1.296,
+   "backbone_rmsd_A": 0.1,
+   "backbone_max_shift_A": 0.472
+  },
+  {
+   "accession": "P25105",
+   "chembl_id": "CHEMBL10971",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 25,
+   "n_backbone_atoms_matched": 1368,
+   "ligand_rmsd_A": 0.468,
+   "ligand_max_shift_A": 1.108,
+   "backbone_rmsd_A": 0.094,
+   "backbone_max_shift_A": 0.443
+  },
+  {
+   "accession": "P25105",
+   "chembl_id": "CHEMBL160692",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 35,
+   "n_backbone_atoms_matched": 1368,
+   "ligand_rmsd_A": 1.094,
+   "ligand_max_shift_A": 2.712,
+   "backbone_rmsd_A": 0.093,
+   "backbone_max_shift_A": 0.413
+  },
+  {
+   "accession": "P25105",
+   "chembl_id": "CHEMBL20359",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 22,
+   "n_backbone_atoms_matched": 1368,
+   "ligand_rmsd_A": 0.633,
+   "ligand_max_shift_A": 1.193,
+   "backbone_rmsd_A": 0.088,
+   "backbone_max_shift_A": 0.365
+  },
+  {
+   "accession": "P25105",
+   "chembl_id": "CHEMBL297624",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 29,
+   "n_backbone_atoms_matched": 1368,
+   "ligand_rmsd_A": 0.948,
+   "ligand_max_shift_A": 1.689,
+   "backbone_rmsd_A": 0.099,
+   "backbone_max_shift_A": 0.538
+  },
+  {
+   "accession": "P25105",
+   "chembl_id": "CHEMBL299944",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 35,
+   "n_backbone_atoms_matched": 1368,
+   "ligand_rmsd_A": 0.77,
+   "ligand_max_shift_A": 1.583,
+   "backbone_rmsd_A": 0.097,
+   "backbone_max_shift_A": 0.581
+  },
+  {
+   "accession": "P30518",
+   "chembl_id": "CHEMBL104839",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 45,
+   "n_backbone_atoms_matched": 1484,
+   "ligand_rmsd_A": 1.164,
+   "ligand_max_shift_A": 3.376,
+   "backbone_rmsd_A": 0.102,
+   "backbone_max_shift_A": 0.586
+  },
+  {
+   "accession": "P30518",
+   "chembl_id": "CHEMBL3890193",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 31,
+   "n_backbone_atoms_matched": 1484,
+   "ligand_rmsd_A": 1.079,
+   "ligand_max_shift_A": 2.584,
+   "backbone_rmsd_A": 0.116,
+   "backbone_max_shift_A": 0.853
+  },
+  {
+   "accession": "P30518",
+   "chembl_id": "CHEMBL3920097",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 33,
+   "n_backbone_atoms_matched": 1484,
+   "ligand_rmsd_A": 0.911,
+   "ligand_max_shift_A": 1.442,
+   "backbone_rmsd_A": 0.109,
+   "backbone_max_shift_A": 0.619
+  },
+  {
+   "accession": "P30518",
+   "chembl_id": "CHEMBL3949118",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 38,
+   "n_backbone_atoms_matched": 1484,
+   "ligand_rmsd_A": 0.684,
+   "ligand_max_shift_A": 1.218,
+   "backbone_rmsd_A": 0.1,
+   "backbone_max_shift_A": 0.597
+  },
+  {
+   "accession": "P30518",
+   "chembl_id": "CHEMBL603708",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 34,
+   "n_backbone_atoms_matched": 1484,
+   "ligand_rmsd_A": 0.591,
+   "ligand_max_shift_A": 1.302,
+   "backbone_rmsd_A": 0.104,
+   "backbone_max_shift_A": 0.548
+  },
+  {
+   "accession": "P30556",
+   "chembl_id": "CHEMBL2063984",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 30,
+   "n_backbone_atoms_matched": 1436,
+   "ligand_rmsd_A": 1.125,
+   "ligand_max_shift_A": 2.349,
+   "backbone_rmsd_A": 0.097,
+   "backbone_max_shift_A": 0.599
+  },
+  {
+   "accession": "P30556",
+   "chembl_id": "CHEMBL278176",
+   "fixed": false,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 49,
+   "n_backbone_atoms_matched": 1436,
+   "ligand_rmsd_A": 0.867,
+   "ligand_max_shift_A": 1.568,
+   "backbone_rmsd_A": 0.106,
+   "backbone_max_shift_A": 0.694
+  },
+  {
+   "accession": "P30556",
+   "chembl_id": "CHEMBL5276125",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 29,
+   "n_backbone_atoms_matched": 1436,
+   "ligand_rmsd_A": 0.504,
+   "ligand_max_shift_A": 1.692,
+   "backbone_rmsd_A": 0.1,
+   "backbone_max_shift_A": 0.474
+  },
+  {
+   "accession": "P30556",
+   "chembl_id": "CHEMBL72053",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 33,
+   "n_backbone_atoms_matched": 1436,
+   "ligand_rmsd_A": 0.737,
+   "ligand_max_shift_A": 1.724,
+   "backbone_rmsd_A": 0.108,
+   "backbone_max_shift_A": 0.511
+  },
+  {
+   "accession": "P30559",
+   "chembl_id": "CHEMBL1254024",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 35,
+   "n_backbone_atoms_matched": 1556,
+   "ligand_rmsd_A": 0.791,
+   "ligand_max_shift_A": 1.52,
+   "backbone_rmsd_A": 0.105,
+   "backbone_max_shift_A": 0.583
+  },
+  {
+   "accession": "P30559",
+   "chembl_id": "CHEMBL200368",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 32,
+   "n_backbone_atoms_matched": 1556,
+   "ligand_rmsd_A": 1.224,
+   "ligand_max_shift_A": 1.756,
+   "backbone_rmsd_A": 0.11,
+   "backbone_max_shift_A": 1.165
+  },
+  {
+   "accession": "P30559",
+   "chembl_id": "CHEMBL2017869",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 41,
+   "n_backbone_atoms_matched": 1556,
+   "ligand_rmsd_A": 0.742,
+   "ligand_max_shift_A": 1.614,
+   "backbone_rmsd_A": 0.095,
+   "backbone_max_shift_A": 0.592
+  },
+  {
+   "accession": "P30559",
+   "chembl_id": "CHEMBL2113185",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 41,
+   "n_backbone_atoms_matched": 1556,
+   "ligand_rmsd_A": 1.814,
+   "ligand_max_shift_A": 3.211,
+   "backbone_rmsd_A": 0.099,
+   "backbone_max_shift_A": 0.521
+  },
+  {
+   "accession": "P30559",
+   "chembl_id": "CHEMBL24781",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 37,
+   "n_backbone_atoms_matched": 1556,
+   "ligand_rmsd_A": 0.607,
+   "ligand_max_shift_A": 1.363,
+   "backbone_rmsd_A": 0.107,
+   "backbone_max_shift_A": 0.712
+  },
+  {
+   "accession": "P30559",
+   "chembl_id": "CHEMBL3763823",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 39,
+   "n_backbone_atoms_matched": 1556,
+   "ligand_rmsd_A": 0.812,
+   "ligand_max_shift_A": 1.528,
+   "backbone_rmsd_A": 0.113,
+   "backbone_max_shift_A": 0.779
+  },
+  {
+   "accession": "P30559",
+   "chembl_id": "CHEMBL4205046",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 29,
+   "n_backbone_atoms_matched": 1556,
+   "ligand_rmsd_A": 0.459,
+   "ligand_max_shift_A": 0.764,
+   "backbone_rmsd_A": 0.112,
+   "backbone_max_shift_A": 0.485
+  },
+  {
+   "accession": "P30559",
+   "chembl_id": "CHEMBL467378",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 28,
+   "n_backbone_atoms_matched": 1556,
+   "ligand_rmsd_A": 1.03,
+   "ligand_max_shift_A": 1.534,
+   "backbone_rmsd_A": 0.104,
+   "backbone_max_shift_A": 0.72
+  },
+  {
+   "accession": "P30559",
+   "chembl_id": "CHEMBL475395",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 26,
+   "n_backbone_atoms_matched": 1556,
+   "ligand_rmsd_A": 0.8,
+   "ligand_max_shift_A": 1.29,
+   "backbone_rmsd_A": 0.111,
+   "backbone_max_shift_A": 0.609
+  },
+  {
+   "accession": "P30559",
+   "chembl_id": "CHEMBL6000224",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 36,
+   "n_backbone_atoms_matched": 1556,
+   "ligand_rmsd_A": 1.191,
+   "ligand_max_shift_A": 3.163,
+   "backbone_rmsd_A": 0.109,
+   "backbone_max_shift_A": 0.75
+  },
+  {
+   "accession": "P30874",
+   "chembl_id": "CHEMBL103769",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 32,
+   "n_backbone_atoms_matched": 1476,
+   "ligand_rmsd_A": 0.823,
+   "ligand_max_shift_A": 1.4,
+   "backbone_rmsd_A": 0.102,
+   "backbone_max_shift_A": 0.518
+  },
+  {
+   "accession": "P30874",
+   "chembl_id": "CHEMBL5175637",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 35,
+   "n_backbone_atoms_matched": 1476,
+   "ligand_rmsd_A": 1.157,
+   "ligand_max_shift_A": 2.393,
+   "backbone_rmsd_A": 0.103,
+   "backbone_max_shift_A": 0.449
+  },
+  {
+   "accession": "P30874",
+   "chembl_id": "CHEMBL5202717",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 33,
+   "n_backbone_atoms_matched": 1476,
+   "ligand_rmsd_A": 1.286,
+   "ligand_max_shift_A": 1.923,
+   "backbone_rmsd_A": 0.127,
+   "backbone_max_shift_A": 1.298
+  },
+  {
+   "accession": "P30968",
+   "chembl_id": "CHEMBL11149",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 35,
+   "n_backbone_atoms_matched": 1312,
+   "ligand_rmsd_A": 1.173,
+   "ligand_max_shift_A": 2.529,
+   "backbone_rmsd_A": 0.104,
+   "backbone_max_shift_A": 0.459
+  },
+  {
+   "accession": "P30968",
+   "chembl_id": "CHEMBL112466",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 38,
+   "n_backbone_atoms_matched": 1312,
+   "ligand_rmsd_A": 1.129,
+   "ligand_max_shift_A": 2.959,
+   "backbone_rmsd_A": 0.104,
+   "backbone_max_shift_A": 0.562
+  },
+  {
+   "accession": "P30968",
+   "chembl_id": "CHEMBL1800157",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 47,
+   "n_backbone_atoms_matched": 1312,
+   "ligand_rmsd_A": 1.082,
+   "ligand_max_shift_A": 2.977,
+   "backbone_rmsd_A": 0.099,
+   "backbone_max_shift_A": 0.644
+  },
+  {
+   "accession": "P30968",
+   "chembl_id": "CHEMBL183066",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 37,
+   "n_backbone_atoms_matched": 1312,
+   "ligand_rmsd_A": 0.649,
+   "ligand_max_shift_A": 1.704,
+   "backbone_rmsd_A": 0.108,
+   "backbone_max_shift_A": 0.893
+  },
+  {
+   "accession": "P30968",
+   "chembl_id": "CHEMBL22653",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 36,
+   "n_backbone_atoms_matched": 1312,
+   "ligand_rmsd_A": 0.629,
+   "ligand_max_shift_A": 1.401,
+   "backbone_rmsd_A": 0.102,
+   "backbone_max_shift_A": 0.574
+  },
+  {
+   "accession": "P30968",
+   "chembl_id": "CHEMBL22929",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 40,
+   "n_backbone_atoms_matched": 1312,
+   "ligand_rmsd_A": 0.893,
+   "ligand_max_shift_A": 2.835,
+   "backbone_rmsd_A": 0.101,
+   "backbone_max_shift_A": 0.653
+  },
+  {
+   "accession": "P30968",
+   "chembl_id": "CHEMBL261145",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 36,
+   "n_backbone_atoms_matched": 1312,
+   "ligand_rmsd_A": 1.022,
+   "ligand_max_shift_A": 2.581,
+   "backbone_rmsd_A": 0.105,
+   "backbone_max_shift_A": 0.613
+  },
+  {
+   "accession": "P30968",
+   "chembl_id": "CHEMBL296199",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 38,
+   "n_backbone_atoms_matched": 1312,
+   "ligand_rmsd_A": 1.018,
+   "ligand_max_shift_A": 1.719,
+   "backbone_rmsd_A": 0.105,
+   "backbone_max_shift_A": 0.602
+  },
+  {
+   "accession": "P30968",
+   "chembl_id": "CHEMBL302769",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 49,
+   "n_backbone_atoms_matched": 1312,
+   "ligand_rmsd_A": 0.917,
+   "ligand_max_shift_A": 2.591,
+   "backbone_rmsd_A": 0.107,
+   "backbone_max_shift_A": 0.563
+  },
+  {
+   "accession": "P30968",
+   "chembl_id": "CHEMBL387006",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 48,
+   "n_backbone_atoms_matched": 1312,
+   "ligand_rmsd_A": 0.935,
+   "ligand_max_shift_A": 1.711,
+   "backbone_rmsd_A": 0.106,
+   "backbone_max_shift_A": 0.691
+  },
+  {
+   "accession": "P30968",
+   "chembl_id": "CHEMBL401193",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 42,
+   "n_backbone_atoms_matched": 1312,
+   "ligand_rmsd_A": 0.83,
+   "ligand_max_shift_A": 1.472,
+   "backbone_rmsd_A": 0.105,
+   "backbone_max_shift_A": 1.124
+  },
+  {
+   "accession": "P30968",
+   "chembl_id": "CHEMBL423291",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 40,
+   "n_backbone_atoms_matched": 1312,
+   "ligand_rmsd_A": 0.502,
+   "ligand_max_shift_A": 1.046,
+   "backbone_rmsd_A": 0.105,
+   "backbone_max_shift_A": 0.542
+  },
+  {
+   "accession": "P30968",
+   "chembl_id": "CHEMBL425523",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 39,
+   "n_backbone_atoms_matched": 1312,
+   "ligand_rmsd_A": 0.925,
+   "ligand_max_shift_A": 1.876,
+   "backbone_rmsd_A": 0.102,
+   "backbone_max_shift_A": 0.552
+  },
+  {
+   "accession": "P30968",
+   "chembl_id": "CHEMBL434936",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 38,
+   "n_backbone_atoms_matched": 1312,
+   "ligand_rmsd_A": 0.95,
+   "ligand_max_shift_A": 1.66,
+   "backbone_rmsd_A": 0.101,
+   "backbone_max_shift_A": 0.713
+  },
+  {
+   "accession": "P30968",
+   "chembl_id": "CHEMBL460480",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 36,
+   "n_backbone_atoms_matched": 1312,
+   "ligand_rmsd_A": 0.688,
+   "ligand_max_shift_A": 1.275,
+   "backbone_rmsd_A": 0.098,
+   "backbone_max_shift_A": 0.466
+  },
+  {
+   "accession": "P30968",
+   "chembl_id": "CHEMBL474991",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 36,
+   "n_backbone_atoms_matched": 1312,
+   "ligand_rmsd_A": 0.884,
+   "ligand_max_shift_A": 1.2,
+   "backbone_rmsd_A": 0.103,
+   "backbone_max_shift_A": 0.619
+  },
+  {
+   "accession": "P30968",
+   "chembl_id": "CHEMBL4749974",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 38,
+   "n_backbone_atoms_matched": 1312,
+   "ligand_rmsd_A": 1.28,
+   "ligand_max_shift_A": 2.828,
+   "backbone_rmsd_A": 0.107,
+   "backbone_max_shift_A": 1.049
+  },
+  {
+   "accession": "P30968",
+   "chembl_id": "CHEMBL48192",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 39,
+   "n_backbone_atoms_matched": 1312,
+   "ligand_rmsd_A": 0.57,
+   "ligand_max_shift_A": 1.225,
+   "backbone_rmsd_A": 0.103,
+   "backbone_max_shift_A": 0.657
+  },
+  {
+   "accession": "P30968",
+   "chembl_id": "CHEMBL487627",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 33,
+   "n_backbone_atoms_matched": 1312,
+   "ligand_rmsd_A": 0.606,
+   "ligand_max_shift_A": 1.43,
+   "backbone_rmsd_A": 0.105,
+   "backbone_max_shift_A": 0.675
+  },
+  {
+   "accession": "P30968",
+   "chembl_id": "CHEMBL50663",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 39,
+   "n_backbone_atoms_matched": 1312,
+   "ligand_rmsd_A": 0.701,
+   "ligand_max_shift_A": 1.27,
+   "backbone_rmsd_A": 0.102,
+   "backbone_max_shift_A": 0.624
+  },
+  {
+   "accession": "P31213",
+   "chembl_id": "CHEMBL24850",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 20,
+   "n_backbone_atoms_matched": 1016,
+   "ligand_rmsd_A": 1.535,
+   "ligand_max_shift_A": 2.386,
+   "backbone_rmsd_A": 0.104,
+   "backbone_max_shift_A": 0.655
+  },
+  {
+   "accession": "P31213",
+   "chembl_id": "CHEMBL25093",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 26,
+   "n_backbone_atoms_matched": 1016,
+   "ligand_rmsd_A": 0.535,
+   "ligand_max_shift_A": 0.869,
+   "backbone_rmsd_A": 0.092,
+   "backbone_max_shift_A": 0.458
+  },
+  {
+   "accession": "P31213",
+   "chembl_id": "CHEMBL300446",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 25,
+   "n_backbone_atoms_matched": 1016,
+   "ligand_rmsd_A": 0.825,
+   "ligand_max_shift_A": 1.374,
+   "backbone_rmsd_A": 0.095,
+   "backbone_max_shift_A": 0.436
+  },
+  {
+   "accession": "P33534",
+   "chembl_id": "CHEMBL107670",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 26,
+   "n_backbone_atoms_matched": 1520,
+   "ligand_rmsd_A": 0.814,
+   "ligand_max_shift_A": 1.354,
+   "backbone_rmsd_A": 0.098,
+   "backbone_max_shift_A": 0.394
+  },
+  {
+   "accession": "P33534",
+   "chembl_id": "CHEMBL13470",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 33,
+   "n_backbone_atoms_matched": 1520,
+   "ligand_rmsd_A": 0.805,
+   "ligand_max_shift_A": 2.744,
+   "backbone_rmsd_A": 0.092,
+   "backbone_max_shift_A": 0.466
+  },
+  {
+   "accession": "P33534",
+   "chembl_id": "CHEMBL4846243",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 27,
+   "n_backbone_atoms_matched": 1520,
+   "ligand_rmsd_A": 0.833,
+   "ligand_max_shift_A": 1.587,
+   "backbone_rmsd_A": 0.101,
+   "backbone_max_shift_A": 0.569
+  },
+  {
+   "accession": "P33534",
+   "chembl_id": "CHEMBL4852987",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 30,
+   "n_backbone_atoms_matched": 1520,
+   "ligand_rmsd_A": 1.395,
+   "ligand_max_shift_A": 3.332,
+   "backbone_rmsd_A": 0.09,
+   "backbone_max_shift_A": 0.372
+  },
+  {
+   "accession": "P33534",
+   "chembl_id": "CHEMBL70",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 21,
+   "n_backbone_atoms_matched": 1520,
+   "ligand_rmsd_A": 0.77,
+   "ligand_max_shift_A": 1.315,
+   "backbone_rmsd_A": 0.109,
+   "backbone_max_shift_A": 1.081
+  },
+  {
+   "accession": "P34995",
+   "chembl_id": "CHEMBL123794",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 29,
+   "n_backbone_atoms_matched": 1608,
+   "ligand_rmsd_A": 0.973,
+   "ligand_max_shift_A": 1.523,
+   "backbone_rmsd_A": 0.114,
+   "backbone_max_shift_A": 0.828
+  },
+  {
+   "accession": "P34995",
+   "chembl_id": "CHEMBL234398",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 32,
+   "n_backbone_atoms_matched": 1608,
+   "ligand_rmsd_A": 0.763,
+   "ligand_max_shift_A": 1.472,
+   "backbone_rmsd_A": 0.101,
+   "backbone_max_shift_A": 0.661
+  },
+  {
+   "accession": "P34995",
+   "chembl_id": "CHEMBL290969",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 28,
+   "n_backbone_atoms_matched": 1608,
+   "ligand_rmsd_A": 0.838,
+   "ligand_max_shift_A": 1.677,
+   "backbone_rmsd_A": 0.109,
+   "backbone_max_shift_A": 0.569
+  },
+  {
+   "accession": "P34995",
+   "chembl_id": "CHEMBL548",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 25,
+   "n_backbone_atoms_matched": 1608,
+   "ligand_rmsd_A": 0.5,
+   "ligand_max_shift_A": 1.346,
+   "backbone_rmsd_A": 0.096,
+   "backbone_max_shift_A": 0.515
+  },
+  {
+   "accession": "P34995",
+   "chembl_id": "CHEMBL87371",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 27,
+   "n_backbone_atoms_matched": 1608,
+   "ligand_rmsd_A": 1.038,
+   "ligand_max_shift_A": 2.0,
+   "backbone_rmsd_A": 0.102,
+   "backbone_max_shift_A": 0.937
+  },
+  {
+   "accession": "P34998",
+   "chembl_id": "CHEMBL183148",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 28,
+   "n_backbone_atoms_matched": 1660,
+   "ligand_rmsd_A": 0.73,
+   "ligand_max_shift_A": 1.515,
+   "backbone_rmsd_A": 0.087,
+   "backbone_max_shift_A": 0.478
+  },
+  {
+   "accession": "P34998",
+   "chembl_id": "CHEMBL2046526",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 32,
+   "n_backbone_atoms_matched": 1660,
+   "ligand_rmsd_A": 1.162,
+   "ligand_max_shift_A": 2.622,
+   "backbone_rmsd_A": 0.096,
+   "backbone_max_shift_A": 0.761
+  },
+  {
+   "accession": "P34998",
+   "chembl_id": "CHEMBL2049190",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 28,
+   "n_backbone_atoms_matched": 1660,
+   "ligand_rmsd_A": 1.359,
+   "ligand_max_shift_A": 2.942,
+   "backbone_rmsd_A": 0.085,
+   "backbone_max_shift_A": 0.431
+  },
+  {
+   "accession": "P34998",
+   "chembl_id": "CHEMBL286494",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 38,
+   "n_backbone_atoms_matched": 1660,
+   "ligand_rmsd_A": 0.957,
+   "ligand_max_shift_A": 1.732,
+   "backbone_rmsd_A": 0.087,
+   "backbone_max_shift_A": 0.392
+  },
+  {
+   "accession": "P34998",
+   "chembl_id": "CHEMBL3652116",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 25,
+   "n_backbone_atoms_matched": 1660,
+   "ligand_rmsd_A": 0.841,
+   "ligand_max_shift_A": 1.345,
+   "backbone_rmsd_A": 0.086,
+   "backbone_max_shift_A": 0.352
+  },
+  {
+   "accession": "P34998",
+   "chembl_id": "CHEMBL4069551",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 26,
+   "n_backbone_atoms_matched": 1660,
+   "ligand_rmsd_A": 0.644,
+   "ligand_max_shift_A": 1.214,
+   "backbone_rmsd_A": 0.098,
+   "backbone_max_shift_A": 0.567
+  },
+  {
+   "accession": "P37288",
+   "chembl_id": "CHEMBL114",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 49,
+   "n_backbone_atoms_matched": 1672,
+   "ligand_rmsd_A": 1.158,
+   "ligand_max_shift_A": 2.985,
+   "backbone_rmsd_A": 0.12,
+   "backbone_max_shift_A": 0.764
+  },
+  {
+   "accession": "P37288",
+   "chembl_id": "CHEMBL2017291",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 31,
+   "n_backbone_atoms_matched": 1672,
+   "ligand_rmsd_A": 0.895,
+   "ligand_max_shift_A": 2.157,
+   "backbone_rmsd_A": 0.112,
+   "backbone_max_shift_A": 0.792
+  },
+  {
+   "accession": "P37288",
+   "chembl_id": "CHEMBL2017869",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 41,
+   "n_backbone_atoms_matched": 1672,
+   "ligand_rmsd_A": 0.783,
+   "ligand_max_shift_A": 1.861,
+   "backbone_rmsd_A": 0.115,
+   "backbone_max_shift_A": 0.873
+  },
+  {
+   "accession": "P37288",
+   "chembl_id": "CHEMBL3416858",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 29,
+   "n_backbone_atoms_matched": 1672,
+   "ligand_rmsd_A": 0.939,
+   "ligand_max_shift_A": 1.806,
+   "backbone_rmsd_A": 0.117,
+   "backbone_max_shift_A": 0.604
+  },
+  {
+   "accession": "P37288",
+   "chembl_id": "CHEMBL3763951",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 45,
+   "n_backbone_atoms_matched": 1672,
+   "ligand_rmsd_A": 1.083,
+   "ligand_max_shift_A": 3.247,
+   "backbone_rmsd_A": 0.119,
+   "backbone_max_shift_A": 1.321
+  },
+  {
+   "accession": "P37288",
+   "chembl_id": "CHEMBL3890193",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 31,
+   "n_backbone_atoms_matched": 1672,
+   "ligand_rmsd_A": 0.729,
+   "ligand_max_shift_A": 1.346,
+   "backbone_rmsd_A": 0.121,
+   "backbone_max_shift_A": 0.934
+  },
+  {
+   "accession": "P37288",
+   "chembl_id": "CHEMBL3920097",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 33,
+   "n_backbone_atoms_matched": 1672,
+   "ligand_rmsd_A": 1.094,
+   "ligand_max_shift_A": 2.346,
+   "backbone_rmsd_A": 0.13,
+   "backbone_max_shift_A": 1.33
+  },
+  {
+   "accession": "P37288",
+   "chembl_id": "CHEMBL3943296",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 39,
+   "n_backbone_atoms_matched": 1672,
+   "ligand_rmsd_A": 1.414,
+   "ligand_max_shift_A": 2.396,
+   "backbone_rmsd_A": 0.121,
+   "backbone_max_shift_A": 0.776
+  },
+  {
+   "accession": "P37288",
+   "chembl_id": "CHEMBL411",
+   "fixed": false,
+   "failed_before": [
+    "double_bond_flatness"
+   ],
+   "n_ligand_heavy_atoms": 20,
+   "n_backbone_atoms_matched": 1672,
+   "ligand_rmsd_A": 1.449,
+   "ligand_max_shift_A": 2.201,
+   "backbone_rmsd_A": 0.112,
+   "backbone_max_shift_A": 0.712
+  },
+  {
+   "accession": "P37288",
+   "chembl_id": "CHEMBL467378",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 28,
+   "n_backbone_atoms_matched": 1672,
+   "ligand_rmsd_A": 0.689,
+   "ligand_max_shift_A": 1.821,
+   "backbone_rmsd_A": 0.111,
+   "backbone_max_shift_A": 0.605
+  },
+  {
+   "accession": "P37288",
+   "chembl_id": "CHEMBL5989228",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 29,
+   "n_backbone_atoms_matched": 1672,
+   "ligand_rmsd_A": 0.604,
+   "ligand_max_shift_A": 1.169,
+   "backbone_rmsd_A": 0.112,
+   "backbone_max_shift_A": 0.547
+  },
+  {
+   "accession": "P37288",
+   "chembl_id": "CHEMBL603708",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 34,
+   "n_backbone_atoms_matched": 1672,
+   "ligand_rmsd_A": 0.834,
+   "ligand_max_shift_A": 1.281,
+   "backbone_rmsd_A": 0.117,
+   "backbone_max_shift_A": 0.686
+  },
+  {
+   "accession": "P37288",
+   "chembl_id": "CHEMBL6101825",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 34,
+   "n_backbone_atoms_matched": 1672,
+   "ligand_rmsd_A": 0.868,
+   "ligand_max_shift_A": 1.776,
+   "backbone_rmsd_A": 0.122,
+   "backbone_max_shift_A": 0.857
+  },
+  {
+   "accession": "P41146",
+   "chembl_id": "CHEMBL211390",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 30,
+   "n_backbone_atoms_matched": 1480,
+   "ligand_rmsd_A": 1.278,
+   "ligand_max_shift_A": 2.416,
+   "backbone_rmsd_A": 0.095,
+   "backbone_max_shift_A": 0.418
+  },
+  {
+   "accession": "P41146",
+   "chembl_id": "CHEMBL3262089",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 36,
+   "n_backbone_atoms_matched": 1480,
+   "ligand_rmsd_A": 0.786,
+   "ligand_max_shift_A": 1.325,
+   "backbone_rmsd_A": 0.096,
+   "backbone_max_shift_A": 0.569
+  },
+  {
+   "accession": "P41146",
+   "chembl_id": "CHEMBL383610",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 29,
+   "n_backbone_atoms_matched": 1480,
+   "ligand_rmsd_A": 0.877,
+   "ligand_max_shift_A": 1.368,
+   "backbone_rmsd_A": 0.1,
+   "backbone_max_shift_A": 0.481
+  },
+  {
+   "accession": "P41146",
+   "chembl_id": "CHEMBL391631",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 38,
+   "n_backbone_atoms_matched": 1480,
+   "ligand_rmsd_A": 1.193,
+   "ligand_max_shift_A": 2.447,
+   "backbone_rmsd_A": 0.097,
+   "backbone_max_shift_A": 0.426
+  },
+  {
+   "accession": "P41146",
+   "chembl_id": "CHEMBL5836313",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 35,
+   "n_backbone_atoms_matched": 1480,
+   "ligand_rmsd_A": 1.04,
+   "ligand_max_shift_A": 2.205,
+   "backbone_rmsd_A": 0.096,
+   "backbone_max_shift_A": 0.528
+  },
+  {
+   "accession": "P43116",
+   "chembl_id": "CHEMBL123794",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 29,
+   "n_backbone_atoms_matched": 1432,
+   "ligand_rmsd_A": 0.507,
+   "ligand_max_shift_A": 0.845,
+   "backbone_rmsd_A": 0.102,
+   "backbone_max_shift_A": 0.547
+  },
+  {
+   "accession": "P43116",
+   "chembl_id": "CHEMBL385955",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 38,
+   "n_backbone_atoms_matched": 1432,
+   "ligand_rmsd_A": 0.841,
+   "ligand_max_shift_A": 2.618,
+   "backbone_rmsd_A": 0.1,
+   "backbone_max_shift_A": 0.79
+  },
+  {
+   "accession": "P43116",
+   "chembl_id": "CHEMBL3901873",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 30,
+   "n_backbone_atoms_matched": 1432,
+   "ligand_rmsd_A": 0.693,
+   "ligand_max_shift_A": 1.331,
+   "backbone_rmsd_A": 0.096,
+   "backbone_max_shift_A": 0.538
+  },
+  {
+   "accession": "P43116",
+   "chembl_id": "CHEMBL3906402",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 32,
+   "n_backbone_atoms_matched": 1432,
+   "ligand_rmsd_A": 0.733,
+   "ligand_max_shift_A": 1.017,
+   "backbone_rmsd_A": 0.104,
+   "backbone_max_shift_A": 0.626
+  },
+  {
+   "accession": "P43116",
+   "chembl_id": "CHEMBL423815",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 22,
+   "n_backbone_atoms_matched": 1432,
+   "ligand_rmsd_A": 0.396,
+   "ligand_max_shift_A": 0.663,
+   "backbone_rmsd_A": 0.11,
+   "backbone_max_shift_A": 0.594
+  },
+  {
+   "accession": "P43116",
+   "chembl_id": "CHEMBL6149627",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 39,
+   "n_backbone_atoms_matched": 1432,
+   "ligand_rmsd_A": 0.848,
+   "ligand_max_shift_A": 1.68,
+   "backbone_rmsd_A": 0.109,
+   "backbone_max_shift_A": 0.628
+  },
+  {
+   "accession": "P43119",
+   "chembl_id": "CHEMBL234598",
+   "fixed": true,
+   "failed_before": [
+    "internal_steric_clash"
+   ],
+   "n_ligand_heavy_atoms": 32,
+   "n_backbone_atoms_matched": 1544,
+   "ligand_rmsd_A": 0.894,
+   "ligand_max_shift_A": 1.974,
+   "backbone_rmsd_A": 0.095,
+   "backbone_max_shift_A": 0.908
+  },
+  {
+   "accession": "P43119",
+   "chembl_id": "CHEMBL3793911",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 29,
+   "n_backbone_atoms_matched": 1544,
+   "ligand_rmsd_A": 0.823,
+   "ligand_max_shift_A": 1.096,
+   "backbone_rmsd_A": 0.097,
+   "backbone_max_shift_A": 0.712
+  },
+  {
+   "accession": "P43119",
+   "chembl_id": "CHEMBL495",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 25,
+   "n_backbone_atoms_matched": 1544,
+   "ligand_rmsd_A": 0.794,
+   "ligand_max_shift_A": 1.458,
+   "backbone_rmsd_A": 0.1,
+   "backbone_max_shift_A": 0.67
+  },
+  {
+   "accession": "P68400",
+   "chembl_id": "CHEMBL1652737",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 26,
+   "n_backbone_atoms_matched": 1564,
+   "ligand_rmsd_A": 1.882,
+   "ligand_max_shift_A": 3.371,
+   "backbone_rmsd_A": 0.106,
+   "backbone_max_shift_A": 0.752
+  },
+  {
+   "accession": "P68400",
+   "chembl_id": "CHEMBL289277",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 20,
+   "n_backbone_atoms_matched": 1564,
+   "ligand_rmsd_A": 1.025,
+   "ligand_max_shift_A": 1.736,
+   "backbone_rmsd_A": 0.103,
+   "backbone_max_shift_A": 0.93
+  },
+  {
+   "accession": "P68400",
+   "chembl_id": "CHEMBL3700385",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 24,
+   "n_backbone_atoms_matched": 1564,
+   "ligand_rmsd_A": 1.636,
+   "ligand_max_shift_A": 3.046,
+   "backbone_rmsd_A": 0.102,
+   "backbone_max_shift_A": 0.747
+  },
+  {
+   "accession": "Q02127",
+   "chembl_id": "CHEMBL5912716",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 38,
+   "n_backbone_atoms_matched": 1580,
+   "ligand_rmsd_A": 0.752,
+   "ligand_max_shift_A": 1.792,
+   "backbone_rmsd_A": 0.084,
+   "backbone_max_shift_A": 0.472
+  },
+  {
+   "accession": "Q13639",
+   "chembl_id": "CHEMBL2179674",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 33,
+   "n_backbone_atoms_matched": 1552,
+   "ligand_rmsd_A": 0.594,
+   "ligand_max_shift_A": 1.197,
+   "backbone_rmsd_A": 0.098,
+   "backbone_max_shift_A": 0.624
+  },
+  {
+   "accession": "Q13639",
+   "chembl_id": "CHEMBL356359",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 27,
+   "n_backbone_atoms_matched": 1552,
+   "ligand_rmsd_A": 0.229,
+   "ligand_max_shift_A": 0.612,
+   "backbone_rmsd_A": 0.102,
+   "backbone_max_shift_A": 0.484
+  },
+  {
+   "accession": "Q13639",
+   "chembl_id": "CHEMBL538635",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 39,
+   "n_backbone_atoms_matched": 1552,
+   "ligand_rmsd_A": 0.79,
+   "ligand_max_shift_A": 1.498,
+   "backbone_rmsd_A": 0.096,
+   "backbone_max_shift_A": 0.559
+  },
+  {
+   "accession": "Q13639",
+   "chembl_id": "CHEMBL76370",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 22,
+   "n_backbone_atoms_matched": 1552,
+   "ligand_rmsd_A": 0.891,
+   "ligand_max_shift_A": 1.836,
+   "backbone_rmsd_A": 0.101,
+   "backbone_max_shift_A": 0.515
+  },
+  {
+   "accession": "Q16739",
+   "chembl_id": "CHEMBL1029",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 15,
+   "n_backbone_atoms_matched": 1576,
+   "ligand_rmsd_A": 1.068,
+   "ligand_max_shift_A": 1.557,
+   "backbone_rmsd_A": 0.094,
+   "backbone_max_shift_A": 0.665
+  },
+  {
+   "accession": "Q16739",
+   "chembl_id": "CHEMBL1088158",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 28,
+   "n_backbone_atoms_matched": 1576,
+   "ligand_rmsd_A": 0.759,
+   "ligand_max_shift_A": 1.513,
+   "backbone_rmsd_A": 0.092,
+   "backbone_max_shift_A": 0.682
+  },
+  {
+   "accession": "Q16739",
+   "chembl_id": "CHEMBL2163830",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 33,
+   "n_backbone_atoms_matched": 1576,
+   "ligand_rmsd_A": 0.945,
+   "ligand_max_shift_A": 2.197,
+   "backbone_rmsd_A": 0.091,
+   "backbone_max_shift_A": 0.363
+  },
+  {
+   "accession": "Q16739",
+   "chembl_id": "CHEMBL2163839",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 32,
+   "n_backbone_atoms_matched": 1576,
+   "ligand_rmsd_A": 0.754,
+   "ligand_max_shift_A": 1.759,
+   "backbone_rmsd_A": 0.089,
+   "backbone_max_shift_A": 0.769
+  },
+  {
+   "accession": "Q16739",
+   "chembl_id": "CHEMBL5909936",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 40,
+   "n_backbone_atoms_matched": 1576,
+   "ligand_rmsd_A": 0.922,
+   "ligand_max_shift_A": 1.357,
+   "backbone_rmsd_A": 0.09,
+   "backbone_max_shift_A": 0.706
+  },
+  {
+   "accession": "Q16739",
+   "chembl_id": "CHEMBL5914151",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 40,
+   "n_backbone_atoms_matched": 1576,
+   "ligand_rmsd_A": 1.091,
+   "ligand_max_shift_A": 2.441,
+   "backbone_rmsd_A": 0.092,
+   "backbone_max_shift_A": 0.338
+  },
+  {
+   "accession": "Q16739",
+   "chembl_id": "CHEMBL5927031",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 31,
+   "n_backbone_atoms_matched": 1576,
+   "ligand_rmsd_A": 1.039,
+   "ligand_max_shift_A": 1.993,
+   "backbone_rmsd_A": 0.089,
+   "backbone_max_shift_A": 0.352
+  },
+  {
+   "accession": "Q16739",
+   "chembl_id": "CHEMBL5946579",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 38,
+   "n_backbone_atoms_matched": 1576,
+   "ligand_rmsd_A": 0.849,
+   "ligand_max_shift_A": 1.572,
+   "backbone_rmsd_A": 0.092,
+   "backbone_max_shift_A": 0.81
+  },
+  {
+   "accession": "Q16739",
+   "chembl_id": "CHEMBL5976403",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 31,
+   "n_backbone_atoms_matched": 1576,
+   "ligand_rmsd_A": 0.84,
+   "ligand_max_shift_A": 1.502,
+   "backbone_rmsd_A": 0.087,
+   "backbone_max_shift_A": 0.724
+  },
+  {
+   "accession": "Q9H244",
+   "chembl_id": "CHEMBL2402142",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 40,
+   "n_backbone_atoms_matched": 1368,
+   "ligand_rmsd_A": 0.889,
+   "ligand_max_shift_A": 2.117,
+   "backbone_rmsd_A": 0.094,
+   "backbone_max_shift_A": 0.489
+  },
+  {
+   "accession": "Q9H244",
+   "chembl_id": "CHEMBL3322653",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 42,
+   "n_backbone_atoms_matched": 1368,
+   "ligand_rmsd_A": 0.877,
+   "ligand_max_shift_A": 1.41,
+   "backbone_rmsd_A": 0.103,
+   "backbone_max_shift_A": 1.018
+  },
+  {
+   "accession": "Q9H244",
+   "chembl_id": "CHEMBL3325629",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 37,
+   "n_backbone_atoms_matched": 1368,
+   "ligand_rmsd_A": 1.007,
+   "ligand_max_shift_A": 1.506,
+   "backbone_rmsd_A": 0.092,
+   "backbone_max_shift_A": 0.573
+  },
+  {
+   "accession": "Q9H244",
+   "chembl_id": "CHEMBL3652616",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 48,
+   "n_backbone_atoms_matched": 1368,
+   "ligand_rmsd_A": 0.834,
+   "ligand_max_shift_A": 1.457,
+   "backbone_rmsd_A": 0.093,
+   "backbone_max_shift_A": 0.569
+  },
+  {
+   "accession": "Q9H244",
+   "chembl_id": "CHEMBL437204",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein",
+    "volume_overlap_with_protein"
+   ],
+   "n_ligand_heavy_atoms": 38,
+   "n_backbone_atoms_matched": 1368,
+   "ligand_rmsd_A": 1.471,
+   "ligand_max_shift_A": 2.815,
+   "backbone_rmsd_A": 0.111,
+   "backbone_max_shift_A": 0.808
+  },
+  {
+   "accession": "Q9H244",
+   "chembl_id": "CHEMBL549308",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 33,
+   "n_backbone_atoms_matched": 1368,
+   "ligand_rmsd_A": 0.73,
+   "ligand_max_shift_A": 1.045,
+   "backbone_rmsd_A": 0.098,
+   "backbone_max_shift_A": 0.687
+  },
+  {
+   "accession": "Q9H244",
+   "chembl_id": "CHEMBL561007",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 41,
+   "n_backbone_atoms_matched": 1368,
+   "ligand_rmsd_A": 1.044,
+   "ligand_max_shift_A": 2.409,
+   "backbone_rmsd_A": 0.098,
+   "backbone_max_shift_A": 0.538
+  },
+  {
+   "accession": "Q9H244",
+   "chembl_id": "CHEMBL568772",
+   "fixed": true,
+   "failed_before": [
+    "minimum_distance_to_protein"
+   ],
+   "n_ligand_heavy_atoms": 43,
+   "n_backbone_atoms_matched": 1368,
+   "ligand_rmsd_A": 0.648,
+   "ligand_max_shift_A": 1.32,
+   "backbone_rmsd_A": 0.089,
+   "backbone_max_shift_A": 0.347
+  }
+ ],
+ "at": "2026-10-17T04:16:11+00:00"
+}
