@@ -277,32 +277,32 @@
       already on disk.</p>
     <p class="body">Take each target's median measured potency and keep the
       compounds within 0.75 log of it. Across
-      <span data-claim="ws_n">82</span> targets, the structure arm
+      <span data-claim="ws_n">84</span> targets, the structure arm
       reaches a median rank correlation of
       <span data-claim="ws_structure">0.271</span> inside that window and a
       fingerprint model trained on the same target reaches
       <span data-claim="ws_ligand">0.375</span>. The mean
-      difference is <span data-claim="ws_diff">minus 0.1400</span> and the
-      interval runs from <span data-claim="ws_ci">minus 0.2201 to minus 0.0619</span>, which <span data-claim="ws_verdict">excludes zero, so on this reading a fingerprint model trained on the same target ranks better inside a potency window</span>.
-      <span data-claim="ws_status">This is interim at 113 of 123 targets. The registration applies its decision rule when the run finishes, and we have called an interim reading a conclusion twice before and been wrong both times.</span></p>
+      difference is <span data-claim="ws_diff">minus 0.1436</span> and the
+      interval runs from <span data-claim="ws_ci">minus 0.2272 to minus 0.0613</span>, which <span data-claim="ws_verdict">excludes zero, so on this reading a fingerprint model trained on the same target ranks better inside a potency window</span>.
+      <span data-claim="ws_status">This is interim at 115 of 123 targets. The registration applies its decision rule when the run finishes, and we have called an interim reading a conclusion twice before and been wrong both times.</span></p>
     <p class="body">On the full held-out sets of those same
-      <span data-claim="ws_n2">82</span> targets the
+      <span data-claim="ws_n2">84</span> targets the
       fingerprint model is ahead by
-      <span data-claim="ws_full_gap">0.152</span>, with an interval from
-      <span data-claim="ws_full_ci">minus 0.205 to minus 0.101</span> that
+      <span data-claim="ws_full_gap">0.147</span>, with an interval from
+      <span data-claim="ws_full_ci">minus 0.201 to minus 0.096</span> that
       excludes zero. Its advantage disappears inside the
       window. Both arms lose accuracy as the range narrows and the fingerprint
-      model loses more, <span data-claim="ws_ligand_drop">0.296</span> against
+      model loses more, <span data-claim="ws_ligand_drop">0.287</span> against
       <span data-claim="ws_structure_drop">0.284</span>.</p>
     <p class="body">A narrow window also holds fewer compounds, and that alone
       moves a rank correlation, so we drew 200 random subsets of each full set
       at the window's size with no restriction on potency. Those score
-      <span data-claim="ws_subset">0.548</span>.
+      <span data-claim="ws_subset">0.540</span>.
       Narrowing the range costs
-      <span data-claim="ws_range_cost">0.263</span> beyond what losing
+      <span data-claim="ws_range_cost">0.264</span> beyond what losing
       compounds costs.</p>
     <p class="body">The run continues as the remaining ChEMBL pools
-      arrive, at <span data-claim="ws_n3">82</span> targets qualifying so
+      arrive, at <span data-claim="ws_n3">84</span> targets qualifying so
       far. The
       <a href="../data-files/2026-10-16-within-series-result.md">result is
       published</a> and so is the
