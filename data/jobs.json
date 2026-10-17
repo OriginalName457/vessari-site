@@ -1,7 +1,7 @@
 {
  "what_this_is": "What the machines are doing right now. Each count is read from the file that job writes as it works, not typed in by hand. Nothing here is a result. Results go to the data page when the job that produced them finishes.",
- "generated_at": "2026-10-17T01:36:10+00:00",
- "generated_unix": 1792200970,
+ "generated_at": "2026-10-17T01:56:42+00:00",
+ "generated_unix": 1792202202,
  "jobs": [
   {
    "id": "data-poor-regime",
@@ -52,7 +52,7 @@
    "kind": "registered control",
    "running": true,
    "finished": false,
-   "done": 86,
+   "done": 89,
    "total": 123,
    "unit": "proteins scored on both arms",
    "note": "Three arms on the same held-out compounds. The structure predictions already recorded, a random forest trained on the ChEMBL pool with those compounds removed, and the rank average of the two with nothing fitted.",
@@ -66,7 +66,7 @@
    "kind": "registered experiment",
    "running": true,
    "finished": false,
-   "done": 81,
+   "done": 83,
    "total": 123,
    "unit": "proteins scored in the window",
    "note": "Our headline is measured on held-out sets spanning four log units of potency. A medicinal chemist works inside one and a half. This scores both arms again with the range held fixed, on predictions already on disk, so it costs no GPU time. A timer reruns it every 30 minutes as the remaining ChEMBL pools arrive, so between firings it is armed rather than working.",
@@ -80,7 +80,7 @@
    "kind": "registered experiment",
    "running": true,
    "finished": false,
-   "done": 4,
+   "done": 5,
    "total": 45,
    "unit": "libraries co-folded",
    "note": "Each library holds 50 known actives among 4,950 decoys matched on weight and logP. A fingerprint prefilter ranks all 5,000 and the top 150 are folded and re-ranked. The prefilter alone is the control.",

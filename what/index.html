@@ -176,7 +176,7 @@
 
   <p class="body">Our corpus median of 0.607 belongs on the public side of that
     gap. Our within-window median of
-    <strong><span data-claim="ws_structure2">0.282</span></strong>, measured in the
+    <strong><span data-claim="ws_structure2">0.300</span></strong>, measured in the
     1.5 log potency range a chemist works in, lands beside their private 0.39.
     Different statistics on different sets, and they agree. The narrow window
     figure is what this model does on medicinal chemistry data, reproduced from
@@ -277,32 +277,32 @@
       already on disk.</p>
     <p class="body">Take each target's median measured potency and keep the
       compounds within 0.75 log of it. Across
-      <span data-claim="ws_n">59</span> targets, the structure arm
+      <span data-claim="ws_n">61</span> targets, the structure arm
       reaches a median rank correlation of
-      <span data-claim="ws_structure">0.282</span> inside that window and a
+      <span data-claim="ws_structure">0.300</span> inside that window and a
       fingerprint model trained on the same target reaches
       <span data-claim="ws_ligand">0.347</span>. The mean
-      difference is <span data-claim="ws_diff">minus 0.0984</span> and the
-      interval runs from <span data-claim="ws_ci">minus 0.1921 to minus 0.0083</span>, so it contains zero. Inside a potency window we cannot
+      difference is <span data-claim="ws_diff">minus 0.0937</span> and the
+      interval runs from <span data-claim="ws_ci">minus 0.1825 to minus 0.0060</span>, so it contains zero. Inside a potency window we cannot
       tell the two apart.</p>
     <p class="body">On the full held-out sets of those same
-      <span data-claim="ws_n2">59</span> targets the
+      <span data-claim="ws_n2">61</span> targets the
       fingerprint model is ahead by
-      <span data-claim="ws_full_gap">0.157</span>, with an interval from
-      <span data-claim="ws_full_ci">minus 0.224 to minus 0.093</span> that
+      <span data-claim="ws_full_gap">0.147</span>, with an interval from
+      <span data-claim="ws_full_ci">minus 0.213 to minus 0.082</span> that
       excludes zero. Its advantage disappears inside the
       window. Both arms lose accuracy as the range narrows and the fingerprint
-      model loses more, <span data-claim="ws_ligand_drop">0.332</span> against
-      <span data-claim="ws_structure_drop">0.273</span>.</p>
+      model loses more, <span data-claim="ws_ligand_drop">0.325</span> against
+      <span data-claim="ws_structure_drop">0.272</span>.</p>
     <p class="body">A narrow window also holds fewer compounds, and that alone
       moves a rank correlation, so we drew 200 random subsets of each full set
       at the window's size with no restriction on potency. Those score
-      <span data-claim="ws_subset">0.533</span>.
+      <span data-claim="ws_subset">0.537</span>.
       Narrowing the range costs
-      <span data-claim="ws_range_cost">0.254</span> beyond what losing
+      <span data-claim="ws_range_cost">0.253</span> beyond what losing
       compounds costs.</p>
     <p class="body">This is interim at
-      <span data-claim="ws_n3">59</span> of 123 targets and the run continues
+      <span data-claim="ws_n3">61</span> of 123 targets and the run continues
       as the remaining ChEMBL pools arrive. The
       <a href="../data-files/2026-10-16-within-series-result.md">result is
       published</a> and so is the
