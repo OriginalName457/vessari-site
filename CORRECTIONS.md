@@ -440,3 +440,50 @@ favourable tail of a distribution centred near zero.
 the two affinity modules is recorded on every prediction and has not been tested
 against error across the corpus. That is the next candidate and it should be
 pre-registered before it is measured, not after.
+
+## Running four free energy legs on one card made the card slower
+
+**Reported:** that throughput off card 2 rises with every leg added to it. Two
+legs 330 ns/day between them, three legs 553, four legs 707, published in
+`docs/PHYSICS-ARM.md` on 18 October with the reading that each leg costs the
+others about 7 percent and brings far more than it costs. The full twelve edge
+tyk2 map was estimated at 5.6 days on that basis.
+
+**Corrected to:** four legs produce less sampling an hour than two. Counted
+from the iteration dimension inside each leg's `simulation.nc`, the solvent leg
+of the jmc_23 to jmc_28 edge reached 100 of its 2,001 iterations in the 109
+minutes from 11:57 to 13:46 on 19 October with three other legs on the card,
+which is 0.92 iterations a minute. Two legs were stopped at 13:47 and the same
+leg ran at 10.4 iterations a minute, reaching 160 iterations by 13:51.
+
+The complex leg of the 31 to 45 edge shows it across four repeats of one
+system with nobody intervening. Repeats 1 and 2 ran against three other legs
+at 2.95 and 2.60 iterations a minute, taking 679 and 769 minutes. Repeats 3
+and 4 ran after the 24 hour timeout had killed the other legs overnight, at
+7.03 and 7.76 iterations a minute, taking 285 and 258 minutes. That is the
+same leg and the same ligands running 2.7 times faster with the card to
+itself.
+
+**Why it moved:** the first numbers were the `ns/day` figures openfe prints
+from inside a running leg, read shortly after each leg was added. That figure
+is an instantaneous rate and it does not count the time a leg spends waiting
+for the CPU. The host is a two core Celeron G3930 and a sampling leg holds
+about one core feeding the card, so four legs on two cores leave each one
+short of the CPU the GPU is waiting on. While the four legs ran the run queue
+stood at 5 to 7 with user time at 89 to 98 percent, and the legs held no swap
+at all, so the cause is CPU starvation rather than memory.
+
+**What it cost:** most of 19 October. Four legs were started that morning on
+the strength of the old table, and `scripts/keep_card_busy.py` was written to
+hold the card at four. The two legs stopped at 13:47 had each reached
+iteration 1 of 2,001 after almost two hours. Both are resumable and neither
+lost completed work.
+
+**What did not move:** the single leg measurements in the same section. A
+sampling leg still holds about 1.2 GB of host memory and 4.41 GB of GPU
+memory, and the setup phase still peaks near 9.7 GB across three setup units.
+Those were read directly rather than inferred from a printed rate.
+
+**Still open:** the twelve edge map has no revised schedule. The old 5.6 day
+estimate came from the wrong table and no replacement has been measured over
+a full edge at two legs.
