@@ -487,3 +487,35 @@ Those were read directly rather than inferred from a printed rate.
 **Still open:** the twelve edge map has no revised schedule. The old 5.6 day
 estimate came from the wrong table and no replacement has been measured over
 a full edge at two legs.
+
+## Two arms on one host, said twice and wrong the first time
+
+**Reported:** On 19 October at 21:39 the free energy map was dropped to one
+leg so the second core could run the structure arm of the design experiment,
+on the reasoning that a sampling leg holds about one core and a folding lane
+about 1.3 of them, so one of each fits on two cores.
+
+**Corrected to:** They do not fit, and the binding constraint is memory rather
+than the CPU. One boltz prediction with the affinity head peaked at 9.3 GB of
+host memory against a leg holding 1.8 GB, on a host with 15.9 GB. The first
+attempt, on a 325 residue target in batches of four, took the host to 1.0 GB
+available with 1.4 GB in swap. The second, on a 254 residue target in batches
+of two, was stopped by its own guard at 2.4 GB available after three minutes.
+
+**Why it moved:** The CPU measurement was correct and incomplete. Host memory
+per folding lane had been recorded at 4.1 GB for a 233 residue protein, which
+is a structure prediction without the affinity head. With the head on, the
+peak is 9.3 GB at 254 residues and does not fall with sequence length in this
+range.
+
+**What it cost:** About twenty minutes of card time across two aborted folding
+runs, and seven background shells the harness stopped while the host was in
+swap. No prediction and no sampling was lost. The leg kept its minimisation
+and is still running.
+
+**What did not move:** The CPU is still the first thing to buy. A quad core is
+what lets this host run two legs, or a leg and a lane once the memory is
+there.
+
+**Still open:** The two arms now run one after the other. The structure arm is
+955 jobs at about a minute each, so it waits for the jmc complex leg.
