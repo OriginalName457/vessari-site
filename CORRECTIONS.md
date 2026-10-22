@@ -519,3 +519,64 @@ there.
 
 **Still open:** The two arms now run one after the other. The structure arm is
 955 jobs at about a minute each, so it waits for the jmc complex leg.
+
+## The structure arm did not reach the 81.9 percent its own calibration predicted
+
+**Reported:** `src/vessari/design/ranking.py` turns a predicted affinity gap
+into a probability of calling the direction right, with sigma 0.7624 log10
+fitted on earlier data. Applied to the 559 matched pairs of the design
+experiment it predicted **81.9 percent**, and the registration of 18 October
+carried that prediction forward as the number the structure arm would reach.
+The registration also set the bar at 75.7 percent, the top of the control's
+interval, for the arm to count as beating the fingerprint.
+
+**Corrected to:** The arm called **403 of 559, 72.09 percent**. The control
+called 398 of 559, 71.20 percent. The paired difference is **+0.89 percentage
+points with a 95 percent interval of -4.97 to +6.45** over the 189 papers, so
+the two arms are indistinguishable on this set. The arm did not reach 81.9 and
+it did not reach 75.7.
+
+**Why it moved:** The 81.9 percent was computed by feeding the calibration the
+**measured** gaps instead of the model's **predicted** gaps. Averaging
+Phi(measured gap / 0.7624) over the 559 pairs gives **0.8186**, which is the
+81.9 in the registration to the digit. Averaging Phi(predicted gap / 0.7624)
+over the structure arm's own 556 scored gaps gives **0.676**.
+
+Those are two different questions. The first asks how often a model whose
+predictions scatter around the truth with that width would call a gap of this
+size correctly, which is a statement about an idealised model and about the
+difficulty of the set. The second asks how confident to be in the call this
+model actually made. A benchmark prediction needs the second one.
+
+Refitting sigma on this set, which the registration asked for as a secondary
+outcome, gives **0.5977 for the fingerprint control and 0.5876 for the
+structure arm**, both tighter than the published 0.7624. At those values the
+correct calculation predicts 69.0 and 71.3 percent against 71.2 and 72.5
+observed, so sigma itself was close to right. Feeding the same wrong quantity
+into the refitted sigma would have predicted 86.7 percent and been further
+out, so the error was never about the width.
+
+**Correction to this entry, made the same evening.** The first version said the
+calibration failed because the two predictions in a matched pair share a
+protein and a pose pipeline, so their errors are correlated and the gap carries
+less information than independence would give. Matched pairs do have that property, and it did not produce the
+ten point miss. The miss came from applying the formula to the answer rather
+than to the prediction. Computing both and seeing 0.8186 come back is what
+showed it.
+
+**What it cost:** 955 co-folding jobs, about 18 hours of card time, plus the
+pose check and the relaxation of 65 poses. The number it produced is the
+registered primary outcome and it stands.
+
+**What did not move:** The pose work. 887 of 952 poses passed every PoseBusters
+check first time, 93.2 percent, and the restrained minimisation fixed all 65
+that failed, so every pose cleared the gate. Three pairs failed because Boltz
+produced a structure and declined to score it, and those three count as wrong.
+The stratification also held: both arms do better on changes of 5 fold and
+above than below, 77.4 against 67.3 for the structure arm.
+
+**Still open:** The two arms disagree on 207 of the 559 pairs and split those
+almost evenly, 106 to the structure arm and 101 to the control. One of them is
+right on **504 of 559 pairs, 90.2 percent**. Whether a rule can be learned that
+picks the right arm per pair is the question this result raises, and it has not
+been tested.
