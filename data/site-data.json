@@ -1320,16 +1320,16 @@
     }
   },
   "free_energy": {
-    "edges_complete": 5,
+    "edges_complete": 6,
     "edges_planned": 12,
-    "rmse": 0.626,
+    "rmse": 0.598,
     "rmse_ci95": [
-      0.403,
-      0.793
+      0.398,
+      0.757
     ],
-    "rmse_lo": 0.403,
-    "rmse_hi": 0.793,
-    "fep_plus_rmse_same_edges": 0.21,
+    "rmse_lo": 0.398,
+    "rmse_hi": 0.757,
+    "fep_plus_rmse_same_edges": 0.268,
     "fep_plus_rmse_full_set": 0.447,
     "openfe_published_tyk2": 0.59,
     "ns_per_leg": 165,
