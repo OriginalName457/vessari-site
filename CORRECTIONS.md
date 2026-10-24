@@ -580,3 +580,32 @@ almost evenly, 106 to the structure arm and 101 to the control. One of them is
 right on **504 of 559 pairs, 90.2 percent**. Whether a rule can be learned that
 picks the right arm per pair is the question this result raises, and it has not
 been tested.
+
+## The physics arm ran on OpenMM 8.4, not the 8.6.1 we recorded
+
+**Reported:** `docs/PHYSICS-ARM.md` said the environment holds OpenMM 8.6.1,
+written on 18 October when the CUDA version conflict was fixed.
+
+**Corrected to:** OpenMM **8.4**. Read from the installed package with
+`~/miniconda3/envs/vessari-fep/bin/python -c "import openmm;
+print(openmm.__version__)"`, which returns 8.4. OpenFF toolkit 0.19.0 and
+openfe 1.13.0 in the same environment are both correct as recorded.
+
+**Why it moved:** The 8.6.1 came from reading a conda solve rather than the
+installed package. A solve lists what it intends to install and the environment
+holds what it installed, and those differ when a pin forces a downgrade, which
+is exactly what pinning `cuda-version=13.1` did.
+
+**What it cost:** Nothing in the science. Every free energy number this arm has
+produced came from 8.4 and the version recorded beside them was wrong, so what
+it cost is traceability. A reviewer checking our stated environment against our
+own machine would have found it before we did.
+
+**What did not move:** All five completed edges and their estimates stand. The
+version was never an input to the calculation, only to the record of it.
+
+**Nothing else in that paragraph moved.** Re-checked against the installed
+packages on 24 October: `cuda-version 13.1 h2ff5cdb_3` and
+`cuda-nvrtc 13.1.115 hecca717_0` in the vessari-fep environment, against an
+NVIDIA driver reporting 590.48.01. The pin holds and the CUDA figures in that
+paragraph are what is installed.
