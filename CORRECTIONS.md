@@ -609,3 +609,83 @@ packages on 24 October: `cuda-version 13.1 h2ff5cdb_3` and
 `cuda-nvrtc 13.1.115 hecca717_0` in the vessari-fep environment, against an
 NVIDIA driver reporting 590.48.01. The pin holds and the CUDA figures in that
 paragraph are what is installed.
+
+## We are not three times worse than the commercial standard
+
+**Reported:** On 22 and 23 October this project reported that its free energy
+arm is "about 3x worse than the commercial standard", from an RMSE of 0.626
+kcal/mol over five tyk2 edges against FEP+'s 0.210 on the same five.
+
+**Corrected to:** Both numbers are right and the comparison is not. Three
+things were missing from it.
+
+FEP+'s 0.210 on those five edges sits **outside its own published figure for
+the whole tyk2 set, 0.447**. Bootstrapped over the five edges at 20,000
+resamples, FEP+ is 0.210 with a 95 percent interval of 0.154 to 0.250 and we
+are 0.626 with an interval of 0.403 to 0.793. An interval that excludes the
+method's own full set value means these five edges are among the ones it does
+best on, so the ratio measured on them flatters FEP+ against itself.
+
+The right comparator for our stack is **openfe, which reports 0.59 kcal/mol on
+tyk2** in the OpenFE Industry Benchmarks. Our 0.626 over five edges is that
+number. On the metric an independent 2026 evaluation used, mean unsigned error,
+we are at 0.555 against FEP+'s published 0.46 over 34 transformations and 21
+proteins, which is a factor of 1.2.
+
+The published classical force field baseline on this target under a matched
+protocol is **0.86 with an interval of 0.57 to 1.13** (Farr and De Fabritiis,
+arXiv 2608.13355). Our 0.626 is inside it.
+
+**Why it moved:** A five edge subsample was compared against a five edge
+subsample without bootstrapping either, and the comparator chosen was a
+commercial code with a different ligand force field rather than the open code
+we actually run. The protocol audit that found this also established that our
+settings are the published openfe reference protocol field by field, 11 lambda
+windows at 5 ns across 3 repeats for 165 ns per leg, every value an openfe
+1.13.0 default. There is no misconfiguration to find.
+
+**What it cost:** Two days of looking for a configuration bug that does not
+exist, and a status report to the project owner that overstated the problem.
+
+**What did not move:** The five edge numbers themselves, and the fact that FEP+
+beats us on these five edges. The remaining gap is attributable mostly to the
+ligand potential, Sage 2.2.1 with AM1-BCC charges against OPLS4, which cannot
+be changed on this rig and which published work sizes at 0.3 to 0.5 kcal/mol
+on tyk2.
+
+**Still open:** What a defensible tyk2 number looks like over the full twelve
+edge map rather than five, and whether the claim we can actually make is about
+ranking rather than about RMSE. The consortium that maintains our stack writes
+that "OpenFE shows competitive performance with state-of-the-art commercial
+software at ranking compounds" while FEP+ "shows superior low error
+performance", so parity exists on ranking and not on error.
+
+## openfe's quoted uncertainty is the across-repeat spread, and an adversarial review said otherwise
+
+**Reported:** An adversarial reviewer in the 23 October protocol audit reported
+that "every complex leg's repeat spread exceeds its quoted MBAR error by 1.6 to
+2.65 times", and used that to reject all three proposed experiment designs on
+the grounds that their thresholds were built on understated error bars.
+
+**Corrected to:** The quoted uncertainty **is** the across-repeat sample
+standard deviation. On the jmc_23 to jmc_28 complex leg the three repeats are
+16.8571, 16.9860 and 17.0874 kcal/mol, whose sample standard deviation is
+0.1154, and the leg's quoted uncertainty is 0.1154 to four decimal places. The
+same holds on all ten completed legs.
+
+**Why it moved:** `result.json` lists each repeat twice, once under a data hash
+and once under a `ProtocolUnitResult` key, so a naive walk collects six values
+for three repeats. The standard deviation of three values each duplicated is
+the true one times the square root of 0.8, which is 0.894, and that is exactly
+the constant ratio measured across all ten legs before deduplication. A
+reviewer comparing per-window MBAR errors from inside the analysis units
+against the leg level uncertainty is comparing two different quantities.
+
+**What it cost:** Three experiment designs were rejected partly on this, one of
+them unanimously. The rejections stand on their other grounds, which include a
+real bug in `scripts/keep_card_busy.py` and a point prediction that was
+algebraically trivial, so the review was still worth its cost.
+
+**What did not move:** The cycle closure. The triangle closes to 0.193 against
+a combined claimed uncertainty of 0.201, which is 0.96 sigma, and that
+arithmetic used the quoted uncertainties, which are the honest ones.
