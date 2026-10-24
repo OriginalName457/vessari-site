@@ -1319,6 +1319,39 @@
       "delta": -0.401
     }
   },
+  "free_energy": {
+    "edges_complete": 5,
+    "edges_planned": 12,
+    "rmse": 0.626,
+    "rmse_ci95": [
+      0.403,
+      0.793
+    ],
+    "rmse_lo": 0.403,
+    "rmse_hi": 0.793,
+    "fep_plus_rmse_same_edges": 0.21,
+    "fep_plus_rmse_full_set": 0.447,
+    "openfe_published_tyk2": 0.59,
+    "ns_per_leg": 165,
+    "hours_per_edge": 18,
+    "bootstrap_draws": 20000,
+    "source": "benchmarks/results/free-energy.jsonl against benchmarks/fep/fep-set.json, tyk2"
+  },
+  "design": {
+    "pairs": 559,
+    "structure_correct": 403,
+    "structure_accuracy": 0.7209,
+    "control_correct": 398,
+    "control_accuracy": 0.712,
+    "disagreements": 207,
+    "either_right": 504,
+    "either_accuracy": 0.9016,
+    "either_minus_best": 18.1,
+    "source": "benchmarks/results/mmp-structure-arm.json and mmp-fingerprint-control.json"
+  },
+  "registrations": {
+    "n": 16
+  },
   "ntab": {
     "benchmark": "NTAB",
     "model": "reproduced fp_and_moldesc baseline",
