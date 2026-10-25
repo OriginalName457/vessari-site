@@ -1352,6 +1352,10 @@
   "registrations": {
     "n": 16
   },
+  "corrections": {
+    "n": 22,
+    "source": "benchmarks/results/CORRECTIONS.md, one heading each"
+  },
   "ntab": {
     "benchmark": "NTAB",
     "model": "reproduced fp_and_moldesc baseline",

@@ -16,7 +16,7 @@
   object-src 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Vessari, verifiable target assessment</title>
+<title>Vessari, drug discovery measured against experiment</title>
 <meta name="description" content="Held-out performance, the fine tuning result that did not work, and one worked specimen. Every figure is drawn against a printed axis and read at load from one file.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,10 +36,10 @@
 <header class="masthead">
   <div class="masthead-in">
     <a class="wordmark" href="./">VESSARI</a>
-    <span class="masthead-sub">verifiable target assessment</span>
+    <span class="masthead-sub">drug discovery measured against experiment</span>
     <nav class="topnav" aria-label="Sections">
       <a href="what/">what we do</a>
-      <a href="">assessment</a>
+      <a href="">results</a>
       <a href="proteins/">proteins</a>
       <a href="selection/">selection</a>
       <a href="sim/">simulation</a>
@@ -69,31 +69,34 @@
         Every number here was registered before it was measured, and the ones that came back against us are published next to the ones that did not. <a href="findings/"><span data-num="registrations.n" data-fmt="int">&#183;&#183;</span> registrations</a>, <a href="data-files/CORRECTIONS.md">every correction with what it cost</a>.</p>
         <dl class="hero-stats">
           <div>
-            <dt>proteins scored</dt>
-            <dd><span data-num="corpus.n_scored" data-fmt="int">&#183;&#183;&#183;</span>
-              <span class="hero-stats__unit"><span data-num="corpus.n_compounds" data-fmt="int">&#183;&#183;&#183;</span> compounds held out</span></dd>
+            <dt>binding free energy, error against experiment</dt>
+            <dd><span data-num="free_energy.rmse" data-fmt="3">&#183;&#183;&#183;&#183;</span> kcal/mol
+              <span class="hero-stats__unit">95% CI <span data-num="free_energy.rmse_lo" data-fmt="3">&#183;&#183;&#183;&#183;</span> to <span data-num="free_energy.rmse_hi" data-fmt="3">&#183;&#183;&#183;&#183;</span>, <span data-num="free_energy.edges_complete" data-fmt="int">&#183;</span> of <span data-num="free_energy.edges_planned" data-fmt="int">&#183;&#183;</span> TYK2 edges</span></dd>
           </div>
           <div>
-            <dt>median error against measurement</dt>
-            <dd><span data-num="corpus.median_fold" data-fmt="1">&#183;&#183;</span>x
-              <span class="hero-stats__unit">95% CI <span data-num="corpus.median_fold_ci.0" data-fmt="1">&#183;&#183;</span> to <span data-num="corpus.median_fold_ci.1" data-fmt="1">&#183;&#183;</span></span></dd>
+            <dt>what OpenFE publishes for the same target</dt>
+            <dd><span data-num="free_energy.openfe_published_tyk2" data-fmt="2">&#183;&#183;&#183;</span> kcal/mol
+              <span class="hero-stats__unit">our protocol is theirs, field by field</span></dd>
           </div>
           <div>
-            <dt>best five found, choosing five</dt>
-            <dd><span data-num="selection.hits" data-fmt="2">&#183;&#183;&#183;</span>
-              <span class="hero-stats__unit">against <span data-num="selection.random" data-fmt="2">&#183;&#183;&#183;</span> at random</span></dd>
+            <dt>FEP+, the commercial code, on our edges</dt>
+            <dd><span data-num="free_energy.fep_plus_rmse_same_edges" data-fmt="3">&#183;&#183;&#183;&#183;</span> kcal/mol
+              <span class="hero-stats__unit"><span data-num="free_energy.fep_plus_rmse_full_set" data-fmt="3">&#183;&#183;&#183;&#183;</span> on its own full set</span></dd>
           </div>
           <div>
-            <dt>targets it ranks in the right direction</dt>
-            <dd><span data-num="corpus.positive" data-fmt="text">&#183;&#183;&#183;</span></dd>
+            <dt>one atom changed, did potency rise or fall</dt>
+            <dd><span data-num="design.structure_correct" data-fmt="int">&#183;&#183;&#183;</span> of <span data-num="design.pairs" data-fmt="int">&#183;&#183;&#183;</span>
+              <span class="hero-stats__unit">a fingerprint with no structure calls <span data-num="design.control_correct" data-fmt="int">&#183;&#183;&#183;</span></span></dd>
           </div>
           <div>
-            <dt>control arms per claim</dt>
-            <dd>4</dd>
+            <dt>cost of one free energy edge</dt>
+            <dd><span data-num="free_energy.hours_per_edge" data-fmt="int">&#183;&#183;</span> hours
+              <span class="hero-stats__unit">one RTX 3090, <span data-num="free_energy.ns_per_leg" data-fmt="int">&#183;&#183;&#183;</span> ns of sampling per leg</span></dd>
           </div>
           <div>
-            <dt>our claims the controls overturned</dt>
-            <dd>2<span class="hero-stats__unit">, both published</span></dd>
+            <dt>registered before measuring</dt>
+            <dd><span data-num="registrations.n" data-fmt="int">&#183;&#183;</span>
+              <span class="hero-stats__unit"><span data-num="corrections.n" data-fmt="int">&#183;&#183;</span> corrections published, with what each cost</span></dd>
           </div>
         </dl>
       </div>
