@@ -1320,16 +1320,22 @@
     }
   },
   "free_energy": {
-    "edges_complete": 6,
+    "spearman_vs_experiment": 0.143,
+    "fep_plus_spearman_vs_experiment": 0.75,
+    "edge_pairs_ordered_right": 11,
+    "edge_pairs_total": 21,
+    "direction_right": 4,
+    "mue": 0.488,
+    "edges_complete": 7,
     "edges_planned": 12,
-    "rmse": 0.598,
+    "rmse": 0.559,
     "rmse_ci95": [
-      0.398,
-      0.757
+      0.358,
+      0.719
     ],
-    "rmse_lo": 0.398,
-    "rmse_hi": 0.757,
-    "fep_plus_rmse_same_edges": 0.268,
+    "rmse_lo": 0.358,
+    "rmse_hi": 0.719,
+    "fep_plus_rmse_same_edges": 0.313,
     "fep_plus_rmse_full_set": 0.447,
     "openfe_published_tyk2": 0.59,
     "ns_per_leg": 165,
