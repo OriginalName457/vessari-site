@@ -1320,6 +1320,17 @@
     }
   },
   "free_energy": {
+    "rmse_minus_fep_plus": 0.216,
+    "rmse_minus_fep_plus_ci95": [
+      0.024,
+      0.42
+    ],
+    "mue_minus_fep_plus": 0.202,
+    "mue_minus_fep_plus_ci95": [
+      -0.026,
+      0.428
+    ],
+    "fep_plus_mue_same_edges": 0.34,
     "spearman_vs_experiment": 0.095,
     "fep_plus_spearman_vs_experiment": 0.571,
     "edge_pairs_ordered_right": 14,
