@@ -689,3 +689,44 @@ algebraically trivial, so the review was still worth its cost.
 **What did not move:** The cycle closure. The triangle closes to 0.193 against
 a combined claimed uncertainty of 0.201, which is 0.96 sigma, and that
 arithmetic used the quoted uncertainties, which are the honest ones.
+
+## The per-ligand error decomposition was a tautology, not a finding
+
+**Reported:** On 24 October the protocol audit reported, and this project
+recorded in `docs/PHYSICS-ARM.md`, that our tyk2 error "has a per-ligand
+shape": fitting one offset per ligand to the edge errors left an RMS residual
+of 0.050 against an RMS error of 0.626, and the ranking of candidate causes was
+built on it, putting every per-ligand cause above every per-edge cause.
+
+**Corrected to:** The decomposition is forced by the geometry of the network and
+it distinguishes nothing. The same fit applied to **FEP+'s errors on the same
+seven edges leaves an RMS residual of 0.000**, so FEP+'s error is 100 percent
+per-ligand by this measure and ours is 99.4 percent. A measure that both
+methods saturate is measuring the fit and not the physics.
+
+Seven edges over eight ligands in two connected components give an incidence
+matrix of rank six, so the fit has **one degree of freedom**. That one degree of
+freedom is the lig_ejm_31 triangle, and the residual is the cycle closure error
+spread over three edges.
+
+**Why it moved:** Nobody computed the degrees of freedom before quoting the
+variance explained, and nobody ran the same fit on the comparator. The
+`PHYSICS-ARM.md` entry of 24 October did say the 99 percent was not meaningful
+and gave the arithmetic linking it to the cycle closure, so the caveat was
+published with the claim. The ranking of causes built on top of it is what
+needs the correction.
+
+**What it cost:** Nothing yet. The ranking it produced put the ligand force
+field and the charges first, and the heavy atom hypothesis it displaced was
+refuted by experiment on 24 October, so the ranking happened to be right. The write-up claimed a stronger reason for that ranking than the data supports.
+
+**What did not move:** The cycle closure itself, which is a real measurement on
+real data, and the conclusion that a per-edge error cannot produce it.
+
+**Still open, and it changes how the next map is planned.** The finished twelve
+edge map will not fix this. The planned network is a minimal spanning tree over
+thirteen ligands, so twelve edges give rank twelve and zero degrees of freedom,
+and the single separately planned cycle edge is the only redundancy in the whole
+map. Testing whether the error is per-ligand needs edges that close cycles, and
+the current plan contains one. Any future map should be planned with redundancy
+rather than as a spanning tree.
