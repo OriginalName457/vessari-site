@@ -1348,7 +1348,21 @@
     "rmse_hi": 0.773,
     "fep_plus_rmse_same_edges": 0.4,
     "fep_plus_rmse_full_set": 0.447,
-    "openfe_published_tyk2": 0.59,
+    "openfe_benchmark_public_weighted_rmse": 1.73,
+    "openfe_benchmark_public_ci95": [
+      1.53,
+      1.96
+    ],
+    "openfe_benchmark_public_systems": 58,
+    "openfe_benchmark_private_weighted_rmse": 2.44,
+    "openfe_benchmark_private_systems": 37,
+    "openfe_benchmark_per_system_range": [
+      0.6,
+      5.0
+    ],
+    "fep_plus_benchmark_weighted_rmse": 1.2,
+    "benchmark_source": "Large-scale collaborative assessment of binding free energy calculations for drug discovery using OpenFE, JCIM 10.1021/acs.jcim.6c00089",
+    "tyk2_is_an_easy_system": "Our 0.616 sits at the bottom of that 0.6 to 5.0 per-system range, and tyk2 is a well behaved congeneric series, so the number is not evidence of beating that benchmark. The comparator for tyk2 is FEP+ on these same edges.",
     "ns_per_leg": 165,
     "hours_per_edge": 18,
     "bootstrap_draws": 20000,
@@ -1369,8 +1383,27 @@
   "registrations": {
     "n": 17
   },
+  "calibration": {
+    "heldout_predicted": 0.7108,
+    "heldout_observed": 0.7248,
+    "heldout_ci95": [
+      0.6862,
+      0.7603
+    ],
+    "heldout_n": 556,
+    "heldout_holds": true,
+    "folds": 5,
+    "split_on": "paper",
+    "false_positives": 84,
+    "false_negatives": 69,
+    "precision_on_make_it": 0.7153,
+    "recall_of_the_good_ones": 0.7536,
+    "both_arms_wrong": 55,
+    "both_arms_same_wrong_call": 53,
+    "source": "benchmarks/results/mmp-error-types.json"
+  },
   "corrections": {
-    "n": 23,
+    "n": 24,
     "source": "benchmarks/results/CORRECTIONS.md, one heading each"
   },
   "ntab": {

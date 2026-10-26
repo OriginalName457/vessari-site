@@ -64,7 +64,7 @@
     <div class="hero">
       <div class="hero-copy">
         <h1 class="h1">We compute binding free energies atom by atom on one graphics card, and publish the commercial code&rsquo;s number beside ours.</h1>
-        <p class="lede">Two arms, both scored. The physics arm computes a binding free energy difference atom by atom, <span data-num="free_energy.ns_per_leg" data-fmt="int">&#183;&#183;&#183;</span> nanoseconds of sampling per leg and <span data-num="free_energy.hours_per_edge" data-fmt="int">&#183;&#183;</span> hours per edge on one RTX 3090. On <span data-num="free_energy.edges_complete" data-fmt="int">&#183;</span> of <span data-num="free_energy.edges_planned" data-fmt="int">&#183;&#183;</span> edges of the public TYK2 benchmark it reaches a root mean square error of <strong><span data-num="free_energy.rmse" data-fmt="3">&#183;&#183;&#183;&#183;</span> kcal/mol</strong>, with a 95 percent interval of <span data-num="free_energy.rmse_lo" data-fmt="3">&#183;&#183;&#183;&#183;</span> to <span data-num="free_energy.rmse_hi" data-fmt="3">&#183;&#183;&#183;&#183;</span> over <span data-num="free_energy.bootstrap_draws" data-fmt="int">&#183;&#183;&#183;&#183;&#183;&#183;</span> resamples, against the <strong><span data-num="free_energy.openfe_published_tyk2" data-fmt="2">&#183;&#183;&#183;</span></strong> that OpenFE publishes for the same target. Our settings are that reference protocol field by field, verified against the installed package. FEP+, the commercial code, scores <span data-num="free_energy.fep_plus_rmse_same_edges" data-fmt="3">&#183;&#183;&#183;&#183;</span> on those same edges and <span data-num="free_energy.fep_plus_rmse_full_set" data-fmt="3">&#183;&#183;&#183;&#183;</span> on the full set. We publish both numbers.
+        <p class="lede">Two arms, both scored. The physics arm computes a binding free energy difference atom by atom, <span data-num="free_energy.ns_per_leg" data-fmt="int">&#183;&#183;&#183;</span> nanoseconds of sampling per leg and <span data-num="free_energy.hours_per_edge" data-fmt="int">&#183;&#183;</span> hours per edge on one RTX 3090. On <span data-num="free_energy.edges_complete" data-fmt="int">&#183;</span> of <span data-num="free_energy.edges_planned" data-fmt="int">&#183;&#183;</span> edges of the public TYK2 benchmark it reaches a root mean square error of <strong><span data-num="free_energy.rmse" data-fmt="3">&#183;&#183;&#183;&#183;</span> kcal/mol</strong>, with a 95 percent interval of <span data-num="free_energy.rmse_lo" data-fmt="3">&#183;&#183;&#183;&#183;</span> to <span data-num="free_energy.rmse_hi" data-fmt="3">&#183;&#183;&#183;&#183;</span> over <span data-num="free_energy.bootstrap_draws" data-fmt="int">&#183;&#183;&#183;&#183;&#183;&#183;</span> resamples, Our settings are the openfe 1.13.0 defaults, verified field by field against the installed package. The published collaborative assessment of that protocol, by 15 pharmaceutical companies over more than 1,700 ligands, reports <strong><span data-num="free_energy.openfe_benchmark_public_weighted_rmse" data-fmt="2">&#183;&#183;&#183;</span> kcal/mol</strong> weighted across <span data-num="free_energy.openfe_benchmark_public_systems" data-fmt="int">&#183;&#183;</span> public systems and <span data-num="free_energy.openfe_benchmark_private_weighted_rmse" data-fmt="2">&#183;&#183;&#183;</span> across <span data-num="free_energy.openfe_benchmark_private_systems" data-fmt="int">&#183;&#183;</span> blinded industrial ones, with per system figures from <span data-num="free_energy.openfe_benchmark_per_system_range.0" data-fmt="1">&#183;&#183;</span> to <span data-num="free_energy.openfe_benchmark_per_system_range.1" data-fmt="1">&#183;&#183;</span>. TYK2 is a well behaved series at the easy end of that range, so our figure is not a win over that benchmark. FEP+, the commercial code, scores <span data-num="free_energy.fep_plus_rmse_same_edges" data-fmt="3">&#183;&#183;&#183;&#183;</span> on those same edges and <span data-num="free_energy.fep_plus_rmse_full_set" data-fmt="3">&#183;&#183;&#183;&#183;</span> on the full set. We publish both numbers.
         The learned arm proposes a change to a molecule and says which way the potency moved. On <span data-num="design.pairs" data-fmt="int">&#183;&#183;&#183;</span> matched pairs from ChEMBL, both members measured in the same assay, it calls the direction on <strong><span data-num="design.structure_correct" data-fmt="int">&#183;&#183;&#183;</span> of <span data-num="design.pairs" data-fmt="int">&#183;&#183;&#183;</span></strong>, and a fingerprint model given no structure at all calls <span data-num="design.control_correct" data-fmt="int">&#183;&#183;&#183;</span>. The two disagree on <span data-num="design.disagreements" data-fmt="int">&#183;&#183;&#183;</span> of those pairs and one of them is right on <strong><span data-num="design.either_right" data-fmt="int">&#183;&#183;&#183;</span> of <span data-num="design.pairs" data-fmt="int">&#183;&#183;&#183;</span></strong>. Knowing which arm to trust on which target is worth <span data-num="design.either_minus_best" data-fmt="1">&#183;&#183;</span> points over either alone, and which one wins tracks how much measured chemistry the target has.
         Every number here was registered before it was measured, and the ones that came back against us are published next to the ones that did not. <a href="findings/"><span data-num="registrations.n" data-fmt="int">&#183;&#183;</span> registrations</a>, <a href="data-files/CORRECTIONS.md">every correction with what it cost</a>.</p>
         <dl class="hero-stats">
@@ -74,14 +74,24 @@
               <span class="hero-stats__unit">95% CI <span data-num="free_energy.rmse_lo" data-fmt="3">&#183;&#183;&#183;&#183;</span> to <span data-num="free_energy.rmse_hi" data-fmt="3">&#183;&#183;&#183;&#183;</span>, <span data-num="free_energy.edges_complete" data-fmt="int">&#183;</span> of <span data-num="free_energy.edges_planned" data-fmt="int">&#183;&#183;</span> TYK2 edges</span></dd>
           </div>
           <div>
-            <dt>what OpenFE publishes for the same target</dt>
-            <dd><span data-num="free_energy.openfe_published_tyk2" data-fmt="2">&#183;&#183;&#183;</span> kcal/mol
-              <span class="hero-stats__unit">our protocol is theirs, field by field</span></dd>
+            <dt>the OpenFE collaborative benchmark, 15 companies</dt>
+            <dd><span data-num="free_energy.openfe_benchmark_public_weighted_rmse" data-fmt="2">&#183;&#183;&#183;</span> kcal/mol
+              <span class="hero-stats__unit">weighted over <span data-num="free_energy.openfe_benchmark_public_systems" data-fmt="int">&#183;&#183;</span> public systems, per system <span data-num="free_energy.openfe_benchmark_per_system_range.0" data-fmt="1">&#183;&#183;</span> to <span data-num="free_energy.openfe_benchmark_per_system_range.1" data-fmt="1">&#183;&#183;</span>. TYK2 is at the easy end, so ours is not a win over it</span></dd>
           </div>
           <div>
             <dt>FEP+, the commercial code, on our edges</dt>
             <dd><span data-num="free_energy.fep_plus_rmse_same_edges" data-fmt="3">&#183;&#183;&#183;&#183;</span> kcal/mol
               <span class="hero-stats__unit"><span data-num="free_energy.fep_plus_rmse_full_set" data-fmt="3">&#183;&#183;&#183;&#183;</span> on its own full set</span></dd>
+          </div>
+          <div>
+            <dt>us minus FEP+, mean unsigned error, paired</dt>
+            <dd>+<span data-num="free_energy.mue_minus_fep_plus" data-fmt="3">&#183;&#183;&#183;&#183;</span>
+              <span class="hero-stats__unit">95% CI <span data-num="free_energy.mue_minus_fep_plus_ci95.0" data-fmt="3">&#183;&#183;&#183;&#183;</span> to <span data-num="free_energy.mue_minus_fep_plus_ci95.1" data-fmt="3">&#183;&#183;&#183;&#183;</span>, which contains zero</span></dd>
+          </div>
+          <div>
+            <dt>the same comparison on squared error</dt>
+            <dd>+<span data-num="free_energy.rmse_minus_fep_plus" data-fmt="3">&#183;&#183;&#183;&#183;</span>
+              <span class="hero-stats__unit">95% CI <span data-num="free_energy.rmse_minus_fep_plus_ci95.0" data-fmt="3">&#183;&#183;&#183;&#183;</span> to <span data-num="free_energy.rmse_minus_fep_plus_ci95.1" data-fmt="3">&#183;&#183;&#183;&#183;</span>, which does not. FEP+ is ahead on this one</span></dd>
           </div>
           <div>
             <dt>one atom changed, did potency rise or fall</dt>
@@ -92,6 +102,16 @@
             <dt>cost of one free energy edge</dt>
             <dd><span data-num="free_energy.hours_per_edge" data-fmt="int">&#183;&#183;</span> hours
               <span class="hero-stats__unit">one RTX 3090, <span data-num="free_energy.ns_per_leg" data-fmt="int">&#183;&#183;&#183;</span> ns of sampling per leg</span></dd>
+          </div>
+          <div>
+            <dt>when we say a number, we deliver it</dt>
+            <dd>say <span data-num="calibration.heldout_predicted" data-fmt="pct">&#183;&#183;%</span>, deliver <span data-num="calibration.heldout_observed" data-fmt="pct">&#183;&#183;%</span>
+              <span class="hero-stats__unit">95% CI <span data-num="calibration.heldout_ci95.0" data-fmt="pct">&#183;&#183;%</span> to <span data-num="calibration.heldout_ci95.1" data-fmt="pct">&#183;&#183;%</span>, over <span data-num="calibration.heldout_n" data-fmt="int">&#183;&#183;&#183;</span> pairs whose papers were held out of the fit</span></dd>
+          </div>
+          <div>
+            <dt>of the compounds we say to make</dt>
+            <dd><span data-num="calibration.precision_on_make_it" data-fmt="pct">&#183;&#183;%</span> are better
+              <span class="hero-stats__unit"><span data-num="calibration.false_positives" data-fmt="int">&#183;&#183;</span> false positives and <span data-num="calibration.false_negatives" data-fmt="int">&#183;&#183;</span> false negatives, close to even</span></dd>
           </div>
           <div>
             <dt>registered before measuring</dt>

@@ -730,3 +730,55 @@ and the single separately planned cycle edge is the only redundancy in the whole
 map. Testing whether the error is per-ligand needs edges that close cycles, and
 the current plan contains one. Any future map should be planned with redundancy
 rather than as a spanning tree.
+
+## The 0.59 we compared ourselves against could not be sourced
+
+**Reported:** From 24 to 26 October, `docs/PHYSICS-ARM.md`, the homepage and
+three commit messages said "openfe publishes 0.59 kcal/mol on tyk2" and used it
+as the comparator for our own 0.598 and then 0.616. The sentence "we are at the
+published accuracy of the stack we run" rested entirely on it.
+
+**Corrected to:** Withdrawn. The figure came from one agent's literature search
+during the protocol audit of 23 October and was never checked against a
+primary source. Two searches on 26 October could not find it. The published
+collaborative assessment of the OpenFE protocol, by 15 pharmaceutical companies
+over more than 1,700 ligands, **reports no per-target figure for tyk2 at all.**
+
+What it does report, and what now stands in its place:
+
+| | |
+|---|---|
+| OpenFE default protocol, 58 public systems | **1.73 kcal/mol** weighted RMSE, 95 percent interval 1.53 to 1.96 |
+| sub kcal/mol systems | 10 of 58 |
+| per system range | 0.6 to 5.0 |
+| OpenFE on 37 blinded industrial systems | **2.44 kcal/mol**, 2 of 37 under 1 |
+| optimised FEP+ on the public set | **1.20 kcal/mol**, 19 systems under 1 |
+
+Source: Large-scale collaborative assessment of binding free energy
+calculations for drug discovery using OpenFE, JCIM 10.1021/acs.jcim.6c00089,
+with the ChemRxiv v2 preprint dated March 2026.
+
+**Why it moved:** An agent reported a number, it fitted our own figure almost
+exactly, and the coincidence made it feel confirmed rather than unchecked. It
+went onto the homepage three days later and stayed there for two.
+
+**What it cost:** Two days with an unsourced number as the central claim of the
+front page. No measurement changes.
+
+**What this does NOT let us claim.** Our 0.616 over 8 tyk2 edges sits at the
+bottom of that 0.6 to 5.0 per system range, and tyk2 is a well behaved
+congeneric series that sits at the easy end of any benchmark it appears in. So
+our figure is **not** evidence of beating the collaborative benchmark, and the
+site now says that in the same tile as the number. The honest comparator for
+tyk2 is FEP+ on these same edges, which is 0.400, and the paired interval on
+mean unsigned error contains zero while the one on squared error does not.
+
+**What did not move:** The settings claim, which was the other thing that agent
+established and the only one of the two that carried a check. Re-verified on 26
+October by dumping `RelativeHybridTopologyProtocol.default_settings()` from the
+installed openfe 1.13.0 and comparing field by field against the settings
+serialised in a transformation we actually ran. 11 lambda windows, 11 replicas,
+5.0 ns production, 1.0 ns equilibration, 3 repeats, 4.0 fs timestep, hydrogen
+mass 3.0, openff-2.2.1, amber ff14SB, tip3p, am1bcc, gapsys soft core. Every
+value matches, and the one difference is the complex leg's 1.0 nm solvent
+padding against the 1.5 nm default, which openfe sets itself.
