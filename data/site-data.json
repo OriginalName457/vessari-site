@@ -1320,22 +1320,22 @@
     }
   },
   "free_energy": {
-    "spearman_vs_experiment": 0.143,
-    "fep_plus_spearman_vs_experiment": 0.75,
-    "edge_pairs_ordered_right": 11,
-    "edge_pairs_total": 21,
+    "spearman_vs_experiment": 0.095,
+    "fep_plus_spearman_vs_experiment": 0.571,
+    "edge_pairs_ordered_right": 14,
+    "edge_pairs_total": 28,
     "direction_right": 4,
-    "mue": 0.488,
-    "edges_complete": 7,
+    "mue": 0.542,
+    "edges_complete": 8,
     "edges_planned": 12,
-    "rmse": 0.559,
+    "rmse": 0.616,
     "rmse_ci95": [
-      0.358,
-      0.719
+      0.413,
+      0.773
     ],
-    "rmse_lo": 0.358,
-    "rmse_hi": 0.719,
-    "fep_plus_rmse_same_edges": 0.313,
+    "rmse_lo": 0.413,
+    "rmse_hi": 0.773,
+    "fep_plus_rmse_same_edges": 0.4,
     "fep_plus_rmse_full_set": 0.447,
     "openfe_published_tyk2": 0.59,
     "ns_per_leg": 165,
@@ -1356,10 +1356,10 @@
     "source": "benchmarks/results/mmp-structure-arm.json and mmp-fingerprint-control.json"
   },
   "registrations": {
-    "n": 16
+    "n": 17
   },
   "corrections": {
-    "n": 22,
+    "n": 23,
     "source": "benchmarks/results/CORRECTIONS.md, one heading each"
   },
   "ntab": {
