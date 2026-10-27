@@ -1399,7 +1399,8 @@
     "precision_on_make_it": 0.7153,
     "recall_of_the_good_ones": 0.7536,
     "both_arms_wrong": 55,
-    "both_arms_same_wrong_call": 53,
+    "both_arms_wrong_if_independent": 48.9,
+    "joint_failure_ratio": 1.126,
     "source": "benchmarks/results/mmp-error-types.json"
   },
   "corrections": {

@@ -782,3 +782,39 @@ serialised in a transformation we actually ran. 11 lambda windows, 11 replicas,
 mass 3.0, openff-2.2.1, amber ff14SB, tip3p, am1bcc, gapsys soft core. Every
 value matches, and the one difference is the complex leg's 1.0 nm solvent
 padding against the 1.5 nm default, which openfe sets itself.
+
+## "53 of 55 make the same wrong call" was forced by the arithmetic
+
+**Reported:** On 26 October, in `benchmarks/results/mmp-error-types.md`, in a
+commit message and to the project owner in conversation: the two arms are both
+wrong on 55 of the 559 pairs and on 53 of those they make the same wrong call,
+therefore both methods are blind to the same thing and the 9.8 percent below
+the oracle ceiling is shared failure rather than something a better switch
+could rescue.
+
+**Corrected to:** Withdrawn. The outcome is binary. If the measured direction
+is improved and a method is wrong, it said worse, and there is no other way to
+be wrong, so two wrong methods must agree. The two exceptions are exactly the
+two pairs where the structure arm returned no prediction at all, and 53 plus 2
+is 55. The number was determined before any data was looked at.
+
+**What the data says when asked properly.** Stratify the 559 pairs on the size
+of the measured change, then compare the observed joint failures in each
+stratum against the product of that stratum's marginal failure rates. That
+gives 55 observed against **48.9** expected under independence. The excess is +6.1
+pairs, a ratio of **1.13**. Once difficulty is held fixed, the two arms fail
+very nearly independently and there is no shared blind spot in this data.
+
+**Why it moved:** 53 of 55 is a striking looking fraction and it was not asked
+where it came from. The check was one line of reasoning about a binary outcome
+and it took two minutes once asked.
+
+**What it cost:** Twenty minutes, one chat message to the owner, one commit
+message and one results file. Caught in the same session that wrote it, while
+trying to find what the 55 pairs had in common, which is how the forcing became
+obvious.
+
+**What did not move:** The 90.2 percent oracle ceiling, the confusion matrix,
+and the held-out calibration. And the corrected reading is the better news:
+nearly independent failures mean a rule that picks the right arm per case is
+worth building, where correlated failures would have made it worthless.
