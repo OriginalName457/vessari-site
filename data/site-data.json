@@ -2,13 +2,15 @@
   "holdout": {
     "n": 120,
     "spearman": 0.785,
-    "mae": 0.759
+    "mae": 0.759,
+    "source": "benchmarks/results/holdout.json"
   },
   "pipeline": {
     "split": "scaffold",
     "scaffold_split_removed": 989,
     "repeat_run_spread_log": 0.02,
-    "citation_check": "deterministic string containment"
+    "citation_check": "deterministic string containment",
+    "source": "benchmarks/results/, the split and repeat-spread records"
   },
   "curve": [
     {
@@ -676,7 +678,8 @@
           "1": 0.9630612134933472
         }
       }
-    }
+    },
+    "source": "~/.vessari/poses, the pose shown in the viewer"
   },
   "abl1": {
     "n": 30,
@@ -710,7 +713,8 @@
       -0.202
     ],
     "n_eval": null,
-    "n_train": null
+    "n_train": null,
+    "source": "benchmarks/results/abl1-controls.json"
   },
   "fep_repro": {
     "n": 364,
@@ -721,7 +725,8 @@
     "comparable_pearson": 0.593,
     "comparable_n": 52,
     "comparable_targets": "CDK2, TYK2, P38",
-    "boltz2_reported_pearson": 0.66
+    "boltz2_reported_pearson": 0.66,
+    "source": "benchmarks/results/fep-reproducibility.json"
   },
   "assessment": {
     "target": "ABL1",
@@ -813,7 +818,8 @@
     "rank_correlation": 1.0,
     "chance_of_this_order": 0.16666666666666666,
     "median_fold_error": 3.4,
-    "assays_behind_comparison": 212
+    "assays_behind_comparison": 212,
+    "source": "benchmarks/results/assessment.json"
   },
   "paired": {
     "n_pairs": 4899,
@@ -897,7 +903,8 @@
       ],
       "rmse_kcal": 1.445,
       "rmse_predict_zero_kcal": 2.107
-    }
+    },
+    "source": "benchmarks/results/paired-controls.json"
   },
   "conformal": {
     "alpha": 0.2,
@@ -1074,7 +1081,8 @@
       "max_coverage": 1.0,
       "n_under_covering": 3,
       "note": "coverage holds on average and not per target; an interval right on average and wrong for your protein is worse than no interval"
-    }
+    },
+    "source": "benchmarks/results/conformal.json"
   },
   "admet": {
     "count": 22,
@@ -1280,7 +1288,8 @@
         "n_test": 226,
         "split_digest": "dca91dea3e56f812"
       }
-    ]
+    ],
+    "source": "benchmarks/results/admet-holdout.json"
   },
   "affinity_control": {
     "model": 0.785,
@@ -1290,7 +1299,8 @@
     "verdict": "inconclusive",
     "note": "with a cross-validated ligand-only baseline the gap is +0.083, 95% CI -0.014 to +0.195, an interval containing zero",
     "delta_nn": 0.409,
-    "delta_mw": 0.772
+    "delta_mw": 0.772,
+    "source": "benchmarks/results/affinity-control.json"
   },
   "fep": {
     "n": 52,
@@ -1317,36 +1327,37 @@
       "boltz2": 0.388,
       "ligand_only": 0.789,
       "delta": -0.401
-    }
+    },
+    "source": "benchmarks/results/fep15-control.json"
   },
   "free_energy": {
-    "rmse_minus_fep_plus": 0.216,
+    "rmse_minus_fep_plus": 0.203,
     "rmse_minus_fep_plus_ci95": [
-      0.024,
-      0.42
+      0.021,
+      0.395
     ],
-    "mue_minus_fep_plus": 0.202,
+    "mue_minus_fep_plus": 0.179,
     "mue_minus_fep_plus_ci95": [
-      -0.026,
-      0.428
+      -0.024,
+      0.389
     ],
-    "fep_plus_mue_same_edges": 0.34,
-    "spearman_vs_experiment": 0.095,
-    "fep_plus_spearman_vs_experiment": 0.571,
-    "edge_pairs_ordered_right": 14,
-    "edge_pairs_total": 28,
-    "direction_right": 4,
-    "mue": 0.542,
-    "edges_complete": 8,
+    "fep_plus_mue_same_edges": 0.316,
+    "spearman_vs_experiment": 0.367,
+    "fep_plus_spearman_vs_experiment": 0.7,
+    "edge_pairs_ordered_right": 22,
+    "edge_pairs_total": 36,
+    "direction_right": 5,
+    "mue": 0.495,
+    "edges_complete": 9,
     "edges_planned": 12,
-    "rmse": 0.616,
+    "rmse": 0.582,
     "rmse_ci95": [
-      0.413,
-      0.773
+      0.381,
+      0.74
     ],
-    "rmse_lo": 0.413,
-    "rmse_hi": 0.773,
-    "fep_plus_rmse_same_edges": 0.4,
+    "rmse_lo": 0.381,
+    "rmse_hi": 0.74,
+    "fep_plus_rmse_same_edges": 0.379,
     "fep_plus_rmse_full_set": 0.447,
     "openfe_benchmark_public_weighted_rmse": 1.73,
     "openfe_benchmark_public_ci95": [
@@ -1381,7 +1392,8 @@
     "source": "benchmarks/results/mmp-structure-arm.json and mmp-fingerprint-control.json"
   },
   "registrations": {
-    "n": 17
+    "n": 17,
+    "source": "benchmarks/preregistered/, counted by listing"
   },
   "calibration": {
     "heldout_predicted": 0.7108,
@@ -1404,7 +1416,7 @@
     "source": "benchmarks/results/mmp-error-types.json"
   },
   "corrections": {
-    "n": 24,
+    "n": 25,
     "source": "benchmarks/results/CORRECTIONS.md, one heading each"
   },
   "ntab": {
@@ -1567,7 +1579,8 @@
       "seed_sd": 0.077,
       "published_between_model_spread": 0.065,
       "published_methods": 3
-    }
+    },
+    "source": "benchmarks/results/ntab-seed-variance.json"
   },
   "verification": {
     "cases": 5,
@@ -1604,7 +1617,8 @@
         "expected": false,
         "why": "A document outside the retrieved corpus cannot support anything, whatever it may say elsewhere. The run only stands on what the run actually read."
       }
-    ]
+    ],
+    "source": "benchmarks/results/verification.json"
   },
   "corpus": {
     "n_scored": 123,
@@ -1664,6 +1678,7 @@
     ],
     "random": 1.21,
     "enrichment": 2.4,
-    "at_least_one": "115 of 119"
+    "at_least_one": "115 of 119",
+    "source": "benchmarks/results/selection.json"
   }
 }
