@@ -818,3 +818,38 @@ obvious.
 and the held-out calibration. And the corrected reading is the better news:
 nearly independent failures mean a rule that picks the right arm per case is
 worth building, where correlated failures would have made it worthless.
+
+## Seven crystallographic waters was two, and two in ligand contact was one
+
+**Reported:** On 26 October, in `docs/EXPERIMENT-DESIGN.md` and in the brief
+given to a workflow, that `~/.vessari/fep-inputs/tyk2/protein.pdb` holds seven
+crystallographic waters with two of them in ligand contact. The figure was used
+to argue that swapping the starting structure changes four things at once.
+
+**Corrected to:** **Two** water molecules, residues 1318 and 1325. The file
+holds 18 HETATM records, 6 ACE and 6 NME capping groups and 6 HOH, and those 6
+HOH records are two waters of three atoms each. **One** of the two touches the
+ligand: A1325 at 2.33 angstroms, a hydrogen bond. A1318's closest approach to
+the crystal ligand is 3.66 angstroms, which is not a contact.
+
+**Why it moved:** `grep -c "HOH"` returned 7 because it matched a `FORMUL`
+header line in addition to the 6 atom records, and nobody asked why a protein
+would hold an odd number of water atoms. Caught by an agent re-deriving the
+count during the 26 October workflow and then re-verified here against the
+coordinates.
+
+**What it cost:** Nothing yet. The figure appeared in the paragraph of the
+rule file written to stop exactly this, and an unchecked one liner of the kind
+that file names is what produced it.
+
+**What this changes in the science.** The water confound is one bridging water
+in the hinge, not seven, and it contacts the invariant core of the series rather
+than the part that changes. A contact that is geometrically the same at both
+alchemical endpoints cancels to first order in a relative free energy, so the
+water term is bounded near zero on every planned edge at no card cost. This also explains the null in `benchmarks/results/fep-water-occupancy.json`.
+That measurement counted bulk shell occupancy around the whole ligand, and the
+one structured water does not move.
+
+**Still true.** openfe did keep both waters in every system it simulated, so
+they were a real presence in all nine published edges rather than a
+hypothetical. No edge is worth spending to isolate them.
