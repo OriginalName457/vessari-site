@@ -853,3 +853,43 @@ one structured water does not move.
 **Still true.** openfe did keep both waters in every system it simulated, so
 they were a real presence in all nine published edges rather than a
 hypothetical. No edge is worth spending to isolate them.
+
+## The assay to commission is enzyme inhibition, and I had it backwards
+
+**Reported:** On 29 October, in `grant/GAPS.md`, that "our predictions are about
+binding and the wrong one would invalidate Aim 1", warning that an enzyme
+inhibition assay would be the wrong format to commission for prospective
+validation.
+
+**Corrected to:** Backwards. Counted from the files, all 13 ligands of the TYK2
+benchmark carry **Ki**, and of the 559 matched pairs **313 are IC50, 245 are Ki
+and exactly one is a Kd**. So **558 of 559, which is 99.8 percent**, of
+everything this project has ever been scored against is derived from enzyme
+inhibition. A binding assay would have returned a number comparable to nothing
+we have validated, which is the opposite of the risk the paragraph named.
+
+**Why it moved:** A free energy calculation computes a binding free energy, so
+"we predict binding" is true of the physics and says nothing about what the
+reference data is. The reference data was never checked before the claim was
+written. Caught by the project owner asking why we were not measuring enzyme
+inhibition, which is a question I should have been able to answer from our own
+files and could not.
+
+**What it cost:** Nothing yet. It would have cost Aim 1 of the application, by
+commissioning a measurement that could not be compared against any of our
+preliminary data.
+
+**What it changes.** The primary assay is enzyme inhibition reporting Ki, or
+IC50 with the ATP concentration and substrate Km stated so Cheng-Prusoff can
+convert it. An IC50 depends on assay conditions, which is why the matched pair
+mining refused any pair whose two members came from different assays.
+
+**What survives from the original thought, for a better reason.** Both assays
+are worth buying on a subset, and the reason is diagnostic. A free energy calculation
+computes binding while an inhibition readout adds mechanism, so if a prediction
+misses, the two measurements separate the explanations. Binding matching our
+prediction while inhibition does not means the physics is right and the
+functional readout carries something the calculation never modelled. Both
+missing means the physics is wrong. One assay cannot tell those apart and the
+difference decides what gets fixed next, so about a third of the compounds
+should carry both.
