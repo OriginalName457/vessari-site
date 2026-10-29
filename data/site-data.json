@@ -3,7 +3,7 @@
     "n": 120,
     "spearman": 0.785,
     "mae": 0.759,
-    "source": "benchmarks/results/holdout.json"
+    "source": "benchmarks/results/curve-n399.json, combined.before over the 120 compound holdout"
   },
   "pipeline": {
     "split": "scaffold",
@@ -694,7 +694,7 @@
     "mae_log": 1.404,
     "median_fold": 20.5,
     "within_10x": 13,
-    "source": "benchmarks/results/abl1-holdout-predictions-v2.json",
+    "source": "benchmarks/results/abl1-holdout-stats-v2.json",
     "effective_n_clusters_note": "The 30 here is a circular answer: it clusters the selected compounds only, and selection already rejected anything within 0.6 of an accepted compound. Over the 3,013 compound candidate pool these 30 span 19 single-linkage clusters, one holding eight of them. See clustering-leak-2026-10-12.json.",
     "assays": 266
   },
@@ -714,7 +714,7 @@
     ],
     "n_eval": null,
     "n_train": null,
-    "source": "benchmarks/results/abl1-controls.json"
+    "source": "benchmarks/results/abl1-controls-v3/controls.json"
   },
   "fep_repro": {
     "n": 364,
@@ -726,7 +726,7 @@
     "comparable_n": 52,
     "comparable_targets": "CDK2, TYK2, P38",
     "boltz2_reported_pearson": 0.66,
-    "source": "benchmarks/results/fep-reproducibility.json"
+    "source": "benchmarks/results/fep-benchmark.json"
   },
   "assessment": {
     "target": "ABL1",
@@ -819,7 +819,7 @@
     "chance_of_this_order": 0.16666666666666666,
     "median_fold_error": 3.4,
     "assays_behind_comparison": 212,
-    "source": "benchmarks/results/assessment.json"
+    "source": "benchmarks/results/assessment-abl1.json"
   },
   "paired": {
     "n_pairs": 4899,
@@ -904,7 +904,7 @@
       "rmse_kcal": 1.445,
       "rmse_predict_zero_kcal": 2.107
     },
-    "source": "benchmarks/results/paired-controls.json"
+    "source": "benchmarks/results/paired-validation.json"
   },
   "conformal": {
     "alpha": 0.2,
@@ -1082,7 +1082,7 @@
       "n_under_covering": 3,
       "note": "coverage holds on average and not per target; an interval right on average and wrong for your protein is worse than no interval"
     },
-    "source": "benchmarks/results/conformal.json"
+    "source": "benchmarks/results/conformal-validation.json"
   },
   "admet": {
     "count": 22,
@@ -1289,7 +1289,7 @@
         "split_digest": "dca91dea3e56f812"
       }
     ],
-    "source": "benchmarks/results/admet-holdout.json"
+    "source": "benchmarks/results/admet.json"
   },
   "affinity_control": {
     "model": 0.785,
@@ -1300,7 +1300,7 @@
     "note": "with a cross-validated ligand-only baseline the gap is +0.083, 95% CI -0.014 to +0.195, an interval containing zero",
     "delta_nn": 0.409,
     "delta_mw": 0.772,
-    "source": "benchmarks/results/affinity-control.json"
+    "source": "benchmarks/results/ligand-only-control.json"
   },
   "fep": {
     "n": 52,
@@ -1618,7 +1618,7 @@
         "why": "A document outside the retrieved corpus cannot support anything, whatever it may say elsewhere. The run only stands on what the run actually read."
       }
     ],
-    "source": "benchmarks/results/verification.json"
+    "source": "benchmarks/results/verification-cases.json"
   },
   "corpus": {
     "n_scored": 123,
@@ -1638,7 +1638,7 @@
     "positive": "116 of 123",
     "above_half": "82 of 123",
     "gpu_hours": 48.1,
-    "source": "corpus-123-targets.json",
+    "source": "benchmarks/results/corpus-123-targets.json",
     "median_spearman_ci": [
       0.503,
       0.654
@@ -1679,6 +1679,6 @@
     "random": 1.21,
     "enrichment": 2.4,
     "at_least_one": "115 of 119",
-    "source": "benchmarks/results/selection.json"
+    "source": "benchmarks/results/top5-selection.json"
   }
 }
