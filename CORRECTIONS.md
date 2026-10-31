@@ -893,3 +893,48 @@ functional readout carries something the calculation never modelled. Both
 missing means the physics is wrong. One assay cannot tell those apart and the
 difference decides what gets fixed next, so about a third of the compounds
 should carry both.
+
+## I called the CYP classification submission broken from its positive rate alone
+
+**30 October 2026.** I compared the predicted positive rates in
+`benchmarks/cyp/submission_classification.csv` against the labelled base rates
+in `benchmarks/cyp/tdi_v2/audit.json`, found 9.73 percent against 21.64 for
+CYP2D6 and 55.60 against 21.32 for CYP3A4, and told the owner twice that both
+thresholds were wrong by factors of 2.2 and 2.6 and that submitting would be,
+in my words, the worst possible first external appearance. I proposed matching
+each threshold to the base rate.
+
+**That was wrong, and the proposed fix would have made the entry worse.**
+
+The deployed cut is the argmax of MCC over the outer out-of-fold scores. I
+recomputed it: argmax lands at -0.5041 for CYP2D6 and -1.8259 for CYP3A4, which
+is the deployed -0.5028 and -1.8252 to three decimals. Against prevalence
+matching on the same out-of-fold data:
+
+| | deployed, argmax MCC | prevalence matched |
+|---|---|---|
+| CYP2D6 out-of-fold MCC | **0.1409** | 0.1059 |
+| CYP3A4 out-of-fold MCC | **0.3944** | 0.3529 |
+
+So my fix would have cost 3.5 points of MCC on CYP2D6 and 4.2 on CYP3A4, on the
+metric the challenge scores. A positive rate above prevalence is what MCC
+maximisation does with a weak classifier, because recall is worth more than
+precision at that signal level. It is not evidence of miscalibration.
+
+**What it cost.** Nothing yet, because the owner was away and nothing was
+edited. It cost two messages of false alarm and it would have cost the entry.
+
+**Why it happened.** `test_cyp_tdi.json` carries a `threshold_provenance` block
+on each endpoint that states the rule, the out-of-fold positive rate, the test
+positive rate, a 1000 draw bootstrap of the cut and an explicit note that an
+out-of-fold score is one model's output while a test score is the mean of five.
+It is a complete answer to the question I was asking and it was in the file I
+was already reading. I did not open it before stating a conclusion.
+
+**What is actually true about this submission.** The thresholds are correct by a
+pre-specified rule. The model is weak against what the labels can support:
+out-of-fold MCC 0.1409 on CYP2D6 against a test-retest floor of 0.577, and
+0.3944 on CYP3A4 against a floor of 0.518. The CYP3A4 figure does sit in the
+pack where the published CYP work sits, around 0.398 with many teams tied. The
+CYP2D6 figure does not. That is the honest thing to put in a method report, and
+it is a different claim from the one I made.
