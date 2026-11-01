@@ -938,3 +938,42 @@ out-of-fold MCC 0.1409 on CYP2D6 against a test-retest floor of 0.577, and
 pack where the published CYP work sits, around 0.398 with many teams tied. The
 CYP2D6 figure does not. That is the honest thing to put in a method report, and
 it is a different claim from the one I made.
+
+## The 79.68 percent two arm ensemble was half leakage
+
+**1 November 2026.** On 29 October I verified that summing the two matched pair
+arms' predicted gaps scored 443 of 556, **79.68 percent**, against 72.48 for the
+structure arm, a paired gain of +7.19 points with an interval over 188 papers of
++4.06 to +10.62 that excluded zero. I called it the largest available gain in
+the project and put it at the top of the next steps.
+
+It was registered rather than published, because the split it sat on was the
+same one that had cost JAK selectivity 19 points six hours earlier. That was the
+right call and this entry is the reason why.
+
+**Under a document level holdout the gain is +3.42 points and the interval runs
+from -0.0021 to +0.0759, which contains zero.** The second branch of the
+registered decision rule fired. The ensemble is not demonstrated to beat the
+structure arm alone, and the shipped ranker does not change.
+
+| | compound held out | document held out |
+|---|---|---|
+| structure arm | 0.7248 | 0.7248 |
+| fingerprint | 0.7140 | **0.6511** |
+| ensemble | 0.7968 | **0.7590** |
+| ensemble minus structure arm | +0.0719 | **+0.0342, interval contains zero** |
+
+**What it cost.** 1,752 minutes of processor time to find out, and nothing else,
+because the figure never left the registration. Had it been published on 29
+October it would have gone into a grant aim and then been withdrawn.
+
+**The second finding, which is larger than the first.** The fingerprint control
+fell from 0.7140 to 0.6511 when its paper siblings were removed. That is 6.3
+points of leakage in a number this project has been quoting as its structureless
+control, on a set where 472 of 559 pairs share a source paper with another pair.
+The 72.5 percent structure arm is untouched, because it fits nothing and has no
+training set to leak through.
+
+**What to carry forward.** Out of bag tree selection is honest at the level of
+the compound and silent about the paper. Any number here produced by a fitted
+forest is an upper bound until it has been scored with the document held out.
