@@ -977,3 +977,60 @@ training set to leak through.
 **What to carry forward.** Out of bag tree selection is honest at the level of
 the compound and silent about the paper. Any number here produced by a fitted
 forest is an upper bound until it has been scored with the document held out.
+
+## The leakage was 10.75 points, not 19, and I reported a per-leg cost as per-edge
+
+**4 November 2026.** Two errors of mine, both found by an adversarial check run
+against my own work, and both already propagated into other files.
+
+### The JAK selectivity leakage was overstated by nearly double
+
+I reported that holding out the source document cost **19 points**, from 85.64
+percent to 66.63. That compared **0.8564 on 26,471 rows against 0.6663 on 995
+rows**. Different compound sets. It is not a matched comparison and it should
+never have been published as one.
+
+Joining `jak-selectivity.json` to `jak-selectivity-refit.json` on molecule and
+target pair matches all 995 refit rows with none unmatched. On those identical
+rows:
+
+| | accuracy on the same 995 cases |
+|---|---|
+| tree selection, compound held out | **0.7739** |
+| document held out, forests refitted | **0.6663** |
+| **matched leakage effect** | **10.75 points** |
+
+The effect is real and it is roughly half what I claimed. Stated against the
+base rate, the margin falls from 24.1 points to 13.4.
+
+**What it cost.** Nothing spent, because the figure never left the repository
+into a submission. It was in `docs/STATE.md`, this file, two registrations and
+the gap analysis, and it was about to become the abstract of a preprint. It is
+corrected in all of them.
+
+**Why it happened.** I compared the headline of one file to the headline of
+another without checking that they were computed on the same rows. The refit
+file says plainly that it holds 995 cases and the other holds 26,471. I read
+both numbers and did not subtract the obvious.
+
+### The free energy cost per edge was a per-leg cost
+
+On 3 November I corrected the aims from a stated 18 hours per edge to a
+measured 15.5, calling the original an overstatement. **The 15.5 was wrong and
+the original was closer.**
+
+An edge requires a complex leg and a solvent leg. I grouped the ledger by its
+`edge` field, which names a leg, counted 18 legs as 18 edges and halved the
+cost. Grouping by `pair`, which is the actual edge, gives **31.1 GPU-hours mean,
+30.0 median, range 22.6 to 43.1 over nine completed edges**.
+
+So the application now understates nothing, and for two days it understated its
+own compute cost by a factor of two in the direction that would have made the
+budget look cheap and then wrong.
+
+### A third thing, which was not an error
+
+`CORRECTIONS.md` records the document-held-out fingerprint control at 0.6511
+and the result file reports 0.6530. Both are right. 0.6511 is the 556 pairs
+that join to the structure arm and 0.6530 is all 559. Neither was labelled.
+Both now are.
