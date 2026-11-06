@@ -1034,3 +1034,57 @@ budget look cheap and then wrong.
 and the result file reports 0.6530. Both are right. 0.6511 is the 556 pairs
 that join to the structure arm and 0.6530 is all 559. Neither was labelled.
 Both now are.
+
+## I diagnosed the CYP failure as compression, and the fix I proposed makes it worse
+
+**6 November 2026.** The test labels were unblinded on 4 November, so this is
+measured rather than argued.
+
+I told the owner that rank 86 was caused by compressed predictions, reasoning
+from Spearman 0.6726 against R2 0.103, and that the fix was rescaling. **The
+mechanism is real and the fix is refuted.**
+
+Predictions are compressed by a measured 17 to 23 percent against the least
+squares optimum. But every variance, slope, isotonic and quantile recalibration
+fitted honestly makes ST-RAE **worse**, by 0.027 to 0.277 macro. A correction
+that appears to help by 0.13 when fitted on out of fold truth costs 0.0015 when
+cross fitted. Recalibrating our own predictions is now a closed question.
+
+**The actual cause is a label location shift, and it is concentrated in one
+endpoint.** Per endpoint, out of fold against test:
+
+| | out of fold | test | gap |
+|---|---|---|---|
+| CYP1A2 | 0.7681 | 0.8522 | +0.084 |
+| CYP2C9 | 0.6114 | 0.5495 | **-0.062, improved** |
+| CYP2D6 | 0.8687 | **1.3478** | **+0.479** |
+| CYP3A4 | 0.4778 | 0.5593 | +0.082 |
+
+**CYP2D6 alone is 82 percent of the 0.146 overestimate.** Its predictions were
+centred about 1.45 log units too high, because the training labels for that
+endpoint contained no inactive compounds at all. A scaffold split cannot see
+that, because it resamples the same label distribution.
+
+**All eleven of the top eleven published method reports repaired the label
+distribution using the single concentration primary screen the organisers
+released.** We used that screen only as an auxiliary training target at weight
+0.3. We never used it to extend the label range into the inactive tail. That is
+the one move the entire field made and we did not.
+
+**What it cost.** The entry. Label repair is estimated at about 0.147 macro at
+other teams' published parameters, taking 0.8272 to roughly 0.68. An additive
+offset from a nearest neighbour label shift bracket was worth +0.09 to +0.16
+and was computable from the blinded SMILES in about ten minutes of processor
+time before submission.
+
+**A second error of mine in the same file.** `SUBMISSION-CHECKLIST.md` stated
+there were no do-overs. Submissions were rate limited to once every 12 hours
+with only the latest counting. We submitted once, two days before close, and
+never used the live board as an instrument. Other teams submitted repeatedly
+and read per endpoint feedback.
+
+**What survives.** The ranking transfers. Board Spearman 0.6726 and Kendall
+0.4965 both exceed our own out of fold 0.5900 and 0.4238. The model orders
+compounds better on the test set than on its own validation. It is the
+magnitudes that are wrong, and 36 percent of the gap to the leader is ranking
+quality that no post hoc correction reaches.
