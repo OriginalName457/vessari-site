@@ -1088,3 +1088,50 @@ and read per endpoint feedback.
 compounds better on the test set than on its own validation. It is the
 magnitudes that are wrong, and 36 percent of the gap to the leader is ranking
 quality that no post hoc correction reaches.
+
+## 28. The structure arm's 0.7209 never applied its own pose gate
+
+**Found 12 November 2026**, while scoring the extension.
+
+**What was claimed.** The structure arm calls the direction of a one atom
+change on **403 of 559 pairs, 0.7209**, and leads the document held out
+fingerprint control by **+6.80 points**. In `benchmarks/results/mmp-structure-arm.json`,
+`docs/STATE.md`, `docs/GAP-ANALYSIS-2026-10-29.md`, `grant/SPECIFIC-AIMS.md`
+and the site.
+
+**What was measured.** The registration at
+`benchmarks/preregistered/2026-10-18-molecule-proposal.md`, lines 84 and 85,
+says: "A pair whose pose fails the PoseBusters check on either member is
+counted as a failure to predict rather than dropped." The committed result
+records `failures_to_predict: {"no affinity": 3}` and no pose failures, so the
+gate was never applied.
+
+Applying it to the identical 559 pairs with the identical predictions gives
+**365 of 559, 0.6530**, with 58 pairs gated out. The de-leaked fingerprint
+control on those same 559 pairs is **0.6530**.
+
+So the two arms **tie exactly**, and the +6.80 point lead was the control
+carrying its registered handicap while the structure arm did not carry its own.
+
+**The third amendment does not rescue it.** That amendment allows a failing
+pose to be relaxed and re-checked, and a pose the ledger records as fixed
+counts as passing. The ledger at `benchmarks/results/pose-relaxation.jsonl`
+holds 190 rows keyed by UniProt accession and covers the corpus. Overlap with
+the 65 failing poses of this arm, on target and compound and on compound alone,
+is **zero**. They were never relaxed.
+
+**What it cost.** The comparison was the project's central open question for
+three weeks. A 194 paper extension was registered on 8 November and 1,475
+compounds were co-folded over 27 hours of card time to resolve an interval on a
+comparison that was mis-specified. The extension is not wasted, because it now
+answers the question symmetrically, but the card time was spent for the wrong
+reason.
+
+**What changed.** `scripts/mmp_structure_score.py` takes `--posebusters` and
+`--preds` more than once, because scoring a pair file against one report
+silently counts every pair outside it as a failure. That is how the first
+extended run read 0.299 and 0.0 on the published pairs.
+
+**Superseded, not deleted.** 0.7209 stays in the record as the ungated number
+with this entry beside it. Every downstream file that quotes 403 of 559 or
++6.80 needs the gated number instead.
