@@ -1135,3 +1135,46 @@ extended run read 0.299 and 0.0 on the published pairs.
 **Superseded, not deleted.** 0.7209 stays in the record as the ungated number
 with this entry beside it. Every downstream file that quotes 403 of 559 or
 +6.80 needs the gated number instead.
+
+## 29. The physics arm's error bars understate its error by three to twelve times
+
+**Found 12 November 2026**, by running `openfe gather` for the first time.
+
+**What was claimed.** Each free energy edge was published with an uncertainty
+taken from the spread of its three protocol repeats, for example
+`lig_ejm_31 to lig_ejm_42: +0.633 +- 0.069`. Those intervals appear in
+`docs/PHYSICS-ARM.md`, in the site data and in
+`benchmarks/preregistered/2026-10-22-cycle-closure-42-45.md`.
+
+**What was measured.** Against experiment, the eight gathered edges miss by a
+mean of **4.7 times their own sigma**, median 3.3, with three of eight above
+seven sigma and the worst at **12.4**. The full table is in
+`docs/SAMPLING-IS-NOT-THE-GAP.md`.
+
+**Why.** All three repeats of an edge start from the same single cached docked
+conformer, `number_of_conformers: null`, and the AM1-BCC charges come from that
+same one conformer. Repeats that share a starting structure measure
+reproducibility, not accuracy. They agree with each other while being wrong
+together.
+
+**What this kills.** The per-ligand offset hypothesis. The 22 October
+registration inferred a shared error of about +0.68 on lig_ejm_31 from its two
+then-existing edges. Four now exist with errors **+0.869, +0.512, +0.259 and
+-0.937**, mixed in sign, which no constant per-ligand term can produce. Mean
+signed error over all eight edges is **+0.025** against an error standard
+deviation of 0.634, so the arm is scattered rather than biased and there is no
+offset to subtract.
+
+**What it protects.** `docs/GAP-ANALYSIS-2026-10-29.md` item 5 asked for this in
+writing and put it at roughly 160 card hours of avoided extended-sampling runs.
+Sampling reduces sigma, and sigma is already the small term.
+
+**Also corrected.** The canonical result file
+`benchmarks/results/free-energy-tyk2.json` did not exist and
+`~/.vessari/free-energy/tyk2/ddg.tsv` was empty, so every published physics
+number was recomputed by `scripts/export_site_data.py` from the leg ledger
+rather than produced by openfe's own analysis. Gathered, openfe reports
+**RMSE 0.593 over 8 edges**. The site quotes 0.582 over 9, the ninth being the
+lig_ejm_42 to lig_ejm_45 edge that sits under the separate `tyk2-cycle` system
+and is not in this gather. The two numbers are close and were produced by
+different paths, which is why the canonical one now exists.
